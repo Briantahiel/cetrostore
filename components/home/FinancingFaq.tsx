@@ -1,22 +1,22 @@
 const faqs = [
   {
-    question: "Cómo puedo acceder a un crédito?",
+    question: "C\u00f3mo puedo acceder a un cr\u00e9dito?",
     answer:
-      "Tenés que ser mayor de edad y contar con un ingreso declarado: antigüedad laboral, jubilación, pensión o monotributo.",
+      "Ten\u00e9s que ser mayor de edad y contar con un ingreso declarado: antig\u00fcedad laboral, jubilaci\u00f3n, pensi\u00f3n o monotributo.",
   },
   {
-    question: "Cuánto tarda?",
-    answer: "La aprobación es inmediata, por sí o por no.",
+    question: "Cu\u00e1nto tarda?",
+    answer: "La aprobaci\u00f3n es inmediata, por s\u00ed o por no.",
   },
   {
     question: "Si no me aprueban?",
     answer:
-      "Podés intentar con el DNI de un familiar, amigo o pareja. También podés contactarnos para explorar otras opciones de financiamiento.",
+      "Pod\u00e9s intentar con el DNI de un familiar, amigo o pareja. Tambi\u00e9n pod\u00e9s contactarnos para explorar otras opciones de financiamiento.",
   },
   {
-    question: "Por cuánto tiempo es válida la aprobación?",
+    question: "Por cu\u00e1nto tiempo es v\u00e1lida la aprobaci\u00f3n?",
     answer:
-      "Tu crédito aprobado es válido por 24 horas. Es importante que te contactes de inmediato para no perder la oportunidad.",
+      "Tu cr\u00e9dito aprobado es v\u00e1lido por 24 horas. Es importante que te contactes de inmediato para no perder la oportunidad.",
   },
 ];
 
@@ -29,14 +29,14 @@ export default function FinancingFaq() {
             Preguntas frecuentes
           </p>
           <h2 className="mt-3 text-3xl font-black tracking-tight">
-            Creditos y aprobacion
+            Cr{"\u00e9"}ditos y aprobaci{"\u00f3"}n
           </h2>
           <p className="mt-4 text-sm font-medium leading-6 text-slate-600">
-            Información básica para saber si podés avanzar con una financiación
-            antes de reservar.
+            Informaci{"\u00f3"}n b{"\u00e1"}sica para saber si pod{"\u00e9"}s
+            avanzar con una financiaci{"\u00f3"}n antes de reservar.
           </p>
           <p className="mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm font-black text-slate-800">
-            Asesor comercial: Brian Gómez
+            Asesor comercial: Brian G{"\u00f3"}mez
           </p>
         </div>
 

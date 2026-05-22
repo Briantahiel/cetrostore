@@ -17,8 +17,7 @@ export default function PhotoSection() {
             </h2>
           </div>
           <p className="max-w-md text-sm font-medium leading-6 text-slate-600">
-            Una vista rapida de modelos para comparar estilo, posicion de
-            manejo y uso recomendado.
+            Una selección de los modelos más vendidos.
           </p>
         </div>
 
