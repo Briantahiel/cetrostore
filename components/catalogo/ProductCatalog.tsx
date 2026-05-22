@@ -183,16 +183,17 @@ export default function ProductCatalog() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-700">
-              Catalogo
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-900">
+              Catálogo
             </p>
             <h2 className="mt-2 text-4xl font-black tracking-tight">
-              Elegi tu moto
+              Elegí tu moto
             </h2>
-            <p className="mt-3 max-w-2xl text-sm font-medium leading-6 text-slate-600">
+            {/* <p className="mt-3 max-w-2xl text-sm font-medium leading-6 text-slate-600">
               {productosOrdenados.length} modelos disponibles. Ordena, compara
               y consulta por el que te guste.
-            </p>
+            </p> */}
+            <p className="mt-3 max-w-2xl text-sm font-medium leading-6 text-slate-600">Consultá disponibilidad, financiación y medios de pago.</p>
           </div>
 
           <select
