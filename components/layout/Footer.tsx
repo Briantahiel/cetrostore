@@ -18,17 +18,17 @@ export default function Footer() {
           </p>
         </div>
 
-    <div className="flex w-20 gap-8 items-center justify-between">
-  {footerLinks.map((link) => (
-    <Link
-      key={link.href}
-      href={link.href}
-      className="text-sm font-bold text-slate-300 transition hover:text-cyan-300"
-    >
-      {link.label}
-    </Link>
-  ))}
-</div>
+        <div className="flex w-20 gap-8 items-center justify-between">
+          {footerLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm font-bold text-slate-300 transition hover:text-cyan-300"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
 
         <a
           href="https://wa.me/5493489696728"
