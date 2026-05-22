@@ -41,7 +41,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-slate-800 px-4 py-4 text-center text-xs font-medium text-slate-500 sm:px-8 lg:px-10">
-        © 2026 cetromotos. Todos los derechos reservados.
+        © 2026 cetromotos. Todos los derechos reservados. Created by Brian 
       </div>
     </footer>
   );

@@ -37,7 +37,7 @@ export default function HeroShowroom() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3 text-slate-950">
-            {["Motos 0 km", "Financiacion", "Retiro coordinado"].map(
+            {["Motos 0 km", "Financiacion", "Entrega inmediata"].map(
               (item) => (
                 <span
                   key={item}
