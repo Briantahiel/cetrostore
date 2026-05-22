@@ -331,9 +331,7 @@ export default function ProductCatalog() {
 
         <div className="mt-8 rounded-lg border border-slate-200 bg-white p-5 text-center text-sm font-medium text-slate-600">
           No encontras el modelo que buscas? Consultanos por el ingreso de
-          nuevas unidades y financiacion disponible. Precio de referencia del
-          catalogo: {priceFormatter.format(Math.min(...productos.map((p) => p.precio)))} a{" "}
-          {priceFormatter.format(Math.max(...productos.map((p) => p.precio)))}.
+          nuevas unidades y financiacion disponible. 
         </div>
       </div>
     </section>
