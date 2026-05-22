@@ -5,8 +5,17 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 overflow-hidden border-b border-blue-500/20 bg-white/90 text-slate-950 shadow-xl shadow-blue-950/10 backdrop-blur-2xl">
       <div className="relative bg-slate-950 px-4 py-2 text-center text-xs font-black uppercase tracking-[0.18em] text-white sm:px-8">
         <span className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-blue-500/50 to-transparent" />
+            <div className="flex justify-around">
+            <p className="mt-1 font-medium text-[0.6rem] text-slate-300">
+            Asesor comercial: Brian Gómez
+          </p>
+           <p className="mt-1 font-medium text-[0.6rem] text-slate-300">
+            Justa Lima 337 - Zárate, Buenos Aires
+          </p>
+      </div>
         <span className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-orange-500/90 via-red-600/30 to-transparent" />
       </div>
+      
 
       <nav className="relative mx-auto flex h-24 max-w-6xl items-center justify-between gap-4 px-4 sm:px-8 lg:px-10">
         <div className="pointer-events-none absolute inset-x-4 bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
@@ -23,8 +32,8 @@ export default function Navbar() {
           </span>
 
           <span className="flex min-w-0 flex-col leading-none">
-       <span className="truncate bg-gradient-to-r from-[#020617] via-[#12306B] via-30% to-[#FF7A00] bg-clip-text text-2xl font-black tracking-tight text-transparent sm:text-3xl">
-  cetromotos
+       <span className="truncate bg-gradient-to-r from-[#020617] via-[#12306B] via-60% to-[#FF7A00] bg-clip-text text-2xl font-black tracking-tight text-transparent sm:text-3xl">
+  Cetrogar Motos
 </span>
 
             <span className="mt-1 text-[0.68rem] font-black uppercase tracking-[0.24em] text-slate-700">

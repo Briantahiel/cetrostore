@@ -3,10 +3,12 @@ import Link from "next/link";
 
 type Props = {
   id: number;
+  codigo?: string;
   nombre: string;
   descripcion: string;
-  precio: number;
+  precio: number | null;
   imagen: string;
+  stock?: "fisico" | "virtual";
 };
 
 const priceFormatter = new Intl.NumberFormat("es-AR", {
@@ -17,14 +19,17 @@ const priceFormatter = new Intl.NumberFormat("es-AR", {
 
 export default function ProductCard({
   id,
+  codigo,
   nombre,
   descripcion,
   precio,
   imagen,
+  stock = "fisico",
 }: Props) {
   const whatsappText = encodeURIComponent(
-    `Hola! Quiero consultar por el producto ${nombre}. Podrian pasarme informacion sobre financiacion y medios de pago?`
+    `Hola! Quiero consultar por el producto ${nombre}${codigo ? `, codigo ${codigo}` : ""}. Podrian pasarme informacion sobre financiacion y medios de pago?`
   );
+  const isVirtualStock = stock === "virtual";
 
   return (
     <article className="flex h-full min-h-[430px] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg">
@@ -52,8 +57,13 @@ export default function ProductCard({
 
       <div className="flex flex-1 flex-col p-5">
         <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
-          Moto disponible
+          {isVirtualStock ? "Stock virtual" : "Moto disponible"}
         </p>
+        {codigo && (
+          <p className="mt-2 text-xs font-black uppercase tracking-wide text-slate-400">
+            Codigo {codigo}
+          </p>
+        )}
         <Link href={`/catalogo/${id}`} className="mt-3 block">
           <h3 className="text-xl font-black tracking-tight text-slate-950 transition hover:text-blue-700">
             {nombre}
@@ -67,10 +77,10 @@ export default function ProductCard({
         <div className="mt-5 border-t border-slate-100 pt-5">
           <div>
             <p className="text-xs font-bold uppercase tracking-wide text-slate-400">
-              Desde
+              {precio === null ? "Precio" : "Desde"}
             </p>
             <p className="mt-1 text-2xl font-black text-slate-950">
-              {priceFormatter.format(precio)}
+              {precio === null ? "Consultar precio" : priceFormatter.format(precio)}
             </p>
           </div>
         </div>

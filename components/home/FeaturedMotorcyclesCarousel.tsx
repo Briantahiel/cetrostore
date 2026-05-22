@@ -79,7 +79,9 @@ export default function FeaturedMotorcyclesCarousel() {
               {activeProduct.descripcion}
             </p>
             <p className="mt-5 text-2xl font-black">
-              {priceFormatter.format(activeProduct.precio)}
+              {activeProduct.precio === null
+                ? "Consultar precio"
+                : priceFormatter.format(activeProduct.precio)}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link

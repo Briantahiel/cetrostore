@@ -7,12 +7,6 @@ import { productos } from "@/data/productos";
 const normalizeSearch = (value: string) =>
   value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-const priceFormatter = new Intl.NumberFormat("es-AR", {
-  style: "currency",
-  currency: "ARS",
-  maximumFractionDigits: 0,
-});
-
 const priceRanges = [
   { label: "Hasta $2M", value: "0-2000000", min: 0, max: 2000000 },
   { label: "$2M a $4M", value: "2000000-4000000", min: 2000000, max: 4000000 },
@@ -69,11 +63,13 @@ export default function ProductCatalog() {
 
       const searchMatches =
         !normalizedSearch ||
-        normalizeSearch(producto.nombre).includes(normalizedSearch);
+        normalizeSearch(producto.nombre).includes(normalizedSearch) ||
+        normalizeSearch(producto.codigo ?? "").includes(normalizedSearch);
 
       const priceMatches =
         !selectedPrice ||
-        (producto.precio >= selectedPrice.min &&
+        (producto.precio !== null &&
+          producto.precio >= selectedPrice.min &&
           producto.precio <= selectedPrice.max);
 
       const displacement = getDisplacement(producto.nombre);
@@ -93,11 +89,11 @@ export default function ProductCatalog() {
     const products = [...filteredProducts];
 
     if (sortOrder === "price-asc") {
-      products.sort((a, b) => a.precio - b.precio);
+      products.sort((a, b) => (a.precio ?? Infinity) - (b.precio ?? Infinity));
     }
 
     if (sortOrder === "price-desc") {
-      products.sort((a, b) => b.precio - a.precio);
+      products.sort((a, b) => (b.precio ?? -Infinity) - (a.precio ?? -Infinity));
     }
 
     if (sortOrder === "name-asc") {
@@ -131,14 +127,14 @@ export default function ProductCatalog() {
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-900">
-              Catalogo
+              Catálogo
             </p>
             <h2 className="mt-2 text-4xl font-black tracking-tight">
-              Elegi tu moto
+              Elegí tu moto
             </h2>
             <p className="mt-3 max-w-2xl text-sm font-medium leading-6 text-slate-600">
               Filtra por marca, precio y cilindrada. Consulta disponibilidad,
-              financiacion y medios de pago.
+              financiación y medios de pago.
             </p>
           </div>
 
@@ -150,7 +146,7 @@ export default function ProductCatalog() {
         <div className="mb-8 rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
           <div className="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
             <h3 className="text-lg font-black tracking-tight">
-              Filtros de busqueda
+              Filtros de búsqueda
             </h3>
             <button
               type="button"
@@ -291,10 +287,12 @@ export default function ProductCatalog() {
             <ProductCard
               key={producto.id}
               id={producto.id}
+              codigo={producto.codigo}
               nombre={producto.nombre}
               descripcion={producto.descripcion}
               precio={producto.precio}
               imagen={producto.imagen}
+              stock={producto.stock}
             />
           ))}
         </div>
@@ -316,7 +314,7 @@ export default function ProductCatalog() {
           </button>
 
           <span className="text-sm font-bold text-slate-500">
-            Pagina {currentPage} de {totalPages}
+            Página {currentPage} de {totalPages}
           </span>
 
           <button
@@ -330,8 +328,8 @@ export default function ProductCatalog() {
         </div>
 
         <div className="mt-8 rounded-lg border border-slate-200 bg-white p-5 text-center text-sm font-medium text-slate-600">
-          No encontras el modelo que buscas? Consultanos por el ingreso de
-          nuevas unidades y financiacion disponible. 
+          No encontrás el modelo que buscas? Consultanos por el ingreso de
+          nuevas unidades y financiación disponible. 
         </div>
       </div>
     </section>

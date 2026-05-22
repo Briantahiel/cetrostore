@@ -1,13 +1,13 @@
 const highlights = [
   {
     eyebrow: "Cuotas",
-    title: "Financiacion",
+    title: "Financiación",
     text: "Opciones a medida para comparar cuotas antes de reservar.",
   },
   {
-    eyebrow: "Operacion",
-    title: "Entrega coordinada",
-    text: "Confirmacion de disponibilidad y documentacion antes del retiro.",
+    eyebrow: "Operación",
+    title: "Entrega inmediata",
+    text: "Confirmación de disponibilidad y documentación antes del retiro.",
   },
   {
     eyebrow: "Compra guiada",
