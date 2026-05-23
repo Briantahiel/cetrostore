@@ -112,7 +112,12 @@ export default function ProductCatalog() {
       const searchMatches =
         !normalizedSearch ||
         normalizeSearch(producto.nombre).includes(normalizedSearch) ||
-        normalizeSearch(producto.codigo ?? "").includes(normalizedSearch);
+        normalizeSearch(producto.codigo ?? "").includes(normalizedSearch) ||
+        producto.variantes?.some(
+          (variante) =>
+            normalizeSearch(variante.nombre).includes(normalizedSearch) ||
+            normalizeSearch(variante.codigo).includes(normalizedSearch),
+        );
 
       const priceMatches =
         !selectedPrice ||
@@ -217,6 +222,14 @@ export default function ProductCatalog() {
       }),
     );
   }, []);
+
+  const getProductDetailHref = useCallback(
+    (productId: number) => {
+      const returnUrl = `/catalogo${catalogSearchParams}`;
+      return `/catalogo/${productId}?from=${encodeURIComponent(returnUrl)}`;
+    },
+    [catalogSearchParams],
+  );
 
   useEffect(() => {
     if (restoredScrollRef.current) return;
@@ -423,6 +436,7 @@ export default function ProductCatalog() {
               precio={producto.precio}
               imagen={producto.imagen}
               stock={producto.stock}
+              detailHref={getProductDetailHref(producto.id)}
               onOpen={saveCatalogPosition}
             />
           ))}

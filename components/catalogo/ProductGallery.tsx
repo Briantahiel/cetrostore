@@ -7,14 +7,29 @@ import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 type Props = {
   nombre: string;
   imagen: string[];
+  selectedImage?: string;
+  onSelectImage?: (image: string) => void;
+  imageLabels?: Record<string, string>;
 };
 
-export default function ProductGallery({ nombre, imagen }: Props) {
-  const [selectedImage, setSelectedImage] = useState(() =>
+export default function ProductGallery({
+  nombre,
+  imagen,
+  selectedImage,
+  onSelectImage,
+  imageLabels = {},
+}: Props) {
+  const [internalSelectedImage, setInternalSelectedImage] = useState(() =>
     getProductoImagenPrincipal(imagen),
   );
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
-  const mainImage = selectedImage || getProductoImagenPrincipal(imagen);
+  const mainImage =
+    selectedImage || internalSelectedImage || getProductoImagenPrincipal(imagen);
+
+  const handleSelectImage = (image: string) => {
+    setInternalSelectedImage(image);
+    onSelectImage?.(image);
+  };
 
   return (
     <div className="space-y-4">
@@ -44,11 +59,11 @@ export default function ProductGallery({ nombre, imagen }: Props) {
           <button
             key={item}
             type="button"
-            onClick={() => setSelectedImage(item)}
+            onClick={() => handleSelectImage(item)}
             className={`flex h-20 items-center justify-center rounded-lg border bg-white p-2 transition hover:border-blue-300 ${
               mainImage === item ? "border-blue-500" : "border-slate-200"
             }`}
-            aria-label={`Ver foto ${index + 1} de ${nombre}`}
+            aria-label={`Ver ${imageLabels[item] ?? `foto ${index + 1}`} de ${nombre}`}
           >
             <ImageWithSkeleton
               src={item}
