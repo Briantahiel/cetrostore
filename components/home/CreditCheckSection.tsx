@@ -25,13 +25,15 @@ export default function CreditCheckSection() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const message = [
-      `Hola soy \`${form.nombre}\` y mi dni \`${form.genero}\` es \`${form.dni}\`, quiero consultar mi estado crediticio para financiar una moto.`,
-      // `Ingreso declarado: ${form.ingreso}`,
-      // form.telefono ? `Telefono: ${form.telefono}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
+  const message = [
+    `Hola, soy ${form.nombre}, mi género es ${form.genero} y mi DNI es ${form.dni}. Quiero consultar mi estado crediticio para financiar una moto.`,
+    
+    // `Ingreso declarado: ${form.ingreso}`,
+    // form.telefono ? `Teléfono: ${form.telefono}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
 
     window.open(
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
