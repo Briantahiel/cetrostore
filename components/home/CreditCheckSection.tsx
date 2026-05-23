@@ -26,7 +26,7 @@ export default function CreditCheckSection() {
     event.preventDefault();
 
     const message = [
-      "Hola soy ${form.nombre} y mi dni ${form.dni} es ${form.dni}, quiero consultar mi estado crediticio para financiar una moto.",
+      `Hola soy \`${form.nombre}\` y mi dni \`${form.genero}\` es \`${form.dni}\`, quiero consultar mi estado crediticio para financiar una moto.`,
       // `Ingreso declarado: ${form.ingreso}`,
       // form.telefono ? `Telefono: ${form.telefono}` : "",
     ]
