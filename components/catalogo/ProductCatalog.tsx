@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import ProductCard from "@/components/catalogo/ProductCard";
 import { productos } from "@/data/productos";
 
@@ -28,14 +28,62 @@ const getDisplacement = (name: string) => {
   return match ? Number(match[1]) : null;
 };
 
+const catalogReturnKey = "catalog-return-position";
+const catalogUrlChangeEvent = "catalog-url-change";
+
+const getCatalogSnapshot = () => {
+  if (typeof window === "undefined") return "";
+  return window.location.search;
+};
+
+const getServerCatalogSnapshot = () => "";
+
+const subscribeToCatalogUrl = (onStoreChange: () => void) => {
+  if (typeof window === "undefined") {
+    return () => {};
+  }
+
+  window.addEventListener("popstate", onStoreChange);
+  window.addEventListener(catalogUrlChangeEvent, onStoreChange);
+
+  return () => {
+    window.removeEventListener("popstate", onStoreChange);
+    window.removeEventListener(catalogUrlChangeEvent, onStoreChange);
+  };
+};
+
+const getCatalogStateFromSearch = (searchParams: string) => {
+  const params = new URLSearchParams(searchParams);
+  const pageFromUrl = Number(params.get("page"));
+
+  return {
+    currentPage: Number.isFinite(pageFromUrl) && pageFromUrl > 0 ? pageFromUrl : 1,
+    search: params.get("q") ?? "",
+    selectedBrand: params.get("brand") ?? "",
+    selectedDisplacementRange: params.get("cc") ?? "",
+    selectedPriceRange: params.get("price") ?? "",
+    sortOrder: params.get("sort") ?? "",
+  };
+};
+
 export default function ProductCatalog() {
-  const [search, setSearch] = useState("");
-  const [selectedBrand, setSelectedBrand] = useState("");
-  const [selectedPriceRange, setSelectedPriceRange] = useState("");
-  const [selectedDisplacementRange, setSelectedDisplacementRange] =
-    useState("");
-  const [sortOrder, setSortOrder] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
+  const catalogSearchParams = useSyncExternalStore(
+    subscribeToCatalogUrl,
+    getCatalogSnapshot,
+    getServerCatalogSnapshot,
+  );
+  const {
+    currentPage,
+    search,
+    selectedBrand,
+    selectedDisplacementRange,
+    selectedPriceRange,
+    sortOrder,
+  } = useMemo(
+    () => getCatalogStateFromSearch(catalogSearchParams),
+    [catalogSearchParams],
+  );
+  const restoredScrollRef = useRef(false);
 
   const productsPerPage = 6;
 
@@ -104,21 +152,103 @@ export default function ProductCatalog() {
   }, [filteredProducts, sortOrder]);
 
   const totalPages = Math.max(1, Math.ceil(sortedProducts.length / productsPerPage));
-  const startIndex = (currentPage - 1) * productsPerPage;
+  const activePage = Math.min(currentPage, totalPages);
+
+  const updateCatalogUrl = useCallback(
+    (updates: Partial<ReturnType<typeof getCatalogStateFromSearch>>) => {
+      const nextState = {
+        currentPage,
+        search,
+        selectedBrand,
+        selectedDisplacementRange,
+        selectedPriceRange,
+        sortOrder,
+        ...updates,
+      };
+      const params = new URLSearchParams();
+
+      if (nextState.search) params.set("q", nextState.search);
+      if (nextState.selectedBrand) params.set("brand", nextState.selectedBrand);
+      if (nextState.selectedPriceRange) {
+        params.set("price", nextState.selectedPriceRange);
+      }
+      if (nextState.selectedDisplacementRange) {
+        params.set("cc", nextState.selectedDisplacementRange);
+      }
+      if (nextState.sortOrder) params.set("sort", nextState.sortOrder);
+      if (nextState.currentPage > 1) {
+        params.set("page", String(nextState.currentPage));
+      }
+
+      const query = params.toString();
+      const nextUrl = `${window.location.pathname}${query ? `?${query}` : ""}`;
+
+      window.history.replaceState(null, "", nextUrl);
+      window.dispatchEvent(new Event(catalogUrlChangeEvent));
+    },
+    [
+      currentPage,
+      search,
+      selectedBrand,
+      selectedDisplacementRange,
+      selectedPriceRange,
+      sortOrder,
+    ],
+  );
+
+  const startIndex = (activePage - 1) * productsPerPage;
   const paginatedProducts = sortedProducts.slice(
     startIndex,
     startIndex + productsPerPage,
   );
 
-  const resetPagination = () => setCurrentPage(1);
+  useEffect(() => {
+    if (currentPage !== activePage) {
+      updateCatalogUrl({ currentPage: activePage });
+    }
+  }, [activePage, currentPage, updateCatalogUrl]);
+
+  const saveCatalogPosition = useCallback(() => {
+    sessionStorage.setItem(
+      catalogReturnKey,
+      JSON.stringify({
+        scrollY: window.scrollY,
+        url: `${window.location.pathname}${window.location.search}`,
+      }),
+    );
+  }, []);
+
+  useEffect(() => {
+    if (restoredScrollRef.current) return;
+
+    const savedValue = sessionStorage.getItem(catalogReturnKey);
+    if (!savedValue) return;
+
+    try {
+      const saved = JSON.parse(savedValue) as { scrollY?: number; url?: string };
+      const currentUrl = `${window.location.pathname}${window.location.search}`;
+
+      if (saved.url === currentUrl && typeof saved.scrollY === "number") {
+        restoredScrollRef.current = true;
+        window.requestAnimationFrame(() => {
+          window.scrollTo({ top: saved.scrollY });
+          sessionStorage.removeItem(catalogReturnKey);
+        });
+      }
+    } catch {
+      sessionStorage.removeItem(catalogReturnKey);
+    }
+  }, [paginatedProducts.length]);
 
   const clearFilters = () => {
-    setSearch("");
-    setSelectedBrand("");
-    setSelectedPriceRange("");
-    setSelectedDisplacementRange("");
-    setSortOrder("");
-    setCurrentPage(1);
+    updateCatalogUrl({
+      currentPage: 1,
+      search: "",
+      selectedBrand: "",
+      selectedDisplacementRange: "",
+      selectedPriceRange: "",
+      sortOrder: "",
+    });
   };
 
   return (
@@ -165,8 +295,7 @@ export default function ProductCatalog() {
               <button
                 type="button"
                 onClick={() => {
-                  setSelectedBrand("");
-                  resetPagination();
+                  updateCatalogUrl({ currentPage: 1, selectedBrand: "" });
                 }}
                 className={`rounded-lg border px-4 py-2 text-sm font-black transition ${
                   selectedBrand === ""
@@ -181,8 +310,7 @@ export default function ProductCatalog() {
                   key={brand}
                   type="button"
                   onClick={() => {
-                    setSelectedBrand(brand);
-                    resetPagination();
+                    updateCatalogUrl({ currentPage: 1, selectedBrand: brand });
                   }}
                   className={`rounded-lg border px-4 py-2 text-sm font-black transition ${
                     selectedBrand === brand
@@ -203,8 +331,7 @@ export default function ProductCatalog() {
                 type="search"
                 value={search}
                 onChange={(event) => {
-                  setSearch(event.target.value);
-                  resetPagination();
+                  updateCatalogUrl({ currentPage: 1, search: event.target.value });
                 }}
                 placeholder="Buscar por nombre"
                 className="h-12 rounded-lg border border-slate-200 px-4 text-sm font-semibold outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
@@ -216,8 +343,10 @@ export default function ProductCatalog() {
               <select
                 value={selectedPriceRange}
                 onChange={(event) => {
-                  setSelectedPriceRange(event.target.value);
-                  resetPagination();
+                  updateCatalogUrl({
+                    currentPage: 1,
+                    selectedPriceRange: event.target.value,
+                  });
                 }}
                 className="h-12 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
               >
@@ -235,8 +364,10 @@ export default function ProductCatalog() {
               <select
                 value={selectedDisplacementRange}
                 onChange={(event) => {
-                  setSelectedDisplacementRange(event.target.value);
-                  resetPagination();
+                  updateCatalogUrl({
+                    currentPage: 1,
+                    selectedDisplacementRange: event.target.value,
+                  });
                 }}
                 className="h-12 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
               >
@@ -254,8 +385,7 @@ export default function ProductCatalog() {
               <select
                 value={sortOrder}
                 onChange={(event) => {
-                  setSortOrder(event.target.value);
-                  resetPagination();
+                  updateCatalogUrl({ currentPage: 1, sortOrder: event.target.value });
                 }}
                 className="h-12 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
               >
@@ -293,6 +423,7 @@ export default function ProductCatalog() {
               precio={producto.precio}
               imagen={producto.imagen}
               stock={producto.stock}
+              onOpen={saveCatalogPosition}
             />
           ))}
         </div>
@@ -306,21 +437,27 @@ export default function ProductCatalog() {
         <div className="mt-8 flex items-center justify-between gap-4">
           <button
             type="button"
-            onClick={() => setCurrentPage((prev) => prev - 1)}
-            disabled={currentPage === 1}
+            onClick={() =>
+              updateCatalogUrl({ currentPage: Math.max(1, activePage - 1) })
+            }
+            disabled={activePage === 1}
             className="rounded-lg border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Anterior
           </button>
 
           <span className="text-sm font-bold text-slate-500">
-            Página {currentPage} de {totalPages}
+            Página {activePage} de {totalPages}
           </span>
 
           <button
             type="button"
-            onClick={() => setCurrentPage((prev) => prev + 1)}
-            disabled={currentPage === totalPages}
+            onClick={() =>
+              updateCatalogUrl({
+                currentPage: Math.min(totalPages, activePage + 1),
+              })
+            }
+            disabled={activePage === totalPages}
             className="rounded-lg border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Siguiente

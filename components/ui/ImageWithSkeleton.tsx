@@ -1,7 +1,7 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
-import { CSSProperties, useState } from "react";
+import { CSSProperties, useCallback, useState } from "react";
 
 type Props = {
   src: string;
@@ -22,7 +22,17 @@ export default function ImageWithSkeleton({
   imageStyle,
   onClick,
 }: Props) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
+  const isLoading = loadedSrc !== src;
+  const markAsLoaded = useCallback(() => setLoadedSrc(src), [src]);
+  const handleImageRef = useCallback(
+    (node: HTMLImageElement | null) => {
+      if (node?.complete) {
+        setLoadedSrc(src);
+      }
+    },
+    [src],
+  );
 
   return (
     <div className={`relative overflow-hidden ${className}`} style={style}>
@@ -30,11 +40,12 @@ export default function ImageWithSkeleton({
         <div className="absolute inset-0 animate-pulse bg-slate-200" />
       )}
       <img
+        ref={handleImageRef}
         src={src}
         alt={alt}
         onClick={onClick}
-        onLoad={() => setIsLoading(false)}
-        onError={() => setIsLoading(false)}
+        onLoad={markAsLoaded}
+        onError={markAsLoaded}
         className={`${imageClassName} transition-opacity duration-100 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}

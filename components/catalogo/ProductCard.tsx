@@ -10,6 +10,7 @@ type Props = {
   precio: number | null;
   imagen: string[];
   stock?: "fisico" | "virtual";
+  onOpen?: () => void;
 };
 
 const priceFormatter = new Intl.NumberFormat("es-AR", {
@@ -26,6 +27,7 @@ export default function ProductCard({
   precio,
   imagen,
   stock = "fisico",
+  onOpen,
 }: Props) {
   const whatsappText = encodeURIComponent(
     `Hola! Quiero consultar por el producto ${nombre}${codigo ? `, codigo ${codigo}` : ""}. Podrian pasarme informacion sobre financiacion y medios de pago?`
@@ -37,6 +39,7 @@ export default function ProductCard({
     <article className="flex h-full min-h-[430px] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg">
       <Link
         href={`/catalogo/${id}`}
+        onClick={onOpen}
         className="block bg-slate-100 p-4 transition hover:bg-blue-50"
       >
         <ImageWithSkeleton
@@ -63,7 +66,7 @@ export default function ProductCard({
             Codigo {codigo}
           </p>
         )}
-        <Link href={`/catalogo/${id}`} className="mt-3 block">
+        <Link href={`/catalogo/${id}`} onClick={onOpen} className="mt-3 block">
           <h3 className="text-xl font-black tracking-tight text-slate-950 transition hover:text-blue-700">
             {nombre}
           </h3>
@@ -87,6 +90,7 @@ export default function ProductCard({
         <div className="mt-5 grid grid-cols-2 gap-3">
           <Link
             href={`/catalogo/${id}`}
+            onClick={onOpen}
             className="flex items-center justify-center rounded-lg border border-slate-300 px-4 py-3 text-center text-sm font-black text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700"
             style={{ minHeight: "3rem" }}
           >
