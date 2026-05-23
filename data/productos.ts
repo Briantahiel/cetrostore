@@ -17,6 +17,7 @@ const imagenes = {
   wave: [
     "/motos/cetrogar-wave.jpg",
     "/motos/67c-021c-8img-web-wave-2025-roja-2.jpg",
+    "/motos/honda-wave-negra.jpg"
   ],
   rouser: [
     "/motos/cetrogar-bajaj-rouser-125.webp",
