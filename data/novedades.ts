@@ -20,7 +20,7 @@ export const novedades = [
     etiqueta: "Eventos",
     titulo: "Beneficios según fechas especiales",
     descripcion:
-      "Acá verás ofertas por Hot Sale, Cyber Monday, Black Friday, festividades, etc.",
+      "Quedate atento a las ofertas por Hot Sale, Cyber Monday, Black Friday, festividades y más.",
     detalle: "Importante estar atento a las novedades y promociones.",
   },
 ];

@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { productos } from "@/data/productos";
+import { getProductoImagenPrincipal, productos } from "@/data/productos";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 const featuredMoto = productos[1] ?? productos[0];
 
@@ -13,18 +13,18 @@ export default function HeroShowroom() {
             Concesionaria multimarca
           </div>
           <h1 className="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
-            Elegi tu próxima moto con entrega y financiación claras
+            Elegí tu próxima moto con entrega y financiación claras
           </h1>
           <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-slate-300">
             Modelos urbanos, todo terreno y ruta con asesoramiento directo,
-            disponibilidad confirmada y atencion personalizada.
+            disponibilidad confirmada y atención personalizada.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/catalogo"
               className="inline-flex min-h-12 items-center justify-center rounded-lg bg-cyan-300 px-6 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-950/20 transition hover:bg-white"
             >
-              Ver catalogo
+              Ver catálogo
             </Link>
             <a
               href="https://wa.me/5493489696728"
@@ -68,11 +68,16 @@ export default function HeroShowroom() {
 </Link>
           </div>
           <div className="flex min-h-[300px] items-center justify-center bg-slate-50 p-8">
-            <img
-              src={featuredMoto.imagen}
+            <ImageWithSkeleton
+              src={getProductoImagenPrincipal(featuredMoto.imagen)}
               alt={featuredMoto.nombre}
-              className="block object-contain"
-              style={{ maxHeight: "230px", maxWidth: "100%", width: "auto" }}
+              className="flex h-full w-full items-center justify-center"
+              imageClassName="block object-contain"
+              imageStyle={{
+                maxHeight: "230px",
+                maxWidth: "100%",
+                width: "auto",
+              }}
             />
           </div>
         </div>

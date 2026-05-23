@@ -1,9 +1,9 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { productos } from "@/data/productos";
+import { getProductoImagenPrincipal, productos } from "@/data/productos";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 const priceFormatter = new Intl.NumberFormat("es-AR", {
   style: "currency",
@@ -61,11 +61,16 @@ export default function FeaturedMotorcyclesCarousel() {
 
         <article className="grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm md:grid-cols-[0.75fr_1fr]">
           <div className="flex min-h-[220px] items-center justify-center border-b border-slate-200 bg-white p-6 md:border-b-0 md:border-r">
-            <img
-              src={activeProduct.imagen}
+            <ImageWithSkeleton
+              src={getProductoImagenPrincipal(activeProduct.imagen)}
               alt={activeProduct.nombre}
-              className="block object-contain"
-              style={{ maxHeight: "170px", maxWidth: "100%", width: "auto" }}
+              className="flex h-full w-full items-center justify-center"
+              imageClassName="block object-contain"
+              imageStyle={{
+                maxHeight: "170px",
+                maxWidth: "100%",
+                width: "auto",
+              }}
             />
           </div>
           <div className="flex flex-col justify-center p-5 md:p-7">

@@ -14,7 +14,7 @@ export default function Footer() {
 
           <p className="mt-3 text-sm leading-6 text-slate-400">
             Venta de motos con financiación, atención personalizada y entrega
-            coordinada.
+            inmediata.
           </p>
         </div>
 

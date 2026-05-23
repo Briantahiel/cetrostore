@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-import { productos } from "@/data/productos";
+import { getProductoImagenPrincipal, productos } from "@/data/productos";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 const showroomPhotos = productos.slice(5, 11);
 
@@ -28,11 +28,16 @@ export default function PhotoSection() {
               className="min-w-[220px] flex-1 overflow-hidden rounded-lg border border-slate-200 bg-slate-50 shadow-sm"
             >
               <div className="flex h-44 items-center justify-center p-5">
-                <img
-                  src={producto.imagen}
+                <ImageWithSkeleton
+                  src={getProductoImagenPrincipal(producto.imagen)}
                   alt={producto.nombre}
-                  className="block object-contain"
-                  style={{ maxHeight: "100%", maxWidth: "100%", width: "auto" }}
+                  className="flex h-full w-full items-center justify-center"
+                  imageClassName="block object-contain"
+                  imageStyle={{
+                    maxHeight: "100%",
+                    maxWidth: "100%",
+                    width: "auto",
+                  }}
                 />
               </div>
               <figcaption className="border-t border-slate-200 bg-white px-4 py-3 text-sm font-black text-slate-700">

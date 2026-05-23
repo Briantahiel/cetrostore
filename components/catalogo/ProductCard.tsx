@@ -1,5 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { getProductoImagenPrincipal } from "@/data/productos";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 type Props = {
   id: number;
@@ -7,7 +8,7 @@ type Props = {
   nombre: string;
   descripcion: string;
   precio: number | null;
-  imagen: string;
+  imagen: string[];
   stock?: "fisico" | "virtual";
 };
 
@@ -30,6 +31,7 @@ export default function ProductCard({
     `Hola! Quiero consultar por el producto ${nombre}${codigo ? `, codigo ${codigo}` : ""}. Podrian pasarme informacion sobre financiacion y medios de pago?`
   );
   const isVirtualStock = stock === "virtual";
+  const imagenPrincipal = getProductoImagenPrincipal(imagen);
 
   return (
     <article className="flex h-full min-h-[430px] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg">
@@ -37,22 +39,19 @@ export default function ProductCard({
         href={`/catalogo/${id}`}
         className="block bg-slate-100 p-4 transition hover:bg-blue-50"
       >
-        <div
-          className="flex items-center justify-center overflow-hidden rounded-lg bg-white"
+        <ImageWithSkeleton
+          src={imagenPrincipal}
+          alt={nombre}
+          className="flex items-center justify-center rounded-lg bg-white"
           style={{ height: "11rem" }}
-        >
-          <img
-            src={imagen}
-            alt={nombre}
-            className="block"
-            style={{
-              height: "100%",
-              maxWidth: "100%",
-              objectFit: "contain",
-              width: "auto",
-            }}
-          />
-        </div>
+          imageClassName="block"
+          imageStyle={{
+            height: "100%",
+            maxWidth: "100%",
+            objectFit: "contain",
+            width: "auto",
+          }}
+        />
       </Link>
 
       <div className="flex flex-1 flex-col p-5">

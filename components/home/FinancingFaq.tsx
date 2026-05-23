@@ -1,22 +1,22 @@
 const faqs = [
   {
-    question: "C\u00f3mo puedo acceder a un cr\u00e9dito?",
+    question: "Cómo puedo acceder a un crédito?",
     answer:
-      "Ten\u00e9s que ser mayor de edad y contar con un ingreso declarado: antig\u00fcedad laboral, jubilaci\u00f3n, pensi\u00f3n o monotributo.",
+      "Tenés que ser mayor de edad y contar con un ingreso declarado: antig\u00fcedad laboral, jubilaci\u00f3n, pensi\u00f3n o monotributo.",
   },
   {
-    question: "Cu\u00e1nto tarda?",
-    answer: "La aprobaci\u00f3n es inmediata, por s\u00ed o por no.",
+    question: "Cuánto tarda?",
+    answer: "La aprobación es inmediata, por sí o por no.",
   },
   {
     question: "Si no me aprueban?",
     answer:
-      "Pod\u00e9s intentar con el DNI de un familiar, amigo o pareja. Tambi\u00e9n pod\u00e9s contactarnos para explorar otras opciones de financiamiento.",
+      "Podés intentar con el DNI de un familiar, amigo o pareja. También podés contactarnos para explorar otras opciones de financiamiento.",
   },
   {
-    question: "Por cu\u00e1nto tiempo es v\u00e1lida la aprobaci\u00f3n?",
+    question: "Por cuánto tiempo es válida la aprobación?",
     answer:
-      "Tu cr\u00e9dito aprobado es v\u00e1lido por 24 horas. Es importante que te contactes de inmediato para no perder la oportunidad.",
+      "Tu crédito aprobado es válido por 24 horas. Es importante que te contactes de inmediato para no perder la oportunidad."
   },
 ];
 
@@ -29,14 +29,14 @@ export default function FinancingFaq() {
             Preguntas frecuentes
           </p>
           <h2 className="mt-3 text-3xl font-black tracking-tight">
-            Cr{"\u00e9"}ditos y aprobaci{"\u00f3"}n
+            Créditos y aprobación
           </h2>
           <p className="mt-4 text-sm font-medium leading-6 text-slate-600">
-            Informaci{"\u00f3"}n b{"\u00e1"}sica para saber si pod{"\u00e9"}s
-            avanzar con una financiaci{"\u00f3"}n antes de reservar.
+            Información básica para saber si puedes
+            avanzar con una financiación antes de reservar.
           </p>
           <p className="mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm font-black text-slate-800">
-            Asesor comercial: Brian G{"\u00f3"}mez
+            Asesor comercial: Brian Gómez
           </p>
         </div>
 

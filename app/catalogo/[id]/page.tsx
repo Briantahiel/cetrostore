@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProductGallery from "@/components/catalogo/ProductGallery";
 import BackButton from "@/components/ui/BackButton";
-import { productos } from "@/data/productos";
+import { getFichaTecnicaProducto, productos } from "@/data/productos";
 
 type Props = {
   params: Promise<{
@@ -35,6 +35,8 @@ export default async function ProductPage({ params }: Props) {
   if (!producto) {
     notFound();
   }
+
+  const fichaTecnica = getFichaTecnicaProducto(producto);
 
   return (
     <main className="flex-1 bg-slate-50 px-4 py-10 text-slate-950 sm:px-8 lg:px-10">
@@ -87,6 +89,45 @@ export default async function ProductPage({ params }: Props) {
               </Link>
             </div>
           </div>
+        </section>
+
+        <section className="mt-8 rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:p-8">
+          <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
+                Especificaciones
+              </p>
+              <h2 className="mt-2 text-2xl font-black tracking-tight">
+                Ficha tecnica
+              </h2>
+            </div>
+            {producto.codigo && (
+              <p className="text-sm font-black uppercase tracking-wide text-slate-400">
+                {producto.codigo}
+              </p>
+            )}
+          </div>
+
+          <dl
+            className="grid gap-3"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
+            }}
+          >
+            {fichaTecnica.map((item) => (
+              <div
+                key={`${item.etiqueta}-${item.valor}`}
+                className="rounded-lg border border-slate-200 bg-slate-50 p-4"
+              >
+                <dt className="text-xs font-black uppercase tracking-wide text-slate-400">
+                  {item.etiqueta}
+                </dt>
+                <dd className="mt-2 text-sm font-black leading-5 text-slate-900">
+                  {item.valor}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </section>
       </div>
     </main>

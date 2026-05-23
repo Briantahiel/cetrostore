@@ -27,7 +27,7 @@ export default function SalesHighlights() {
             </h2>
           </div>
           <p className="max-w-md text-sm font-medium leading-6 text-slate-600">
-            La idea es que sepas precio, forma de pago y disponibilidad antes
+            La idea es que sepas el precio, formas de pago y la disponibilidad antes
             de avanzar.
           </p>
         </div>
