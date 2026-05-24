@@ -25,6 +25,7 @@ export default function HeroShowroom() {
               className="inline-flex min-h-12 items-center justify-center rounded-lg bg-cyan-300 px-6 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-950/20 transition hover:bg-white"
             >
               Ver catálogo
+              
             </Link>
             <a
               href="https://wa.me/5493489696728"
