@@ -7,25 +7,17 @@ type Props = {
   codigo?: string;
   nombre: string;
   descripcion: string;
-  precio: number | null;
   imagen: string[];
   stock?: "fisico" | "virtual";
   detailHref?: string;
   onOpen?: () => void;
 };
 
-const priceFormatter = new Intl.NumberFormat("es-AR", {
-  style: "currency",
-  currency: "ARS",
-  maximumFractionDigits: 0,
-});
-
 export default function ProductCard({
   id,
   codigo,
   nombre,
   descripcion,
-  precio,
   imagen,
   stock = "fisico",
   detailHref = `/catalogo/${id}`,
@@ -77,17 +69,6 @@ export default function ProductCard({
         <p className="mt-3 flex-1 text-sm font-medium leading-6 text-slate-600">
           {descripcion}
         </p>
-
-        <div className="mt-5 border-t border-slate-100 pt-5">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-wide text-slate-400">
-              {precio === null ? "Precio" : "Desde"}
-            </p>
-            <p className="mt-1 text-2xl font-black text-slate-950">
-              {precio === null ? "Consultar precio" : priceFormatter.format(precio)}
-            </p>
-          </div>
-        </div>
 
         <div className="mt-5 grid grid-cols-2 gap-3">
           <Link

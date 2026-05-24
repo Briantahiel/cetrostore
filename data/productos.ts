@@ -306,8 +306,6 @@ export const getFichaTecnicaProducto = (
 };
 
 const stockVirtual = {
-  descripcion:
-    "Unidad de stock virtual. Consulta disponibilidad, colores, precio actualizado y financiacion.",
   precio: null,
   stock: "virtual" as const,
 };
@@ -315,136 +313,151 @@ const stockVirtual = {
 export const productos: Producto[] = [
   {
   id: 1,
+  codigo: "MO1001",
   nombre: "Honda Wave 110 S",
   descripcion:
     "La Honda Wave 110 S es una de las motos urbanas mas vendidas de Argentina gracias a su bajo consumo, confiabilidad mecanica y mantenimiento economico. Su motor de 110 cc y transmision semiautomatica la convierten en una opcion ideal para movilidad diaria, delivery y uso urbano intensivo.",
-  precio: 4000000,
+  precio: null,
   imagen: imagenes.wave,
   stock: "fisico",
 },
 {
   id: 2,
+  codigo: "MO1002",
   nombre: "Bajaj Rouser NS 125",
   descripcion:
     "La Bajaj Rouser NS 125 combina un estilo deportivo con un motor eficiente y buen nivel de equipamiento para su segmento. Ofrece una posicion de manejo comoda, excelente estabilidad en ciudad y un rendimiento destacado para quienes buscan su primera moto street.",
-  precio: 1500000,
+  precio: null,
   imagen: imagenes.rouser,
   stock: "fisico",
 },
 {
   id: 3,
+  codigo: "MO1003",
   nombre: "Motomel S2 150",
   descripcion:
     "La Motomel S2 150 es una moto utilitaria muy elegida por su resistencia y bajo costo operativo en el uso diario. Cuenta con motor de 150 cc, buena autonomia y una mecanica simple que facilita el mantenimiento y las reparaciones.",
-  precio: 2200000,
+  precio: null,
   imagen: imagenes.motomel,
   stock: "fisico",
 },
 {
   id: 4,
+  codigo: "MO1004",
   nombre: "Honda CG 150 Titan",
   descripcion:
     "La Honda CG 150 Titan es reconocida por su durabilidad, economia y excelente reputacion en el mercado argentino. Su motor confiable y su comodidad de manejo la convierten en una moto ideal tanto para trabajo como para uso cotidiano.",
-  precio: 2500000,
+  precio: null,
   imagen: imagenes.hondaCg,
   stock: "fisico",
 },
 {
   id: 5,
+  codigo: "MO1005",
   nombre: "Yamaha YBR 125",
   descripcion:
     "La Yamaha YBR 125 es una moto urbana confiable y de manejo suave, pensada para quienes buscan economia y confort en ciudad. Se destaca por su bajo consumo, calidad de construccion y excelente vida util del motor.",
-  precio: 2100000,
+  precio: null,
   imagen: imagenes.yamahaYbr,
   stock: "fisico",
 },
 {
   id: 6,
+  codigo: "MO1006",
   nombre: "Yamaha FZ 150",
   descripcion:
     "La Yamaha FZ 150 ofrece un diseño moderno tipo naked junto con una conduccion comoda y estable para uso urbano. Su motor de 150 cc brinda buena respuesta, mientras que su estetica deportiva y equipamiento la hacen muy popular entre jovenes usuarios.",
-  precio: 2900000,
+  precio: null,
   imagen: imagenes.yamahaFz,
   stock: "fisico",
 },
 {
   id: 7,
+  codigo: "MO1007",
   nombre: "Honda XR 150L",
   descripcion:
     "La Honda XR 150L es una moto on/off diseñada para adaptarse tanto a calles urbanas como a caminos rurales y terrenos irregulares. Su suspension elevada, resistencia mecanica y posicion de manejo confortable la convierten en una excelente opcion multiproposito.",
-  precio: 3200000,
+  precio: null,
   imagen: imagenes.hondaXr,
   stock: "fisico",
 },
 {
   id: 8,
+  codigo: "MO1008",
   nombre: "Bajaj Boxer 150",
   descripcion:
     "La Bajaj Boxer 150 fue desarrollada para trabajo intensivo y uso diario en condiciones exigentes. Se destaca por su robustez, gran capacidad de carga, bajo consumo y una mecanica simple orientada a la durabilidad.",
-  precio: 2000000,
+  precio: null,
   imagen: imagenes.boxer,
   stock: "fisico",
 },
 {
   id: 9,
+  codigo: "MO1009",
   nombre: "Zanella ZB 110",
   descripcion:
     "La Zanella ZB 110 es una moto economica y practica, ideal para desplazamientos urbanos y uso diario. Su bajo consumo de combustible y mantenimiento accesible la convierten en una de las opciones mas elegidas dentro del segmento 110.",
-  precio: 1400000,
+  precio: null,
   imagen: imagenes.zanella,
   stock: "fisico",
 },
 {
   id: 10,
+  codigo: "MO1010",
   nombre: "Gilera Smash 110",
   descripcion:
     "La Gilera Smash 110 es una de las motos mas utilizadas para delivery y movilidad urbana gracias a su confiabilidad y economia. Su transmision semiautomatica facilita el manejo y permite una conduccion sencilla para todo tipo de usuarios.",
-  precio: 1600000,
+  precio: null,
   imagen: imagenes.gilera,
   stock: "fisico",
 },
 {
   id: 11,
+  codigo: "MO1011",
   nombre: "Corven Energy 110",
   descripcion:
     "La Corven Energy 110 ofrece una solucion accesible y eficiente para el transporte diario en ciudad. Cuenta con un motor confiable, bajo costo de mantenimiento y una estructura liviana que facilita la conduccion en el trafico urbano.",
-  precio: 1500000,
+  precio: null,
   imagen: imagenes.corven,
   stock: "fisico",
 },
 {
   id: 12,
+  codigo: "MO1012",
   nombre: "Honda CB 190R",
   descripcion:
     "La Honda CB 190R es una naked deportiva con diseño agresivo, buena aceleracion y excelente maniobrabilidad urbana. Equipa inyeccion electronica y frenos a disco, ofreciendo una experiencia de manejo moderna y segura.",
-  precio: 4100000,
+  precio: null,
   imagen: imagenes.hondaCb,
   stock: "fisico",
 },
 {
   id: 13,
+  codigo: "MO1013",
   nombre: "Honda Tornado XR 250",
   descripcion:
     "La Honda Tornado XR 250 es una de las motos enduro mas reconocidas del mercado argentino por su potencia y resistencia. Su motor de 250 cc y suspensiones de largo recorrido la hacen ideal para aventuras off-road y viajes en caminos exigentes.",
-  precio: 6500000,
+  precio: null,
   imagen: imagenes.tornado,
   stock: "fisico",
 },
 {
   id: 14,
+  codigo: "MO1014",
   nombre: "Yamaha MT-03",
   descripcion:
     "La Yamaha MT-03 es una naked deportiva de media cilindrada con gran aceleracion, diseño agresivo y excelente tecnologia. Equipada con motor bicilindrico y frenos ABS, ofrece una experiencia de manejo dinamica tanto en ciudad como en ruta.",
-  precio: 8500000,
+  precio: null,
   imagen: imagenes.mt03,
   stock: "fisico",
 },
 {
   id: 15,
+  codigo: "MO1015",
   nombre: "Bajaj Dominar 400",
   descripcion:
     "La Bajaj Dominar 400 fue diseñada para turismo y viajes largos, combinando potencia, estabilidad y confort de manejo. Su motor de 400 cc, iluminacion full LED y equipamiento moderno la convierten en una de las touring mas completas de su categoria.",
-  precio: 9000000,
+  precio: null,
   imagen: imagenes.dominar,
   stock: "fisico",
 },
@@ -523,6 +536,8 @@ export const productos: Producto[] = [
     id: 21,
     codigo: "MO0839",
     nombre: "Yamaha XTZ 250 ABS Azul",
+    descripcion:
+      "La Yamaha XTZ 250 ABS es una doble proposito con motor de 249 cc, inyeccion electronica y arranque electrico. Su suspension de largo recorrido, frenos con ABS y postura alta la hacen apta para ciudad, ripio y caminos de uso mixto.",
     imagen: imagenes.yamahaYbr,
     ...stockVirtual,
   },
@@ -530,6 +545,8 @@ export const productos: Producto[] = [
     id: 22,
     codigo: "MO0841",
     nombre: "Yamaha XTZ 125 E Azul",
+    descripcion:
+      "La Yamaha XTZ 125 E es una on/off liviana con motor de 124 cc, caja de 5 velocidades y refrigeracion por aire. Su bajo peso, despeje y postura erguida la vuelven practica para aprender, circular en ciudad y entrar en caminos de tierra.",
     imagen: imagenes.yamahaYbr,
     ...stockVirtual,
   },
@@ -537,6 +554,8 @@ export const productos: Producto[] = [
     id: 23,
     codigo: "MO0842",
     nombre: "Yamaha XTZ 125 E Blanco",
+    descripcion:
+      "La Yamaha XTZ 125 E combina una mecanica simple de 124 cc con suspensiones pensadas para uso mixto. Es una moto confiable y facil de manejar, adecuada para traslados diarios y salidas por calles en mal estado o ripio.",
     imagen: imagenes.yamahaYbr,
     ...stockVirtual,
   },
@@ -544,6 +563,8 @@ export const productos: Producto[] = [
     id: 24,
     codigo: "MO0843",
     nombre: "Yamaha XTZ 125 E Negro",
+    descripcion:
+      "La Yamaha XTZ 125 E es una alternativa de baja cilindrada para quienes buscan una moto alta, liviana y versatil. Su motor refrigerado por aire y transmision de 5 marchas priorizan economia, control y mantenimiento sencillo.",
     imagen: imagenes.yamahaYbr,
     ...stockVirtual,
   },
@@ -551,6 +572,8 @@ export const productos: Producto[] = [
     id: 25,
     codigo: "MO0873",
     nombre: "Yamaha XTZ 250 ABS negro",
+    descripcion:
+      "La Yamaha XTZ 250 ABS utiliza un monocilindrico de 249 cc con inyeccion electronica, reconocido por su entrega progresiva. La version con ABS suma seguridad de frenado y conserva la versatilidad para transitar asfalto, tierra y recorridos largos.",
     imagen: imagenes.yamahaYbr,
     ...stockVirtual,
   },
@@ -558,6 +581,8 @@ export const productos: Producto[] = [
     id: 26,
     codigo: "MO0891",
     nombre: "Yamaha XTZ 250 ABS beige",
+    descripcion:
+      "La Yamaha XTZ 250 ABS esta pensada para quienes necesitan una doble proposito confiable con buena autonomia y respuesta. Su configuracion de 249 cc, suspensiones altas y frenos asistidos favorecen el uso diario y las escapadas fuera del asfalto.",
     imagen: imagenes.yamahaYbr,
     ...stockVirtual,
   },
@@ -565,6 +590,8 @@ export const productos: Producto[] = [
     id: 27,
     codigo: "MO0926",
     nombre: "Honda XR 300L Tornado Rally Rojo",
+    descripcion:
+      "La Honda XR 300L Tornado Rally es una trail de 293 cc orientada al uso mixto y a caminos exigentes. Su motor monocilindrico, chasis preparado para doble proposito y posicion de manejo alta la hacen adecuada para aventura y recorridos rurales.",
     imagen: imagenes.tornado,
     ...stockVirtual,
   },
@@ -572,6 +599,8 @@ export const productos: Producto[] = [
     id: 28,
     codigo: "MO0846",
     nombre: "Yamaha Fascino 125 FI Negra",
+    descripcion:
+      "La Yamaha Fascino 125 FI es un scooter urbano con motor de 125 cc, inyeccion electronica y transmision automatica CVT. Su enfoque esta en la comodidad, bajo consumo y manejo simple para desplazamientos diarios sin cambios manuales.",
     imagen: imagenes.scooter,
     ...stockVirtual,
   },
@@ -579,6 +608,8 @@ export const productos: Producto[] = [
     id: 29,
     codigo: "MO0847",
     nombre: "Yamaha Fascino 125 FI Cyan",
+    descripcion:
+      "La Yamaha Fascino 125 FI ofrece una conduccion ligera y practica gracias a su transmision automatica y motor eficiente de 125 cc. Su diseno tipo scooter facilita el uso urbano, con buena maniobrabilidad y asiento comodo para trayectos cotidianos.",
     imagen: imagenes.scooter,
     ...stockVirtual,
   },
@@ -586,6 +617,8 @@ export const productos: Producto[] = [
     id: 30,
     codigo: "MO0848",
     nombre: "Yamaha Ray ZR 125 FI Rojo",
+    descripcion:
+      "La Yamaha Ray ZR 125 FI es un scooter de estilo deportivo con motor de 125 cc, inyeccion electronica y transmision automatica. Esta pensado para ciudad, con manejo agil, bajo peso y practicidad para usuarios que buscan movilidad sencilla.",
     imagen: imagenes.scooter,
     ...stockVirtual,
   },
@@ -593,6 +626,8 @@ export const productos: Producto[] = [
     id: 31,
     codigo: "MO0849",
     nombre: "Yamaha Ray ZR 125 FI Negro",
+    descripcion:
+      "La Yamaha Ray ZR 125 FI combina estetica deportiva con economia de combustible y conduccion automatica. Su motor de 125 cc y dimensiones compactas lo hacen comodo para transito urbano, estacionamiento y recorridos frecuentes.",
     imagen: imagenes.scooter,
     ...stockVirtual,
   },
@@ -600,6 +635,8 @@ export const productos: Producto[] = [
     id: 32,
     codigo: "MO0850",
     nombre: "Yamaha Ray ZR 125 FI Azul",
+    descripcion:
+      "La Yamaha Ray ZR 125 FI es un scooter urbano de 125 cc con respuesta progresiva y manejo muy simple. La transmision CVT elimina los cambios manuales y favorece una conduccion relajada en calles congestionadas.",
     imagen: imagenes.scooter,
     ...stockVirtual,
   },
@@ -607,6 +644,8 @@ export const productos: Producto[] = [
     id: 33,
     codigo: "MO0884",
     nombre: "Kymco Micare 125 - Black",
+    descripcion:
+      "La Kymco Micare 125 es un scooter urbano de 125 cc con transmision automatica, ideal para moverse con comodidad en ciudad. Su formato compacto, piso plano y proteccion frontal priorizan practicidad, bajo consumo y facilidad de uso.",
     imagen: imagenes.scooter,
     ...stockVirtual,
   },
@@ -614,6 +653,8 @@ export const productos: Producto[] = [
     id: 34,
     codigo: "MO0885",
     nombre: "Kymco Micare 125 - Ruby red",
+    descripcion:
+      "La Kymco Micare 125 apunta a usuarios que quieren un scooter sencillo, economico y facil de estacionar. Su motor de 125 cc y transmision CVT permiten circular sin cambios manuales, con una postura comoda para trayectos urbanos.",
     imagen: imagenes.scooter,
     ...stockVirtual,
   },
@@ -621,6 +662,8 @@ export const productos: Producto[] = [
     id: 35,
     codigo: "MO0886",
     nombre: "Kymco Micare 125 - Silver Blue",
+    descripcion:
+      "La Kymco Micare 125 es una opcion practica para movilidad diaria, con mecanica de 125 cc y conduccion automatica. Su configuracion de scooter favorece el uso cotidiano, la comodidad del conductor y los recorridos cortos dentro de la ciudad.",
     imagen: imagenes.scooter,
     ...stockVirtual,
   },
@@ -628,6 +671,8 @@ export const productos: Producto[] = [
     id: 36,
     codigo: "MO0902",
     nombre: "Yamaha Fascino 125 FI Rojo",
+    descripcion:
+      "La Yamaha Fascino 125 FI es un scooter eficiente, liviano y facil de conducir gracias a su transmision automatica. Su motor con inyeccion electronica ayuda a reducir consumo y mejora la respuesta en uso urbano.",
     imagen: imagenes.scooter,
     ...stockVirtual,
   },
@@ -635,6 +680,8 @@ export const productos: Producto[] = [
     id: 37,
     codigo: "MO0814",
     nombre: "Honda CB125F Twister negro",
+    descripcion:
+      "La Honda CB125F Twister es una street de 124 cc orientada a la movilidad urbana con bajo consumo y manejo facil. Su caja de 5 velocidades, freno delantero a disco y postura comoda la hacen una buena opcion para uso diario.",
     imagen: imagenes.hondaCb,
     ...stockVirtual,
   },
@@ -642,6 +689,8 @@ export const productos: Producto[] = [
     id: 38,
     codigo: "MO0820",
     nombre: "Honda CB300F Twister rojo",
+    descripcion:
+      "La Honda CB300F Twister es una naked de 294 cc con inyeccion electronica y motor OHC de 4 valvulas. Ofrece mayor torque y potencia que las street chicas, con postura deportiva y buen equilibrio para ciudad y ruta.",
     imagen: imagenes.hondaCb,
     ...stockVirtual,
   },
@@ -649,6 +698,8 @@ export const productos: Producto[] = [
     id: 39,
     codigo: "MO0822",
     nombre: "Honda CB300F Twister gris",
+    descripcion:
+      "La Honda CB300F Twister combina un monocilindrico de 294 cc con una ciclística agil para uso diario y salidas a ruta. Su equipamiento moderno, frenos a disco y respuesta contundente la ubican como una naked versatil de media cilindrada.",
     imagen: imagenes.hondaCb,
     ...stockVirtual,
   },
@@ -656,6 +707,8 @@ export const productos: Producto[] = [
     id: 40,
     codigo: "MO0833",
     nombre: "Honda GLH150 rojo",
+    descripcion:
+      "La Honda GLH150 es una moto urbana de 149,2 cc con inyeccion electronica, pensada para eficiencia y confiabilidad. Su caja de 5 velocidades, postura comoda y bajo consumo la hacen muy apta para trabajo y traslados cotidianos.",
     imagen: imagenes.hondaCg,
     ...stockVirtual,
   },
@@ -663,6 +716,8 @@ export const productos: Producto[] = [
     id: 41,
     codigo: "MO0851",
     nombre: "Yamaha FZS FI V4.0 ABS Negro",
+    descripcion:
+      "La Yamaha FZS FI V4.0 ABS es una naked urbana con motor de 149 cc con inyeccion electronica y freno delantero con ABS. Se destaca por su bajo consumo, ergonomia comoda y diseno moderno para quienes buscan una 150 equipada.",
     imagen: imagenes.yamahaFz,
     ...stockVirtual,
   },
@@ -670,6 +725,8 @@ export const productos: Producto[] = [
     id: 42,
     codigo: "MO0852",
     nombre: "Yamaha FZS FI V4.0 ABS Azul",
+    descripcion:
+      "La Yamaha FZS FI V4.0 ABS mantiene la base eficiente de la familia FZ con inyeccion, buena estabilidad y postura relajada. El ABS delantero suma seguridad en frenadas y la hace conveniente para uso urbano intensivo.",
     imagen: imagenes.yamahaFz,
     ...stockVirtual,
   },
@@ -677,6 +734,8 @@ export const productos: Producto[] = [
     id: 43,
     codigo: "MO0853",
     nombre: "Yamaha FZS FI V4.0 ABS Azul LL Azul",
+    descripcion:
+      "La Yamaha FZS FI V4.0 ABS es una street de 150 cc pensada para economia, confort y respuesta suave en ciudad. Su estetica naked, inyeccion electronica y freno con ABS la vuelven una alternativa moderna dentro del segmento.",
     imagen: imagenes.yamahaFz,
     ...stockVirtual,
   },
@@ -684,6 +743,8 @@ export const productos: Producto[] = [
     id: 44,
     codigo: "MO0854",
     nombre: "Yamaha FZS FI V4.0 ABS Negra LL Dorada",
+    descripcion:
+      "La Yamaha FZS FI V4.0 ABS combina motor eficiente de 149 cc, ergonomia urbana y detalles deportivos de la linea FZ. La version con ABS delantero mejora el control de frenado y conserva el bajo consumo caracteristico del modelo.",
     imagen: imagenes.yamahaFz,
     ...stockVirtual,
   },
@@ -691,6 +752,8 @@ export const productos: Producto[] = [
     id: 45,
     codigo: "MO0857",
     nombre: "Bajaj Rouser P150 Black Red",
+    descripcion:
+      "La Bajaj Rouser P150 es una street de 150 cc con orientacion deportiva y una posicion de manejo comoda para ciudad. Su motor eficiente, caja de 5 velocidades y diseno moderno la hacen una evolucion practica dentro de la familia Rouser.",
     imagen: imagenes.rouser,
     ...stockVirtual,
   },
@@ -698,6 +761,8 @@ export const productos: Producto[] = [
     id: 46,
     codigo: "MO0858",
     nombre: "Bajaj Rouser P150 Caribbean",
+    descripcion:
+      "La Bajaj Rouser P150 ofrece una combinacion de bajo consumo, buen torque urbano y estetica naked actual. Es una moto pensada para uso diario con prestaciones suficientes para traslados rapidos y una conduccion estable.",
     imagen: imagenes.rouser,
     ...stockVirtual,
   },
@@ -705,6 +770,8 @@ export const productos: Producto[] = [
     id: 47,
     codigo: "MO0859",
     nombre: "Bajaj Rouser P150 Ebony Black",
+    descripcion:
+      "La Bajaj Rouser P150 pertenece al segmento street 150, con motor de 4 tiempos y caja de 5 marchas. Su enfoque esta en la eficiencia, el diseno deportivo y una respuesta equilibrada para ciudad y recorridos suburbanos.",
     imagen: imagenes.rouser,
     ...stockVirtual,
   },
@@ -712,6 +779,8 @@ export const productos: Producto[] = [
     id: 48,
     codigo: "MO0861",
     nombre: "Bajaj Rouser 125 LS Blanco",
+    descripcion:
+      "La Bajaj Rouser 125 LS utiliza un motor DTS-i de 124,4 cc que prioriza rendimiento y bajo consumo. Es una moto liviana y maniobrable, ideal para primera moto, trabajo diario y trayectos urbanos frecuentes.",
     imagen: imagenes.rouser,
     ...stockVirtual,
   },
@@ -719,6 +788,8 @@ export const productos: Producto[] = [
     id: 49,
     codigo: "MO0862",
     nombre: "Bajaj Rouser 125 LS Negro",
+    descripcion:
+      "La Bajaj Rouser 125 LS combina diseno deportivo con mecanica simple de 125 cc y caja de 5 velocidades. Su buena autonomia y respuesta suave la hacen una opcion confiable para ciudad y usuarios que buscan economia.",
     imagen: imagenes.rouser,
     ...stockVirtual,
   },
@@ -726,6 +797,8 @@ export const productos: Producto[] = [
     id: 50,
     codigo: "MO0866",
     nombre: "Bajaj Rouser NS 200 Pearl",
+    descripcion:
+      "La Bajaj Rouser NS 200 es una naked deportiva con motor de 199,5 cc, caja de 6 velocidades y buena respuesta en media cilindrada. Su chasis perimetral, frenos a disco y postura agresiva la hacen apta para manejo urbano dinamico y ruta corta.",
     imagen: imagenes.rouser,
     ...stockVirtual,
   },
@@ -733,6 +806,8 @@ export const productos: Producto[] = [
     id: 51,
     codigo: "MO0870",
     nombre: "Bajaj Rouser NS 160 Pearl",
+    descripcion:
+      "La Bajaj Rouser NS 160 se ubica entre las street de baja y media cilindrada, con enfoque deportivo y buen rendimiento urbano. Su motor de 160 cc, postura naked y frenado a disco ofrecen una conduccion mas firme que una 125 tradicional.",
     imagen: imagenes.rouser,
     ...stockVirtual,
   },
@@ -740,6 +815,8 @@ export const productos: Producto[] = [
     id: 52,
     codigo: "MO0874",
     nombre: "Yamaha FZ25 BS Rojo",
+    descripcion:
+      "La Yamaha FZ25 es una naked de 249 cc con inyeccion electronica y motor SOHC refrigerado por aire y aceite segun version. Se destaca por su torque a bajas vueltas, postura comoda y facilidad para usarla tanto en ciudad como en ruta.",
     imagen: imagenes.yamahaFz,
     ...stockVirtual,
   },
@@ -747,6 +824,8 @@ export const productos: Producto[] = [
     id: 53,
     codigo: "MO0901",
     nombre: "Yamaha FZ25 ABS Azul",
+    descripcion:
+      "La Yamaha FZ25 ABS agrega asistencia antibloqueo al frenado sobre una base de 249 cc confiable y de bajo mantenimiento. Es una naked equilibrada, con buena entrega de torque y una ergonomia apta para recorridos diarios o salidas de fin de semana.",
     imagen: imagenes.yamahaFz,
     ...stockVirtual,
   },
@@ -754,6 +833,8 @@ export const productos: Producto[] = [
     id: 54,
     codigo: "MO0908",
     nombre: "Yamaha FZ25 AZUL",
+    descripcion:
+      "La Yamaha FZ25 ofrece un monocilindrico de 249 cc con respuesta elastica y consumo razonable para su cilindrada. Su diseno naked, asiento amplio y buena estabilidad la convierten en una moto versatil para ciudad y ruta.",
     imagen: imagenes.yamahaFz,
     ...stockVirtual,
   },
@@ -761,6 +842,8 @@ export const productos: Producto[] = [
     id: 55,
     codigo: "MO0904",
     nombre: "Rouser P150-Red",
+    descripcion:
+      "La Rouser P150 es una Bajaj de 150 cc orientada al uso urbano con estilo deportivo y mecanica eficiente. Su caja de 5 velocidades, bajo consumo y postura comoda la hacen adecuada para trabajo, estudio y traslados diarios.",
     imagen: imagenes.rouser,
     ...stockVirtual,
   },
@@ -768,6 +851,8 @@ export const productos: Producto[] = [
     id: 56,
     codigo: "MO0920",
     nombre: "Bajaj Boxer CT100 ROJA",
+    descripcion:
+      "La Bajaj Boxer CT100 es una moto utilitaria de baja cilindrada enfocada en economia, robustez y mantenimiento simple. Su motor cercano a 100 cc, transmision de 4 velocidades y construccion resistente la hacen popular para trabajo diario.",
     imagen: imagenes.boxer,
     ...stockVirtual,
   },
@@ -775,6 +860,8 @@ export const productos: Producto[] = [
     id: 57,
     codigo: "MO0918",
     nombre: "Bajaj Boxer CT100 Azul/Negro",
+    descripcion:
+      "La Bajaj Boxer CT100 prioriza bajo consumo y durabilidad por encima de prestaciones deportivas. Es una moto liviana y sencilla, adecuada para recorridos urbanos, tareas de reparto y usuarios que buscan costos operativos reducidos.",
     imagen: imagenes.boxer,
     ...stockVirtual,
   },

@@ -11,12 +11,6 @@ type Props = {
   catalogAction?: ReactNode;
 };
 
-const priceFormatter = new Intl.NumberFormat("es-AR", {
-  style: "currency",
-  currency: "ARS",
-  maximumFractionDigits: 0,
-});
-
 const getInitialVariant = (producto: Producto) =>
   producto.variantes?.find((variante) => variante.codigo === producto.codigo) ??
   producto.variantes?.[0] ??
@@ -95,12 +89,6 @@ export default function ProductDetail({
           <p className="mt-5 text-base font-medium leading-7 text-slate-600">
             {producto.descripcion}
           </p>
-          <p className="mt-6 text-3xl font-black">
-            {producto.precio === null
-              ? "Consultar precio"
-              : priceFormatter.format(producto.precio)}
-          </p>
-
           {producto.variantes?.length ? (
             <div className="mt-6">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-slate-500">

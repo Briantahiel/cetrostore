@@ -5,12 +5,6 @@ import { useMemo, useState } from "react";
 import { getProductoImagenPrincipal, productos } from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
-const priceFormatter = new Intl.NumberFormat("es-AR", {
-  style: "currency",
-  currency: "ARS",
-  maximumFractionDigits: 0,
-});
-
 export default function FeaturedMotorcyclesCarousel() {
   const featuredProducts = useMemo(() => productos.slice(0, 5), []);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -82,11 +76,6 @@ export default function FeaturedMotorcyclesCarousel() {
             </h3>
             <p className="mt-4 text-sm font-medium leading-6 text-slate-600">
               {activeProduct.descripcion}
-            </p>
-            <p className="mt-5 text-2xl font-black">
-              {activeProduct.precio === null
-                ? "Consultar precio"
-                : priceFormatter.format(activeProduct.precio)}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link

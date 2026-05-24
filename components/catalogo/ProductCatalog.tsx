@@ -7,13 +7,6 @@ import { productos } from "@/data/productos";
 const normalizeSearch = (value: string) =>
   value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-const priceRanges = [
-  { label: "Hasta $2M", value: "0-2000000", min: 0, max: 2000000 },
-  { label: "$2M a $4M", value: "2000000-4000000", min: 2000000, max: 4000000 },
-  { label: "$4M a $7M", value: "4000000-7000000", min: 4000000, max: 7000000 },
-  { label: "Mas de $7M", value: "7000000-up", min: 7000000, max: Infinity },
-];
-
 const cilindradaRanges = [
   { label: "Hasta 110cc", value: "0-110", min: 0, max: 110 },
   { label: "111cc a 150cc", value: "111-150", min: 111, max: 150 },
@@ -61,7 +54,6 @@ const getCatalogStateFromSearch = (searchParams: string) => {
     search: params.get("q") ?? "",
     selectedBrand: params.get("brand") ?? "",
     selectedDisplacementRange: params.get("cc") ?? "",
-    selectedPriceRange: params.get("price") ?? "",
     sortOrder: params.get("sort") ?? "",
   };
 };
@@ -77,7 +69,6 @@ export default function ProductCatalog() {
     search,
     selectedBrand,
     selectedDisplacementRange,
-    selectedPriceRange,
     sortOrder,
   } = useMemo(
     () => getCatalogStateFromSearch(catalogSearchParams),
@@ -92,10 +83,6 @@ export default function ProductCatalog() {
       Array.from(new Set(productos.map((producto) => getBrand(producto.nombre))))
         .sort((a, b) => a.localeCompare(b)),
     [],
-  );
-
-  const selectedPrice = priceRanges.find(
-    (range) => range.value === selectedPriceRange,
   );
 
   const selectedDisplacement = cilindradaRanges.find(
@@ -119,12 +106,6 @@ export default function ProductCatalog() {
             normalizeSearch(variante.codigo).includes(normalizedSearch),
         );
 
-      const priceMatches =
-        !selectedPrice ||
-        (producto.precio !== null &&
-          producto.precio >= selectedPrice.min &&
-          producto.precio <= selectedPrice.max);
-
       const displacement = getDisplacement(producto.nombre);
       const displacementMatches =
         !selectedDisplacement ||
@@ -132,22 +113,12 @@ export default function ProductCatalog() {
           displacement >= selectedDisplacement.min &&
           displacement <= selectedDisplacement.max);
 
-      return (
-        brandMatches && searchMatches && priceMatches && displacementMatches
-      );
+      return brandMatches && searchMatches && displacementMatches;
     });
-  }, [search, selectedBrand, selectedDisplacement, selectedPrice]);
+  }, [search, selectedBrand, selectedDisplacement]);
 
   const sortedProducts = useMemo(() => {
     const products = [...filteredProducts];
-
-    if (sortOrder === "price-asc") {
-      products.sort((a, b) => (a.precio ?? Infinity) - (b.precio ?? Infinity));
-    }
-
-    if (sortOrder === "price-desc") {
-      products.sort((a, b) => (b.precio ?? -Infinity) - (a.precio ?? -Infinity));
-    }
 
     if (sortOrder === "name-asc") {
       products.sort((a, b) => a.nombre.localeCompare(b.nombre));
@@ -166,7 +137,6 @@ export default function ProductCatalog() {
         search,
         selectedBrand,
         selectedDisplacementRange,
-        selectedPriceRange,
         sortOrder,
         ...updates,
       };
@@ -174,9 +144,6 @@ export default function ProductCatalog() {
 
       if (nextState.search) params.set("q", nextState.search);
       if (nextState.selectedBrand) params.set("brand", nextState.selectedBrand);
-      if (nextState.selectedPriceRange) {
-        params.set("price", nextState.selectedPriceRange);
-      }
       if (nextState.selectedDisplacementRange) {
         params.set("cc", nextState.selectedDisplacementRange);
       }
@@ -196,7 +163,6 @@ export default function ProductCatalog() {
       search,
       selectedBrand,
       selectedDisplacementRange,
-      selectedPriceRange,
       sortOrder,
     ],
   );
@@ -259,7 +225,6 @@ export default function ProductCatalog() {
       search: "",
       selectedBrand: "",
       selectedDisplacementRange: "",
-      selectedPriceRange: "",
       sortOrder: "",
     });
   };
@@ -270,14 +235,14 @@ export default function ProductCatalog() {
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-900">
-              Catálogo
+              Catalogo
             </p>
             <h2 className="mt-2 text-4xl font-black tracking-tight">
-              Elegí tu moto
+              Elegi tu moto
             </h2>
             <p className="mt-3 max-w-2xl text-sm font-medium leading-6 text-slate-600">
-              Filtra por marca, precio y cilindrada. Consulta disponibilidad,
-              financiación y medios de pago.
+              Filtra por marca y cilindrada. Consulta disponibilidad,
+              financiacion y medios de pago.
             </p>
           </div>
 
@@ -289,7 +254,7 @@ export default function ProductCatalog() {
         <div className="mb-8 rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
           <div className="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
             <h3 className="text-lg font-black tracking-tight">
-              Filtros de búsqueda
+              Filtros de busqueda
             </h3>
             <button
               type="button"
@@ -337,7 +302,7 @@ export default function ProductCatalog() {
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-3">
             <label className="flex flex-col gap-2 text-sm font-black">
               Modelo
               <input
@@ -346,30 +311,9 @@ export default function ProductCatalog() {
                 onChange={(event) => {
                   updateCatalogUrl({ currentPage: 1, search: event.target.value });
                 }}
-                placeholder="Buscar por nombre"
+                placeholder="Buscar por nombre o codigo"
                 className="h-12 rounded-lg border border-slate-200 px-4 text-sm font-semibold outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
               />
-            </label>
-
-            <label className="flex flex-col gap-2 text-sm font-black">
-              Precio
-              <select
-                value={selectedPriceRange}
-                onChange={(event) => {
-                  updateCatalogUrl({
-                    currentPage: 1,
-                    selectedPriceRange: event.target.value,
-                  });
-                }}
-                className="h-12 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
-              >
-                <option value="">Todos los precios</option>
-                {priceRanges.map((range) => (
-                  <option key={range.value} value={range.value}>
-                    {range.label}
-                  </option>
-                ))}
-              </select>
             </label>
 
             <label className="flex flex-col gap-2 text-sm font-black">
@@ -403,8 +347,6 @@ export default function ProductCatalog() {
                 className="h-12 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
               >
                 <option value="">Sin ordenar</option>
-                <option value="price-asc">Menor precio</option>
-                <option value="price-desc">Mayor precio</option>
                 <option value="name-asc">A-Z</option>
               </select>
             </label>
@@ -412,7 +354,6 @@ export default function ProductCatalog() {
 
           <div className="mt-4 flex flex-wrap gap-2 text-xs font-black uppercase tracking-wide text-slate-500">
             {selectedBrand && <span>Marca: {selectedBrand}</span>}
-            {selectedPrice && <span>Precio: {selectedPrice.label}</span>}
             {selectedDisplacement && (
               <span>Cilindrada: {selectedDisplacement.label}</span>
             )}
@@ -433,7 +374,6 @@ export default function ProductCatalog() {
               codigo={producto.codigo}
               nombre={producto.nombre}
               descripcion={producto.descripcion}
-              precio={producto.precio}
               imagen={producto.imagen}
               stock={producto.stock}
               detailHref={getProductDetailHref(producto.id)}
@@ -461,7 +401,7 @@ export default function ProductCatalog() {
           </button>
 
           <span className="text-sm font-bold text-slate-500">
-            Página {activePage} de {totalPages}
+            Pagina {activePage} de {totalPages}
           </span>
 
           <button
@@ -479,8 +419,8 @@ export default function ProductCatalog() {
         </div>
 
         <div className="mt-8 rounded-lg border border-slate-200 bg-white p-5 text-center text-sm font-medium text-slate-600">
-          No encontrás el modelo que buscas? Consultanos por el ingreso de
-          nuevas unidades y financiación disponible. 
+          No encontras el modelo que buscas? Consultanos por el ingreso de
+          nuevas unidades y financiacion disponible.
         </div>
       </div>
     </section>
