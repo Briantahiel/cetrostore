@@ -374,7 +374,7 @@ export const productos: Producto[] = [
 {
   id: 7,
   codigo: "MO1007",
-  nombre: "Honda XR 150L",
+  nombre: "Honda XR 150 L",
   descripcion:
     "La Honda XR 150L es una moto on/off diseñada para adaptarse tanto a calles urbanas como a caminos rurales y terrenos irregulares. Su suspension elevada, resistencia mecanica y posicion de manejo confortable la convierten en una excelente opcion multiproposito.",
   precio: null,
@@ -424,7 +424,7 @@ export const productos: Producto[] = [
 {
   id: 12,
   codigo: "MO1012",
-  nombre: "Honda CB 190R",
+  nombre: "Honda CB 190 R",
   descripcion:
     "La Honda CB 190R es una naked deportiva con diseño agresivo, buena aceleracion y excelente maniobrabilidad urbana. Equipa inyeccion electronica y frenos a disco, ofreciendo una experiencia de manejo moderna y segura.",
   precio: null,
@@ -499,7 +499,7 @@ export const productos: Producto[] = [
 {
   id: 17,
   codigo: "MO0805",
-  nombre: "Honda XR 150L rojo",
+  nombre: "Honda XR 150 L rojo",
   descripcion:
     "La Honda XR 150L es una moto doble proposito preparada para circular comodamente tanto en ciudad como en caminos de tierra. Su posicion elevada, suspensiones resistentes y mecanica confiable la convierten en una opcion muy valorada para trabajo y aventura.",
   imagen: imagenes.hondaXr,
@@ -508,7 +508,7 @@ export const productos: Producto[] = [
 {
   id: 18,
   codigo: "MO0806",
-  nombre: "Honda XR 150L blanco",
+  nombre: "Honda XR 150 L blanco",
   descripcion:
     "La Honda XR 150L combina versatilidad y resistencia en una moto ideal para trayectos urbanos y rurales. Gracias a su motor confiable y su estructura robusta, ofrece un excelente rendimiento en distintos tipos de terreno.",
   imagen: imagenes.hondaXr,
@@ -517,7 +517,7 @@ export const productos: Producto[] = [
 {
   id: 19,
   codigo: "MO0819",
-  nombre: "Honda XR 190L beige",
+  nombre: "Honda XR 190 L beige",
   descripcion:
     "La Honda XR 190L ofrece mayor potencia y equipamiento dentro de la linea on/off de Honda. Su motor de 190 cc, buena altura al suelo y posicion de manejo confortable permiten un desempeño eficiente tanto en ciudad como fuera del asfalto.",
   imagen: imagenes.hondaXr,
@@ -526,7 +526,7 @@ export const productos: Producto[] = [
 {
   id: 20,
   codigo: "MO0830",
-  nombre: "Honda XR 300L rojo",
+  nombre: "Honda XR 300 L rojo",
   descripcion:
     "La Honda XR 300L esta orientada a usuarios que buscan una moto de aventura con mayor potencia y capacidad off-road. Su motor de mayor cilindrada y suspensiones reforzadas brindan estabilidad y rendimiento en terrenos exigentes.",
   imagen: imagenes.tornado,
@@ -589,7 +589,7 @@ export const productos: Producto[] = [
   {
     id: 27,
     codigo: "MO0926",
-    nombre: "Honda XR 300L Tornado Rally Rojo",
+    nombre: "Honda XR 300 L Tornado Rally Rojo",
     descripcion:
       "La Honda XR 300L Tornado Rally es una trail de 293 cc orientada al uso mixto y a caminos exigentes. Su motor monocilindrico, chasis preparado para doble proposito y posicion de manejo alta la hacen adecuada para aventura y recorridos rurales.",
     imagen: imagenes.tornado,
@@ -679,7 +679,7 @@ export const productos: Producto[] = [
   {
     id: 37,
     codigo: "MO0814",
-    nombre: "Honda CB125F Twister negro",
+    nombre: "Honda CB 125 F Twister negro",
     descripcion:
       "La Honda CB125F Twister es una street de 124 cc orientada a la movilidad urbana con bajo consumo y manejo facil. Su caja de 5 velocidades, freno delantero a disco y postura comoda la hacen una buena opcion para uso diario.",
     imagen: imagenes.hondaCb,
@@ -688,7 +688,7 @@ export const productos: Producto[] = [
   {
     id: 38,
     codigo: "MO0820",
-    nombre: "Honda CB300F Twister rojo",
+    nombre: "Honda CB 300 F Twister rojo",
     descripcion:
       "La Honda CB300F Twister es una naked de 294 cc con inyeccion electronica y motor OHC de 4 valvulas. Ofrece mayor torque y potencia que las street chicas, con postura deportiva y buen equilibrio para ciudad y ruta.",
     imagen: imagenes.hondaCb,
@@ -697,7 +697,7 @@ export const productos: Producto[] = [
   {
     id: 39,
     codigo: "MO0822",
-    nombre: "Honda CB300F Twister gris",
+    nombre: "Honda CB 300 F Twister gris",
     descripcion:
       "La Honda CB300F Twister combina un monocilindrico de 294 cc con una ciclística agil para uso diario y salidas a ruta. Su equipamiento moderno, frenos a disco y respuesta contundente la ubican como una naked versatil de media cilindrada.",
     imagen: imagenes.hondaCb,
@@ -706,7 +706,7 @@ export const productos: Producto[] = [
   {
     id: 40,
     codigo: "MO0833",
-    nombre: "Honda GLH150 rojo",
+    nombre: "Honda GLH 150 rojo",
     descripcion:
       "La Honda GLH150 es una moto urbana de 149,2 cc con inyeccion electronica, pensada para eficiencia y confiabilidad. Su caja de 5 velocidades, postura comoda y bajo consumo la hacen muy apta para trabajo y traslados cotidianos.",
     imagen: imagenes.hondaCg,
@@ -751,7 +751,7 @@ export const productos: Producto[] = [
   {
     id: 45,
     codigo: "MO0857",
-    nombre: "Bajaj Rouser P150 Black Red",
+    nombre: "Bajaj Rouser P 150 Black Red",
     descripcion:
       "La Bajaj Rouser P150 es una street de 150 cc con orientacion deportiva y una posicion de manejo comoda para ciudad. Su motor eficiente, caja de 5 velocidades y diseno moderno la hacen una evolucion practica dentro de la familia Rouser.",
     imagen: imagenes.rouser,
@@ -760,7 +760,7 @@ export const productos: Producto[] = [
   {
     id: 46,
     codigo: "MO0858",
-    nombre: "Bajaj Rouser P150 Caribbean",
+    nombre: "Bajaj Rouser P 150 Caribbean",
     descripcion:
       "La Bajaj Rouser P150 ofrece una combinacion de bajo consumo, buen torque urbano y estetica naked actual. Es una moto pensada para uso diario con prestaciones suficientes para traslados rapidos y una conduccion estable.",
     imagen: imagenes.rouser,
@@ -769,7 +769,7 @@ export const productos: Producto[] = [
   {
     id: 47,
     codigo: "MO0859",
-    nombre: "Bajaj Rouser P150 Ebony Black",
+    nombre: "Bajaj Rouser P 150 Ebony Black",
     descripcion:
       "La Bajaj Rouser P150 pertenece al segmento street 150, con motor de 4 tiempos y caja de 5 marchas. Su enfoque esta en la eficiencia, el diseno deportivo y una respuesta equilibrada para ciudad y recorridos suburbanos.",
     imagen: imagenes.rouser,
@@ -841,7 +841,7 @@ export const productos: Producto[] = [
   {
     id: 55,
     codigo: "MO0904",
-    nombre: "Rouser P150-Red",
+    nombre: "Rouser P 150-Red",
     descripcion:
       "La Rouser P150 es una Bajaj de 150 cc orientada al uso urbano con estilo deportivo y mecanica eficiente. Su caja de 5 velocidades, bajo consumo y postura comoda la hacen adecuada para trabajo, estudio y traslados diarios.",
     imagen: imagenes.rouser,
@@ -850,7 +850,7 @@ export const productos: Producto[] = [
   {
     id: 56,
     codigo: "MO0920",
-    nombre: "Bajaj Boxer CT100 ROJA",
+    nombre: "Bajaj Boxer CT 100 ROJA",
     descripcion:
       "La Bajaj Boxer CT100 es una moto utilitaria de baja cilindrada enfocada en economia, robustez y mantenimiento simple. Su motor cercano a 100 cc, transmision de 4 velocidades y construccion resistente la hacen popular para trabajo diario.",
     imagen: imagenes.boxer,
@@ -859,7 +859,7 @@ export const productos: Producto[] = [
   {
     id: 57,
     codigo: "MO0918",
-    nombre: "Bajaj Boxer CT100 Azul/Negro",
+    nombre: "Bajaj Boxer CT 100 Azul/Negro",
     descripcion:
       "La Bajaj Boxer CT100 prioriza bajo consumo y durabilidad por encima de prestaciones deportivas. Es una moto liviana y sencilla, adecuada para recorridos urbanos, tareas de reparto y usuarios que buscan costos operativos reducidos.",
     imagen: imagenes.boxer,
