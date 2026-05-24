@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import ProductCard from "@/components/catalogo/ProductCard";
-import { productos } from "@/data/productos";
+import { getCilindradaProducto, productos } from "@/data/productos";
 
 const normalizeSearch = (value: string) =>
   value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -15,11 +15,6 @@ const cilindradaRanges = [
 ];
 
 const getBrand = (name: string) => name.split(" ")[0];
-
-const getDisplacement = (name: string) => {
-  const match = name.match(/\b(\d{3})\b/);
-  return match ? Number(match[1]) : null;
-};
 
 const catalogReturnKey = "catalog-return-position";
 const catalogUrlChangeEvent = "catalog-url-change";
@@ -106,7 +101,7 @@ export default function ProductCatalog() {
             normalizeSearch(variante.codigo).includes(normalizedSearch),
         );
 
-      const displacement = getDisplacement(producto.nombre);
+      const displacement = getCilindradaProducto(producto);
       const displacementMatches =
         !selectedDisplacement ||
         (displacement !== null &&
