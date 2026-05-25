@@ -899,9 +899,23 @@ export const productos: Producto[] = [
     codigo: "MO0820",
     nombre: "Honda CB 300 F Twister rojo",
     descripcion:
-      "La Honda CB300F Twister es una naked de 294 cc con inyeccion electronica y motor OHC de 4 valvulas. Ofrece mayor torque y potencia que las street chicas, con postura deportiva y buen equilibrio para ciudad y ruta.",
+      "La Honda CB300F Twister combina un monocilindrico de 294 cc con una ciclística agil para uso diario y salidas a ruta. Su equipamiento moderno, frenos a disco y respuesta contundente la ubican como una naked versatil de media cilindrada.",
     imagen: imagenes.hondaCb,
     ...stockVirtual,
+       variantes: [
+     {
+      codigo: "MO0820",
+      nombre: "Honda CB 300 F Twister rojo",
+      imagen: "/motos/honda-cb-300-twister.jpg",
+      color: "Rojo",
+    },
+    {
+      codigo: "MO0822",
+      nombre: "Honda CB 300 F Twister gris",
+      imagen: "/motos/honda-cb-300-twister-gris.webp",
+      color: "Gris",
+    },
+  ],   
   },
   {
     id: 39,
