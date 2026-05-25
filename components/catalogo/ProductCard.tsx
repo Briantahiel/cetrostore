@@ -24,7 +24,7 @@ export default function ProductCard({
   onOpen,
 }: Props) {
   const whatsappText = encodeURIComponent(
-    `Hola! Quiero consultar por el producto ${nombre}${codigo ? `, codigo ${codigo}` : ""}. Podrian pasarme informacion sobre financiacion y medios de pago?`
+    `Hola! Quiero consultar por el modelo ${nombre}${codigo ? `, codigo ${codigo}` : ""}. Podrían pasarme informacion sobre financiación y medios de pago?`
   );
   const isVirtualStock = stock === "virtual";
   const imagenPrincipal = getProductoImagenPrincipal(imagen);

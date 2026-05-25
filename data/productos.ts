@@ -31,9 +31,6 @@ const imagenes = {
   rouser: [
     "/motos/cetrogar-bajaj-rouser-125.webp",
   ],
-  motomel: [
-    "/motos/cetrogar-honda-xr150.jpg",
-  ],
   hondaCg: [
     "/motos/cetrogar-honda-cb190.webp",
   ],
@@ -54,20 +51,37 @@ const imagenes = {
     "/motos/cetrogar-bajaj-rouser-125.webp",
   ],
   zanella: [
-    "/motos/cetrogar-wave.jpg",
+    "/motos/zanella-zb-110.jpg",
   ],
   gilera: [
-    "/motos/cetrogar-wave.jpg",
+    "/motos/gilera-smash-110.jpg",
+  ],
+  kellerEcoCrono110: [
+    "/motos/keller-eco-crono-110.webp",
   ],
   corven: [
-    "/motos/cetrogar-wave.jpg",
+    "/motos/honda-wave-roja.jpg",
+  ],
+  zanellaZb: [
+    "/motos/zanella-zb.webp"
   ],
   hondaCb: [
-    "/motos/cetrogar-honda-cb190.webp",
-    "/motos/cetrogar-honda-cb300.jpg",
+    "/motos/honda-cb-300-twister.jpg",
+  ],
+  hondaGlh: [
+    "/motos/honda-glh-roja.webp",
+  ],
+  hondaCbtwisterGris: [
+    "/motos/honda-cb-300-twister-gris.webp",
+  ],
+  hondaCb125: [
+    "/motos/honda-cb-125-negra.png",
   ],
   tornado: [
     "/motos/honda-tornado-300.webp",
+  ],
+  tornadoRally: [
+    "/motos/honda-tornado-300-rally.webp",
   ],
   mt03: [
     "/motos/cetrogar-yamaha-xtz-250.jpeg",
@@ -78,6 +92,9 @@ const imagenes = {
   scooter: [
     "/motos/cetrogar-kymco-agility.png",
   ],
+  motomelS2: [
+    "/motos/motomel-s2.png"
+  ]
 };
 
 export const getProductoImagenPrincipal = (imagen: string[]) => imagen[0] ?? "";
@@ -89,11 +106,41 @@ const fichasTecnicas = {
   wave: ficha([
     ["Cilindrada", "109 cc"],
     ["Velocidades", "4"],
-    ["Potencia maxima", "9.3 HP a 7.500 rpm"],
-    ["Torque maximo", "8.5 Nm a 6.000 rpm"],
-    ["Arranque", "Elctrico / Patada"],
+    ["Alimentacion", "Carburador"],
+    ["Potencia máxima", "9.3 HP a 7.500 rpm"],
+    ["Torque máximo", "8.5 Nm a 6.000 rpm"],
+    ["Arranque", "Eléctrico / Patada"],
     ["Llantas", "Rayos"],
     ["Freno", "A disco"],
+  ]),
+  gilera: ficha([
+    ["Tipo", "Monocilíndrico, 4 tiempos"],
+    ["Cilindrada", "107 cc"],
+    ["Refrigeración", "Aire"],
+    ["Alimentación", "Carburador"],
+    ["Frenos", "Delantero a tambor o disco"],
+    ["Potencia máxima", "6,6 HP a 8.500 rpm"],
+    ["Caja", "4 velocidades semiautomática"],
+    ["Arranque", "Eléctrico / Patada"],
+  ]),
+  kellerEcoCrono110: ficha([
+    ["Tipo", "Monocilíndrico, 4 tiempos"],
+    ["Cilindrada", "107 cc"],
+    ["Refrigeración", "Aire"],
+    ["Alimentación", "Carburador"],
+    ["Frenos", "Delantero a tambor o disco"],
+    ["Potencia máxima", "6,5 HP a 8.000 rpm"],
+    ["Caja", "4 velocidades semiautomática"],
+    ["Arranque", "Eléctrico / Patada"],
+  ]),
+  zanellaZb110: ficha([
+    ["Tipo", "Monocilindrico, 4 tiempos, OCH"],
+    ["Cilindrada", "107 cc"],
+    ["Potencia máxima", "6.7 a 7.2 HP"],
+    ["Alimentacion", "Carburador"],
+    ["Arranque", "Electrico / Patada"],
+    ["Refrigeración", "Aire"],
+    ["Caja", "4 velocidades semiautomática"],
   ]),
   rouser125: ficha([
     ["Tipo", "Monocilindrico, 4 tiempos, DTS-i"],
@@ -102,7 +149,7 @@ const fichasTecnicas = {
     ["Potencia maxima", "12 HP a 8.500 rpm"],
     ["Torque maximo", "11 Nm a 6.500 rpm"],
     ["Alimentacion", "Carburador"],
-    ["Arranque", "Electrico y pedal"],
+    ["Arranque", "Electrico / Patada"],
     ["Caja", "5 velocidades"],
   ]),
   rouser150: ficha([
@@ -125,12 +172,14 @@ const fichasTecnicas = {
     ["Potencia maxima", "13,4 HP a 8.500 rpm"],
     ["Refrigeracion", "Aire"],
     ["Alimentacion", "Carburador"],
-    ["Arranque", "Electrico y pedal"],
+    ["Arranque", "Electrico / Patada"],
     ["Transmision", "Manual 5 velocidades"],
   ]),
   hondaCgGlh150: ficha([
+    ["Tipo", "Monocilíndrico, 4 tiempos, OHC"],
     ["Cilindrada", "149,2 cc"],
     ["Velocidades", "5"],
+    ["Refrigeración", "Aire"],
     ["Arranque", "Electrico"],
     ["Freno", "A disco"],
     ["Llantas", "Aleacion"],
@@ -180,6 +229,19 @@ const fichasTecnicas = {
     ["Velocidades", "6"],
     ["Uso", "On/Off"],
   ]),
+  hondaXr300Rally: ficha([
+    ["Tipo", "Monocilíndrico, 4 tiempos, 4 válvulas, OHC, refrigerado por aire y aceite"],
+    ["Cilindrada", "294 cc"],
+    ["Alimentación", "Inyección electrónica PGM-FI"],
+    ["Potencia máxima", "24,3 HP a 7.500 rpm"],
+    ["Torque máximo", "26,5 Nm a 5.750 rpm"],
+    ["Arranque", "Eléctrico"],
+    ["Freno delantero", "Disco con ABS"],
+    ["Freno trasero", "Disco"],
+    ["Velocidades", "6"],
+    ["Uso", "On/Off - Adventure"],
+    // ["Equipamiento", "Parabrisas, carenado rally, protectores y estética Dakar"]
+]),
   boxer150: ficha([
     ["Cilindrada", "144,8 cc"],
     ["Velocidades", "5"],
@@ -198,6 +260,9 @@ const fichasTecnicas = {
     ["Arranque", "Eléctrico"],
     ["Freno", "A disco"],
     ["Llantas", "Aleación"],
+  ]),
+  zanellaZb: ficha([
+
   ]),
   corvenEnergy: ficha([
     ["Tipo", "Monocilindrico, 4 tiempos, refrigerado por aire"],
@@ -241,8 +306,11 @@ const fichasTecnicas = {
     ["Consumo estimado", "35km/l aprox"],
   ]),
   cb125: ficha([
+    ["Tipo", "Monocilíndrico, 4 tiempos, OHC, 4 valvulas"],
     ["Cilindrada", "124 cc"],
     ["Velocidades", "5"],
+    ["Refrigeración", "Aire (con radiador de aceite)"],
+    ["Alimentación", "Inyección electrónica PGM-FI"],
     ["Arranque", "Eléctrico"],
     ["Freno", "A disco"],
     ["Llantas", "Aleación"],
@@ -292,19 +360,19 @@ const fichasTecnicas = {
 type FichaTecnicaKey = keyof typeof fichasTecnicas;
 
 const fichaTecnicaPorCodigo: Partial<Record<string, FichaTecnicaKey>> = {
-  // MO1001: "wave",
-  // MO1002: "rouser125",
-  // MO1003: "motomelS2",
-  // MO1004: "hondaCgGlh150",
-  // MO1005: "yamahaYbr125",
-  // MO1006: "yamahaFz",
-  // MO1007: "hondaXr150",
-  // MO1008: "boxer150",
-  // MO1009: "cub110",
-  // MO1010: "cub110",
-  // MO1011: "corvenEnergy",
-  // MO1012: "cb190",
-  // MO1013: "hondaXr300",
+  MO1001: "kellerEcoCrono110",
+  MO1002: "rouser125",
+  MO1003: "motomelS2",
+  MO1004: "hondaCgGlh150",
+  MO1005: "yamahaYbr125",
+  MO1006: "yamahaFz",
+  MO1007: "hondaXr150",
+  MO1008: "boxer150",
+  MO1009: "zanellaZb110",
+  MO1010: "gilera",
+  MO1011: "corvenEnergy",
+  MO1012: "cb190",
+  MO1013: "hondaXr300",
   MO0808: "wave",
   MO0809: "wave",
   MO0810: "wave",
@@ -318,7 +386,7 @@ const fichaTecnicaPorCodigo: Partial<Record<string, FichaTecnicaKey>> = {
   MO0843: "xtz125",
   MO0873: "xtz250",
   MO0891: "xtz250",
-  MO0926: "hondaXr300",
+  MO0926: "hondaXr300Rally",
   MO0846: "scooter125",
   MO0847: "scooter125",
   MO0848: "rayZ",
@@ -384,6 +452,7 @@ const getFichaTecnicaKeyPorNombre = (nombre: string): FichaTecnicaKey | null => 
   if (normalizedName.includes("xr300") || normalizedName.includes("tornado")) {
     return "hondaXr300";
   }
+ 
   if (normalizedName.includes("xr150")) return "hondaXr150";
   if (normalizedName.includes("boxerct100")) return "boxer100";
   if (normalizedName.includes("boxer")) return "boxer150";
@@ -449,155 +518,155 @@ const stockVirtual = {
 
 export const productos: Producto[] = [
   {
-    id: 1,
-    codigo: "MO1001",
-    nombre: "Honda Wave 110 S",
-    descripcion:
-      "La Honda Wave 110 S es una de las motos urbanas mas vendidas de Argentina por su bajo consumo, confiabilidad mecanica y mantenimiento economico. Su motor de 110 cc y transmision semiautomatica la convierten en una opcion ideal para movilidad diaria, delivery y uso urbano intensivo.",
-    precio: null,
-    imagen: imagenes.wave,
-    stock: "fisico",
-  },
-  {
-    id: 2,
-    codigo: "MO1002",
-    nombre: "Bajaj Rouser NS 125",
-    descripcion:
-      "La Bajaj Rouser NS 125 combina estilo deportivo con un motor eficiente y buen nivel de equipamiento para su segmento. Ofrece una posicion de manejo comoda, buena estabilidad urbana y un rendimiento destacado para quienes buscan su primera moto street.",
-    precio: null,
-    imagen: imagenes.rouser,
-    stock: "fisico",
-  },
-  {
-    id: 3,
-    codigo: "MO1003",
-    nombre: "Motomel S2 150",
-    descripcion:
-      "La Motomel S2 150 es una moto utilitaria elegida por su resistencia y bajo costo operativo en el uso diario. Cuenta con motor de 150 cc, buena autonomia y una mecanica simple que facilita el mantenimiento y las reparaciones.",
-    precio: null,
-    imagen: imagenes.motomel,
-    stock: "fisico",
-  },
-  {
-    id: 4,
-    codigo: "MO1004",
-    nombre: "Honda CG 150 Titan",
-    descripcion:
-      "La Honda CG 150 Titan es reconocida por su durabilidad, economia y excelente reputacion en el mercado argentino. Su motor confiable y su comodidad de manejo la convierten en una moto ideal tanto para trabajo como para uso cotidiano.",
-    precio: null,
-    imagen: imagenes.hondaCg,
-    stock: "fisico",
-  },
-  {
-    id: 5,
-    codigo: "MO1005",
-    nombre: "Yamaha YBR 125",
-    descripcion:
-      "La Yamaha YBR 125 es una moto urbana confiable y de manejo suave, pensada para quienes buscan economia y confort en ciudad. Se destaca por su bajo consumo, calidad de construccion y excelente vida util del motor.",
-    precio: null,
-    imagen: imagenes.yamahaYbr,
-    stock: "fisico",
-  },
-  {
-    id: 6,
-    codigo: "MO1006",
-    nombre: "Yamaha FZ 150",
-    descripcion:
-      "La Yamaha FZ 150 ofrece un diseno moderno tipo naked junto con una conduccion comoda y estable para uso urbano. Su motor de 150 cc brinda buena respuesta, mientras que su estetica deportiva y equipamiento la hacen popular entre usuarios jovenes.",
-    precio: null,
-    imagen: imagenes.yamahaFz,
-    stock: "fisico",
-  },
-  {
-    id: 7,
-    codigo: "MO1007",
-    nombre: "Honda XR 150 L",
-    descripcion:
-      "La Honda XR 150L es una moto on/off disenada para adaptarse tanto a calles urbanas como a caminos rurales y terrenos irregulares. Su suspension elevada, resistencia mecanica y posicion confortable la convierten en una excelente opcion multiproposito.",
-    precio: null,
-    imagen: imagenes.hondaXr,
-    stock: "fisico",
-  },
-  {
-    id: 8,
-    codigo: "MO1008",
-    nombre: "Bajaj Boxer 150",
-    descripcion:
-      "La Bajaj Boxer 150 fue desarrollada para trabajo intensivo y uso diario en condiciones exigentes. Se destaca por su robustez, gran capacidad de carga, bajo consumo y una mecanica simple orientada a la durabilidad.",
-    precio: null,
-    imagen: imagenes.boxer,
-    stock: "fisico",
-  },
-  {
-    id: 9,
-    codigo: "MO1009",
-    nombre: "Zanella ZB 110",
-    descripcion:
-      "La Zanella ZB 110 es una moto economica y practica, ideal para desplazamientos urbanos y uso diario. Su bajo consumo de combustible y mantenimiento accesible la convierten en una opcion muy elegida dentro del segmento 110.",
-    precio: null,
-    imagen: imagenes.zanella,
-    stock: "fisico",
-  },
-  {
-    id: 10,
-    codigo: "MO1010",
-    nombre: "Gilera Smash 110",
-    descripcion:
-      "La Gilera Smash 110 es una de las motos mas utilizadas para delivery y movilidad urbana gracias a su confiabilidad y economia. Su transmision semiautomatica facilita el manejo y permite una conduccion sencilla para todo tipo de usuarios.",
-    precio: null,
-    imagen: imagenes.gilera,
-    stock: "fisico",
-  },
-  {
-    id: 11,
-    codigo: "MO1011",
-    nombre: "Corven Energy 110",
-    descripcion:
-      "La Corven Energy 110 ofrece una solucion accesible y eficiente para el transporte diario en ciudad. Cuenta con un motor confiable, bajo costo de mantenimiento y una estructura liviana que facilita la conduccion en el trafico urbano.",
-    precio: null,
-    imagen: imagenes.corven,
-    stock: "fisico",
-  },
-  {
-    id: 12,
-    codigo: "MO1012",
-    nombre: "Honda CB 190 R",
-    descripcion:
-      "La Honda CB 190R es una naked deportiva con diseno agresivo, buena aceleracion y excelente maniobrabilidad urbana. Equipa inyeccion electronica y frenos a disco, ofreciendo una experiencia de manejo moderna y segura.",
-    precio: null,
-    imagen: imagenes.hondaCb,
-    stock: "fisico",
-  },
-  {
-    id: 13,
-    codigo: "MO1013",
-    nombre: "Honda Tornado XR 250",
-    descripcion:
-      "La Honda Tornado XR 250 es una de las motos enduro mas reconocidas del mercado argentino por su potencia y resistencia. Su motor de 250 cc y suspensiones de largo recorrido la hacen ideal para aventuras off-road y viajes en caminos exigentes.",
-    precio: null,
-    imagen: imagenes.tornado,
-    stock: "fisico",
-  },
-  {
-    id: 14,
-    codigo: "MO1014",
-    nombre: "Yamaha MT-03",
-    descripcion:
-      "La Yamaha MT-03 es una naked deportiva de media cilindrada con gran aceleracion, diseno agresivo y excelente tecnologia. Equipada con motor bicilindrico y frenos ABS, ofrece una experiencia de manejo dinamica tanto en ciudad como en ruta.",
-    precio: null,
-    imagen: imagenes.mt03,
-    stock: "fisico",
-  },
-  {
-    id: 15,
-    codigo: "MO1015",
-    nombre: "Bajaj Dominar 400",
-    descripcion:
-      "La Bajaj Dominar 400 fue disenada para turismo y viajes largos, combinando potencia, estabilidad y confort de manejo. Su motor de 400 cc, iluminacion full LED y equipamiento moderno la convierten en una touring completa de su categoria.",
-    precio: null,
-    imagen: imagenes.dominar,
-    stock: "fisico",
-  },
+  id: 1,
+  codigo: "MO1001",
+  nombre: "Keller Eco Crono 110",
+  descripcion:
+    "La Keller Eco Crono 110 es una moto urbana económica y práctica, ideal para desplazamientos diarios en ciudad. Su motor de 110 cc ofrece un rendimiento eficiente, mientras que su diseño moderno y bajo costo de mantenimiento la convierten en una opción popular para quienes buscan movilidad accesible.",
+  precio: null,
+  imagen: imagenes.kellerEcoCrono110,
+  stock: "fisico",
+},
+{
+  id: 2,
+  codigo: "MO1002",
+  nombre: "Corven Energy 110",
+  descripcion:
+    "La Corven Energy 110 es una moto económica y confiable, perfecta para la movilidad urbana diaria. Su motor de 110 cc ofrece un rendimiento eficiente, mientras que su diseño moderno y bajo costo de mantenimiento la convierten en una opción popular para quienes buscan una moto práctica y accesible.",
+  precio: null,
+  imagen: imagenes.rouser,
+  stock: "fisico",
+},
+{
+  id: 3,
+  codigo: "MO1003",
+  nombre: "Motomel S2 150",
+  descripcion:
+    "La Motomel S2 150 es una moto utilitaria muy elegida por su resistencia y bajo costo operativo en el uso diario. Cuenta con motor de 150 cc, buena autonomia y una mecanica simple que facilita el mantenimiento y las reparaciones.",
+  precio: null,
+  imagen: imagenes.motomelS2,
+  stock: "fisico",
+},
+{
+  id: 4,
+  codigo: "MO1004",
+  nombre: "Honda CG 150 Titan",
+  descripcion:
+    "La Honda CG 150 Titan es reconocida por su durabilidad, economia y excelente reputacion en el mercado argentino. Su motor confiable y su comodidad de manejo la convierten en una moto ideal tanto para trabajo como para uso cotidiano.",
+  precio: null,
+  imagen: imagenes.hondaCg,
+  stock: "fisico",
+},
+{
+  id: 5,
+  codigo: "MO1005",
+  nombre: "Yamaha YBR 125",
+  descripcion:
+    "La Yamaha YBR 125 es una moto urbana confiable y de manejo suave, pensada para quienes buscan economia y confort en ciudad. Se destaca por su bajo consumo, calidad de construccion y excelente vida util del motor.",
+  precio: null,
+  imagen: imagenes.yamahaYbr,
+  stock: "fisico",
+},
+{
+  id: 6,
+  codigo: "MO1006",
+  nombre: "Yamaha FZ 150",
+  descripcion:
+    "La Yamaha FZ 150 ofrece un diseño moderno tipo naked junto con una conduccion comoda y estable para uso urbano. Su motor de 150 cc brinda buena respuesta, mientras que su estetica deportiva y equipamiento la hacen muy popular entre jovenes usuarios.",
+  precio: null,
+  imagen: imagenes.yamahaFz,
+  stock: "fisico",
+},
+{
+  id: 7,
+  codigo: "MO1007",
+  nombre: "Honda XR 150 L",
+  descripcion:
+    "La Honda XR 150L es una moto on/off diseñada para adaptarse tanto a calles urbanas como a caminos rurales y terrenos irregulares. Su suspension elevada, resistencia mecanica y posicion de manejo confortable la convierten en una excelente opcion multiproposito.",
+  precio: null,
+  imagen: imagenes.hondaXr,
+  stock: "fisico",
+},
+{
+  id: 8,
+  codigo: "MO1008",
+  nombre: "Bajaj Boxer 150",
+  descripcion:
+    "La Bajaj Boxer 150 fue desarrollada para trabajo intensivo y uso diario en condiciones exigentes. Se destaca por su robustez, gran capacidad de carga, bajo consumo y una mecanica simple orientada a la durabilidad.",
+  precio: null,
+  imagen: imagenes.boxer,
+  stock: "fisico",
+},
+{
+  id: 9,
+  codigo: "MO1009",
+  nombre: "Zanella ZB 110",
+  descripcion:
+    "La Zanella ZB 110 es una moto economica y practica, ideal para desplazamientos urbanos y uso diario. Su bajo consumo de combustible y mantenimiento accesible la convierten en una de las opciones mas elegidas dentro del segmento 110.",
+  precio: null,
+  imagen: imagenes.zanellaZb,
+  stock: "fisico",
+},
+{
+  id: 10,
+  codigo: "MO1010",
+  nombre: "Gilera Smash 110",
+  descripcion:
+    "La Gilera Smash 110 es una de las motos mas utilizadas para delivery y movilidad urbana gracias a su confiabilidad y economia. Su transmision semiautomatica facilita el manejo y permite una conduccion sencilla para todo tipo de usuarios.",
+  precio: null,
+  imagen: imagenes.gilera,
+  stock: "fisico",
+},
+{
+  id: 11,
+  codigo: "MO1011",
+  nombre: "Corven Energy 110",
+  descripcion:
+    "La Corven Energy 110 ofrece una solucion accesible y eficiente para el transporte diario en ciudad. Cuenta con un motor confiable, bajo costo de mantenimiento y una estructura liviana que facilita la conduccion en el trafico urbano.",
+  precio: null,
+  imagen: imagenes.corven,
+  stock: "fisico",
+},
+{
+  id: 12,
+  codigo: "MO1012",
+  nombre: "Honda CB 190 R",
+  descripcion:
+    "La Honda CB 190R es una naked deportiva con diseño agresivo, buena aceleracion y excelente maniobrabilidad urbana. Equipa inyeccion electronica y frenos a disco, ofreciendo una experiencia de manejo moderna y segura.",
+  precio: null,
+  imagen: imagenes.hondaCb,
+  stock: "fisico",
+},
+{
+  id: 13,
+  codigo: "MO1013",
+  nombre: "Honda Tornado XR 250",
+  descripcion:
+    "La Honda Tornado XR 250 es una de las motos enduro mas reconocidas del mercado argentino por su potencia y resistencia. Su motor de 250 cc y suspensiones de largo recorrido la hacen ideal para aventuras off-road y viajes en caminos exigentes.",
+  precio: null,
+  imagen: imagenes.tornado,
+  stock: "fisico",
+},
+{
+  id: 14,
+  codigo: "MO1014",
+  nombre: "Yamaha MT-03",
+  descripcion:
+    "La Yamaha MT-03 es una naked deportiva de media cilindrada con gran aceleracion, diseño agresivo y excelente tecnologia. Equipada con motor bicilindrico y frenos ABS, ofrece una experiencia de manejo dinamica tanto en ciudad como en ruta.",
+  precio: null,
+  imagen: imagenes.mt03,
+  stock: "fisico",
+},
+{
+  id: 15,
+  codigo: "MO1015",
+  nombre: "Bajaj Dominar 400",
+  descripcion:
+    "La Bajaj Dominar 400 fue diseñada para turismo y viajes largos, combinando potencia, estabilidad y confort de manejo. Su motor de 400 cc, iluminacion full LED y equipamiento moderno la convierten en una de las touring mas completas de su categoria.",
+  precio: null,
+  imagen: imagenes.dominar,
+  stock: "fisico",
+},
 {
   id: 16,
   codigo: "MO0808",
@@ -733,8 +802,8 @@ export const productos: Producto[] = [
     codigo: "MO0926",
     nombre: "Honda XR 300 L Tornado Rally Rojo",
     descripcion:
-      "La Honda XR 300L Tornado Rally es una trail de 293 cc orientada al uso mixto y a caminos exigentes. Su motor monocilindrico, chasis preparado para doble proposito y posicion de manejo alta la hacen adecuada para aventura y recorridos rurales. La Honda XR 300 L está equipada con tecnología de última generación. El sistema de inyección de combustible avanzado optimiza el consumo y reduce las emisiones, mientras que el sistema de frenos ABS de doble canal garantiza una seguridad adicional en cada frenada",
-    imagen: imagenes.tornado,
+      "La Honda XR 300L Tornado Rally es una trail de 293 cc orientada al uso mixto y a caminos exigentes. Su motor monocilindrico, chasis preparado para doble proposito y posicion de manejo alta la hacen adecuada para aventura y recorridos rurales. Equipada con tecnología de última generación. El sistema de inyección de combustible avanzado optimiza el consumo y reduce las emisiones, mientras que el sistema de frenos ABS de doble canal garantiza una seguridad adicional en cada frenada",
+    imagen: imagenes.tornadoRally,
     ...stockVirtual,
   },
   {
@@ -824,7 +893,7 @@ export const productos: Producto[] = [
     nombre: "Honda CB 125 F Twister negro",
     descripcion:
       "La Honda CB125F Twister es una street de 124 cc orientada a la movilidad urbana con bajo consumo y manejo facil. Su caja de 5 velocidades, freno delantero a disco y postura comoda la hacen una buena opcion para uso diario.",
-    imagen: imagenes.hondaCb,
+    imagen: imagenes.hondaCb125,
     ...stockVirtual,
   },
   {
@@ -842,7 +911,7 @@ export const productos: Producto[] = [
     nombre: "Honda CB 300 F Twister gris",
     descripcion:
       "La Honda CB300F Twister combina un monocilindrico de 294 cc con una ciclística agil para uso diario y salidas a ruta. Su equipamiento moderno, frenos a disco y respuesta contundente la ubican como una naked versatil de media cilindrada.",
-    imagen: imagenes.hondaCb,
+    imagen: imagenes.hondaCbtwisterGris,
     ...stockVirtual,
   },
   {
@@ -850,8 +919,8 @@ export const productos: Producto[] = [
     codigo: "MO0833",
     nombre: "Honda GLH 150 rojo",
     descripcion:
-      "La Honda GLH150 es una moto urbana de 149,2 cc con inyeccion electronica, pensada para eficiencia y confiabilidad. Su caja de 5 velocidades, postura comoda y bajo consumo la hacen muy apta para trabajo y traslados cotidianos.",
-    imagen: imagenes.hondaCg,
+      "La Honda GLH150 es una moto urbana de 149,2 cc con inyeccion electrónica, pensada para eficiencia y confiabilidad. Su caja de 5 velocidades, postura comoda y bajo consumo la hacen muy apta para trabajo y traslados cotidianos.",
+    imagen: imagenes.hondaGlh,
     ...stockVirtual,
   },
   {
