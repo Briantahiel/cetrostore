@@ -60,7 +60,7 @@ const imagenes = {
     "/motos/keller-eco-crono-110.webp",
   ],
   corven: [
-    "/motos/honda-wave-roja.jpg",
+    "/motos/corven-energy.webp",
   ],
   zanellaZb: [
     "/motos/zanella-zb.webp"
@@ -261,9 +261,7 @@ const fichasTecnicas = {
     ["Freno", "A disco"],
     ["Llantas", "Aleación"],
   ]),
-  zanellaZb: ficha([
 
-  ]),
   corvenEnergy: ficha([
     ["Tipo", "Monocilindrico, 4 tiempos, refrigerado por aire"],
     ["Cilindrada", "107 cc"],
@@ -361,7 +359,7 @@ type FichaTecnicaKey = keyof typeof fichasTecnicas;
 
 const fichaTecnicaPorCodigo: Partial<Record<string, FichaTecnicaKey>> = {
   MO1001: "kellerEcoCrono110",
-  MO1002: "rouser125",
+  MO1002: "corvenEnergy",
   MO1003: "motomelS2",
   MO1004: "hondaCgGlh150",
   MO1005: "yamahaYbr125",
@@ -534,7 +532,7 @@ export const productos: Producto[] = [
   descripcion:
     "La Corven Energy 110 es una moto económica y confiable, perfecta para la movilidad urbana diaria. Su motor de 110 cc ofrece un rendimiento eficiente, mientras que su diseño moderno y bajo costo de mantenimiento la convierten en una opción popular para quienes buscan una moto práctica y accesible.",
   precio: null,
-  imagen: imagenes.rouser,
+  imagen: imagenes.corven,
   stock: "fisico",
 },
 {

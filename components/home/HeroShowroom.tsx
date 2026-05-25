@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getProductoImagenPrincipal, productos } from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
-const featuredMoto = productos[1] ?? productos[0];
+const featuredMoto = productos[15] ?? productos[0];
 
 export default function HeroShowroom() {
   return (
