@@ -10,9 +10,9 @@ export const novedades = [
   {
     id: 2,
     etiqueta: "Bancos",
-    titulo: "Cuotas sin interes con bancos seleccionados",
+    titulo: "Cuotas sin interés con bancos seleccionados",
     descripcion:
-      "Opciones sujetas a eventos comerciales, tarjetas adheridas y aprobación.",
+      "Opciones sujetas a eventos comerciales y tarjetas adheridas",
     detalle: "La disponibilidad puede cambiar según eventos comerciales y promociones bancarias.",
   },
   {

@@ -15,9 +15,8 @@ export default function HeroShowroom() {
           <h1 className="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
             Elegí tu próxima moto con entrega y financiación claras
           </h1>
-          <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-slate-300">
-            Modelos urbanos, todo terreno y ruta con asesoramiento directo,
-            disponibilidad confirmada y atención personalizada.
+          <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-cyan-300">
+            Modelos urbanos, todo terreno y ruta con asesoramiento directo y atención personalizada.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
@@ -36,9 +35,9 @@ export default function HeroShowroom() {
               Consultar ahora
             </a>
           </div>
-
+{/* 
           <div className="mt-8 flex flex-wrap gap-3 text-slate-950">
-            {["Motos 0 km", "Financiacion", "Entrega inmediata"].map(
+            {["Motos 0 km", "Financiación", "Entrega inmediata"].map(
               (item) => (
                 <span
                   key={item}
@@ -48,7 +47,7 @@ export default function HeroShowroom() {
                 </span>
               ),
             )}
-          </div>
+          </div> */}
         </div>
 
         <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white text-slate-950 shadow-2xl shadow-slate-950/20">

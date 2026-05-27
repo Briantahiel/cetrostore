@@ -26,10 +26,10 @@ export default function SalesHighlights() {
               Todo listo para decidir mejor
             </h2>
           </div>
-          <p className="max-w-md text-sm font-medium leading-6 text-slate-600">
+          {/* <p className="max-w-md text-sm font-medium leading-6 text-slate-600">
             La idea es que sepas el precio, formas de pago y la disponibilidad antes
             de avanzar.
-          </p>
+          </p> */}
         </div>
 
         <div className="flex flex-wrap gap-4">
