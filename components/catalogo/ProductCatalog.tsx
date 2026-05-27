@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import ProductCard from "@/components/catalogo/ProductCard";
-import { getCilindradaProducto, productos } from "@/data/productos";
+import { getCilindradaProducto, type Producto } from "@/data/productos";
 
 const normalizeSearch = (value: string) =>
   value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -53,7 +53,11 @@ const getCatalogStateFromSearch = (searchParams: string) => {
   };
 };
 
-export default function ProductCatalog() {
+type Props = {
+  productos: Producto[];
+};
+
+export default function ProductCatalog({ productos }: Props) {
   const catalogSearchParams = useSyncExternalStore(
     subscribeToCatalogUrl,
     getCatalogSnapshot,
@@ -77,7 +81,7 @@ export default function ProductCatalog() {
     () =>
       Array.from(new Set(productos.map((producto) => getBrand(producto.nombre))))
         .sort((a, b) => a.localeCompare(b)),
-    [],
+    [productos],
   );
 
   const selectedDisplacement = cilindradaRanges.find(
@@ -110,7 +114,7 @@ export default function ProductCatalog() {
 
       return brandMatches && searchMatches && displacementMatches;
     });
-  }, [search, selectedBrand, selectedDisplacement]);
+  }, [productos, search, selectedBrand, selectedDisplacement]);
 
   const sortedProducts = useMemo(() => {
     const products = [...filteredProducts];

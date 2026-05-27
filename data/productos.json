@@ -1,0 +1,656 @@
+[
+  {
+    "id": 1,
+    "codigo": "MO0808",
+    "nombre": "Honda Wave 110 S New rojo",
+    "descripcion": "La Honda Wave 110 S New mantiene el reconocido equilibrio entre economia, confiabilidad y practicidad para uso urbano diario. Esta version incorpora dise?o actualizado y excelente autonomia, siendo ideal para quienes buscan una moto agil y de bajo mantenimiento.",
+    "imagen": [
+      "/motos/honda-wave-roja.jpg",
+      "/motos/honda-wave-blanca.jpg",
+      "/motos/honda-wave-negra.jpg",
+      "/motos/honda-wave-gris.jpg"
+    ],
+    "variantes": [
+      {
+        "codigo": "MO0808",
+        "nombre": "Honda Wave 110 S New roja",
+        "imagen": "/motos/honda-wave-roja.jpg",
+        "color": "Rojo"
+      },
+      {
+        "codigo": "MO0809",
+        "nombre": "Honda Wave 110 S New blanco",
+        "imagen": "/motos/honda-wave-blanca.jpg",
+        "color": "Blanco"
+      },
+      {
+        "codigo": "MO0810",
+        "nombre": "Honda Wave 110 S New negra",
+        "imagen": "/motos/honda-wave-negra.jpg",
+        "color": "Negro"
+      },
+      {
+        "codigo": "MO0811",
+        "nombre": "Honda Wave 110 S New gris",
+        "imagen": "/motos/honda-wave-gris.jpg",
+        "color": "Gris"
+      }
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 2,
+    "codigo": "MO0805",
+    "nombre": "Honda XR 150 L rojo",
+    "descripcion": "La Honda XR 150L es una moto doble proposito preparada para circular comodamente tanto en ciudad como en caminos de tierra. Su posici?n elevada, suspensiones resistentes y mec?nica confiable la convierten en una opci?n muy valorada para trabajo y aventura.",
+    "imagen": [
+      "/motos/cetrogar-honda-xr150.jpg",
+      "/motos/honda-xr-150-blanca.webp"
+    ],
+    "variantes": [
+      {
+        "codigo": "MO0805",
+        "nombre": "Honda XR 150 L rojo",
+        "imagen": "/motos/cetrogar-honda-xr150.jpg",
+        "color": "Rojo"
+      },
+      {
+        "codigo": "MO0806",
+        "nombre": "Honda XR 150 L blanco",
+        "imagen": "/motos/honda-xr-150-blanca.webp",
+        "color": "Blanco"
+      }
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 3,
+    "codigo": "MO0819",
+    "nombre": "Honda XR 190 L beige",
+    "descripcion": "La Honda XR 190L ofrece mayor potencia y equipamiento dentro de la linea on/off de Honda. Su motor de 190 cc, buena altura al suelo y posicion de manejo confortable permiten un desempe?o eficiente tanto en ciudad como fuera del asfalto.",
+    "imagen": [
+      "/motos/honda-xr-190-beige.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 4,
+    "codigo": "MO0830",
+    "nombre": "Honda XR 300 L rojo",
+    "descripcion": "La Honda XR 300L esta orientada a usuarios que buscan una moto de aventura con mayor potencia y capacidad off-road. Su motor de mayor cilindrada y suspensiones reforzadas brindan estabilidad y rendimiento en terrenos exigentes.",
+    "imagen": [
+      "/motos/honda-tornado-300.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 5,
+    "codigo": "MO0839",
+    "nombre": "Yamaha XTZ 250 ABS Azul",
+    "descripcion": "La Yamaha XTZ 250 ABS es una doble proposito con motor de 249 cc, inyeccion electronica y arranque electrico. Su suspension de largo recorrido, frenos con ABS y postura alta la hacen apta para ciudad, ripio y caminos de uso mixto.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 6,
+    "codigo": "MO0841",
+    "nombre": "Yamaha XTZ 125 E Azul",
+    "descripcion": "La Yamaha XTZ 125 E es una on/off liviana con motor de 124 cc, caja de 5 velocidades y refrigeracion por aire. Su bajo peso, despeje y postura erguida la vuelven practica para aprender, circular en ciudad y entrar en caminos de tierra.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 7,
+    "codigo": "MO0842",
+    "nombre": "Yamaha XTZ 125 E Blanco",
+    "descripcion": "La Yamaha XTZ 125 E combina una mecanica simple de 124 cc con suspensiones pensadas para uso mixto. Es una moto confiable y facil de manejar, adecuada para traslados diarios y salidas por calles en mal estado o ripio.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 8,
+    "codigo": "MO0843",
+    "nombre": "Yamaha XTZ 125 E Negro",
+    "descripcion": "La Yamaha XTZ 125 E es una alternativa de baja cilindrada para quienes buscan una moto alta, liviana y versatil. Su motor refrigerado por aire y transmision de 5 marchas priorizan economia, control y mantenimiento sencillo.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 9,
+    "codigo": "MO0873",
+    "nombre": "Yamaha XTZ 250 ABS negro",
+    "descripcion": "La Yamaha XTZ 250 ABS utiliza un monocilindrico de 249 cc con inyeccion electronica, reconocido por su entrega progresiva. La version con ABS suma seguridad de frenado y conserva la versatilidad para transitar asfalto, tierra y recorridos largos.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 10,
+    "codigo": "MO0891",
+    "nombre": "Yamaha XTZ 250 ABS beige",
+    "descripcion": "La Yamaha XTZ 250 ABS esta pensada para quienes necesitan una doble proposito confiable con buena autonomia y respuesta. Su configuracion de 249 cc, suspensiones altas y frenos asistidos favorecen el uso diario y las escapadas fuera del asfalto.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 11,
+    "codigo": "MO0926",
+    "nombre": "Honda XR 300 L Tornado Rally Rojo",
+    "descripcion": "La Honda XR 300L Tornado Rally es una trail de 293 cc orientada al uso mixto y a caminos exigentes. Su motor monocilindrico, chasis preparado para doble proposito y posicion de manejo alta la hacen adecuada para aventura y recorridos rurales. Equipada con tecnolog?a de ?ltima generaci?n. El sistema de inyecci?n de combustible avanzado optimiza el consumo y reduce las emisiones, mientras que el sistema de frenos ABS de doble canal garantiza una seguridad adicional en cada frenada",
+    "imagen": [
+      "/motos/honda-tornado-300-rally.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 12,
+    "codigo": "MO0846",
+    "nombre": "Yamaha Fascino 125 FI Negra",
+    "descripcion": "La Yamaha Fascino 125 FI es un scooter urbano con motor de 125 cc, inyeccion electronica y transmision automatica CVT. Su enfoque esta en la comodidad, bajo consumo y manejo simple para desplazamientos diarios sin cambios manuales.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 13,
+    "codigo": "MO0847",
+    "nombre": "Yamaha Fascino 125 FI Cyan",
+    "descripcion": "La Yamaha Fascino 125 FI ofrece una conduccion ligera y practica gracias a su transmision automatica y motor eficiente de 125 cc. Su diseno tipo scooter facilita el uso urbano, con buena maniobrabilidad y asiento comodo para trayectos cotidianos.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 14,
+    "codigo": "MO0848",
+    "nombre": "Yamaha Ray ZR 125 FI Rojo",
+    "descripcion": "La Yamaha Ray ZR 125 FI es un scooter de estilo deportivo con motor de 125 cc, inyeccion electronica y transmision automatica. Esta pensado para ciudad, con manejo agil, bajo peso y practicidad para usuarios que buscan movilidad sencilla.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 15,
+    "codigo": "MO0849",
+    "nombre": "Yamaha Ray ZR 125 FI Negro",
+    "descripcion": "La Yamaha Ray ZR 125 FI combina estetica deportiva con economia de combustible y conduccion automatica. Su motor de 125 cc y dimensiones compactas lo hacen comodo para transito urbano, estacionamiento y recorridos frecuentes.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 16,
+    "codigo": "MO0850",
+    "nombre": "Yamaha Ray ZR 125 FI Azul",
+    "descripcion": "La Yamaha Ray ZR 125 FI es un scooter urbano de 125 cc con respuesta progresiva y manejo muy simple. La transmision CVT elimina los cambios manuales y favorece una conduccion relajada en calles congestionadas.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 17,
+    "codigo": "MO0884",
+    "nombre": "Kymco Micare 125 - Black",
+    "descripcion": "La Kymco Micare 125 es un scooter urbano de 125 cc con transmision automatica, ideal para moverse con comodidad en ciudad. Su formato compacto, piso plano y proteccion frontal priorizan practicidad, bajo consumo y facilidad de uso.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 18,
+    "codigo": "MO0885",
+    "nombre": "Kymco Micare 125 - Ruby red",
+    "descripcion": "La Kymco Micare 125 apunta a usuarios que quieren un scooter sencillo, economico y facil de estacionar. Su motor de 125 cc y transmision CVT permiten circular sin cambios manuales, con una postura comoda para trayectos urbanos.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 19,
+    "codigo": "MO0886",
+    "nombre": "Kymco Micare 125 - Silver Blue",
+    "descripcion": "La Kymco Micare 125 es una opcion practica para movilidad diaria, con mecanica de 125 cc y conduccion automatica. Su configuracion de scooter favorece el uso cotidiano, la comodidad del conductor y los recorridos cortos dentro de la ciudad.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 20,
+    "codigo": "MO0902",
+    "nombre": "Yamaha Fascino 125 FI Rojo",
+    "descripcion": "La Yamaha Fascino 125 FI es un scooter eficiente, liviano y facil de conducir gracias a su transmision automatica. Su motor con inyeccion electronica ayuda a reducir consumo y mejora la respuesta en uso urbano.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 21,
+    "codigo": "MO0814",
+    "nombre": "Honda CB 125 F Twister negro",
+    "descripcion": "La Honda CB125F Twister es una street de 124 cc orientada a la movilidad urbana con bajo consumo y manejo facil. Su caja de 5 velocidades, freno delantero a disco y postura comoda la hacen una buena opcion para uso diario.",
+    "imagen": [
+      "/motos/honda-cb-125-negra.png"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 22,
+    "codigo": "MO0820",
+    "nombre": "Honda CB 300 F Twister rojo",
+    "descripcion": "La Honda CB300F Twister combina un monocilindrico de 294 cc con una cicl?stica agil para uso diario y salidas a ruta. Su equipamiento moderno, frenos a disco y respuesta contundente la ubican como una naked versatil de media cilindrada.",
+    "imagen": [
+      "/motos/honda-cb-300-twister.jpg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "variantes": [
+      {
+        "codigo": "MO0820",
+        "nombre": "Honda CB 300 F Twister rojo",
+        "imagen": "/motos/honda-cb-300-twister.jpg",
+        "color": "Rojo"
+      },
+      {
+        "codigo": "MO0822",
+        "nombre": "Honda CB 300 F Twister gris",
+        "imagen": "/motos/honda-cb-300-twister-gris.webp",
+        "color": "Gris"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "codigo": "MO0822",
+    "nombre": "Honda CB 300 F Twister gris",
+    "descripcion": "La Honda CB300F Twister combina un monocilindrico de 294 cc con una cicl?stica agil para uso diario y salidas a ruta. Su equipamiento moderno, frenos a disco y respuesta contundente la ubican como una naked versatil de media cilindrada.",
+    "imagen": [
+      "/motos/honda-cb-300-twister-gris.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 24,
+    "codigo": "MO0833",
+    "nombre": "Honda GLH 150 rojo",
+    "descripcion": "La Honda GLH150 es una moto urbana de 149,2 cc con inyeccion electr?nica, pensada para eficiencia y confiabilidad. Su caja de 5 velocidades, postura comoda y bajo consumo la hacen muy apta para trabajo y traslados cotidianos.",
+    "imagen": [
+      "/motos/honda-glh-roja.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 25,
+    "codigo": "MO0851",
+    "nombre": "Yamaha FZS FI V4.0 ABS Negro",
+    "descripcion": "La Yamaha FZS FI V4.0 ABS es una naked urbana con motor de 149 cc con inyeccion electronica y freno delantero con ABS. Se destaca por su bajo consumo, ergonomia comoda y diseno moderno para quienes buscan una 150 equipada.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 26,
+    "codigo": "MO0852",
+    "nombre": "Yamaha FZS FI V4.0 ABS Azul",
+    "descripcion": "La Yamaha FZS FI V4.0 ABS mantiene la base eficiente de la familia FZ con inyeccion, buena estabilidad y postura relajada. El ABS delantero suma seguridad en frenadas y la hace conveniente para uso urbano intensivo.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 27,
+    "codigo": "MO0853",
+    "nombre": "Yamaha FZS FI V4.0 ABS Azul LL Azul",
+    "descripcion": "La Yamaha FZS FI V4.0 ABS es una street de 150 cc pensada para economia, confort y respuesta suave en ciudad. Su estetica naked, inyeccion electronica y freno con ABS la vuelven una alternativa moderna dentro del segmento.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 28,
+    "codigo": "MO0854",
+    "nombre": "Yamaha FZS FI V4.0 ABS Negra LL Dorada",
+    "descripcion": "La Yamaha FZS FI V4.0 ABS combina motor eficiente de 149 cc, ergonomia urbana y detalles deportivos de la linea FZ. La version con ABS delantero mejora el control de frenado y conserva el bajo consumo caracteristico del modelo.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 29,
+    "codigo": "MO0857",
+    "nombre": "Bajaj Rouser P 150 Black Red",
+    "descripcion": "La Bajaj Rouser P150 es una street de 150 cc con orientacion deportiva y una posicion de manejo comoda para ciudad. Su motor eficiente, caja de 5 velocidades y diseno moderno la hacen una evolucion practica dentro de la familia Rouser.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 30,
+    "codigo": "MO0858",
+    "nombre": "Bajaj Rouser P 150 Caribbean",
+    "descripcion": "La Bajaj Rouser P150 ofrece una combinacion de bajo consumo, buen torque urbano y estetica naked actual. Es una moto pensada para uso diario con prestaciones suficientes para traslados rapidos y una conduccion estable.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 31,
+    "codigo": "MO0859",
+    "nombre": "Bajaj Rouser P 150 Ebony Black",
+    "descripcion": "La Bajaj Rouser P150 pertenece al segmento street 150, con motor de 4 tiempos y caja de 5 marchas. Su enfoque esta en la eficiencia, el diseno deportivo y una respuesta equilibrada para ciudad y recorridos suburbanos.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 32,
+    "codigo": "MO0861",
+    "nombre": "Bajaj Rouser 125 LS Blanco",
+    "descripcion": "La Bajaj Rouser 125 LS utiliza un motor DTS-i de 124,4 cc que prioriza rendimiento y bajo consumo. Es una moto liviana y maniobrable, ideal para primera moto, trabajo diario y trayectos urbanos frecuentes.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 33,
+    "codigo": "MO0862",
+    "nombre": "Bajaj Rouser 125 LS Negro",
+    "descripcion": "La Bajaj Rouser 125 LS combina diseno deportivo con mecanica simple de 125 cc y caja de 5 velocidades. Su buena autonomia y respuesta suave la hacen una opcion confiable para ciudad y usuarios que buscan economia.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 34,
+    "codigo": "MO0866",
+    "nombre": "Bajaj Rouser NS 200 Pearl",
+    "descripcion": "La Bajaj Rouser NS 200 es una naked deportiva con motor de 199,5 cc, caja de 6 velocidades y buena respuesta en media cilindrada. Su chasis perimetral, frenos a disco y postura agresiva la hacen apta para manejo urbano dinamico y ruta corta.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 35,
+    "codigo": "MO0870",
+    "nombre": "Bajaj Rouser NS 160 Pearl",
+    "descripcion": "La Bajaj Rouser NS 160 se ubica entre las street de baja y media cilindrada, con enfoque deportivo y buen rendimiento urbano. Su motor de 160 cc, postura naked y frenado a disco ofrecen una conduccion mas firme que una 125 tradicional.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 36,
+    "codigo": "MO0874",
+    "nombre": "Yamaha FZ25 BS Rojo",
+    "descripcion": "La Yamaha FZ25 es una naked de 249 cc con inyeccion electronica y motor SOHC refrigerado por aire y aceite segun version. Se destaca por su torque a bajas vueltas, postura comoda y facilidad para usarla tanto en ciudad como en ruta.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 37,
+    "codigo": "MO0901",
+    "nombre": "Yamaha FZ25 ABS Azul",
+    "descripcion": "La Yamaha FZ25 ABS agrega asistencia antibloqueo al frenado sobre una base de 249 cc confiable y de bajo mantenimiento. Es una naked equilibrada, con buena entrega de torque y una ergonomia apta para recorridos diarios o salidas de fin de semana.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 38,
+    "codigo": "MO0908",
+    "nombre": "Yamaha FZ25 AZUL",
+    "descripcion": "La Yamaha FZ25 ofrece un monocilindrico de 249 cc con respuesta elastica y consumo razonable para su cilindrada. Su diseno naked, asiento amplio y buena estabilidad la convierten en una moto versatil para ciudad y ruta.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 39,
+    "codigo": "MO0904",
+    "nombre": "Rouser P 150-Red",
+    "descripcion": "La Rouser P150 es una Bajaj de 150 cc orientada al uso urbano con estilo deportivo y mecanica eficiente. Su caja de 5 velocidades, bajo consumo y postura comoda la hacen adecuada para trabajo, estudio y traslados diarios.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 40,
+    "codigo": "MO0920",
+    "nombre": "Bajaj Boxer CT 100 ROJA",
+    "descripcion": "La Bajaj Boxer CT100 es una moto utilitaria de baja cilindrada enfocada en economia, robustez y mantenimiento simple. Su motor cercano a 100 cc, transmision de 4 velocidades y construccion resistente la hacen popular para trabajo diario.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 41,
+    "codigo": "MO0918",
+    "nombre": "Bajaj Boxer CT 100 Azul/Negro",
+    "descripcion": "La Bajaj Boxer CT100 prioriza bajo consumo y durabilidad por encima de prestaciones deportivas. Es una moto liviana y sencilla, adecuada para recorridos urbanos, tareas de reparto y usuarios que buscan costos operativos reducidos.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 42,
+    "codigo": "MO1001",
+    "nombre": "Keller Eco Crono 110",
+    "descripcion": "La Keller Eco Crono 110 es una cub urbana de bajo consumo, sencilla de mantener y practica para moverse todos los dias. Su mecanica 110 cc, arranque electrico y formato liviano la hacen una opcion accesible para trabajo, estudio y traslados cortos.",
+    "imagen": [
+      "/motos/keller-eco-crono-110.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 43,
+    "codigo": "MO1002",
+    "nombre": "Corven Energy 110",
+    "descripcion": "La Corven Energy 110 es una moto utilitaria pensada para uso diario, con mecanica simple, bajo consumo y mantenimiento economico. Es comoda para ciudad y recorridos frecuentes gracias a su peso contenido y manejo facil.",
+    "imagen": [
+      "/motos/corven-energy.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 44,
+    "codigo": "MO1003",
+    "nombre": "Motomel S2 150",
+    "descripcion": "La Motomel S2 150 es una street de 150 cc orientada a movilidad urbana y viajes cortos. Combina postura comoda, caja manual de 5 velocidades y una mecanica conocida para quienes buscan una moto practica y economica.",
+    "imagen": [
+      "/motos/motomel-s2.png",
+      "/motos/motomel-s2.jpg"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 45,
+    "codigo": "MO1004",
+    "nombre": "Honda GLH 150",
+    "descripcion": "La Honda GLH 150 es una moto urbana confiable, eficiente y comoda para uso intensivo. Su motor de 150 cc con inyeccion electronica, caja de 5 marchas y freno delantero a disco la hacen muy apta para trabajo y traslados diarios.",
+    "imagen": [
+      "/motos/honda-glh-roja.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 46,
+    "codigo": "MO1007",
+    "nombre": "Honda XR 150 L",
+    "descripcion": "La Honda XR 150 L es una doble proposito versatil, preparada para ciudad, caminos de tierra y recorridos de uso mixto. Su posicion alta de manejo, suspensiones resistentes y mecanica confiable la vuelven una opcion muy buscada.",
+    "imagen": [
+      "/motos/cetrogar-honda-xr150.jpg",
+      "/motos/honda-xr-150-blanca.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 47,
+    "codigo": "MO1009",
+    "nombre": "Zanella ZB 110",
+    "descripcion": "La Zanella ZB 110 es una cub liviana y economica, ideal para quienes necesitan movilidad simple en ciudad. Su formato practico, consumo bajo y mantenimiento sencillo la hacen conveniente para el uso cotidiano.",
+    "imagen": [
+      "/motos/zanella-zb.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 48,
+    "codigo": "MO1010",
+    "nombre": "Gilera Smash 110",
+    "descripcion": "La Gilera Smash 110 es una de las cub urbanas mas elegidas por su bajo costo de uso, facilidad de manejo y repuestos accesibles. Es una alternativa practica para trabajo, estudio y traslados diarios.",
+    "imagen": [
+      "/motos/gilera-smash-110.jpg"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 49,
+    "codigo": "MO1011",
+    "nombre": "Corven Energy 110 Base",
+    "descripcion": "La Corven Energy 110 Base mantiene una propuesta simple y economica para movilidad diaria. Su motor de 110 cc, bajo consumo y mantenimiento accesible la vuelven una opcion funcional para recorridos urbanos.",
+    "imagen": [
+      "/motos/corven-energy.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 50,
+    "codigo": "MO1012",
+    "nombre": "Honda CB 190 R",
+    "descripcion": "La Honda CB 190 R es una street de estilo deportivo con motor de 184 cc, inyeccion electronica y caja de 5 velocidades. Ofrece una conduccion agil para ciudad y buena respuesta para quienes buscan subir de cilindrada.",
+    "imagen": [
+      "/motos/cetrogar-honda-cb190.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 51,
+    "codigo": "MO1013",
+    "nombre": "Honda XR 300 L Tornado",
+    "descripcion": "La Honda XR 300 L Tornado es una trail de mayor cilindrada pensada para uso mixto, con buen despeje, suspensiones preparadas y respuesta solida en caminos exigentes. Es una moto orientada a aventura, trabajo rural y recorridos fuera del asfalto.",
+    "imagen": [
+      "/motos/honda-tornado-300.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 52,
+    "codigo": "MO1005",
+    "nombre": "Yamaha YBR 125",
+    "descripcion": "La Yamaha YBR 125 es una street urbana confiable, economica y facil de manejar. Su motor de 125 cc, caja de 5 velocidades y postura comoda la hacen una alternativa practica para traslados diarios y primera moto.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 53,
+    "codigo": "MO1006",
+    "nombre": "Yamaha FZ 150",
+    "descripcion": "La Yamaha FZ 150 es una naked urbana con buen equilibrio entre consumo, comodidad y respuesta. Su posicion de manejo relajada y su estetica deportiva la hacen atractiva para ciudad y recorridos frecuentes.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 54,
+    "codigo": "MO1008",
+    "nombre": "Bajaj Boxer 150",
+    "descripcion": "La Bajaj Boxer 150 es una moto utilitaria robusta, pensada para trabajo y uso diario. Su mecanica simple, bajo consumo y buena capacidad para recorridos intensivos la convierten en una opcion funcional y rendidora.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual"
+  }
+]

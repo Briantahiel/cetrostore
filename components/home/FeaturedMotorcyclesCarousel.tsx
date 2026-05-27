@@ -2,11 +2,15 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { getProductoImagenPrincipal, productos } from "@/data/productos";
+import { getProductoImagenPrincipal, type Producto } from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
-export default function FeaturedMotorcyclesCarousel() {
-  const featuredProducts = useMemo(() => productos.slice(0, 5), []);
+type Props = {
+  productos: Producto[];
+};
+
+export default function FeaturedMotorcyclesCarousel({ productos }: Props) {
+  const featuredProducts = useMemo(() => productos.slice(0, 5), [productos]);
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProduct = featuredProducts[activeIndex];
 

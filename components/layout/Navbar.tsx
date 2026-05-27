@@ -48,15 +48,6 @@ export default function Navbar() {
           >
             Catálogo
           </Link>
-          <a
-            href="https://wa.me/5493489696728"
-            target="_blank"
-            rel="noreferrer"
-            className="group relative border-green-700 border-2 inline-flex items-center justify-center overflow-hidden rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white shadow-xl shadow-gray-600/20 transition hover:-translate-y-0.5 sm:px-6"
-          >
-            <span className="absolute inset-0 bg-gradient-to-r from-green-400 via-green-500 to-green-700 opacity-90 " />
-            <span className="relative whitespace-nowrap">WhatsApp</span>
-          </a>
         </div>
       </nav>
     </header>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { WhatsAppLogo } from "@/components/layout/FloatingActions";
 
 const footerLinks = [
   { href: "/", label: "Inicio" },
@@ -34,9 +35,10 @@ export default function Footer() {
           href="https://wa.me/5493489696728"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex h-11 items-center justify-center rounded-lg bg-cyan-300 px-5 text-sm font-black text-slate-950 transition hover:bg-white"
+          aria-label="Consultar por WhatsApp"
+          className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white transition hover:bg-white hover:text-slate-950"
         >
-          WhatsApp
+          <WhatsAppLogo />
         </a>
       </div>
 

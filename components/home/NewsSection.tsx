@@ -1,6 +1,10 @@
-import { novedades } from "@/data/novedades";
+import type { Novedad } from "@/data/novedades";
 
-export default function NewsSection() {
+type Props = {
+  novedades: Novedad[];
+};
+
+export default function NewsSection({ novedades }: Props) {
   return (
     <section className="bg-white px-4 py-12 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-6xl">

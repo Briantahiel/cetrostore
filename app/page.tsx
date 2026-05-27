@@ -5,15 +5,18 @@ import HeroShowroom from "@/components/home/HeroShowroom";
 import NewsSection from "@/components/home/NewsSection";
 import PhotoSection from "@/components/home/PhotoSection";
 import SalesHighlights from "@/components/home/SalesHighlights";
+import { getNovedades, getProductos } from "@/data/catalog-store";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [productos, novedades] = await Promise.all([getProductos(), getNovedades()]);
+
   return (
     <main className="flex-1 bg-slate-50 text-slate-950">
       <HeroShowroom />
       <SalesHighlights />
-      <NewsSection />
+      <NewsSection novedades={novedades} />
       <CreditCheckSection />
-      <FeaturedMotorcyclesCarousel />
+      <FeaturedMotorcyclesCarousel productos={productos} />
       <FinancingFaq />
       <PhotoSection />
     </main>

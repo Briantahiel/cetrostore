@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import ProductDetail from "@/components/catalogo/ProductDetail";
 import BackButton from "@/components/ui/BackButton";
+import { getProductos } from "@/data/catalog-store";
 import { getFichaTecnicaProducto, productos } from "@/data/productos";
 
 type Props = {
@@ -21,7 +22,8 @@ export function generateStaticParams() {
 
 export default async function ProductPage({ params }: Props) {
   const { id } = await params;
-  const producto = productos.find((p) => p.id === Number(id));
+  const catalogProducts = await getProductos();
+  const producto = catalogProducts.find((p) => p.id === Number(id));
 
   if (!producto) {
     notFound();
