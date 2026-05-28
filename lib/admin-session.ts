@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import {
   adminSessionCookieName,
+  getBaseUrl,
   getAdminPath,
   verifyAdminSessionToken,
 } from "@/lib/admin-auth";
@@ -15,7 +16,9 @@ export const requireAdminSession = async () => {
   const session = await getAdminSession();
 
   if (!session) {
-    redirect(`/api/admin-auth/google?next=${encodeURIComponent(getAdminPath())}`);
+    redirect(
+      `${getBaseUrl()}/api/admin-auth/google?next=${encodeURIComponent(getAdminPath())}`,
+    );
   }
 
   return session;

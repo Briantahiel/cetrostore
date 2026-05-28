@@ -3,6 +3,7 @@ import {
   adminSessionCookieName,
   adminStateCookieName,
   createAdminSessionToken,
+  getBaseUrl,
   getAdminPath,
   getAllowedAdminEmails,
   hasAdminAuthConfig,
@@ -26,6 +27,7 @@ const getSafeNextPath = (value?: string) => {
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
+  const baseUrl = getBaseUrl(request.url);
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
   const stateCookie = url.searchParams.get("error")
@@ -51,7 +53,7 @@ export async function GET(request: Request) {
     });
   }
 
-  const redirectUri = new URL("/api/admin-auth/google/callback", url.origin);
+  const redirectUri = new URL("/api/admin-auth/google/callback", baseUrl);
   const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -88,7 +90,7 @@ export async function GET(request: Request) {
     name: userInfo.name,
     picture: userInfo.picture,
   });
-  const response = NextResponse.redirect(new URL(nextPath, url.origin));
+  const response = NextResponse.redirect(new URL(nextPath, baseUrl));
 
   response.cookies.delete(adminStateCookieName);
   response.cookies.set(adminSessionCookieName, sessionToken, {

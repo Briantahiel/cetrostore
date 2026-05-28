@@ -33,9 +33,33 @@ const timingSafeEqual = (a: string, b: string) => {
   return result === 0;
 };
 
+// export const getBaseUrl = (requestUrl?: string) => {
+//   const configuredBaseUrl = process.env.BASE_URL?.trim();
+//   const vercelUrl = process.env.VERCEL_URL?.trim();
+
+//   if (configuredBaseUrl) return configuredBaseUrl.replace(/\/+$/, "");
+//   if (vercelUrl) return `https://${vercelUrl.replace(/\/+$/, "")}`;
+//   if (requestUrl) return new URL(requestUrl).origin;
+
+//   return "http://localhost:3000";
+// };
+export const getBaseUrl = (requestUrl?: string) => {
+  const configuredBaseUrl = process.env.BASE_URL?.trim();
+
+  if (configuredBaseUrl) {
+    return configuredBaseUrl.replace(/\/+$/, "");
+  }
+
+  if (process.env.NODE_ENV === "development") {
+    return "http://localhost:3000";
+  }
+
+  // fallback seguro en producción (NO usar VERCEL_URL para OAuth)
+  return "https://cetrostore.vercel.app";
+};
+
 const getSessionSecret = () =>
   process.env.ADMIN_SESSION_SECRET ??
-  process.env.GOOGLE_CLIENT_SECRET ??
   (process.env.NODE_ENV === "development" ? "dev-cetromotos-admin-session" : "");
 
 const getKey = async () =>
@@ -70,7 +94,8 @@ export const hasAdminAuthConfig = () =>
     process.env.GOOGLE_CLIENT_ID &&
       process.env.GOOGLE_CLIENT_SECRET &&
       getAllowedAdminEmails().length > 0 &&
-      getSessionSecret(),
+      getSessionSecret() &&
+      (process.env.NODE_ENV !== "production" || getBaseUrl()),
   );
 
 export const createRandomToken = () => {

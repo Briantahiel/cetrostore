@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import {
   adminStateCookieName,
   createRandomToken,
+  getBaseUrl,
   getAdminPath,
   hasAdminAuthConfig,
 } from "@/lib/admin-auth";
@@ -15,18 +16,19 @@ const getSafeNextPath = (value: string | null) => {
 };
 
 export async function GET(request: Request) {
+  const baseUrl = getBaseUrl(request.url);
   const url = new URL(request.url);
 
   if (!hasAdminAuthConfig()) {
     return new Response(
-      "Falta configurar GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET y ADMIN_ALLOWED_EMAIL en el entorno.",
+      "Falta configurar GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, ADMIN_ALLOWED_EMAIL, ADMIN_SESSION_SECRET o BASE_URL en el entorno.",
       { status: 500 },
     );
   }
 
   const nextPath = getSafeNextPath(url.searchParams.get("next"));
   const state = createRandomToken();
-  const redirectUri = new URL("/api/admin-auth/google/callback", url.origin);
+  const redirectUri = new URL("/api/admin-auth/google/callback", baseUrl);
   const authUrl = new URL(googleAuthUrl);
 
   authUrl.searchParams.set("client_id", process.env.GOOGLE_CLIENT_ID ?? "");
