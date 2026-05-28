@@ -45,17 +45,17 @@ const timingSafeEqual = (a: string, b: string) => {
 // };
 export const getBaseUrl = (requestUrl?: string) => {
   const configuredBaseUrl = process.env.BASE_URL?.trim();
+  const vercelUrl = process.env.VERCEL_URL?.trim();
 
   if (configuredBaseUrl) {
     return configuredBaseUrl.replace(/\/+$/, "");
   }
 
-  if (process.env.NODE_ENV === "development") {
-    return "http://localhost:3000";
-  }
+  if (vercelUrl) return `https://${vercelUrl.replace(/\/+$/, "")}`;
+  if (requestUrl) return new URL(requestUrl).origin;
 
   // fallback seguro en producción (NO usar VERCEL_URL para OAuth)
-  return "https://cetrostore.vercel.app";
+  return "http://localhost:3000";
 };
 
 const getSessionSecret = () =>
