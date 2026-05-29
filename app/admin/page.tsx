@@ -1,3 +1,5 @@
+import { promises as fs } from "node:fs";
+import path from "node:path";
 import Link from "next/link";
 import {
   deleteNovedadAction,
@@ -6,17 +8,19 @@ import {
   saveProductoAction,
 } from "@/app/admin/actions";
 import DeleteButton from "@/components/admin/DeleteButton";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 import { getFichaTecnicaProducto } from "@/data/productos";
 import { getNovedades, getProductos } from "@/data/catalog-store";
 import { getAdminPath } from "@/lib/admin-auth";
 import { requireAdminSession } from "@/lib/admin-session";
 import type { Novedad } from "@/data/novedades";
-import type { Producto } from "@/data/productos";
+import type { Producto, ProductoVariante } from "@/data/productos";
 
 type Props = {
   searchParams: Promise<{
     tab?: string;
     moto?: string;
+    variant?: string;
     novedad?: string;
   }>;
 };
@@ -28,31 +32,132 @@ const sectionClassName = "rounded-lg border border-slate-200 bg-white p-5 shadow
 
 const jsonText = (value: unknown) => JSON.stringify(value ?? [], null, 2);
 
-function ProductForm({ producto }: { producto?: Producto }) {
+const getGalleryImages = async () => {
+  const motosDirectory = path.join(process.cwd(), "public", "motos");
+
+  try {
+    const files = await fs.readdir(motosDirectory);
+
+    return files
+      .filter((file) => /\.(?:avif|gif|jpe?g|png|webp)$/i.test(file))
+      .sort((a, b) => a.localeCompare(b))
+      .map((file) => `/motos/${file}`);
+  } catch {
+    return [];
+  }
+};
+
+function ImageGalleryField({
+  galleryImages,
+  selectedImages,
+  single = false,
+}: {
+  galleryImages: string[];
+  selectedImages: string[];
+  single?: boolean;
+}) {
+  const inputType = single ? "radio" : "checkbox";
+  const inputName = single ? "imagenSeleccionada" : "imagenes";
+
+  return (
+    <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <p className="text-sm font-black text-slate-800">Galeria de imagenes</p>
+        <span className="text-xs font-black uppercase tracking-wide text-slate-400">
+          {single ? "Elegir una" : "Elegir varias"}
+        </span>
+      </div>
+      <div className="grid max-h-72 grid-cols-2 gap-3 overflow-auto pr-1 sm:grid-cols-3">
+        {galleryImages.map((image) => (
+          <label
+            key={image}
+            className="group grid cursor-pointer gap-2 rounded-lg border border-slate-200 bg-white p-2 text-xs font-black text-slate-600 transition hover:border-blue-300 hover:bg-blue-50"
+          >
+            <input
+              type={inputType}
+              name={inputName}
+              value={image}
+              defaultChecked={selectedImages.includes(image)}
+              className="sr-only peer"
+            />
+            <ImageWithSkeleton
+              src={image}
+              alt={image}
+              className="flex h-24 items-center justify-center rounded-md bg-slate-100"
+              imageClassName="block"
+              imageStyle={{
+                height: "100%",
+                maxWidth: "100%",
+                objectFit: "contain",
+                width: "auto",
+              }}
+            />
+            <span className="break-all rounded-md px-2 py-1 peer-checked:bg-blue-600 peer-checked:text-white">
+              {image.replace("/motos/", "")}
+            </span>
+          </label>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ProductForm({
+  producto,
+  selectedVariant,
+  galleryImages,
+}: {
+  producto?: Producto;
+  selectedVariant?: ProductoVariante;
+  galleryImages: string[];
+}) {
   const fichaTecnica = producto?.fichaTecnica ?? (producto ? getFichaTecnicaProducto(producto) : []);
   const adminPath = getAdminPath();
+  const isEditingVariant = Boolean(producto && selectedVariant);
+  const selectedImages = selectedVariant
+    ? [selectedVariant.imagen]
+    : (producto?.imagen ?? []);
+  const displayProducto = selectedVariant
+    ? {
+        ...producto,
+        codigo: selectedVariant.codigo,
+        nombre: selectedVariant.nombre,
+        imagen: [selectedVariant.imagen],
+      }
+    : producto;
 
   return (
     <form action={saveProductoAction} className={`${sectionClassName} grid gap-4`}>
       <input type="hidden" name="id" value={producto?.id ?? ""} />
+      <input type="hidden" name="variantCodigo" value={selectedVariant?.codigo ?? ""} />
       <div>
         <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
-          {producto ? `Editando moto #${producto.id}` : "Nueva moto"}
+          {isEditingVariant
+            ? `Editando variante ${selectedVariant?.codigo}`
+            : producto
+              ? `Editando moto #${producto.id}`
+              : "Nueva moto"}
         </p>
         <h2 className="mt-2 text-2xl font-black tracking-tight">
-          {producto ? producto.nombre : "Cargar moto"}
+          {displayProducto ? displayProducto.nombre : "Cargar moto"}
         </h2>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
         <label className={labelClassName}>
           Nombre
-          <input name="nombre" required defaultValue={producto?.nombre} className={fieldClassName} />
+          <input name="nombre" required defaultValue={displayProducto?.nombre} className={fieldClassName} />
         </label>
         <label className={labelClassName}>
           Codigo
-          <input name="codigo" defaultValue={producto?.codigo} className={fieldClassName} />
+          <input name="codigo" defaultValue={displayProducto?.codigo} className={fieldClassName} />
         </label>
+        {isEditingVariant ? (
+          <label className={labelClassName}>
+            Color
+            <input name="color" required defaultValue={selectedVariant?.color} className={fieldClassName} />
+          </label>
+        ) : null}
         <label className={labelClassName}>
           Precio
           <input
@@ -85,27 +190,34 @@ function ProductForm({ producto }: { producto?: Producto }) {
         />
       </label>
 
+      <ImageGalleryField
+        galleryImages={galleryImages}
+        selectedImages={selectedImages}
+        single={isEditingVariant}
+      />
+
       <label className={labelClassName}>
-        Imagenes
+        Imagenes manuales
         <textarea
           name="imagen"
-          required
-          rows={4}
-          defaultValue={producto?.imagen.join("\n")}
+          rows={3}
+          defaultValue={isEditingVariant ? "" : producto?.imagen.join("\n")}
           className={fieldClassName}
           placeholder="/motos/archivo.webp"
         />
       </label>
 
-      <label className={labelClassName}>
-        Variantes
-        <textarea
-          name="variantes"
-          rows={7}
-          defaultValue={jsonText(producto?.variantes)}
-          className={`${fieldClassName} font-mono`}
-        />
-      </label>
+      {!isEditingVariant ? (
+        <label className={labelClassName}>
+          Variantes
+          <textarea
+            name="variantes"
+            rows={7}
+            defaultValue={jsonText(producto?.variantes)}
+            className={`${fieldClassName} font-mono`}
+          />
+        </label>
+      ) : null}
 
       <label className={labelClassName}>
         Ficha tecnica
@@ -207,8 +319,15 @@ export default async function AdminPage({ searchParams }: Props) {
   const params = await searchParams;
   const adminPath = getAdminPath();
   const activeTab = params.tab === "novedades" ? "novedades" : "motos";
-  const [productos, novedades] = await Promise.all([getProductos(), getNovedades()]);
+  const [productos, novedades, galleryImages] = await Promise.all([
+    getProductos(),
+    getNovedades(),
+    getGalleryImages(),
+  ]);
   const selectedProducto = productos.find((producto) => producto.id === Number(params.moto));
+  const selectedVariant = selectedProducto?.variantes?.find(
+    (variant) => variant.codigo === params.variant,
+  );
   const selectedNovedad = novedades.find((novedad) => novedad.id === Number(params.novedad));
 
   return (
@@ -270,6 +389,23 @@ export default async function AdminPage({ searchParams }: Props) {
                       #{producto.id} {producto.codigo}
                     </p>
                     <h3 className="mt-1 text-base font-black">{producto.nombre}</h3>
+                    {producto.variantes?.length ? (
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {producto.variantes.map((variant) => (
+                          <Link
+                            key={variant.codigo}
+                            href={`${adminPath}?tab=motos&moto=${producto.id}&variant=${encodeURIComponent(variant.codigo)}`}
+                            className={`rounded-lg border px-3 py-2 text-xs font-black transition ${
+                              params.variant === variant.codigo
+                                ? "border-blue-600 bg-blue-600 text-white"
+                                : "border-slate-200 text-slate-600 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+                            }`}
+                          >
+                            {variant.color}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null}
                     <div className="mt-3 flex flex-wrap gap-2">
                       <Link
                         href={`${adminPath}?tab=motos&moto=${producto.id}`}
@@ -288,7 +424,11 @@ export default async function AdminPage({ searchParams }: Props) {
                 ))}
               </div>
             </div>
-            <ProductForm producto={selectedProducto} />
+            <ProductForm
+              producto={selectedProducto}
+              selectedVariant={selectedVariant}
+              galleryImages={galleryImages}
+            />
           </div>
         ) : (
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">

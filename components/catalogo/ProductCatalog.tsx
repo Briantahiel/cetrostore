@@ -375,6 +375,7 @@ export default function ProductCatalog({ productos }: Props) {
               descripcion={producto.descripcion}
               imagen={producto.imagen}
               stock={producto.stock}
+              variantes={producto.variantes}
               detailHref={getProductDetailHref(producto.id)}
               onOpen={saveCatalogPosition}
             />

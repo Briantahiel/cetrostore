@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getProductoImagenPrincipal } from "@/data/productos";
+import { getProductoImagenPrincipal, type ProductoVariante } from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 type Props = {
@@ -9,6 +9,7 @@ type Props = {
   descripcion: string;
   imagen: string[];
   stock?: "fisico" | "virtual";
+  variantes?: ProductoVariante[];
   detailHref?: string;
   onOpen?: () => void;
 };
@@ -20,6 +21,7 @@ export default function ProductCard({
   descripcion,
   imagen,
   stock = "fisico",
+  variantes,
   detailHref = `/catalogo/${id}`,
   onOpen,
 }: Props) {
@@ -69,6 +71,19 @@ export default function ProductCard({
         <p className="mt-3 flex-1 text-sm font-medium leading-6 text-slate-600">
           {descripcion}
         </p>
+
+        {variantes?.length ? (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {variantes.map((variante) => (
+              <span
+                key={variante.codigo}
+                className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-black text-slate-600"
+              >
+                {variante.color}
+              </span>
+            ))}
+          </div>
+        ) : null}
 
         <div className="mt-5 grid grid-cols-2 gap-3">
           <Link

@@ -38,6 +38,16 @@ const parseLines = (value: FormDataEntryValue | null) =>
     .map((line) => line.trim())
     .filter(Boolean);
 
+const parseImages = (formData: FormData) => {
+  const galleryImages = formData
+    .getAll("imagenes")
+    .map((value) => String(value).trim())
+    .filter(Boolean);
+  const manualImages = parseLines(formData.get("imagen"));
+
+  return Array.from(new Set([...galleryImages, ...manualImages]));
+};
+
 const refreshCatalog = () => {
   const adminPath = getAdminPath();
 
@@ -49,7 +59,7 @@ const refreshCatalog = () => {
 };
 
 const getProductoFromForm = (formData: FormData, id: number): Producto => {
-  const imagen = parseLines(formData.get("imagen"));
+  const imagen = parseImages(formData);
   const variantes = parseJsonArray<ProductoVariante>(
     formData.get("variantes"),
     [],
@@ -77,18 +87,62 @@ export async function saveProductoAction(formData: FormData) {
   const productos = await getProductos();
   const id = Number(formData.get("id"));
   const isEditing = Number.isFinite(id) && id > 0;
+  const variantCodigo = String(formData.get("variantCodigo") ?? "").trim();
   const producto = getProductoFromForm(
     formData,
     isEditing ? id : productos.length + 1,
   );
 
-  if (!producto.nombre || !producto.descripcion || producto.imagen.length === 0) {
+  const selectedVariantImage = String(
+    formData.get("imagenSeleccionada") ?? "",
+  ).trim();
+  const hasImage = producto.imagen.length > 0 || Boolean(selectedVariantImage);
+
+  if (!producto.nombre || !producto.descripcion || !hasImage) {
     throw new Error("Nombre, descripcion e imagen son obligatorios.");
   }
 
-  const nextProductos = isEditing
-    ? productos.map((item) => (item.id === id ? producto : item))
-    : [...productos, producto];
+  const currentProduct = productos.find((item) => item.id === id);
+  const color = String(formData.get("color") ?? "").trim();
+
+  const nextProductos =
+    isEditing && variantCodigo && currentProduct
+      ? productos.map((item) => {
+          if (item.id !== id) return item;
+
+          const variants = item.variantes ?? [];
+          const nextVariant: ProductoVariante = {
+            codigo: producto.codigo ?? variantCodigo,
+            nombre: producto.nombre,
+            imagen: selectedVariantImage || producto.imagen[0],
+            color:
+              color ||
+              variants.find((variant) => variant.codigo === variantCodigo)
+                ?.color ||
+              producto.nombre,
+          };
+          const nextVariants = variants.map((variant) =>
+            variant.codigo === variantCodigo ? nextVariant : variant,
+          );
+          const shouldSyncParent =
+            item.codigo === variantCodigo ||
+            variants[0]?.codigo === variantCodigo;
+
+          return {
+            ...item,
+            codigo: shouldSyncParent ? nextVariant.codigo : item.codigo,
+            nombre: shouldSyncParent ? nextVariant.nombre : item.nombre,
+            descripcion: producto.descripcion,
+            precio: producto.precio,
+            stock: producto.stock,
+            imagen: nextVariants.map((variant) => variant.imagen),
+            variantes: nextVariants,
+            fichaTecnica: producto.fichaTecnica,
+          };
+        })
+      : isEditing
+        ? productos.map((item) => (item.id === id ? producto : item))
+        : [...productos, producto];
 
   await saveProductos(nextProductos);
   refreshCatalog();

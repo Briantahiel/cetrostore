@@ -1,7 +1,10 @@
+import { connection } from "next/server";
 import ProductCatalog from "@/components/catalogo/ProductCatalog";
 import { getProductos } from "@/data/catalog-store";
 
 export default async function CatalogoPage() {
+  await connection();
+
   const productos = await getProductos();
 
   return (
