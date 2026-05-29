@@ -1,5 +1,6 @@
 import "server-only";
 
+import { readFileSync } from "node:fs";
 import { cert, getApps, initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
@@ -55,6 +56,26 @@ const getServiceAccountFromBase64 = () => {
   }
 };
 
+const getServiceAccountFromFile = () => {
+  const serviceAccountPath = (
+    process.env.FIREBASE_SERVICE_ACCOUNT_PATH ??
+    process.env.GOOGLE_APPLICATION_CREDENTIALS ??
+    ""
+  ).trim();
+
+  if (!serviceAccountPath) return null;
+
+  try {
+    const serviceAccount = JSON.parse(
+      readFileSync(serviceAccountPath, "utf8"),
+    ) as GoogleServiceAccountJson;
+
+    return normalizeServiceAccount(serviceAccount);
+  } catch {
+    return null;
+  }
+};
+
 const getServiceAccountFromEnv = () => {
   const projectId = process.env.FIREBASE_PROJECT_ID?.trim();
   const clientEmail = process.env.FIREBASE_CLIENT_EMAIL?.trim();
@@ -66,7 +87,9 @@ const getServiceAccountFromEnv = () => {
 };
 
 export const getFirebaseServiceAccount = () =>
-  getServiceAccountFromBase64() ?? getServiceAccountFromEnv();
+  getServiceAccountFromBase64() ??
+  getServiceAccountFromFile() ??
+  getServiceAccountFromEnv();
 
 export const hasFirebaseConfig = () => Boolean(getFirebaseServiceAccount());
 

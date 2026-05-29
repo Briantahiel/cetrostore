@@ -4,39 +4,10 @@
     "codigo": "MO0808",
     "nombre": "Honda Wave 110 S New rojo",
     "descripcion": "La Honda Wave 110 S New mantiene el reconocido equilibrio entre economia, confiabilidad y practicidad para uso urbano diario. Esta version incorpora dise?o actualizado y excelente autonomia, siendo ideal para quienes buscan una moto agil y de bajo mantenimiento.",
-    "imagen": [
-      "/motos/honda-wave-roja.jpg",
-      "/motos/honda-wave-blanca.jpg",
-      "/motos/honda-wave-negra.jpg",
-      "/motos/honda-wave-gris.jpg"
-    ],
-    "variantes": [
-      {
-        "codigo": "MO0808",
-        "nombre": "Honda Wave 110 S New roja",
-        "imagen": "/motos/honda-wave-roja.jpg",
-        "color": "Rojo"
-      },
-      {
-        "codigo": "MO0809",
-        "nombre": "Honda Wave 110 S New blanco",
-        "imagen": "/motos/honda-wave-blanca.jpg",
-        "color": "Blanco"
-      },
-      {
-        "codigo": "MO0810",
-        "nombre": "Honda Wave 110 S New negra",
-        "imagen": "/motos/honda-wave-negra.jpg",
-        "color": "Negro"
-      },
-      {
-        "codigo": "MO0811",
-        "nombre": "Honda Wave 110 S New gris",
-        "imagen": "/motos/honda-wave-gris.jpg",
-        "color": "Gris"
-      }
-    ],
     "precio": null,
+    "imagen": [
+      "/motos/honda-wave-roja.jpg"
+    ],
     "stock": "virtual"
   },
   {
@@ -651,6 +622,50 @@
       "/motos/cetrogar-bajaj-rouser-125.webp"
     ],
     "precio": null,
+    "stock": "virtual"
+  },
+  {
+    "id": 55,
+    "codigo": "MO0809",
+    "nombre": "Honda Wave 110 S New blanco",
+    "descripcion": "La Honda Wave 110 S New mantiene el reconocido equilibrio entre economia, confiabilidad y practicidad para uso urbano diario. Esta version incorpora dise?o actualizado y excelente autonomia, siendo ideal para quienes buscan una moto agil y de bajo mantenimiento.",
+    "precio": null,
+    "imagen": [
+      "/motos/honda-wave-blanca.jpg"
+    ],
+    "stock": "virtual"
+  },
+  {
+    "id": 56,
+    "codigo": "MO0810",
+    "nombre": "Honda Wave 110 S New negra",
+    "descripcion": "La Honda Wave 110 S New mantiene el reconocido equilibrio entre economia, confiabilidad y practicidad para uso urbano diario. Esta version incorpora dise?o actualizado y excelente autonomia, siendo ideal para quienes buscan una moto agil y de bajo mantenimiento.",
+    "precio": null,
+    "imagen": [
+      "/motos/honda-wave-negra.jpg"
+    ],
+    "stock": "virtual"
+  },
+  {
+    "id": 57,
+    "codigo": "MO0811",
+    "nombre": "Honda Wave 110 S New gris",
+    "descripcion": "La Honda Wave 110 S New mantiene el reconocido equilibrio entre economia, confiabilidad y practicidad para uso urbano diario. Esta version incorpora dise?o actualizado y excelente autonomia, siendo ideal para quienes buscan una moto agil y de bajo mantenimiento.",
+    "precio": null,
+    "imagen": [
+      "/motos/honda-wave-gris.jpg"
+    ],
+    "stock": "virtual"
+  },
+  {
+    "id": 58,
+    "codigo": "1234",
+    "nombre": "Moto Prueba",
+    "descripcion": "descripcion prueba",
+    "precio": null,
+    "imagen": [
+      "/motos/honda-wave-roja.jpg"
+    ],
     "stock": "virtual"
   }
 ]
