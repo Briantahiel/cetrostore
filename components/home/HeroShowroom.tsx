@@ -6,10 +6,11 @@ const featuredMoto = productos[15] ?? productos[0];
 
 export default function HeroShowroom() {
   return (
-    <section className="border-b border-slate-200 bg-[linear-gradient(135deg,#0f172a_0%,#111827_48%,#f8fafc_48%,#ffffff_100%)] px-4 py-12 text-white sm:px-8 lg:px-10">
+    <section className="relative overflow-hidden border-b border-slate-200 bg-[linear-gradient(135deg,#0f172a_0%,#111827_48%,#f8fafc_48%,#ffffff_100%)] px-4 py-14 text-white sm:px-8 lg:px-10">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <div className="inline-flex rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-xs font-black uppercase tracking-[0.18em] text-cyan-200">
+          <div className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cyan-200 shadow-sm shadow-cyan-950/20">
             Concesionaria multimarca
           </div>
           <h1 className="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
@@ -21,7 +22,7 @@ export default function HeroShowroom() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/catalogo"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-cyan-300 px-6 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-950/20 transition hover:bg-white"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-cyan-300 px-6 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-950/20 transition hover:-translate-y-0.5 hover:bg-white"
             >
               Ver catalogo
             </Link>
@@ -29,15 +30,15 @@ export default function HeroShowroom() {
               href="https://wa.me/5493489696728"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/20 px-6 py-3 text-sm font-black text-white transition hover:border-cyan-300 hover:text-cyan-200"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-200"
             >
               Consultar ahora
             </a>
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white text-slate-950 shadow-2xl shadow-slate-950/20">
-          <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+        <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white text-slate-950 shadow-2xl shadow-slate-950/25 ring-1 ring-white/40">
+          <div className="flex items-center justify-between border-b border-slate-200 bg-white px-5 py-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
                 Unidad destacada
@@ -53,7 +54,7 @@ export default function HeroShowroom() {
               Ver
             </Link>
           </div>
-          <div className="flex min-h-[300px] items-center justify-center bg-slate-50 p-8">
+          <div className="flex min-h-[300px] items-center justify-center bg-gradient-to-b from-slate-50 to-white p-8">
             <ImageWithSkeleton
               src={getProductoImagenPrincipal(featuredMoto.imagen)}
               alt={featuredMoto.nombre}

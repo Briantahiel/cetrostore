@@ -7,6 +7,7 @@ export type Producto = {
   descripcion: string;
   precio: number | null;
   imagen: string[];
+  color?: string;
   stock?: "fisico" | "virtual";
   variantes?: ProductoVariante[];
   fichaTecnica?: FichaTecnicaItem[];

@@ -254,6 +254,7 @@ function ProductForm({
         ...producto,
         codigo: selectedVariant.codigo,
         nombre: selectedVariant.nombre,
+        color: selectedVariant.color,
         descripcion: selectedVariant.descripcion ?? producto?.descripcion,
         precio: selectedVariant.precio ?? producto?.precio,
         stock: selectedVariant.stock ?? producto?.stock,
@@ -287,12 +288,16 @@ function ProductForm({
           Codigo
           <input name="codigo" defaultValue={displayProducto?.codigo} className={fieldClassName} />
         </label>
-        {isEditingVariant ? (
-          <label className={labelClassName}>
-            Color
-            <input name="color" required defaultValue={selectedVariant?.color} className={fieldClassName} />
-          </label>
-        ) : null}
+        <label className={labelClassName}>
+          Color
+          <input
+            name="color"
+            required
+            defaultValue={displayProducto?.color}
+            className={fieldClassName}
+            placeholder="Rojo"
+          />
+        </label>
         <label className={labelClassName}>
           Precio
           <input

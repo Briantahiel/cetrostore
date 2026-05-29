@@ -18,7 +18,7 @@ const highlights = [
 
 export default function SalesHighlights() {
   return (
-    <section className="bg-white px-4 py-10 sm:px-8 lg:px-10">
+    <section className="bg-white px-4 py-12 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-6xl">
         <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
           <div>
@@ -28,11 +28,11 @@ export default function SalesHighlights() {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="grid gap-4 md:grid-cols-3">
           {highlights.map((item) => (
             <article
               key={item.title}
-              className="min-w-[240px] flex-1 rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm"
+              className="min-w-[240px] flex-1 rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-white hover:shadow-lg"
             >
               <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-500">
                 {item.eyebrow}

@@ -29,6 +29,7 @@ export default function ProductDetail({
 
   const displayName = selectedVariant?.nombre ?? producto.nombre;
   const displayCode = selectedVariant?.codigo ?? producto.codigo;
+  const displayColor = selectedVariant?.color ?? producto.color;
   const displayDescription = selectedVariant?.descripcion ?? producto.descripcion;
   const displayStock = selectedVariant?.stock ?? producto.stock;
   const displayFichaTecnica = selectedVariant?.fichaTecnica?.length
@@ -90,6 +91,11 @@ export default function ProductDetail({
           {displayCode && (
             <p className="mt-2 text-xs font-black uppercase tracking-wide text-slate-400">
               Codigo {displayCode}
+            </p>
+          )}
+          {displayColor && (
+            <p className="mt-2 text-xs font-black uppercase tracking-wide text-slate-400">
+              Color {displayColor}
             </p>
           )}
           <h1 className="mt-3 text-4xl font-black tracking-tight">

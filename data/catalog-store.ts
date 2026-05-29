@@ -93,6 +93,7 @@ export const groupProductoVariants = (productos: Producto[]) => {
 
     return {
       ...parent,
+      color: parent.color ?? getColorVariantFromName(parent.nombre)?.color,
       imagen: nextVariants.map((variant) => variant.imagen),
       variantes: nextVariants.length > 1 ? nextVariants : parent.variantes,
     };

@@ -187,6 +187,7 @@ const getProductoFromForm = (formData: FormData, id: number): Producto => {
     descripcion: String(formData.get("descripcion") ?? "").trim(),
     precio: parseNumber(formData.get("precio")),
     imagen,
+    color: String(formData.get("color") ?? "").trim() || undefined,
     stock: formData.get("stock") === "fisico" ? "fisico" : "virtual",
     fichaTecnica: fichaTecnica.length ? fichaTecnica : undefined,
   };
