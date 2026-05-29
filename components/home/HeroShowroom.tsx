@@ -1,30 +1,27 @@
 import Link from "next/link";
+import { getProductoImagenPrincipal, productos } from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
-import { getProductoImagenPrincipal, type Producto } from "@/data/productos";
 
-type Props = {
-  featuredMoto?: Producto;
-};
+const featuredMoto = productos[15] ?? productos[0];
 
-export default function HeroShowroom({ featuredMoto }: Props) {
+export default function HeroShowroom() {
   return (
-    <section className="overflow-hidden border-b border-slate-200 bg-slate-950 px-4 py-12 text-white sm:px-8 lg:px-10">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1fr_0.9fr]">
+    <section className="border-b border-slate-200 bg-[linear-gradient(135deg,#0f172a_0%,#111827_48%,#f8fafc_48%,#ffffff_100%)] px-4 py-12 text-white sm:px-8 lg:px-10">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <div className="inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-blue-100">
-            Concesionaria multimarca en Zarate
+          <div className="inline-flex rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-xs font-black uppercase tracking-[0.18em] text-cyan-200">
+            Concesionaria multimarca
           </div>
           <h1 className="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
-            Motos listas para elegir, financiar y retirar con asesoramiento real.
+            Elegi tu proxima moto con entrega y financiacion claras
           </h1>
-          <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-slate-300">
-            Compara modelos, colores y ficha tecnica. Te acompañamos para que elijas una unidad que cierre por uso, presupuesto y entrega.
+          <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-cyan-300">
+            Modelos urbanos, todo terreno y ruta con asesoramiento directo y atencion personalizada.
           </p>
-
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/catalogo"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-black text-slate-950 shadow-lg shadow-slate-950/20 transition hover:bg-blue-100"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-cyan-300 px-6 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-950/20 transition hover:bg-white"
             >
               Ver catalogo
             </Link>
@@ -32,62 +29,44 @@ export default function HeroShowroom({ featuredMoto }: Props) {
               href="https://wa.me/5493489696728"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/20 px-6 py-3 text-sm font-black text-white transition hover:border-blue-300 hover:bg-white/10"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/20 px-6 py-3 text-sm font-black text-white transition hover:border-cyan-300 hover:text-cyan-200"
             >
-              Hablar con un asesor
+              Consultar ahora
             </a>
-          </div>
-
-          <div className="mt-8 grid max-w-2xl grid-cols-3 gap-3">
-            {[
-              ["0 km", "Unidades"],
-              ["Cuotas", "Financiacion"],
-              ["Showroom", "Atencion"],
-            ].map(([value, label]) => (
-              <div key={label} className="rounded-lg border border-white/10 bg-white/5 p-4">
-                <p className="text-xl font-black">{value}</p>
-                <p className="mt-1 text-xs font-bold uppercase tracking-wide text-slate-400">
-                  {label}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
 
-        {featuredMoto ? (
-          <div className="relative rounded-lg border border-white/10 bg-white p-5 text-slate-950 shadow-2xl shadow-blue-950/30">
-            <div className="mb-4 flex items-start justify-between gap-4">
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
-                  Unidad destacada
-                </p>
-                <h2 className="mt-2 text-2xl font-black tracking-tight">
-                  {featuredMoto.nombre}
-                </h2>
-              </div>
-              <Link
-                href={`/catalogo/${featuredMoto.id}`}
-                className="rounded-lg bg-slate-950 px-4 py-2 text-xs font-black uppercase tracking-wide text-white transition hover:bg-blue-700"
-              >
-                Ver
-              </Link>
+        <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white text-slate-950 shadow-2xl shadow-slate-950/20">
+          <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
+                Unidad destacada
+              </p>
+              <h2 className="mt-1 text-xl font-black tracking-tight">
+                {featuredMoto.nombre}
+              </h2>
             </div>
-
-            <div className="flex min-h-[320px] items-center justify-center rounded-lg bg-slate-50 p-8">
-              <ImageWithSkeleton
-                src={getProductoImagenPrincipal(featuredMoto.imagen)}
-                alt={featuredMoto.nombre}
-                className="flex h-full w-full items-center justify-center"
-                imageClassName="block object-contain"
-                imageStyle={{
-                  maxHeight: "260px",
-                  maxWidth: "100%",
-                  width: "auto",
-                }}
-              />
-            </div>
+            <Link
+              href={`/catalogo/${featuredMoto.id}`}
+              className="rounded-lg bg-emerald-50 px-3 py-2 text-xs font-black uppercase tracking-wide text-emerald-700 transition hover:bg-emerald-100"
+            >
+              Ver
+            </Link>
           </div>
-        ) : null}
+          <div className="flex min-h-[300px] items-center justify-center bg-slate-50 p-8">
+            <ImageWithSkeleton
+              src={getProductoImagenPrincipal(featuredMoto.imagen)}
+              alt={featuredMoto.nombre}
+              className="flex h-full w-full items-center justify-center"
+              imageClassName="block object-contain"
+              imageStyle={{
+                maxHeight: "230px",
+                maxWidth: "100%",
+                width: "auto",
+              }}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

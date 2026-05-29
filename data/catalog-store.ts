@@ -79,6 +79,10 @@ export const groupProductoVariants = (productos: Producto[]) => {
           nombre: item.nombre,
           imagen: item.imagen[0],
           color: parsedColor?.color ?? item.nombre,
+          descripcion: item.descripcion,
+          precio: item.precio,
+          stock: item.stock,
+          fichaTecnica: item.fichaTecnica,
         };
         variants.set(getVariantKey(variant), variant);
       }

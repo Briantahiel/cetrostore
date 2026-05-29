@@ -27,6 +27,11 @@ export default function ProductDetail({
 
   const displayName = selectedVariant?.nombre ?? producto.nombre;
   const displayCode = selectedVariant?.codigo ?? producto.codigo;
+  const displayDescription = selectedVariant?.descripcion ?? producto.descripcion;
+  const displayStock = selectedVariant?.stock ?? producto.stock;
+  const displayFichaTecnica = selectedVariant?.fichaTecnica?.length
+    ? selectedVariant.fichaTecnica
+    : fichaTecnica;
   const galleryImages = producto.variantes?.length
     ? producto.variantes.map((variante) => variante.imagen)
     : producto.imagen;
@@ -76,7 +81,7 @@ export default function ProductDetail({
 
         <div className="flex flex-col justify-center">
           <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
-            {producto.stock === "virtual" ? "Stock virtual" : "Moto disponible"}
+            {displayStock === "virtual" ? "Stock virtual" : "Moto disponible"}
           </p>
           {displayCode && (
             <p className="mt-2 text-xs font-black uppercase tracking-wide text-slate-400">
@@ -87,7 +92,7 @@ export default function ProductDetail({
             {displayName}
           </h1>
           <p className="mt-5 text-base font-medium leading-7 text-slate-600">
-            {producto.descripcion}
+            {displayDescription}
           </p>
           {producto.variantes?.length ? (
             <div className="mt-6">
@@ -150,7 +155,7 @@ export default function ProductDetail({
             gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
           }}
         >
-          {fichaTecnica.map((item) => (
+          {displayFichaTecnica.map((item) => (
             <div
               key={`${item.etiqueta}-${item.valor}`}
               className="rounded-lg border border-slate-200 bg-slate-50 p-4"

@@ -153,7 +153,13 @@ const emptyVariantRows = Array.from({ length: 4 }, () => ({
   imagen: "",
 }));
 
-function VariantFields({ variants }: { variants: ProductoVariante[] }) {
+function VariantFields({
+  variants,
+  galleryImages,
+}: {
+  variants: ProductoVariante[];
+  galleryImages: string[];
+}) {
   const rows = [...variants, ...emptyVariantRows];
 
   return (
@@ -166,25 +172,49 @@ function VariantFields({ variants }: { variants: ProductoVariante[] }) {
       </div>
       <div className="grid gap-3">
         {rows.map((variant, index) => (
-          <div key={`${variant.codigo}-${index}`} className="grid gap-3 rounded-lg bg-slate-50 p-3 md:grid-cols-4">
-            <input
-              name="varianteColor"
-              defaultValue={variant.color}
-              className={fieldClassName}
-              placeholder="Rojo"
-            />
-            <input
-              name="varianteCodigo"
-              defaultValue={variant.codigo}
-              className={fieldClassName}
-              placeholder="MO0808"
-            />
-            <input
-              name="varianteNombre"
-              defaultValue={variant.nombre}
-              className={fieldClassName}
-              placeholder="Honda Wave roja"
-            />
+          <div key={`${variant.codigo}-${index}`} className="grid gap-3 rounded-lg bg-slate-50 p-3">
+            <div className="grid gap-3 md:grid-cols-3">
+              <input
+                name="varianteColor"
+                defaultValue={variant.color}
+                className={fieldClassName}
+                placeholder="Rojo"
+              />
+              <input
+                name="varianteCodigo"
+                defaultValue={variant.codigo}
+                className={fieldClassName}
+                placeholder="MO0808"
+              />
+              <input
+                name="varianteNombre"
+                defaultValue={variant.nombre}
+                className={fieldClassName}
+                placeholder="Honda Wave roja"
+              />
+            </div>
+            <div className="grid gap-3 md:grid-cols-2">
+              <select
+                name="varianteImagenGaleria"
+                defaultValue={variant.imagen}
+                className={fieldClassName}
+              >
+                <option value="">Elegir imagen de la app</option>
+                {galleryImages.map((image) => (
+                  <option key={image} value={image}>
+                    {image.startsWith("/motos/")
+                      ? image.replace("/motos/", "")
+                      : "Imagen subida"}
+                  </option>
+                ))}
+              </select>
+              <input
+                name="varianteImagenArchivo"
+                type="file"
+                accept="image/avif,image/gif,image/jpeg,image/png,image/webp"
+                className={`${fieldClassName} file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-black file:text-white`}
+              />
+            </div>
             <input
               name="varianteImagen"
               defaultValue={variant.imagen}
@@ -207,7 +237,10 @@ function ProductForm({
   selectedVariant?: ProductoVariante;
   galleryImages: string[];
 }) {
-  const fichaTecnica = producto?.fichaTecnica ?? (producto ? getFichaTecnicaProducto(producto) : []);
+  const fichaTecnica =
+    selectedVariant?.fichaTecnica ??
+    producto?.fichaTecnica ??
+    (producto ? getFichaTecnicaProducto(producto) : []);
   const adminPath = getAdminPath();
   const isEditingVariant = Boolean(producto && selectedVariant);
   const selectedImages = selectedVariant
@@ -218,6 +251,9 @@ function ProductForm({
         ...producto,
         codigo: selectedVariant.codigo,
         nombre: selectedVariant.nombre,
+        descripcion: selectedVariant.descripcion ?? producto?.descripcion,
+        precio: selectedVariant.precio ?? producto?.precio,
+        stock: selectedVariant.stock ?? producto?.stock,
         imagen: [selectedVariant.imagen],
       }
     : producto;
@@ -261,14 +297,14 @@ function ProductForm({
             type="number"
             min="0"
             step="1"
-            defaultValue={producto?.precio ?? ""}
+            defaultValue={displayProducto?.precio ?? ""}
             className={fieldClassName}
             placeholder="Vacio si es a consultar"
           />
         </label>
         <label className={labelClassName}>
           Stock
-          <select name="stock" defaultValue={producto?.stock ?? "virtual"} className={fieldClassName}>
+          <select name="stock" defaultValue={displayProducto?.stock ?? "virtual"} className={fieldClassName}>
             <option value="virtual">Virtual</option>
             <option value="fisico">Fisico</option>
           </select>
@@ -281,7 +317,7 @@ function ProductForm({
           name="descripcion"
           required
           rows={5}
-          defaultValue={producto?.descripcion}
+          defaultValue={displayProducto?.descripcion}
           className={fieldClassName}
         />
       </label>
@@ -315,7 +351,7 @@ function ProductForm({
       </label>
 
       {!isEditingVariant ? (
-        <VariantFields variants={producto?.variantes ?? []} />
+        <VariantFields variants={producto?.variantes ?? []} galleryImages={galleryImages} />
       ) : null}
 
       <TechnicalSheetFields items={fichaTecnica} />

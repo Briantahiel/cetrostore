@@ -39,19 +39,33 @@ const parseRows = (formData: FormData, labelName: string, valueName: string) => 
     .filter((item) => item.etiqueta && item.valor);
 };
 
-const parseVariantRows = (formData: FormData): ProductoVariante[] => {
+const getFilesByName = (formData: FormData, name: string) =>
+  formData.getAll(name).filter((value): value is File => value instanceof File);
+
+const parseVariantRows = async (formData: FormData): Promise<ProductoVariante[]> => {
   const codigos = formData.getAll("varianteCodigo");
   const nombres = formData.getAll("varianteNombre");
   const colores = formData.getAll("varianteColor");
   const imagenes = formData.getAll("varianteImagen");
+  const imagenesGaleria = formData.getAll("varianteImagenGaleria");
+  const archivos = getFilesByName(formData, "varianteImagenArchivo");
+  const uploadedByIndex = await Promise.all(
+    archivos.map((file) => (file.size > 0 ? uploadImageFiles([file]) : Promise.resolve([]))),
+  );
 
   return codigos
-    .map((codigo, index) => ({
-      codigo: String(codigo ?? "").trim(),
-      nombre: String(nombres[index] ?? "").trim(),
-      color: String(colores[index] ?? "").trim(),
-      imagen: String(imagenes[index] ?? "").trim(),
-    }))
+    .map((codigo, index) => {
+      const uploadedImage = uploadedByIndex[index]?.[0] ?? "";
+      const galleryImage = String(imagenesGaleria[index] ?? "").trim();
+      const manualImage = String(imagenes[index] ?? "").trim();
+
+      return {
+        codigo: String(codigo ?? "").trim(),
+        nombre: String(nombres[index] ?? "").trim(),
+        color: String(colores[index] ?? "").trim(),
+        imagen: uploadedImage || galleryImage || manualImage,
+      };
+    })
     .filter((variante) => variante.codigo && variante.nombre && variante.color && variante.imagen);
 };
 
@@ -72,9 +86,7 @@ const parseImages = (formData: FormData) => {
 };
 
 const getUploadedFiles = (formData: FormData) =>
-  formData
-    .getAll("imagenArchivo")
-    .filter((value): value is File => value instanceof File && value.size > 0);
+  getFilesByName(formData, "imagenArchivo").filter((value) => value.size > 0);
 
 const extensionByType: Record<string, string> = {
   "image/avif": "avif",
@@ -166,7 +178,6 @@ const refreshCatalog = () => {
 
 const getProductoFromForm = (formData: FormData, id: number): Producto => {
   const imagen = parseImages(formData);
-  const variantes = parseVariantRows(formData);
   const fichaTecnica = parseRows(formData, "fichaEtiqueta", "fichaValor") as FichaTecnicaItem[];
 
   return {
@@ -177,7 +188,6 @@ const getProductoFromForm = (formData: FormData, id: number): Producto => {
     precio: parseNumber(formData.get("precio")),
     imagen,
     stock: formData.get("stock") === "fisico" ? "fisico" : "virtual",
-    variantes: variantes.length ? variantes : undefined,
     fichaTecnica: fichaTecnica.length ? fichaTecnica : undefined,
   };
 };
@@ -194,6 +204,8 @@ export async function saveProductoAction(formData: FormData) {
     isEditing ? id : productos.length + 1,
   );
   producto.imagen = Array.from(new Set([...uploadedImages, ...producto.imagen]));
+  const variantes = await parseVariantRows(formData);
+  producto.variantes = variantes.length ? variantes : undefined;
 
   const selectedVariantImage = String(
     formData.get("imagenSeleccionada") ?? "",
@@ -223,24 +235,22 @@ export async function saveProductoAction(formData: FormData) {
               variants.find((variant) => variant.codigo === variantCodigo)
                 ?.color ||
               producto.nombre,
+            descripcion: producto.descripcion,
+            precio: producto.precio,
+            stock: producto.stock,
+            fichaTecnica: producto.fichaTecnica,
           };
           const nextVariants = variants.map((variant) =>
             variant.codigo === variantCodigo ? nextVariant : variant,
           );
           const shouldSyncParent =
-            item.codigo === variantCodigo ||
             variants[0]?.codigo === variantCodigo;
 
           return {
             ...item,
-            codigo: shouldSyncParent ? nextVariant.codigo : item.codigo,
-            nombre: shouldSyncParent ? nextVariant.nombre : item.nombre,
-            descripcion: producto.descripcion,
-            precio: producto.precio,
-            stock: producto.stock,
             imagen: nextVariants.map((variant) => variant.imagen),
             variantes: nextVariants,
-            fichaTecnica: producto.fichaTecnica,
+            ...(shouldSyncParent ? { codigo: item.codigo ?? nextVariant.codigo } : {}),
           };
         })
       : isEditing

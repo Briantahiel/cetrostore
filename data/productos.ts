@@ -17,6 +17,10 @@ export type ProductoVariante = {
   nombre: string;
   imagen: string;
   color: string;
+  descripcion?: string;
+  precio?: number | null;
+  stock?: "fisico" | "virtual";
+  fichaTecnica?: FichaTecnicaItem[];
 };
 
 export type FichaTecnicaItem = {
