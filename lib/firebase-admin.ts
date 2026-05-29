@@ -19,8 +19,6 @@ type GoogleServiceAccountJson = {
   privateKey?: string;
 };
 
-let firestoreSettingsApplied = false;
-
 const normalizeServiceAccount = (
   serviceAccount: GoogleServiceAccountJson,
 ): FirebaseServiceAccount | null => {
@@ -126,12 +124,5 @@ export const getFirebaseDb = () => {
     });
   }
 
-  const db = getFirestore();
-
-  if (!firestoreSettingsApplied) {
-    db.settings({ ignoreUndefinedProperties: true });
-    firestoreSettingsApplied = true;
-  }
-
-  return db;
+  return getFirestore();
 };
