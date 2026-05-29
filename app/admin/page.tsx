@@ -237,6 +237,9 @@ function ProductForm({
   selectedVariant?: ProductoVariante;
   galleryImages: string[];
 }) {
+  const childVariants = (producto?.variantes ?? []).filter(
+    (variant) => !producto?.codigo || variant.codigo !== producto.codigo,
+  );
   const fichaTecnica =
     selectedVariant?.fichaTecnica ??
     producto?.fichaTecnica ??
@@ -259,7 +262,7 @@ function ProductForm({
     : producto;
 
   return (
-    <form action={saveProductoAction} encType="multipart/form-data" className={`${sectionClassName} grid gap-4`}>
+    <form action={saveProductoAction} className={`${sectionClassName} grid gap-4`}>
       <input type="hidden" name="id" value={producto?.id ?? ""} />
       <input type="hidden" name="variantCodigo" value={selectedVariant?.codigo ?? ""} />
       <div>
@@ -351,7 +354,7 @@ function ProductForm({
       </label>
 
       {!isEditingVariant ? (
-        <VariantFields variants={producto?.variantes ?? []} galleryImages={galleryImages} />
+        <VariantFields variants={childVariants} galleryImages={galleryImages} />
       ) : null}
 
       <TechnicalSheetFields items={fichaTecnica} />

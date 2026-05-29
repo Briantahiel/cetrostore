@@ -66,14 +66,15 @@ export const groupProductoVariants = (productos: Producto[]) => {
     const parent = bucket[0];
     const variants = new Map<string, ProductoVariante>();
 
-    for (const item of bucket) {
+    for (const [index, item] of bucket.entries()) {
       const parsedColor = getColorVariantFromName(item.nombre);
 
       for (const variant of item.variantes ?? []) {
+        if (variant.codigo && variant.codigo === parent.codigo) continue;
         variants.set(getVariantKey(variant), variant);
       }
 
-      if (!item.variantes?.length && item.imagen[0]) {
+      if (index > 0 && !item.variantes?.length && item.imagen[0]) {
         const variant: ProductoVariante = {
           codigo: item.codigo ?? `producto-${item.id}`,
           nombre: item.nombre,

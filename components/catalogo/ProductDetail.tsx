@@ -11,18 +11,20 @@ type Props = {
   catalogAction?: ReactNode;
 };
 
-const getInitialVariant = (producto: Producto) =>
-  producto.variantes?.find((variante) => variante.codigo === producto.codigo) ??
-  producto.variantes?.[0] ??
-  null;
-
 export default function ProductDetail({
   producto,
   fichaTecnica,
   catalogAction,
 }: Props) {
   const [selectedVariant, setSelectedVariant] = useState<ProductoVariante | null>(
-    () => getInitialVariant(producto),
+    null,
+  );
+  const childVariants = useMemo(
+    () =>
+      producto.variantes?.filter(
+        (variante) => !producto.codigo || variante.codigo !== producto.codigo,
+      ) ?? [],
+    [producto.codigo, producto.variantes],
   );
 
   const displayName = selectedVariant?.nombre ?? producto.nombre;
@@ -32,20 +34,20 @@ export default function ProductDetail({
   const displayFichaTecnica = selectedVariant?.fichaTecnica?.length
     ? selectedVariant.fichaTecnica
     : fichaTecnica;
-  const galleryImages = producto.variantes?.length
-    ? producto.variantes.map((variante) => variante.imagen)
-    : producto.imagen;
+  const galleryImages = Array.from(
+    new Set([...producto.imagen, ...childVariants.map((variante) => variante.imagen)]),
+  );
   const selectedImage = selectedVariant?.imagen;
 
   const imageLabels = useMemo(
     () =>
       Object.fromEntries(
-        producto.variantes?.map((variante) => [
+        childVariants.map((variante) => [
           variante.imagen,
           `${variante.color} - ${variante.codigo}`,
-        ]) ?? [],
+        ]),
       ),
-    [producto.variantes],
+    [childVariants],
   );
 
   const codigoTexto = displayCode ? `, codigo ${displayCode}` : "";
@@ -60,6 +62,8 @@ export default function ProductDetail({
 
     if (nextVariant) {
       setSelectedVariant(nextVariant);
+    } else if (producto.imagen.includes(image)) {
+      setSelectedVariant(null);
     }
   };
 
@@ -94,13 +98,24 @@ export default function ProductDetail({
           <p className="mt-5 text-base font-medium leading-7 text-slate-600">
             {displayDescription}
           </p>
-          {producto.variantes?.length ? (
+          {childVariants.length ? (
             <div className="mt-6">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-slate-500">
                 Color
               </p>
               <div className="flex flex-wrap gap-2">
-                {producto.variantes.map((variante) => (
+                <button
+                  type="button"
+                  onClick={() => setSelectedVariant(null)}
+                  className={`rounded-lg border px-4 py-2 text-sm font-black transition ${
+                    selectedVariant === null
+                      ? "border-blue-600 bg-blue-600 text-white"
+                      : "border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50"
+                  }`}
+                >
+                  Principal
+                </button>
+                {childVariants.map((variante) => (
                   <button
                     key={variante.codigo}
                     type="button"

@@ -205,7 +205,10 @@ export async function saveProductoAction(formData: FormData) {
   );
   producto.imagen = Array.from(new Set([...uploadedImages, ...producto.imagen]));
   const variantes = await parseVariantRows(formData);
-  producto.variantes = variantes.length ? variantes : undefined;
+  const childVariants = variantes.filter(
+    (variante) => !producto.codigo || variante.codigo !== producto.codigo,
+  );
+  producto.variantes = childVariants.length ? childVariants : undefined;
 
   const selectedVariantImage = String(
     formData.get("imagenSeleccionada") ?? "",
@@ -243,14 +246,13 @@ export async function saveProductoAction(formData: FormData) {
           const nextVariants = variants.map((variant) =>
             variant.codigo === variantCodigo ? nextVariant : variant,
           );
-          const shouldSyncParent =
-            variants[0]?.codigo === variantCodigo;
 
           return {
             ...item,
-            imagen: nextVariants.map((variant) => variant.imagen),
+            imagen: Array.from(
+              new Set([...item.imagen, ...nextVariants.map((variant) => variant.imagen)]),
+            ),
             variantes: nextVariants,
-            ...(shouldSyncParent ? { codigo: item.codigo ?? nextVariant.codigo } : {}),
           };
         })
       : isEditing
