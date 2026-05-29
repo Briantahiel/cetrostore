@@ -23,7 +23,7 @@ type GoogleServiceAccountJson = {
 const getFirebaseStorageBucketName = (projectId?: string) =>
   getFirebaseStorageBucketNames(projectId)[0] ?? "";
 
-const getFirebaseStorageBucketNames = (projectId?: string) => {
+export const getFirebaseStorageBucketNames = (projectId?: string) => {
   const configuredBucket = process.env.FIREBASE_STORAGE_BUCKET?.trim();
 
   if (configuredBucket) return [configuredBucket];

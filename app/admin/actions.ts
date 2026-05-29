@@ -14,6 +14,7 @@ import {
 import { getAdminPath } from "@/lib/admin-auth";
 import { requireAdminSession } from "@/lib/admin-session";
 import {
+  getFirebaseStorageBucketNames,
   getFirebaseStorageBuckets,
   getFirebaseServiceAccount,
 } from "@/lib/firebase-admin";
@@ -131,13 +132,22 @@ const uploadImageFiles = async (files: File[]) => {
       const storagePath = `motos/${fileName}`;
       const token = randomUUID();
       const buckets = getFirebaseStorageBuckets();
+      const triedBucketNames: string[] = [];
       let uploadedUrl = "";
       let uploadError: unknown = null;
 
       for (const bucket of buckets) {
         const bucketFile = bucket.file(storagePath);
+        triedBucketNames.push(bucket.name);
 
         try {
+          const [bucketExists] = await bucket.exists();
+
+          if (!bucketExists) {
+            uploadError = new Error(`El bucket ${bucket.name} no existe.`);
+            continue;
+          }
+
           await bucketFile.save(bytes, {
             contentType: file.type || `image/${extension}`,
             metadata: {
@@ -160,9 +170,17 @@ const uploadImageFiles = async (files: File[]) => {
       }
 
       if (!uploadedUrl) {
+        const configuredBucket = process.env.FIREBASE_STORAGE_BUCKET?.trim();
+        const guessedBuckets = triedBucketNames.length
+          ? triedBucketNames
+          : getFirebaseStorageBucketNames().join(", ");
+        const bucketHelp = configuredBucket
+          ? `Revisa FIREBASE_STORAGE_BUCKET=${configuredBucket} en Vercel.`
+          : `Configura FIREBASE_STORAGE_BUCKET en Vercel con el bucket real de Firebase Storage. Se probo: ${guessedBuckets}.`;
+
         throw uploadError instanceof Error
-          ? uploadError
-          : new Error("No se pudo subir la imagen a Firebase Storage.");
+          ? new Error(`${uploadError.message} ${bucketHelp}`)
+          : new Error(`No se pudo subir la imagen a Firebase Storage. ${bucketHelp}`);
       }
 
       uploadedPaths.push(uploadedUrl);
