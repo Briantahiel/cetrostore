@@ -58,16 +58,16 @@ export default function FeaturedMotorcyclesCarousel({ productos }: Props) {
         </div>
 
         <article className="grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm md:grid-cols-[0.75fr_1fr]">
-          <div className="flex min-h-[220px] items-center justify-center border-b border-slate-200 bg-white p-6 md:border-b-0 md:border-r">
+          <div className="flex min-h-[220px] items-center justify-center border-b border-slate-200 bg-white p-4 sm:p-6 md:border-b-0 md:border-r">
             <ImageWithSkeleton
               src={getProductoImagenPrincipal(activeProduct.imagen)}
               alt={activeProduct.nombre}
-              className="flex h-full w-full items-center justify-center"
+              className="flex aspect-[4/3] w-full items-center justify-center"
               imageClassName="block object-contain"
               imageStyle={{
-                maxHeight: "170px",
+                maxHeight: "100%",
                 maxWidth: "100%",
-                width: "auto",
+                width: "100%",
               }}
             />
           </div>

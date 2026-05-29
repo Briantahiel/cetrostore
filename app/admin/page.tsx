@@ -8,6 +8,7 @@ import {
   saveProductoAction,
 } from "@/app/admin/actions";
 import DeleteButton from "@/components/admin/DeleteButton";
+import ImageFileInput from "@/components/admin/ImageFileInput";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 import { getFichaTecnicaProducto } from "@/data/productos";
 import { getNovedades, getProductos } from "@/data/catalog-store";
@@ -209,10 +210,8 @@ function VariantFields({
                   </option>
                 ))}
               </select>
-              <input
+              <ImageFileInput
                 name="varianteImagenArchivo"
-                type="file"
-                accept="image/*,.avif,.gif,.heic,.heif,.jpg,.jpeg,.png,.webp"
                 className={`${fieldClassName} file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-black file:text-white`}
               />
             </div>
@@ -347,10 +346,8 @@ function ProductForm({
 
       <label className={labelClassName}>
         Subir imagen desde tu dispositivo
-        <input
+        <ImageFileInput
           name="imagenArchivo"
-          type="file"
-          accept="image/*,.avif,.gif,.heic,.heif,.jpg,.jpeg,.png,.webp"
           multiple={!isEditingVariant}
           className={`${fieldClassName} file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-black file:text-white`}
         />

@@ -54,16 +54,16 @@ export default function HeroShowroom() {
               Ver
             </Link>
           </div>
-          <div className="flex min-h-[300px] items-center justify-center bg-gradient-to-b from-slate-50 to-white p-8">
+          <div className="flex min-h-[260px] items-center justify-center bg-gradient-to-b from-slate-50 to-white p-4 sm:min-h-[300px] sm:p-8">
             <ImageWithSkeleton
               src={getProductoImagenPrincipal(featuredMoto.imagen)}
               alt={featuredMoto.nombre}
-              className="flex h-full w-full items-center justify-center"
+              className="flex aspect-[4/3] w-full items-center justify-center"
               imageClassName="block object-contain"
               imageStyle={{
-                maxHeight: "230px",
+                maxHeight: "100%",
                 maxWidth: "100%",
-                width: "auto",
+                width: "100%",
               }}
             />
           </div>

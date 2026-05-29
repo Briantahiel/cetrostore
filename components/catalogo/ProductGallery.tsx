@@ -35,32 +35,31 @@ export default function ProductGallery({
     <div className="space-y-4">
       <button
         type="button"
-        className="block cursor-zoom-in rounded-lg text-left"
+        className="block w-full max-w-xl cursor-zoom-in rounded-lg text-left"
         onClick={() => setExpandedImage(mainImage)}
         aria-label={`Ampliar imagen de ${nombre}`}
       >
         <ImageWithSkeleton
           src={mainImage}
           alt={nombre}
-          className="flex items-center justify-center rounded-lg bg-slate-100 p-5"
-          style={{ height: "20rem", maxHeight: "45vh", maxWidth: "420px" }}
+          className="flex aspect-[4/3] w-full items-center justify-center rounded-lg bg-slate-100 p-4 sm:p-5"
           imageClassName="block"
           imageStyle={{
-            height: "100%",
+            maxHeight: "100%",
             maxWidth: "100%",
             objectFit: "contain",
-            width: "auto",
+            width: "100%",
           }}
         />
       </button>
 
-      <div className="grid grid-cols-3 gap-3" style={{ maxWidth: "420px" }}>
+      <div className="grid w-full max-w-xl grid-cols-3 gap-3">
         {imagen.map((item, index) => (
           <button
             key={item}
             type="button"
             onClick={() => handleSelectImage(item)}
-            className={`flex h-20 items-center justify-center rounded-lg border bg-white p-2 transition hover:border-blue-300 ${
+            className={`flex aspect-square min-h-16 items-center justify-center rounded-lg border bg-white p-2 transition hover:border-blue-300 ${
               mainImage === item ? "border-blue-500" : "border-slate-200"
             }`}
             aria-label={`Ver ${imageLabels[item] ?? `foto ${index + 1}`} de ${nombre}`}
@@ -85,7 +84,7 @@ export default function ProductGallery({
         >
           <button
             type="button"
-            className="absolute right-4 top-4 rounded-lg bg-white px-4 py-2 text-sm font-black text-slate-900 transition hover:bg-slate-200"
+          className="absolute right-4 top-4 rounded-lg bg-white px-4 py-2 text-sm font-black text-slate-900 transition hover:bg-slate-200"
             onClick={() => setExpandedImage(null)}
           >
             Cerrar
@@ -99,7 +98,7 @@ export default function ProductGallery({
               maxHeight: "82vh",
               maxWidth: "88vw",
               objectFit: "contain",
-              width: "auto",
+              width: "100%",
             }}
             onClick={() => setExpandedImage(null)}
           />

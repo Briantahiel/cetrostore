@@ -21,13 +21,13 @@ export default function PhotoSection() {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {showroomPhotos.map((producto) => (
             <figure
               key={producto.id}
-              className="min-w-[220px] flex-1 overflow-hidden rounded-lg border border-slate-200 bg-slate-50 shadow-sm"
+              className="overflow-hidden rounded-lg border border-slate-200 bg-slate-50 shadow-sm"
             >
-              <div className="flex h-44 items-center justify-center p-5">
+              <div className="flex aspect-[4/3] items-center justify-center p-4 sm:p-5">
                 <ImageWithSkeleton
                   src={getProductoImagenPrincipal(producto.imagen)}
                   alt={producto.nombre}
@@ -36,7 +36,7 @@ export default function PhotoSection() {
                   imageStyle={{
                     maxHeight: "100%",
                     maxWidth: "100%",
-                    width: "auto",
+                    width: "100%",
                   }}
                 />
               </div>
