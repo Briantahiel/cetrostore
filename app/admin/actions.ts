@@ -14,7 +14,7 @@ import {
 import { getAdminPath } from "@/lib/admin-auth";
 import { requireAdminSession } from "@/lib/admin-session";
 import {
-  getFirebaseStorageBucket,
+  getFirebaseStorageBuckets,
   getFirebaseServiceAccount,
 } from "@/lib/firebase-admin";
 import type { FichaTecnicaItem, Producto, ProductoVariante } from "@/data/productos";
@@ -91,6 +91,8 @@ const getUploadedFiles = (formData: FormData) =>
 const extensionByType: Record<string, string> = {
   "image/avif": "avif",
   "image/gif": "gif",
+  "image/heic": "heic",
+  "image/heif": "heif",
   "image/jpeg": "jpg",
   "image/png": "png",
   "image/webp": "webp",
@@ -101,7 +103,7 @@ const getSafeImageExtension = (file: File) => {
   if (fromType) return fromType;
 
   const fromName = file.name.split(".").pop()?.toLowerCase();
-  if (fromName && ["avif", "gif", "jpg", "jpeg", "png", "webp"].includes(fromName)) {
+  if (fromName && ["avif", "gif", "heic", "heif", "jpg", "jpeg", "png", "webp"].includes(fromName)) {
     return fromName === "jpeg" ? "jpg" : fromName;
   }
 
@@ -115,35 +117,55 @@ const uploadImageFiles = async (files: File[]) => {
     const extension = getSafeImageExtension(file);
 
     if (!extension) {
-      throw new Error("Solo se permiten imagenes AVIF, GIF, JPG, PNG o WEBP.");
+      throw new Error("Solo se permiten imagenes AVIF, GIF, HEIC, HEIF, JPG, PNG o WEBP.");
     }
 
-    if (file.size > 4 * 1024 * 1024) {
-      throw new Error("Cada imagen debe pesar menos de 4 MB.");
+    if (file.size > 12 * 1024 * 1024) {
+      throw new Error("Cada imagen debe pesar menos de 12 MB.");
     }
 
     const fileName = `${Date.now()}-${randomUUID()}.${extension}`;
     const bytes = Buffer.from(await file.arrayBuffer());
 
-    if (process.env.FIREBASE_STORAGE_BUCKET?.trim()) {
-      const bucket = getFirebaseStorageBucket();
+    if (getFirebaseServiceAccount()) {
       const storagePath = `motos/${fileName}`;
       const token = randomUUID();
-      const bucketFile = bucket.file(storagePath);
+      const buckets = getFirebaseStorageBuckets();
+      let uploadedUrl = "";
+      let uploadError: unknown = null;
 
-      await bucketFile.save(bytes, {
-        contentType: file.type || `image/${extension}`,
-        metadata: {
-          cacheControl: "public, max-age=31536000, immutable",
-          metadata: {
-            firebaseStorageDownloadTokens: token,
-          },
-        },
-      });
+      for (const bucket of buckets) {
+        const bucketFile = bucket.file(storagePath);
 
-      uploadedPaths.push(
-        `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(storagePath)}?alt=media&token=${token}`,
-      );
+        try {
+          await bucketFile.save(bytes, {
+            contentType: file.type || `image/${extension}`,
+            metadata: {
+              cacheControl: "public, max-age=31536000, immutable",
+              metadata: {
+                firebaseStorageDownloadTokens: token,
+              },
+            },
+          });
+
+          uploadedUrl = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(storagePath)}?alt=media&token=${token}`;
+          break;
+        } catch (error) {
+          uploadError = error;
+
+          if (process.env.FIREBASE_STORAGE_BUCKET?.trim()) {
+            break;
+          }
+        }
+      }
+
+      if (!uploadedUrl) {
+        throw uploadError instanceof Error
+          ? uploadError
+          : new Error("No se pudo subir la imagen a Firebase Storage.");
+      }
+
+      uploadedPaths.push(uploadedUrl);
       continue;
     }
 
@@ -193,8 +215,28 @@ const getProductoFromForm = (formData: FormData, id: number): Producto => {
   };
 };
 
+const getActionErrorMessage = (error: unknown) =>
+  error instanceof Error && error.message
+    ? error.message
+    : "No se pudo guardar. Revisa la imagen e intenta de nuevo.";
+
+const redirectToProductoError = (formData: FormData, error: unknown) => {
+  const params = new URLSearchParams({
+    tab: "motos",
+    error: getActionErrorMessage(error),
+  });
+  const id = String(formData.get("id") ?? "").trim();
+  const variantCodigo = String(formData.get("variantCodigo") ?? "").trim();
+
+  if (id) params.set("moto", id);
+  if (variantCodigo) params.set("variant", variantCodigo);
+
+  redirect(`${getAdminPath()}?${params.toString()}`);
+};
+
 export async function saveProductoAction(formData: FormData) {
   await requireAdminSession();
+  try {
   const uploadedImages = await uploadImageFiles(getUploadedFiles(formData));
   const productos = await getProductos();
   const id = Number(formData.get("id"));
@@ -262,6 +304,10 @@ export async function saveProductoAction(formData: FormData) {
 
   await saveProductos(nextProductos);
   refreshCatalog();
+  } catch (error) {
+    redirectToProductoError(formData, error);
+  }
+
   redirect(`${getAdminPath()}?tab=motos`);
 }
 

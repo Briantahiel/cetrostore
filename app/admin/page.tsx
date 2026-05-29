@@ -22,6 +22,7 @@ type Props = {
     moto?: string;
     variant?: string;
     novedad?: string;
+    error?: string;
   }>;
 };
 
@@ -211,7 +212,7 @@ function VariantFields({
               <input
                 name="varianteImagenArchivo"
                 type="file"
-                accept="image/avif,image/gif,image/jpeg,image/png,image/webp"
+                accept="image/*,.avif,.gif,.heic,.heif,.jpg,.jpeg,.png,.webp"
                 className={`${fieldClassName} file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-black file:text-white`}
               />
             </div>
@@ -232,10 +233,12 @@ function ProductForm({
   producto,
   selectedVariant,
   galleryImages,
+  errorMessage,
 }: {
   producto?: Producto;
   selectedVariant?: ProductoVariante;
   galleryImages: string[];
+  errorMessage?: string;
 }) {
   const childVariants = (producto?.variantes ?? []).filter(
     (variant) => !producto?.codigo || variant.codigo !== producto.codigo,
@@ -278,6 +281,12 @@ function ProductForm({
           {displayProducto ? displayProducto.nombre : "Cargar moto"}
         </h2>
       </div>
+
+      {errorMessage ? (
+        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-bold text-red-700">
+          {errorMessage}
+        </div>
+      ) : null}
 
       <div className="grid gap-4 md:grid-cols-2">
         <label className={labelClassName}>
@@ -341,7 +350,7 @@ function ProductForm({
         <input
           name="imagenArchivo"
           type="file"
-          accept="image/avif,image/gif,image/jpeg,image/png,image/webp"
+          accept="image/*,.avif,.gif,.heic,.heif,.jpg,.jpeg,.png,.webp"
           multiple={!isEditingVariant}
           className={`${fieldClassName} file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-black file:text-white`}
         />
@@ -560,6 +569,7 @@ export default async function AdminPage({ searchParams }: Props) {
               producto={selectedProducto}
               selectedVariant={selectedVariant}
               galleryImages={galleryImages}
+              errorMessage={params.error}
             />
           </div>
         ) : (

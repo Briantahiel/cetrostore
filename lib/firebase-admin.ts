@@ -21,8 +21,19 @@ type GoogleServiceAccountJson = {
 };
 
 const getFirebaseStorageBucketName = (projectId?: string) =>
-  process.env.FIREBASE_STORAGE_BUCKET?.trim() ||
-  (projectId ? `${projectId}.appspot.com` : "");
+  getFirebaseStorageBucketNames(projectId)[0] ?? "";
+
+const getFirebaseStorageBucketNames = (projectId?: string) => {
+  const configuredBucket = process.env.FIREBASE_STORAGE_BUCKET?.trim();
+
+  if (configuredBucket) return [configuredBucket];
+  if (!projectId) return [];
+
+  return [
+    `${projectId}.firebasestorage.app`,
+    `${projectId}.appspot.com`,
+  ];
+};
 
 const normalizeServiceAccount = (
   serviceAccount: GoogleServiceAccountJson,
@@ -160,4 +171,31 @@ export const getFirebaseStorageBucket = () => {
   }
 
   return getStorage().bucket(bucketName);
+};
+
+export const getFirebaseStorageBuckets = () => {
+  const serviceAccount = getFirebaseServiceAccount();
+
+  if (!serviceAccount) {
+    throw new Error("Firebase no esta configurado.");
+  }
+
+  if (!getApps().length) {
+    initializeApp({
+      credential: cert({
+        projectId: serviceAccount.projectId,
+        clientEmail: serviceAccount.clientEmail,
+        privateKey: serviceAccount.privateKey,
+      }),
+      storageBucket: getFirebaseStorageBucketName(serviceAccount.projectId),
+    });
+  }
+
+  const bucketNames = getFirebaseStorageBucketNames(serviceAccount.projectId);
+
+  if (!bucketNames.length) {
+    throw new Error("Falta configurar FIREBASE_STORAGE_BUCKET.");
+  }
+
+  return bucketNames.map((bucketName) => getStorage().bucket(bucketName));
 };
