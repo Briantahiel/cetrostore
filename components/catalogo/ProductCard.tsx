@@ -8,6 +8,7 @@ type Props = {
   nombre: string;
   descripcion: string;
   imagen: string[];
+  color?: string;
   stock?: "fisico" | "virtual";
   variantes?: ProductoVariante[];
   detailHref?: string;
@@ -20,6 +21,7 @@ export default function ProductCard({
   nombre,
   descripcion,
   imagen,
+  color,
   stock = "fisico",
   variantes,
   detailHref = `/catalogo/${id}`,
@@ -32,11 +34,11 @@ export default function ProductCard({
   const imagenPrincipal = getProductoImagenPrincipal(imagen);
 
   return (
-    <article className="flex h-full min-h-[430px] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg">
+    <article className="flex h-full min-h-[430px] flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/10">
       <Link
         href={detailHref}
         onClick={onOpen}
-        className="block bg-slate-100 p-4 transition hover:bg-blue-50"
+        className="block bg-gradient-to-b from-slate-100 to-white p-4 transition hover:bg-blue-50"
       >
         <ImageWithSkeleton
           src={imagenPrincipal}
@@ -54,14 +56,16 @@ export default function ProductCard({
       </Link>
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
-          {isVirtualStock ? "Stock virtual" : "Moto disponible"}
-        </p>
-        {codigo && (
-          <p className="mt-2 text-xs font-black uppercase tracking-wide text-slate-400">
-            Codigo {codigo}
+        <div className="flex flex-wrap items-center gap-2">
+          <p className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black uppercase tracking-wide text-blue-700">
+            {isVirtualStock ? "Stock virtual" : "Moto disponible"}
           </p>
-        )}
+          {codigo && (
+            <p className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-slate-500">
+              Codigo {codigo}
+            </p>
+          )}
+        </div>
         <Link href={detailHref} onClick={onOpen} className="mt-3 block">
           <h3 className="text-xl font-black tracking-tight text-slate-950 transition hover:text-blue-700">
             {nombre}
@@ -72,9 +76,14 @@ export default function ProductCard({
           {descripcion}
         </p>
 
-        {variantes?.length ? (
+        {color || variantes?.length ? (
           <div className="mt-4 flex flex-wrap gap-2">
-            {variantes.map((variante) => (
+            {color ? (
+              <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">
+                {color}
+              </span>
+            ) : null}
+            {variantes?.map((variante) => (
               <span
                 key={variante.codigo}
                 className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-black text-slate-600"

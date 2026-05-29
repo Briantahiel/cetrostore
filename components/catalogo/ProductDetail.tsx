@@ -29,7 +29,6 @@ export default function ProductDetail({
 
   const displayName = selectedVariant?.nombre ?? producto.nombre;
   const displayCode = selectedVariant?.codigo ?? producto.codigo;
-  const displayColor = selectedVariant?.color ?? producto.color;
   const displayDescription = selectedVariant?.descripcion ?? producto.descripcion;
   const displayStock = selectedVariant?.stock ?? producto.stock;
   const displayFichaTecnica = selectedVariant?.fichaTecnica?.length
@@ -93,18 +92,13 @@ export default function ProductDetail({
               Codigo {displayCode}
             </p>
           )}
-          {displayColor && (
-            <p className="mt-2 text-xs font-black uppercase tracking-wide text-slate-400">
-              Color {displayColor}
-            </p>
-          )}
           <h1 className="mt-3 text-4xl font-black tracking-tight">
             {displayName}
           </h1>
           <p className="mt-5 text-base font-medium leading-7 text-slate-600">
             {displayDescription}
           </p>
-          {childVariants.length ? (
+          {producto.color || childVariants.length ? (
             <div className="mt-6">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-slate-500">
                 Color
@@ -119,7 +113,7 @@ export default function ProductDetail({
                       : "border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50"
                   }`}
                 >
-                  Principal
+                  {producto.color ?? "Principal"}
                 </button>
                 {childVariants.map((variante) => (
                   <button

@@ -231,26 +231,28 @@ export default function ProductCatalog({ productos }: Props) {
   return (
     <section className="px-4 py-10 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-8 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+          <div className="flex flex-col gap-4 bg-slate-950 px-5 py-6 text-white sm:flex-row sm:items-end sm:justify-between sm:px-7">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-900">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-200">
               Catalogo
             </p>
             <h2 className="mt-2 text-4xl font-black tracking-tight">
               Elegi tu moto
             </h2>
-            <p className="mt-3 max-w-2xl text-sm font-medium leading-6 text-slate-600">
+            <p className="mt-3 max-w-2xl text-sm font-medium leading-6 text-slate-300">
               Filtra por marca y cilindrada. Consulta disponibilidad,
               financiacion y medios de pago.
             </p>
           </div>
 
-          <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-black text-slate-700 shadow-sm">
+          <div className="rounded-lg border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white shadow-sm">
             {sortedProducts.length} unidades
+          </div>
           </div>
         </div>
 
-        <div className="mb-8 rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="mb-8 rounded-lg border border-slate-200 bg-white p-5 shadow-lg shadow-slate-950/5">
           <div className="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
             <h3 className="text-lg font-black tracking-tight">
               Filtros de busqueda
@@ -375,6 +377,7 @@ export default function ProductCatalog({ productos }: Props) {
               descripcion={producto.descripcion}
               imagen={producto.imagen}
               stock={producto.stock}
+              color={producto.color}
               variantes={producto.variantes}
               detailHref={getProductDetailHref(producto.id)}
               onOpen={saveCatalogPosition}
