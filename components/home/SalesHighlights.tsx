@@ -1,49 +1,48 @@
 const highlights = [
   {
-    eyebrow: "Cuotas",
-    title: "Financiación",
-    text: "Opciones a medida para comparar cuotas antes de reservar.",
+    eyebrow: "Financiacion",
+    title: "Cuotas claras antes de avanzar",
+    text: "Revisamos alternativas y monto estimado para que compares sin perder tiempo.",
   },
   {
-    eyebrow: "Operación",
-    title: "Entrega inmediata",
-    text: "Confirmación de disponibilidad y documentación antes del retiro.",
+    eyebrow: "Disponibilidad",
+    title: "Modelos y colores organizados",
+    text: "Cada moto muestra sus variantes juntas, con ficha tecnica y consulta directa.",
   },
   {
-    eyebrow: "Compra guiada",
-    title: "Asesoramiento",
-    text: "Te ayudamos a elegir el modelo que más se adapta a tu necesidad y estilo",
+    eyebrow: "Entrega",
+    title: "Acompañamiento hasta el retiro",
+    text: "Coordinamos documentacion, reserva y entrega con seguimiento personalizado.",
   },
 ];
 
 export default function SalesHighlights() {
   return (
-    <section className="bg-white px-4 py-10 sm:px-8 lg:px-10">
+    <section className="bg-white px-4 py-12 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+        <div className="mb-6 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
           <div>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
+              Compra guiada
+            </p>
             <h2 className="mt-2 text-3xl font-black tracking-tight">
-              Todo listo para decidir mejor
+              Informacion simple para decidir mejor
             </h2>
           </div>
-          {/* <p className="max-w-md text-sm font-medium leading-6 text-slate-600">
-            La idea es que sepas el precio, formas de pago y la disponibilidad antes
-            de avanzar.
-          </p> */}
         </div>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="grid gap-4 md:grid-cols-3">
           {highlights.map((item) => (
             <article
               key={item.title}
-              className="min-w-[240px] flex-1 rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm"
+              className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-white hover:shadow-lg"
             >
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-500">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
                 {item.eyebrow}
               </p>
-              <h2 className="text-lg font-black tracking-tight text-slate-950">
+              <h3 className="mt-2 text-lg font-black tracking-tight text-slate-950">
                 {item.title}
-              </h2>
+              </h3>
               <p className="mt-2 text-sm font-medium leading-6 text-slate-600">
                 {item.text}
               </p>

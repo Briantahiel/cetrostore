@@ -1,5 +1,8 @@
 "use server";
 
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import { randomUUID } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import {
@@ -10,6 +13,10 @@ import {
 } from "@/data/catalog-store";
 import { getAdminPath } from "@/lib/admin-auth";
 import { requireAdminSession } from "@/lib/admin-session";
+import {
+  getFirebaseStorageBucket,
+  getFirebaseServiceAccount,
+} from "@/lib/firebase-admin";
 import type { FichaTecnicaItem, Producto, ProductoVariante } from "@/data/productos";
 
 const parseNumber = (value: FormDataEntryValue | null) => {
@@ -20,16 +27,32 @@ const parseNumber = (value: FormDataEntryValue | null) => {
   return Number.isFinite(parsed) ? parsed : null;
 };
 
-const parseJsonArray = <T,>(value: FormDataEntryValue | null, fallback: T[]) => {
-  const text = String(value ?? "").trim();
-  if (!text) return fallback;
+const parseRows = (formData: FormData, labelName: string, valueName: string) => {
+  const labels = formData.getAll(labelName);
+  const values = formData.getAll(valueName);
 
-  const parsed = JSON.parse(text);
-  if (!Array.isArray(parsed)) {
-    throw new Error("El campo JSON debe ser un array.");
-  }
+  return labels
+    .map((label, index) => ({
+      etiqueta: String(label ?? "").trim(),
+      valor: String(values[index] ?? "").trim(),
+    }))
+    .filter((item) => item.etiqueta && item.valor);
+};
 
-  return parsed as T[];
+const parseVariantRows = (formData: FormData): ProductoVariante[] => {
+  const codigos = formData.getAll("varianteCodigo");
+  const nombres = formData.getAll("varianteNombre");
+  const colores = formData.getAll("varianteColor");
+  const imagenes = formData.getAll("varianteImagen");
+
+  return codigos
+    .map((codigo, index) => ({
+      codigo: String(codigo ?? "").trim(),
+      nombre: String(nombres[index] ?? "").trim(),
+      color: String(colores[index] ?? "").trim(),
+      imagen: String(imagenes[index] ?? "").trim(),
+    }))
+    .filter((variante) => variante.codigo && variante.nombre && variante.color && variante.imagen);
 };
 
 const parseLines = (value: FormDataEntryValue | null) =>
@@ -48,6 +71,89 @@ const parseImages = (formData: FormData) => {
   return Array.from(new Set([...galleryImages, ...manualImages]));
 };
 
+const getUploadedFiles = (formData: FormData) =>
+  formData
+    .getAll("imagenArchivo")
+    .filter((value): value is File => value instanceof File && value.size > 0);
+
+const extensionByType: Record<string, string> = {
+  "image/avif": "avif",
+  "image/gif": "gif",
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp",
+};
+
+const getSafeImageExtension = (file: File) => {
+  const fromType = extensionByType[file.type];
+  if (fromType) return fromType;
+
+  const fromName = file.name.split(".").pop()?.toLowerCase();
+  if (fromName && ["avif", "gif", "jpg", "jpeg", "png", "webp"].includes(fromName)) {
+    return fromName === "jpeg" ? "jpg" : fromName;
+  }
+
+  return null;
+};
+
+const uploadImageFiles = async (files: File[]) => {
+  const uploadedPaths: string[] = [];
+
+  for (const file of files) {
+    const extension = getSafeImageExtension(file);
+
+    if (!extension) {
+      throw new Error("Solo se permiten imagenes AVIF, GIF, JPG, PNG o WEBP.");
+    }
+
+    if (file.size > 4 * 1024 * 1024) {
+      throw new Error("Cada imagen debe pesar menos de 4 MB.");
+    }
+
+    const fileName = `${Date.now()}-${randomUUID()}.${extension}`;
+    const bytes = Buffer.from(await file.arrayBuffer());
+
+    if (process.env.FIREBASE_STORAGE_BUCKET?.trim()) {
+      const bucket = getFirebaseStorageBucket();
+      const storagePath = `motos/${fileName}`;
+      const token = randomUUID();
+      const bucketFile = bucket.file(storagePath);
+
+      await bucketFile.save(bytes, {
+        contentType: file.type || `image/${extension}`,
+        metadata: {
+          cacheControl: "public, max-age=31536000, immutable",
+          metadata: {
+            firebaseStorageDownloadTokens: token,
+          },
+        },
+      });
+
+      uploadedPaths.push(
+        `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(storagePath)}?alt=media&token=${token}`,
+      );
+      continue;
+    }
+
+    if (process.env.VERCEL) {
+      throw new Error(
+        "Para subir imagenes en Vercel configura FIREBASE_STORAGE_BUCKET con el bucket de Firebase Storage.",
+      );
+    }
+
+    if (getFirebaseServiceAccount() && process.env.NODE_ENV !== "development") {
+      throw new Error("Falta configurar FIREBASE_STORAGE_BUCKET.");
+    }
+
+    const localDirectory = path.join(process.cwd(), "public", "motos");
+    await fs.mkdir(localDirectory, { recursive: true });
+    await fs.writeFile(path.join(localDirectory, fileName), bytes);
+    uploadedPaths.push(`/motos/${fileName}`);
+  }
+
+  return uploadedPaths;
+};
+
 const refreshCatalog = () => {
   const adminPath = getAdminPath();
 
@@ -60,14 +166,8 @@ const refreshCatalog = () => {
 
 const getProductoFromForm = (formData: FormData, id: number): Producto => {
   const imagen = parseImages(formData);
-  const variantes = parseJsonArray<ProductoVariante>(
-    formData.get("variantes"),
-    [],
-  );
-  const fichaTecnica = parseJsonArray<FichaTecnicaItem>(
-    formData.get("fichaTecnica"),
-    [],
-  );
+  const variantes = parseVariantRows(formData);
+  const fichaTecnica = parseRows(formData, "fichaEtiqueta", "fichaValor") as FichaTecnicaItem[];
 
   return {
     id,
@@ -84,6 +184,7 @@ const getProductoFromForm = (formData: FormData, id: number): Producto => {
 
 export async function saveProductoAction(formData: FormData) {
   await requireAdminSession();
+  const uploadedImages = await uploadImageFiles(getUploadedFiles(formData));
   const productos = await getProductos();
   const id = Number(formData.get("id"));
   const isEditing = Number.isFinite(id) && id > 0;
@@ -92,10 +193,12 @@ export async function saveProductoAction(formData: FormData) {
     formData,
     isEditing ? id : productos.length + 1,
   );
+  producto.imagen = Array.from(new Set([...uploadedImages, ...producto.imagen]));
 
   const selectedVariantImage = String(
     formData.get("imagenSeleccionada") ?? "",
   ).trim();
+  const uploadedVariantImage = uploadedImages[0] ?? "";
   const hasImage = producto.imagen.length > 0 || Boolean(selectedVariantImage);
 
   if (!producto.nombre || !producto.descripcion || !hasImage) {
@@ -114,7 +217,7 @@ export async function saveProductoAction(formData: FormData) {
           const nextVariant: ProductoVariante = {
             codigo: producto.codigo ?? variantCodigo,
             nombre: producto.nombre,
-            imagen: selectedVariantImage || producto.imagen[0],
+            imagen: uploadedVariantImage || selectedVariantImage || producto.imagen[0],
             color:
               color ||
               variants.find((variant) => variant.codigo === variantCodigo)

@@ -2,22 +2,21 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 overflow-hidden border-b border-blue-500/20 bg-white/90 text-slate-950 shadow-xl shadow-blue-950/10 backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 overflow-hidden border-b border-slate-200/80 bg-white/90 text-slate-950 shadow-lg shadow-slate-950/5 backdrop-blur-2xl">
       <div className="relative bg-slate-950 px-4 py-2 text-center text-xs font-black uppercase tracking-[0.18em] text-white sm:px-8">
         <span className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-blue-500/50 to-transparent" />
-            <div className="flex justify-around">
-            <p className="mt-1 font-medium text-[0.6rem] text-slate-300">
-            Asesor comercial: Brian Gómez
+        <div className="relative flex flex-col justify-center gap-1 sm:flex-row sm:gap-8">
+          <p className="font-medium text-[0.65rem] text-slate-300">
+            Asesor comercial: Brian Gomez
           </p>
-           <p className="mt-1 font-medium text-[0.6rem] text-slate-300">
-            Justa Lima 337 - Zárate, Buenos Aires
+          <p className="font-medium text-[0.65rem] text-slate-300">
+            Justa Lima 337 - Zarate, Buenos Aires
           </p>
-      </div>
+        </div>
         <span className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-orange-500/90 via-red-600/30 to-transparent" />
       </div>
-      
 
-      <nav className="relative mx-auto flex h-24 max-w-6xl items-center justify-between gap-4 px-4 sm:px-8 lg:px-10">
+      <nav className="relative mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-8 lg:px-10">
         <div className="pointer-events-none absolute inset-x-4 bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
 
         <Link
@@ -25,30 +24,28 @@ export default function Navbar() {
           className="group flex flex-1 items-center gap-3"
           aria-label="Cetromotos inicio"
         >
-          <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-r from-[#020617] via-[#12306B] via-30% to-[#FF7A00] p-0.5 shadow-2xl shadow-blue-600/30 transition duration-300 group-hover:scale-105 group-hover:shadow-orange-400/30">
-            <span className="flex h-full w-full items-center justify-center rounded-[0.9rem] bg-slate-950 text-lg font-black text-white">
+          <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-[#020617] via-[#12306B] via-30% to-[#FF7A00] p-0.5 shadow-xl shadow-blue-600/20 transition duration-300 group-hover:scale-105 group-hover:shadow-orange-400/30">
+            <span className="flex h-full w-full items-center justify-center rounded-[0.65rem] bg-slate-950 text-base font-black text-white">
               CM
             </span>
           </span>
 
           <span className="flex min-w-0 flex-col leading-none">
-       <span className="truncate bg-gradient-to-r from-[#020617] via-[#12306B] via-60% to-[#FF7A00] bg-clip-text text-2xl font-black tracking-tight text-transparent sm:text-3xl">
-  Cetrogar Motos
-</span>
-
+            <span className="truncate bg-gradient-to-r from-[#020617] via-[#12306B] via-60% to-[#FF7A00] bg-clip-text text-2xl font-black tracking-tight text-transparent sm:text-3xl">
+              Cetrogar Motos
+            </span>
             <span className="mt-1 text-[0.68rem] font-black uppercase tracking-[0.24em] text-slate-700">
-              motos & showroom
+              motos y showroom
             </span>
           </span>
         </Link>
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/catalogo"
-            className="hidden rounded-full border border-slate-200 bg-white px-4 py-3 text-xs font-black uppercase tracking-wide text-slate-700 shadow-sm transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 md:inline-flex"
-          >
-            Catálogo
-          </Link>
-        </div>
+
+        <Link
+          href="/catalogo"
+          className="hidden rounded-full border border-slate-200 bg-slate-950 px-5 py-3 text-xs font-black uppercase tracking-wide text-white shadow-sm transition hover:border-blue-300 hover:bg-blue-700 md:inline-flex"
+        >
+          Catalogo
+        </Link>
       </nav>
     </header>
   );

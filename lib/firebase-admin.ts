@@ -3,6 +3,7 @@ import "server-only";
 import { readFileSync } from "node:fs";
 import { cert, getApps, initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
+import { getStorage } from "firebase-admin/storage";
 
 type FirebaseServiceAccount = {
   projectId: string;
@@ -18,6 +19,10 @@ type GoogleServiceAccountJson = {
   clientEmail?: string;
   privateKey?: string;
 };
+
+const getFirebaseStorageBucketName = (projectId?: string) =>
+  process.env.FIREBASE_STORAGE_BUCKET?.trim() ||
+  (projectId ? `${projectId}.appspot.com` : "");
 
 const normalizeServiceAccount = (
   serviceAccount: GoogleServiceAccountJson,
@@ -104,6 +109,8 @@ export const getFirebaseConfigStatus = () => {
     privateKeyHasEndMarker: Boolean(
       serviceAccount?.privateKey.includes("-----END PRIVATE KEY-----"),
     ),
+    storageBucket:
+      getFirebaseStorageBucketName(serviceAccount?.projectId) || null,
   };
 };
 
@@ -121,8 +128,36 @@ export const getFirebaseDb = () => {
         clientEmail: serviceAccount.clientEmail,
         privateKey: serviceAccount.privateKey,
       }),
+      storageBucket: getFirebaseStorageBucketName(serviceAccount.projectId),
     });
   }
 
   return getFirestore();
+};
+
+export const getFirebaseStorageBucket = () => {
+  const serviceAccount = getFirebaseServiceAccount();
+
+  if (!serviceAccount) {
+    throw new Error("Firebase no esta configurado.");
+  }
+
+  if (!getApps().length) {
+    initializeApp({
+      credential: cert({
+        projectId: serviceAccount.projectId,
+        clientEmail: serviceAccount.clientEmail,
+        privateKey: serviceAccount.privateKey,
+      }),
+      storageBucket: getFirebaseStorageBucketName(serviceAccount.projectId),
+    });
+  }
+
+  const bucketName = getFirebaseStorageBucketName(serviceAccount.projectId);
+
+  if (!bucketName) {
+    throw new Error("Falta configurar FIREBASE_STORAGE_BUCKET.");
+  }
+
+  return getStorage().bucket(bucketName);
 };

@@ -30,20 +30,23 @@ const fieldClassName =
 const labelClassName = "flex flex-col gap-2 text-sm font-black text-slate-800";
 const sectionClassName = "rounded-lg border border-slate-200 bg-white p-5 shadow-sm";
 
-const jsonText = (value: unknown) => JSON.stringify(value ?? [], null, 2);
-
-const getGalleryImages = async () => {
+const getGalleryImages = async (productos: Producto[]) => {
   const motosDirectory = path.join(process.cwd(), "public", "motos");
+  const productImages = productos.flatMap((producto) => [
+    ...producto.imagen,
+    ...(producto.variantes?.map((variante) => variante.imagen) ?? []),
+  ]);
 
   try {
     const files = await fs.readdir(motosDirectory);
-
-    return files
+    const publicImages = files
       .filter((file) => /\.(?:avif|gif|jpe?g|png|webp)$/i.test(file))
       .sort((a, b) => a.localeCompare(b))
       .map((file) => `/motos/${file}`);
+
+    return Array.from(new Set([...productImages, ...publicImages])).filter(Boolean);
   } catch {
-    return [];
+    return Array.from(new Set(productImages)).filter(Boolean);
   }
 };
 
@@ -62,11 +65,14 @@ function ImageGalleryField({
   return (
     <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
       <div className="mb-3 flex items-center justify-between gap-3">
-        <p className="text-sm font-black text-slate-800">Galeria de imagenes</p>
+        <p className="text-sm font-black text-slate-800">Galeria de la app</p>
         <span className="text-xs font-black uppercase tracking-wide text-slate-400">
-          {single ? "Elegir una" : "Elegir varias"}
+          {single ? "Elegir una" : "Marcar las que usa"}
         </span>
       </div>
+      <p className="mb-3 text-xs font-bold text-slate-500">
+        Para quitar una imagen de esta moto, dejala sin marcar y guarda.
+      </p>
       <div className="grid max-h-72 grid-cols-2 gap-3 overflow-auto pr-1 sm:grid-cols-3">
         {galleryImages.map((image) => (
           <label
@@ -93,9 +99,99 @@ function ImageGalleryField({
               }}
             />
             <span className="break-all rounded-md px-2 py-1 peer-checked:bg-blue-600 peer-checked:text-white">
-              {image.replace("/motos/", "")}
+              {image.startsWith("/motos/") ? image.replace("/motos/", "") : "Imagen subida"}
             </span>
           </label>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const emptyFichaRows = Array.from({ length: 6 }, () => ({
+  etiqueta: "",
+  valor: "",
+}));
+
+function TechnicalSheetFields({ items }: { items: Array<{ etiqueta: string; valor: string }> }) {
+  const rows = [...items, ...emptyFichaRows];
+
+  return (
+    <div className="rounded-lg border border-slate-200 bg-white p-4">
+      <div className="mb-4 flex flex-col gap-1">
+        <p className="text-sm font-black text-slate-800">Ficha tecnica</p>
+        <p className="text-xs font-bold text-slate-500">
+          Completa una fila por dato. Ejemplo: Cilindrada / 110 cc.
+        </p>
+      </div>
+      <div className="grid gap-3">
+        {rows.map((item, index) => (
+          <div key={`${item.etiqueta}-${index}`} className="grid gap-3 sm:grid-cols-[0.8fr_1.2fr]">
+            <input
+              name="fichaEtiqueta"
+              defaultValue={item.etiqueta}
+              className={fieldClassName}
+              placeholder="Cilindrada"
+            />
+            <input
+              name="fichaValor"
+              defaultValue={item.valor}
+              className={fieldClassName}
+              placeholder="110 cc"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const emptyVariantRows = Array.from({ length: 4 }, () => ({
+  codigo: "",
+  nombre: "",
+  color: "",
+  imagen: "",
+}));
+
+function VariantFields({ variants }: { variants: ProductoVariante[] }) {
+  const rows = [...variants, ...emptyVariantRows];
+
+  return (
+    <div className="rounded-lg border border-slate-200 bg-white p-4">
+      <div className="mb-4 flex flex-col gap-1">
+        <p className="text-sm font-black text-slate-800">Variantes por color</p>
+        <p className="text-xs font-bold text-slate-500">
+          Usa una fila por color. Si la moto no tiene variantes, deja estas filas vacias.
+        </p>
+      </div>
+      <div className="grid gap-3">
+        {rows.map((variant, index) => (
+          <div key={`${variant.codigo}-${index}`} className="grid gap-3 rounded-lg bg-slate-50 p-3 md:grid-cols-4">
+            <input
+              name="varianteColor"
+              defaultValue={variant.color}
+              className={fieldClassName}
+              placeholder="Rojo"
+            />
+            <input
+              name="varianteCodigo"
+              defaultValue={variant.codigo}
+              className={fieldClassName}
+              placeholder="MO0808"
+            />
+            <input
+              name="varianteNombre"
+              defaultValue={variant.nombre}
+              className={fieldClassName}
+              placeholder="Honda Wave roja"
+            />
+            <input
+              name="varianteImagen"
+              defaultValue={variant.imagen}
+              className={fieldClassName}
+              placeholder="/motos/honda-wave-roja.jpg"
+            />
+          </div>
         ))}
       </div>
     </div>
@@ -127,7 +223,7 @@ function ProductForm({
     : producto;
 
   return (
-    <form action={saveProductoAction} className={`${sectionClassName} grid gap-4`}>
+    <form action={saveProductoAction} encType="multipart/form-data" className={`${sectionClassName} grid gap-4`}>
       <input type="hidden" name="id" value={producto?.id ?? ""} />
       <input type="hidden" name="variantCodigo" value={selectedVariant?.codigo ?? ""} />
       <div>
@@ -197,7 +293,18 @@ function ProductForm({
       />
 
       <label className={labelClassName}>
-        Imagenes manuales
+        Subir imagen desde tu dispositivo
+        <input
+          name="imagenArchivo"
+          type="file"
+          accept="image/avif,image/gif,image/jpeg,image/png,image/webp"
+          multiple={!isEditingVariant}
+          className={`${fieldClassName} file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-black file:text-white`}
+        />
+      </label>
+
+      <label className={labelClassName}>
+        Imagenes manuales opcionales
         <textarea
           name="imagen"
           rows={3}
@@ -208,26 +315,10 @@ function ProductForm({
       </label>
 
       {!isEditingVariant ? (
-        <label className={labelClassName}>
-          Variantes
-          <textarea
-            name="variantes"
-            rows={7}
-            defaultValue={jsonText(producto?.variantes)}
-            className={`${fieldClassName} font-mono`}
-          />
-        </label>
+        <VariantFields variants={producto?.variantes ?? []} />
       ) : null}
 
-      <label className={labelClassName}>
-        Ficha tecnica
-        <textarea
-          name="fichaTecnica"
-          rows={8}
-          defaultValue={jsonText(fichaTecnica)}
-          className={`${fieldClassName} font-mono`}
-        />
-      </label>
+      <TechnicalSheetFields items={fichaTecnica} />
 
       <div className="flex flex-wrap gap-3">
         <button
@@ -319,11 +410,8 @@ export default async function AdminPage({ searchParams }: Props) {
   const params = await searchParams;
   const adminPath = getAdminPath();
   const activeTab = params.tab === "novedades" ? "novedades" : "motos";
-  const [productos, novedades, galleryImages] = await Promise.all([
-    getProductos(),
-    getNovedades(),
-    getGalleryImages(),
-  ]);
+  const [productos, novedades] = await Promise.all([getProductos(), getNovedades()]);
+  const galleryImages = await getGalleryImages(productos);
   const selectedProducto = productos.find((producto) => producto.id === Number(params.moto));
   const selectedVariant = selectedProducto?.variantes?.find(
     (variant) => variant.codigo === params.variant,
