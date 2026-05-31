@@ -3,7 +3,7 @@ import { WhatsAppLogo } from "@/components/layout/FloatingActions";
 
 const footerLinks = [
   { href: "/", label: "Inicio" },
-  { href: "/catalogo", label: "Catalogo" },
+  { href: "/catalogo", label: "Catálogo" },
 ];
 
 export default function Footer() {
@@ -11,9 +11,9 @@ export default function Footer() {
     <footer className="border-t border-slate-800 bg-slate-950 text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
         <div className="max-w-sm">
-          <p className="text-2xl font-black tracking-tight">cetromotos</p>
+          <p className="text-2xl font-black tracking-tight">Cetromotos</p>
           <p className="mt-3 text-sm leading-6 text-slate-400">
-            Venta de motos con financiacion, atencion personalizada y entrega inmediata.
+            Venta de motos con financiación, atencion personalizada y entrega inmediata.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-slate-800 px-4 py-4 text-center text-xs font-medium text-slate-500 sm:px-8 lg:px-10">
-        © 2026 cetromotos. Todos los derechos reservados. Created by Brian
+        © 2026 Cetromotos. Todos los derechos reservados. Created by Brian
       </div>
     </footer>
   );

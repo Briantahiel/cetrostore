@@ -16,15 +16,15 @@ export default function HeroShowroom() {
           <h1 className="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
             Elegi tu proxima moto con entrega y financiacion claras
           </h1>
-          <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-cyan-300">
-            Modelos urbanos, todo terreno y ruta con asesoramiento directo y atencion personalizada.
+          <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-gray-500">
+            Modelos urbanos, todo terreno y ruta con asesoramiento directo y atención personalizada.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/catalogo"
               className="inline-flex min-h-12 items-center justify-center rounded-lg bg-cyan-300 px-6 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-950/20 transition hover:-translate-y-0.5 hover:bg-white"
             >
-              Ver catalogo
+              Ver catálogo
             </Link>
             <a
               href="https://wa.me/5493489696728"

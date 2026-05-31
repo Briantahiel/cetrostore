@@ -50,9 +50,9 @@ export default function ProductDetail({
     [childVariants],
   );
 
-  const codigoTexto = displayCode ? `, codigo ${displayCode}` : "";
+  const codigoTexto = displayCode ? `, código ${displayCode}` : "";
   const whatsappText = encodeURIComponent(
-    `Hola! Quiero consultar por el producto ${displayName}${codigoTexto} y los planes de financiacion.`,
+    `Hola! Quiero consultar por el modelo ${displayName}${codigoTexto} y los planes de financiación.`,
   );
 
   const selectImage = (image: string) => {
@@ -89,7 +89,7 @@ export default function ProductDetail({
           </p>
           {displayCode && (
             <p className="mt-2 text-xs font-black uppercase tracking-wide text-slate-400">
-              Codigo {displayCode}
+              Código {displayCode}
             </p>
           )}
           <h1 className="mt-3 text-4xl font-black tracking-tight">
@@ -154,7 +154,7 @@ export default function ProductDetail({
               Especificaciones
             </p>
             <h2 className="mt-2 text-2xl font-black tracking-tight">
-              Ficha tecnica
+              Ficha técnica
             </h2>
           </div>
           {displayCode && (

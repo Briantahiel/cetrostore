@@ -235,14 +235,14 @@ export default function ProductCatalog({ productos }: Props) {
           <div className="flex flex-col gap-4 bg-slate-950 px-5 py-6 text-white sm:flex-row sm:items-end sm:justify-between sm:px-7">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-200">
-              Catalogo
+              Catálogo
             </p>
             <h2 className="mt-2 text-4xl font-black tracking-tight">
-              Elegi tu moto
+              Elige tu moto
             </h2>
             <p className="mt-3 max-w-2xl text-sm font-medium leading-6 text-slate-300">
               Filtra por marca y cilindrada. Consulta disponibilidad,
-              financiacion y medios de pago.
+              financiación y medios de pago.
             </p>
           </div>
 
@@ -255,7 +255,7 @@ export default function ProductCatalog({ productos }: Props) {
         <div className="mb-8 rounded-lg border border-slate-200 bg-white p-5 shadow-lg shadow-slate-950/5">
           <div className="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
             <h3 className="text-lg font-black tracking-tight">
-              Filtros de busqueda
+              Filtros de búsqueda
             </h3>
             <button
               type="button"
@@ -423,7 +423,7 @@ export default function ProductCatalog({ productos }: Props) {
 
         <div className="mt-8 rounded-lg border border-slate-200 bg-white p-5 text-center text-sm font-medium text-slate-600">
           No encontras el modelo que buscas? Consultanos por el ingreso de
-          nuevas unidades y financiacion disponible.
+          nuevas unidades y financiación disponible.
         </div>
       </div>
     </section>
