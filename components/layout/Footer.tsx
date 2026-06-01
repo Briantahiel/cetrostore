@@ -12,8 +12,9 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
         <div className="max-w-sm">
           <p className="text-2xl font-black tracking-tight">Cetromotos</p>
-          <p className="mt-3 text-sm leading-6 text-slate-400">
-            Venta de motos con financiación, atencion personalizada y entrega inmediata.
+          <p className="mt-3 text-sm font-semibold leading-6 text-slate-300">
+            Venta de motos con financiación, atención personalizada y entrega
+            inmediata.
           </p>
         </div>
 
@@ -40,7 +41,7 @@ export default function Footer() {
         </a>
       </div>
 
-      <div className="border-t border-slate-800 px-4 py-4 text-center text-xs font-medium text-slate-500 sm:px-8 lg:px-10">
+      <div className="border-t border-slate-800 px-4 py-4 text-center text-xs font-semibold text-slate-400 sm:px-8 lg:px-10">
         © 2026 Cetromotos. Todos los derechos reservados. Created by Brian
       </div>
     </footer>

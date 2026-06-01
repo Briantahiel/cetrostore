@@ -13,7 +13,7 @@ type Props = {
 };
 
 const secondaryCatalogLinkClassName =
-  "rounded-lg border border-slate-300 px-5 py-3 text-center text-sm font-black text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700";
+  "rounded-lg border border-slate-300 px-5 py-3 text-center text-sm font-black text-slate-800 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700 dark:border-slate-600 dark:text-slate-100 dark:hover:border-cyan-400 dark:hover:bg-slate-900 dark:hover:text-cyan-300";
 
 export default async function ProductPage({ params }: Props) {
   await connection();
@@ -29,7 +29,7 @@ export default async function ProductPage({ params }: Props) {
   const fichaTecnica = getFichaTecnicaProducto(producto);
 
   return (
-    <main className="flex-1 bg-slate-50 px-4 py-10 text-slate-950 sm:px-8 lg:px-10">
+    <main className="flex-1 bg-slate-50 px-4 py-10 text-slate-950 dark:bg-slate-950 dark:text-slate-50 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-6xl">
         <Suspense fallback={null}>
           <BackButton />
@@ -50,7 +50,7 @@ export default async function ProductPage({ params }: Props) {
               }
             >
               <BackButton
-                label="Ver catalogo"
+                label="Ver catálogo"
                 className={secondaryCatalogLinkClassName}
               />
             </Suspense>

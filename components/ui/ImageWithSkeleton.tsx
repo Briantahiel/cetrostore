@@ -37,7 +37,7 @@ export default function ImageWithSkeleton({
   return (
     <div className={`relative overflow-hidden ${className}`} style={style}>
       {isLoading && (
-        <div className="absolute inset-0 animate-pulse bg-slate-200" />
+        <div className="absolute inset-0 animate-pulse bg-slate-200 dark:bg-slate-800" />
       )}
       <img
         ref={handleImageRef}

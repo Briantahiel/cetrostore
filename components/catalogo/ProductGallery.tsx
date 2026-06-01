@@ -42,7 +42,7 @@ export default function ProductGallery({
         <ImageWithSkeleton
           src={mainImage}
           alt={nombre}
-          className="flex aspect-[4/3] w-full items-center justify-center rounded-lg bg-slate-100 p-4 sm:p-5"
+          className="flex aspect-[4/3] w-full items-center justify-center rounded-lg bg-white p-4 sm:p-5"
           imageClassName="block"
           imageStyle={{
             maxHeight: "100%",
@@ -59,8 +59,10 @@ export default function ProductGallery({
             key={item}
             type="button"
             onClick={() => handleSelectImage(item)}
-            className={`flex aspect-square min-h-16 items-center justify-center rounded-lg border bg-white p-2 transition hover:border-blue-300 ${
-              mainImage === item ? "border-blue-500" : "border-slate-200"
+            className={`flex aspect-square min-h-16 items-center justify-center rounded-lg border bg-white p-2 transition hover:border-blue-300 dark:hover:border-cyan-400 ${
+              mainImage === item
+                ? "border-blue-600 dark:border-cyan-300"
+                : "border-slate-200 dark:border-slate-700"
             }`}
             aria-label={`Ver ${imageLabels[item] ?? `foto ${index + 1}`} de ${nombre}`}
           >
@@ -84,7 +86,7 @@ export default function ProductGallery({
         >
           <button
             type="button"
-          className="absolute right-4 top-4 rounded-lg bg-white px-4 py-2 text-sm font-black text-slate-900 transition hover:bg-slate-200"
+            className="absolute right-4 top-4 rounded-lg bg-white px-4 py-2 text-sm font-black text-slate-900 transition hover:bg-slate-200"
             onClick={() => setExpandedImage(null)}
           >
             Cerrar

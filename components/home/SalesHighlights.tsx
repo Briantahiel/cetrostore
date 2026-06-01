@@ -12,13 +12,13 @@ const highlights = [
   {
     eyebrow: "Compra guiada",
     title: "Asesoramiento",
-    text: "Te ayudamos a elegir el modelo que mas se adapta a tu necesidad y estilo",
+    text: "Te ayudamos a elegir el modelo que más se adapta a tu necesidad y estilo.",
   },
 ];
 
 export default function SalesHighlights() {
   return (
-    <section className="bg-white px-4 py-12 sm:px-8 lg:px-10">
+    <section className="bg-white px-4 py-12 text-slate-950 dark:bg-slate-950 dark:text-slate-50 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-6xl">
         <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
           <div>
@@ -32,15 +32,15 @@ export default function SalesHighlights() {
           {highlights.map((item) => (
             <article
               key={item.title}
-              className="min-w-[240px] flex-1 rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-white hover:shadow-lg"
+              className="min-w-[240px] flex-1 rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-white hover:shadow-lg dark:border-slate-700 dark:bg-slate-900 dark:hover:border-cyan-400 dark:hover:bg-slate-900"
             >
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-500">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700 dark:text-cyan-300">
                 {item.eyebrow}
               </p>
-              <h2 className="text-lg font-black tracking-tight text-slate-950">
+              <h2 className="mt-2 text-lg font-black tracking-tight text-slate-950 dark:text-white">
                 {item.title}
               </h2>
-              <p className="mt-2 text-sm font-medium leading-6 text-slate-600">
+              <p className="mt-2 text-sm font-semibold leading-6 text-slate-700 dark:text-slate-300">
                 {item.text}
               </p>
             </article>

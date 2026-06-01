@@ -44,7 +44,7 @@ export default function FloatingActions() {
           type="button"
           aria-label="Volver al inicio"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-2xl font-black text-slate-900 shadow-xl shadow-slate-950/15 transition hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-700"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-2xl font-black text-slate-900 shadow-xl shadow-slate-950/15 transition hover:-translate-y-0.5 hover:border-blue-300 hover:text-blue-700 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-cyan-400 dark:hover:text-cyan-300"
         >
           ↑
         </button>

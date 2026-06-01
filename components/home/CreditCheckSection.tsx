@@ -8,8 +8,6 @@ const initialForm = {
   nombre: "",
   dni: "",
   genero: "",
-  // ingreso: "",
-  // telefono: "",
 };
 
 export default function CreditCheckSection() {
@@ -25,15 +23,11 @@ export default function CreditCheckSection() {
   const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-  const message = [
-    `Hola, soy ${form.nombre}, mi género es ${form.genero} y mi DNI es ${form.dni}. Quiero consultar mi estado crediticio para financiar una moto.`,
-    
-    // `Ingreso declarado: ${form.ingreso}`,
-    // form.telefono ? `Teléfono: ${form.telefono}` : "",
-  ]
-    .filter(Boolean)
-    .join("\n");
-
+    const message = [
+      `Hola, soy ${form.nombre}, mi género es ${form.genero} y mi DNI es ${form.dni}. Quiero consultar mi estado crediticio para financiar una moto.`,
+    ]
+      .filter(Boolean)
+      .join("\n");
 
     window.open(
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
@@ -41,6 +35,9 @@ export default function CreditCheckSection() {
       "noopener,noreferrer",
     );
   };
+
+  const fieldClassName =
+    "h-12 rounded-lg border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-950 outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder:text-slate-400 dark:focus:border-cyan-300 dark:focus:ring-cyan-300/20";
 
   return (
     <section className="bg-slate-950 px-4 py-12 text-white sm:px-8 lg:px-10">
@@ -52,18 +49,19 @@ export default function CreditCheckSection() {
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
             Revisamos tu crédito antes de elegir la moto
           </h2>
-          <p className="mt-4 text-sm font-medium leading-6 text-slate-300">
-            Completa con tus datos, te decimos al instante si calificás para financiar y el monto disponible. Sin compromiso de compra.
+          <p className="mt-4 text-sm font-semibold leading-6 text-slate-300">
+            Completá tus datos, te decimos al instante si calificás para
+            financiar y el monto disponible. Sin compromiso de compra.
           </p>
-          <div className="mt-6 rounded-lg border border-cyan-300/20 bg-white/5 p-4 text-sm font-bold leading-6 text-slate-200">
-            La aprobación es inmediata por sí o por no. Si
-            califica, el crédito queda disponible por 24 horas.
+          <div className="mt-6 rounded-lg border border-cyan-300/30 bg-white/10 p-4 text-sm font-bold leading-6 text-slate-100">
+            La aprobación es inmediata por sí o por no. Si califica, el crédito
+            queda disponible por 24 horas.
           </div>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-lg border border-white/10 bg-white p-5 text-slate-950 shadow-2xl shadow-slate-950/30"
+          className="rounded-lg border border-white/10 bg-white p-5 text-slate-950 shadow-2xl shadow-slate-950/30 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <label
@@ -78,8 +76,7 @@ export default function CreditCheckSection() {
                 type="text"
                 value={form.nombre}
                 onChange={(event) => updateField("nombre", event.target.value)}
-                // placeholder="Ej: Juan Perez"
-                className="h-12 rounded-lg border border-slate-200 px-4 text-sm font-semibold outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
+                className={fieldClassName}
               />
             </label>
 
@@ -97,8 +94,7 @@ export default function CreditCheckSection() {
                 maxLength={9}
                 value={form.dni}
                 onChange={(event) => updateField("dni", event.target.value)}
-                // placeholder="Ej: 30111222"
-                className="h-12 rounded-lg border border-slate-200 px-4 text-sm font-semibold outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
+                className={fieldClassName}
               />
             </label>
 
@@ -113,57 +109,18 @@ export default function CreditCheckSection() {
                 required
                 value={form.genero}
                 onChange={(event) => updateField("genero", event.target.value)}
-                className="h-12 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
+                className={fieldClassName}
               >
                 <option value="">Seleccionar</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
               </select>
             </label>
-
-            {/* <label
-              htmlFor="credit-income"
-              className="flex flex-col gap-2 text-sm font-black"
-            >
-              Ingreso declarado
-              <select
-                id="credit-income"
-                name="ingreso"
-                required
-                value={form.ingreso}
-                onChange={(event) => updateField("ingreso", event.target.value)}
-                className="h-12 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
-              >
-                <option value="">Seleccionar</option>
-                <option value="Antiguedad laboral">Antiguedad laboral</option>
-                <option value="Jubilacion">Jubilacion</option>
-                <option value="Pension">Pension</option>
-                <option value="Monotributo">Monotributo</option>
-              </select>
-            </label> */}
-
-            {/* <label
-              htmlFor="credit-phone"
-              className="flex flex-col gap-2 text-sm font-black sm:col-span-2"
-            >
-              Telefono
-              <input
-                id="credit-phone"
-                name="telefono"
-                type="tel"
-                value={form.telefono}
-                onChange={(event) =>
-                  updateField("telefono", event.target.value)
-                }
-                placeholder="Opcional"
-                className="h-12 rounded-lg border border-slate-200 px-4 text-sm font-semibold outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
-              />
-            </label> */}
           </div>
 
           <button
             type="submit"
-            className="mt-5 flex min-h-12 w-full items-center justify-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-black text-white transition hover:bg-slate-950"
+            className="mt-5 flex min-h-12 w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-sm font-black text-white transition hover:bg-slate-950 dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-white"
           >
             Enviar consulta por WhatsApp
           </button>
