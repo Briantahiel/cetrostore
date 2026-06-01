@@ -28,9 +28,9 @@ type Props = {
 };
 
 const fieldClassName =
-  "rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100";
-const labelClassName = "flex flex-col gap-2 text-sm font-black text-slate-800";
-const sectionClassName = "rounded-lg border border-slate-200 bg-white p-5 shadow-sm";
+  "w-full min-w-0 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-100";
+const labelClassName = "flex min-w-0 flex-col gap-2 text-sm font-black text-slate-800";
+const sectionClassName = "min-w-0 rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:p-5";
 
 const getGalleryImages = async (productos: Producto[]) => {
   const motosDirectory = path.join(process.cwd(), "public", "motos");
@@ -66,7 +66,7 @@ function ImageGalleryField({
 
   return (
     <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
-      <div className="mb-3 flex items-center justify-between gap-3">
+      <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm font-black text-slate-800">Galeria de la app</p>
         <span className="text-xs font-black uppercase tracking-wide text-slate-400">
           {single ? "Elegir una" : "Marcar las que usa"}
@@ -75,11 +75,11 @@ function ImageGalleryField({
       <p className="mb-3 text-xs font-bold text-slate-500">
         Para quitar una imagen de esta moto, dejala sin marcar y guarda.
       </p>
-      <div className="grid max-h-72 grid-cols-2 gap-3 overflow-auto pr-1 sm:grid-cols-3">
+      <div className="grid max-h-72 grid-cols-1 gap-3 overflow-auto pr-1 min-[420px]:grid-cols-2 sm:grid-cols-3">
         {galleryImages.map((image) => (
           <label
             key={image}
-            className="group grid cursor-pointer gap-2 rounded-lg border border-slate-200 bg-white p-2 text-xs font-black text-slate-600 transition hover:border-blue-300 hover:bg-blue-50"
+            className="group grid min-w-0 cursor-pointer gap-2 rounded-lg border border-slate-200 bg-white p-2 text-xs font-black text-slate-600 transition hover:border-blue-300 hover:bg-blue-50"
           >
             <input
               type={inputType}
@@ -370,7 +370,7 @@ function ProductForm({
 
       <TechnicalSheetFields items={fichaTecnica} />
 
-      <div className="flex flex-wrap gap-3">
+      <div className="grid gap-3 sm:flex sm:flex-wrap">
         <button
           type="submit"
           className="rounded-lg bg-blue-600 px-5 py-3 text-sm font-black text-white transition hover:bg-slate-950"
@@ -380,7 +380,7 @@ function ProductForm({
         {producto ? (
           <Link
             href={`${adminPath}?tab=motos`}
-            className="rounded-lg border border-slate-200 px-5 py-3 text-sm font-black text-slate-700 transition hover:border-blue-300 hover:bg-blue-50"
+            className="rounded-lg border border-slate-200 px-5 py-3 text-center text-sm font-black text-slate-700 transition hover:border-blue-300 hover:bg-blue-50"
           >
             Nueva moto
           </Link>
@@ -435,7 +435,7 @@ function NewsForm({ novedad }: { novedad?: Novedad }) {
         />
       </label>
 
-      <div className="flex flex-wrap gap-3">
+      <div className="grid gap-3 sm:flex sm:flex-wrap">
         <button
           type="submit"
           className="rounded-lg bg-blue-600 px-5 py-3 text-sm font-black text-white transition hover:bg-slate-950"
@@ -445,7 +445,7 @@ function NewsForm({ novedad }: { novedad?: Novedad }) {
         {novedad ? (
           <Link
             href={`${adminPath}?tab=novedades`}
-            className="rounded-lg border border-slate-200 px-5 py-3 text-sm font-black text-slate-700 transition hover:border-blue-300 hover:bg-blue-50"
+            className="rounded-lg border border-slate-200 px-5 py-3 text-center text-sm font-black text-slate-700 transition hover:border-blue-300 hover:bg-blue-50"
           >
             Nueva novedad
           </Link>
@@ -469,24 +469,24 @@ export default async function AdminPage({ searchParams }: Props) {
   const selectedNovedad = novedades.find((novedad) => novedad.id === Number(params.novedad));
 
   return (
-    <main className="flex-1 bg-slate-50 px-4 py-10 text-slate-950 sm:px-8 lg:px-10">
+    <main className="flex-1 bg-slate-50 px-3 py-6 text-slate-950 sm:px-8 sm:py-10 lg:px-10">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
+        <div className="mb-6 flex min-w-0 flex-col gap-4 sm:mb-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="min-w-0">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-900">
               Administracion
             </p>
-            <h1 className="mt-2 text-4xl font-black tracking-tight">
+            <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">
               Catalogo y novedades
             </h1>
-            <p className="mt-2 text-xs font-bold text-slate-500">
+            <p className="mt-2 break-all text-xs font-bold text-slate-500 sm:break-normal">
               Sesion: {session.email}
             </p>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-wrap lg:justify-end">
             <Link
               href={`${adminPath}?tab=motos`}
-              className={`rounded-lg px-4 py-3 text-sm font-black transition ${
+              className={`rounded-lg px-4 py-3 text-center text-sm font-black transition ${
                 activeTab === "motos" ? "bg-blue-600 text-white" : "border border-slate-200 bg-white text-slate-700"
               }`}
             >
@@ -494,16 +494,16 @@ export default async function AdminPage({ searchParams }: Props) {
             </Link>
             <Link
               href={`${adminPath}?tab=novedades`}
-              className={`rounded-lg px-4 py-3 text-sm font-black transition ${
+              className={`rounded-lg px-4 py-3 text-center text-sm font-black transition ${
                 activeTab === "novedades" ? "bg-blue-600 text-white" : "border border-slate-200 bg-white text-slate-700"
               }`}
             >
               Novedades
             </Link>
-            <form action="/api/admin-auth/logout" method="post">
+            <form action="/api/admin-auth/logout" method="post" className="col-span-2 sm:col-span-1">
               <button
                 type="submit"
-                className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-black text-slate-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700"
+                className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-black text-slate-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700"
               >
                 Salir
               </button>
@@ -512,7 +512,7 @@ export default async function AdminPage({ searchParams }: Props) {
         </div>
 
         {activeTab === "motos" ? (
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-5 xl:grid-cols-[0.9fr_1.1fr] xl:gap-6">
             <div className={sectionClassName}>
               <div className="mb-4 flex items-center justify-between gap-3">
                 <h2 className="text-xl font-black tracking-tight">Motos</h2>
@@ -520,13 +520,13 @@ export default async function AdminPage({ searchParams }: Props) {
                   {productos.length}
                 </span>
               </div>
-              <div className="grid max-h-[720px] gap-3 overflow-auto pr-1">
+              <div className="grid gap-3 xl:max-h-[720px] xl:overflow-auto xl:pr-1">
                 {productos.map((producto) => (
-                  <article key={producto.id} className="rounded-lg border border-slate-200 p-4">
-                    <p className="text-xs font-black uppercase tracking-wide text-slate-400">
+                  <article key={producto.id} className="min-w-0 rounded-lg border border-slate-200 p-4">
+                    <p className="break-words text-xs font-black uppercase tracking-wide text-slate-400">
                       #{producto.id} {producto.codigo}
                     </p>
-                    <h3 className="mt-1 text-base font-black">{producto.nombre}</h3>
+                    <h3 className="mt-1 break-words text-base font-black">{producto.nombre}</h3>
                     {producto.variantes?.length ? (
                       <div className="mt-3 flex flex-wrap gap-2">
                         {producto.variantes.map((variant) => (
@@ -570,7 +570,7 @@ export default async function AdminPage({ searchParams }: Props) {
             />
           </div>
         ) : (
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-5 xl:grid-cols-[0.9fr_1.1fr] xl:gap-6">
             <div className={sectionClassName}>
               <div className="mb-4 flex items-center justify-between gap-3">
                 <h2 className="text-xl font-black tracking-tight">Novedades</h2>
@@ -580,11 +580,11 @@ export default async function AdminPage({ searchParams }: Props) {
               </div>
               <div className="grid gap-3">
                 {novedades.map((novedad) => (
-                  <article key={novedad.id} className="rounded-lg border border-slate-200 p-4">
-                    <p className="text-xs font-black uppercase tracking-wide text-slate-400">
+                  <article key={novedad.id} className="min-w-0 rounded-lg border border-slate-200 p-4">
+                    <p className="break-words text-xs font-black uppercase tracking-wide text-slate-400">
                       #{novedad.id} {novedad.etiqueta}
                     </p>
-                    <h3 className="mt-1 text-base font-black">{novedad.titulo}</h3>
+                    <h3 className="mt-1 break-words text-base font-black">{novedad.titulo}</h3>
                     <div className="mt-3 flex flex-wrap gap-2">
                       <Link
                         href={`${adminPath}?tab=novedades&novedad=${novedad.id}`}

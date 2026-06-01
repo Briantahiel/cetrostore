@@ -1,4 +1,5 @@
 import { promises as fs } from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import type { WriteBatch } from "firebase-admin/firestore";
 import type { Novedad } from "@/data/novedades";
@@ -12,6 +13,8 @@ const productosPath = path.join(dataDirectory, "productos.json");
 const novedadesPath = path.join(dataDirectory, "novedades.json");
 const productosCollection = "productos";
 const novedadesCollection = "novedades";
+const metadataCollection = "catalogMetadata";
+const productosJsonMetadataDoc = "productosJson";
 const colorSuffixes = [
   { label: "Rojo", words: ["rojo", "roja"] },
   { label: "Blanco", words: ["blanco", "blanca"] },
@@ -121,6 +124,9 @@ const writeJsonFile = async <T,>(filePath: string, data: T) => {
 
 const sanitizeForFirestore = <T,>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
 
+const getContentHash = (value: unknown) =>
+  createHash("sha256").update(JSON.stringify(value)).digest("hex");
+
 const getCollectionItems = async <T extends { id: number }>(collectionName: string) => {
   const snapshot = await getFirebaseDb().collection(collectionName).orderBy("id", "asc").get();
 
@@ -165,21 +171,67 @@ const saveCollectionItems = async <T extends { id: number }>(
   await commitIfNeeded();
 };
 
+const getProductosJsonSnapshot = async () => {
+  const productos = await readJsonFile<Producto[]>(
+    productosPath,
+    productosData as Producto[],
+  );
+  const normalizedProductos = normalizeProductoIds(groupProductoVariants(sortById(productos)));
+
+  return {
+    hash: getContentHash(normalizedProductos),
+    productos: normalizedProductos,
+  };
+};
+
+const saveProductosJsonSnapshotToFirebase = async ({
+  hash,
+  productos,
+}: {
+  hash: string;
+  productos: Producto[];
+}) => {
+  await saveCollectionItems(productosCollection, productos);
+  await getFirebaseDb()
+    .collection(metadataCollection)
+    .doc(productosJsonMetadataDoc)
+    .set({
+      hash,
+      itemCount: productos.length,
+      source: "data/productos.json",
+      syncedAt: new Date().toISOString(),
+    });
+};
+
+const ensureProductosJsonSyncedToFirebase = async () => {
+  const snapshot = await getProductosJsonSnapshot();
+  const metadata = await getFirebaseDb()
+    .collection(metadataCollection)
+    .doc(productosJsonMetadataDoc)
+    .get();
+  const metadataHash = metadata.exists ? metadata.data()?.hash : null;
+
+  if (metadataHash !== snapshot.hash) {
+    await saveProductosJsonSnapshotToFirebase(snapshot);
+  }
+
+  return snapshot;
+};
+
 export const getProductos = async () => {
   if (hasFirebaseConfig()) {
+    const jsonSnapshot = await ensureProductosJsonSyncedToFirebase();
     const productos = await getCollectionItems<Producto>(productosCollection);
 
     if (productos.length) {
       return normalizeProductoIds(groupProductoVariants(sortById(productos)));
     }
+
+    await saveProductosJsonSnapshotToFirebase(jsonSnapshot);
+    return jsonSnapshot.productos;
   }
 
-  const productos = await readJsonFile<Producto[]>(
-    productosPath,
-    productosData as Producto[],
-  );
-
-  return normalizeProductoIds(groupProductoVariants(sortById(productos)));
+  return (await getProductosJsonSnapshot()).productos;
 };
 
 export const saveProductos = async (productos: Producto[]) => {
@@ -191,6 +243,20 @@ export const saveProductos = async (productos: Producto[]) => {
   }
 
   await writeJsonFile(productosPath, normalizedProductos);
+};
+
+export const syncProductosJsonToFirebase = async () => {
+  if (!hasFirebaseConfig()) {
+    throw new Error(
+      "Firebase no esta configurado. Revisa FIREBASE_SERVICE_ACCOUNT_BASE64 o las variables FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL y FIREBASE_PRIVATE_KEY.",
+    );
+  }
+
+  const snapshot = await getProductosJsonSnapshot();
+
+  await saveProductosJsonSnapshotToFirebase(snapshot);
+
+  return snapshot.productos.length;
 };
 
 export const getNovedades = async () => {
