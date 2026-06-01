@@ -2,7 +2,7 @@ const faqs = [
   {
     question: "Cómo puedo acceder a un crédito?",
     answer:
-      "Tenés que ser mayor de edad y contar con un ingreso declarado: antig\u00fcedad laboral, jubilaci\u00f3n, pensi\u00f3n o monotributo.",
+      "Tenés que ser mayor de edad y contar con un ingreso declarado: antigüedad laboral, jubilación, pensión o monotributo.",
   },
   {
     question: "Cuánto tarda?",
@@ -18,6 +18,16 @@ const faqs = [
     answer:
       "Tu crédito aprobado es válido por 24 horas. Es importante que te contactes de inmediato para no perder la oportunidad."
   },
+  {
+  question: "¿Cómo funciona la entrega de la moto?",
+  answer:
+    "Una vez aprobado el crédito, la entrega puede ser con la primera cuota o mediante un anticipo mayor, dependiendo del modelo elegido y las condiciones de financiación."
+  },
+  {
+  question: "¿Tengo que hacer el patentamiento por mi cuenta?",
+  answer:
+    "No. Nosotros nos encargamos de gestionar el patentamiento y la documentación necesaria para que la moto quede lista para circular. Sólo te solicitaremos la información y documentación requerida para realizar el trámite."
+},
 ];
 
 export default function FinancingFaq() {

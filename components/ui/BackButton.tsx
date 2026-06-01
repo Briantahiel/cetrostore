@@ -19,7 +19,7 @@ const getSafeCatalogReturnUrl = (value: string | null) => {
 
 export default function BackButton({
   className = defaultClassName,
-  label = "Volver al catalogo",
+  label = "Volver al catálogo",
 }: Props) {
   const searchParams = useSearchParams();
   const returnHref = getSafeCatalogReturnUrl(searchParams.get("from"));

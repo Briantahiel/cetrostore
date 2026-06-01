@@ -1,16 +1,17 @@
 import Link from "next/link";
+import ThemeToggle from "@/components/layout/ThemeToggle";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 overflow-hidden border-b border-slate-200/80 bg-white/90 text-slate-950 shadow-lg shadow-slate-950/5 backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 overflow-hidden border-b border-slate-200/80 bg-white/90 text-slate-950 shadow-lg shadow-slate-950/5 backdrop-blur-2xl dark:border-slate-800 dark:bg-slate-950/90 dark:text-white">
       <div className="relative bg-slate-950 px-4 py-2 text-center text-xs font-black uppercase tracking-[0.18em] text-white sm:px-8">
         <span className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-blue-500/50 to-transparent" />
         <div className="relative flex flex-col justify-center gap-1 sm:flex-row sm:gap-8">
           <p className="font-medium text-[0.65rem] text-slate-300">
-            Asesor comercial: Brian Gomez
+            Asesor comercial: Brian Gómez
           </p>
           <p className="font-medium text-[0.65rem] text-slate-300">
-            Justa Lima 337 - Zarate, Buenos Aires
+            Justa Lima 337 - Zárate, Buenos Aires
           </p>
         </div>
         <span className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-orange-500/90 via-red-600/30 to-transparent" />
@@ -44,7 +45,7 @@ export default function Navbar() {
           href="/catalogo"
           className="hidden rounded-full border border-slate-200 bg-slate-950 px-5 py-3 text-xs font-black uppercase tracking-wide text-white shadow-sm transition hover:border-blue-300 hover:bg-blue-700 md:inline-flex"
         >
-          Catalogo
+          Catálogo
         </Link>
       </nav>
     </header>

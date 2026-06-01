@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getProductoImagenPrincipal, productos } from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
-const featuredMoto = productos[15] ?? productos[0];
+const featuredMoto = productos[0] ?? productos[0];
 
 export default function HeroShowroom() {
   return (
@@ -14,7 +14,7 @@ export default function HeroShowroom() {
             Concesionaria multimarca
           </div>
           <h1 className="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
-            Elegi tu proxima moto con entrega y financiacion claras
+            Elegi tu próxima moto con entrega y financiación claras
           </h1>
           <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-gray-500">
             Modelos urbanos, todo terreno y ruta con asesoramiento directo y atención personalizada.

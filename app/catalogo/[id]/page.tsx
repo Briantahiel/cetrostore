@@ -45,7 +45,7 @@ export default async function ProductPage({ params }: Props) {
                   className={secondaryCatalogLinkClassName}
                   style={{ minHeight: "2.75rem" }}
                 >
-                  Ver catalogo
+                  Ver catálogo
                 </span>
               }
             >
