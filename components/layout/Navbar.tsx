@@ -32,21 +32,24 @@ export default function Navbar() {
           </span>
 
           <span className="flex min-w-0 flex-col leading-none">
-            <span className="truncate bg-gradient-to-r from-[#020617] via-[#12306B] via-60% to-[#FF7A00] bg-clip-text text-2xl font-black tracking-tight text-transparent sm:text-3xl">
+            <span className="truncate bg-gradient-to-r from-[#020617] via-[#12306B] via-60% to-[#FF7A00] bg-clip-text text-2xl font-black tracking-tight text-transparent dark:from-white dark:via-cyan-200 dark:to-orange-300 sm:text-3xl">
               Cetrogar Motos
             </span>
-            <span className="mt-1 text-[0.68rem] font-black uppercase tracking-[0.24em] text-slate-700">
+            <span className="mt-1 text-[0.68rem] font-black uppercase tracking-[0.24em] text-slate-700 dark:text-slate-300">
               motos y showroom
             </span>
           </span>
         </Link>
 
-        <Link
-          href="/catalogo"
-          className="hidden rounded-full border border-slate-200 bg-slate-950 px-5 py-3 text-xs font-black uppercase tracking-wide text-white shadow-sm transition hover:border-blue-300 hover:bg-blue-700 md:inline-flex"
-        >
-          Catálogo
-        </Link>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link
+            href="/catalogo"
+            className="hidden rounded-lg border border-slate-200 bg-slate-950 px-5 py-3 text-xs font-black uppercase tracking-wide text-white shadow-sm transition hover:border-blue-300 hover:bg-blue-700 dark:border-slate-700 dark:bg-white dark:text-slate-950 dark:hover:border-cyan-300 dark:hover:bg-cyan-100 md:inline-flex"
+          >
+            Catálogo
+          </Link>
+        </div>
       </nav>
     </header>
   );
