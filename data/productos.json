@@ -3,7 +3,7 @@
     "id": 1,
     "codigo": "MO0808",
     "nombre": "Honda Wave 110 S New rojo",
-    "descripcion": "La Honda Wave 110 S New mantiene el reconocido equilibrio entre economia, confiabilidad y practicidad para uso urbano diario. Esta version incorpora dise?o actualizado y excelente autonomia, siendo ideal para quienes buscan una moto agil y de bajo mantenimiento.",
+    "descripcion": "La Honda Wave 110 S New mantiene el reconocido equilibrio entre economía, confiabilidad y practicidad para uso urbano diario. Esta version incorpora diseño actualizado y excelente autonomía, siendo ideal para quienes buscan una moto ágil y de bajo mantenimiento.",
     "precio": null,
     "imagen": [
       "/motos/honda-wave-roja.jpg",
@@ -43,7 +43,7 @@
     "id": 2,
     "codigo": "MO0805",
     "nombre": "Honda XR 150 L rojo",
-    "descripcion": "La Honda XR 150L es una moto doble proposito preparada para circular comodamente tanto en ciudad como en caminos de tierra. Su posici?n elevada, suspensiones resistentes y mec?nica confiable la convierten en una opci?n muy valorada para trabajo y aventura.",
+    "descripcion": "La Honda XR 150L es una moto doble propósito preparada para circular comodamente tanto en ciudad como en caminos de tierra. Su posición elevada, suspensiones resistentes y mecánica confiable la convierten en una opción muy valorada para trabajo y aventura.",
     "imagen": [
       "/motos/cetrogar-honda-xr150.jpg",
       "/motos/honda-xr-150-blanca.webp"
@@ -69,7 +69,7 @@
     "id": 3,
     "codigo": "MO0819",
     "nombre": "Honda XR 190 L beige",
-    "descripcion": "La Honda XR 190L ofrece mayor potencia y equipamiento dentro de la linea on/off de Honda. Su motor de 190 cc, buena altura al suelo y posicion de manejo confortable permiten un desempe?o eficiente tanto en ciudad como fuera del asfalto.",
+    "descripcion": "La Honda XR 190L ofrece mayor potencia y equipamiento dentro de la linea on/off de Honda. Su motor de 190 cc, buena altura al suelo y posición de manejo confortable permiten un desempeño eficiente tanto en ciudad como fuera del asfalto.",
     "imagen": [
       "/motos/honda-xr-190-beige.png"
     ],
@@ -80,7 +80,7 @@
     "id": 4,
     "codigo": "MO0830",
     "nombre": "Honda XR 300 L rojo",
-    "descripcion": "La Honda XR 300L esta orientada a usuarios que buscan una moto de aventura con mayor potencia y capacidad off-road. Su motor de mayor cilindrada y suspensiones reforzadas brindan estabilidad y rendimiento en terrenos exigentes.",
+    "descripcion": "La Honda XR 300L está orientada a usuarios que buscan una moto de aventura con mayor potencia y capacidad off-road. Su motor de mayor cilindrada y suspensiones reforzadas brindan estabilidad y rendimiento en terrenos exigentes.",
     "imagen": [
       "/motos/honda-tornado-300.webp"
     ],
@@ -91,7 +91,7 @@
     "id": 5,
     "codigo": "MO0839",
     "nombre": "Yamaha XTZ 250 ABS Azul",
-    "descripcion": "La Yamaha XTZ 250 ABS es una doble propósito con motor de 249 cc, inyección electrónica y arranque electrico. Su suspension de largo recorrido, frenos con ABS y postura alta la hacen apta para ciudad, ripio y caminos de uso mixto.",
+    "descripcion": "La Yamaha XTZ 250 ABS es una doble propósito con motor de 249 cc, inyección electrónica y arranque eléctrico. Su suspensión de largo recorrido, frenos con ABS y postura alta la hacen apta para ciudad, ripio y caminos de uso mixto.",
     "imagen": [
       "/motos/cetrogar-yamaha-xtz-250.jpeg"
     ],
@@ -146,7 +146,7 @@
     "id": 10,
     "codigo": "MO0891",
     "nombre": "Yamaha XTZ 250 ABS beige",
-    "descripcion": "La Yamaha XTZ 250 ABS esta pensada para quienes necesitan una doble propósito confiable con buena autonomía y respuesta. Su configuración de 249 cc, suspensiones altas y frenos asistidos favorecen el uso diario y las escapadas fuera del asfalto.",
+    "descripcion": "La Yamaha XTZ 250 ABS está pensada para quienes necesitan una doble propósito confiable con buena autonomía y respuesta. Su configuración de 249 cc, suspensiones altas y frenos asistidos favorecen el uso diario y las escapadas fuera del asfalto.",
     "imagen": [
       "/motos/cetrogar-yamaha-xtz-250.jpeg"
     ],
@@ -478,8 +478,8 @@
   {
     "id": 39,
     "codigo": "MO0904",
-    "nombre": "Rouser P 150-Red",
-    "descripcion": "La Rouser P150 es una Bajaj de 150 cc orientada al uso urbano con estilo deportivo y mecánica eficiente. Su caja de 5 velocidades, bajo consumo y postura cómoda la hacen adecuada para trabajo, estudio y traslados diarios.",
+    "nombre": "Bajaj Rouser P 150 rojo",
+    "descripcion": "La Rouser P150 es una Bajaj de 150 cc orientada al uso urbano con estilo deportivo y mecánica eficiente. Su caja de 5 velocidades, bajo consumo y postura cómoda la hacen adecuada para trabajo y viajes diarios.",
     "imagen": [
       "/motos/cetrogar-bajaj-rouser-125.webp"
     ],
