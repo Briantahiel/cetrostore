@@ -184,6 +184,30 @@ const getProductosJsonSnapshot = async () => {
   };
 };
 
+const mergeProductosJsonWithFirebaseState = async (productos: Producto[]) => {
+  const existingProductos = await getCollectionItems<Producto>(productosCollection);
+  const existingById = new Map(existingProductos.map((producto) => [producto.id, producto]));
+  const existingByCodigo = new Map(
+    existingProductos
+      .filter((producto) => producto.codigo)
+      .map((producto) => [producto.codigo, producto]),
+  );
+
+  return productos.map((producto) => {
+    if (Object.prototype.hasOwnProperty.call(producto, "disponibleSucursal")) {
+      return producto;
+    }
+
+    const existingProducto =
+      (producto.codigo ? existingByCodigo.get(producto.codigo) : undefined) ??
+      existingById.get(producto.id);
+
+    return existingProducto?.disponibleSucursal
+      ? { ...producto, disponibleSucursal: true }
+      : producto;
+  });
+};
+
 const saveProductosJsonSnapshotToFirebase = async ({
   hash,
   productos,
@@ -191,13 +215,15 @@ const saveProductosJsonSnapshotToFirebase = async ({
   hash: string;
   productos: Producto[];
 }) => {
-  await saveCollectionItems(productosCollection, productos);
+  const mergedProductos = await mergeProductosJsonWithFirebaseState(productos);
+
+  await saveCollectionItems(productosCollection, mergedProductos);
   await getFirebaseDb()
     .collection(metadataCollection)
     .doc(productosJsonMetadataDoc)
     .set({
       hash,
-      itemCount: productos.length,
+      itemCount: mergedProductos.length,
       source: "data/productos.json",
       syncedAt: new Date().toISOString(),
     });

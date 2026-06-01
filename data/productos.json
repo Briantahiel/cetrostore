@@ -652,16 +652,5 @@
     ],
     "precio": null,
     "stock": "virtual"
-  },
-  {
-    "id": 55,
-    "codigo": "1234",
-    "nombre": "Moto Prueba",
-    "descripcion": "descripcion prueba",
-    "precio": null,
-    "imagen": [
-      "/motos/honda-wave-roja.jpg"
-    ],
-    "stock": "virtual"
   }
 ]

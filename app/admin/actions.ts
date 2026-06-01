@@ -229,6 +229,7 @@ const getProductoFromForm = (formData: FormData, id: number): Producto => {
     imagen,
     color: String(formData.get("color") ?? "").trim() || undefined,
     stock: formData.get("stock") === "fisico" ? "fisico" : "virtual",
+    disponibleSucursal: formData.get("disponibleSucursal") === "on",
     fichaTecnica: fichaTecnica.length ? fichaTecnica : undefined,
   };
 };

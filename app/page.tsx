@@ -23,7 +23,7 @@ export default async function HomePage() {
       <CreditCheckSection />
       <FeaturedMotorcyclesCarousel productos={productos} />
       <FinancingFaq />
-      <PhotoSection />
+      <PhotoSection productos={productos} />
     </main>
   );
 }

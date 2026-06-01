@@ -338,6 +338,23 @@ function ProductForm({
         />
       </label>
 
+      {!isEditingVariant ? (
+        <label className="flex items-start gap-3 rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm font-black text-slate-800">
+          <input
+            type="checkbox"
+            name="disponibleSucursal"
+            defaultChecked={Boolean(producto?.disponibleSucursal)}
+            className="mt-1 h-4 w-4 rounded border-slate-300 accent-blue-600"
+          />
+          <span className="grid gap-1">
+            <span>Mostrar en Motos listas para ver</span>
+            <span className="text-xs font-bold text-slate-500">
+              Usalo para las motos disponibles en la sucursal.
+            </span>
+          </span>
+        </label>
+      ) : null}
+
       <ImageGalleryField
         galleryImages={galleryImages}
         selectedImages={selectedImages}
@@ -527,6 +544,11 @@ export default async function AdminPage({ searchParams }: Props) {
                       #{producto.id} {producto.codigo}
                     </p>
                     <h3 className="mt-1 break-words text-base font-black">{producto.nombre}</h3>
+                    {producto.disponibleSucursal ? (
+                      <p className="mt-2 inline-flex rounded-lg bg-blue-50 px-2 py-1 text-xs font-black text-blue-700">
+                        En sucursal
+                      </p>
+                    ) : null}
                     {producto.variantes?.length ? (
                       <div className="mt-3 flex flex-wrap gap-2">
                         {producto.variantes.map((variant) => (

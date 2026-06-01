@@ -9,6 +9,7 @@ export type Producto = {
   imagen: string[];
   color?: string;
   stock?: "fisico" | "virtual";
+  disponibleSucursal?: boolean;
   variantes?: ProductoVariante[];
   fichaTecnica?: FichaTecnicaItem[];
 };
