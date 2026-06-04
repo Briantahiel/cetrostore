@@ -24,9 +24,6 @@ type Props = {
   }>;
 };
 
-const secondaryCatalogLinkClassName =
-  "rounded-lg border border-slate-300 px-5 py-3 text-center text-sm font-black text-slate-800 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700 dark:border-slate-600 dark:text-slate-100 dark:hover:border-cyan-400 dark:hover:bg-slate-900 dark:hover:text-cyan-300";
-
 const findProductoByParam = (productos: Producto[], param: string) => {
   const numericId = Number(param);
 
@@ -180,23 +177,6 @@ export default async function ProductPage({ params, searchParams }: Props) {
         <ProductDetail
           producto={producto}
           fichaTecnica={fichaTecnica}
-          catalogAction={
-            <Suspense
-              fallback={
-                <span
-                  className={secondaryCatalogLinkClassName}
-                  style={{ minHeight: "2.75rem" }}
-                >
-                  Ver catálogo
-                </span>
-              }
-            >
-              <BackButton
-                label="Ver catálogo"
-                className={secondaryCatalogLinkClassName}
-              />
-            </Suspense>
-          }
         />
       </div>
     </main>

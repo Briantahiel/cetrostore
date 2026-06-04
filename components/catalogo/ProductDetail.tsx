@@ -2,22 +2,29 @@
 
 import { useMemo, useState } from "react";
 import ProductGallery from "@/components/catalogo/ProductGallery";
-import type { FichaTecnicaItem, Producto, ProductoVariante } from "@/data/productos";
-import type { ReactNode } from "react";
+import ShareButton from "@/components/ui/ShareButton";
+import {
+  getProductoImagenPrincipal,
+  getProductoCanonicalPath,
+  type FichaTecnicaItem,
+  type Producto,
+  type ProductoVariante,
+} from "@/data/productos";
 
 type Props = {
   producto: Producto;
   fichaTecnica: FichaTecnicaItem[];
-  catalogAction?: ReactNode;
 };
 
 export default function ProductDetail({
   producto,
   fichaTecnica,
-  catalogAction,
 }: Props) {
   const [selectedVariant, setSelectedVariant] = useState<ProductoVariante | null>(
     null,
+  );
+  const [selectedImage, setSelectedImage] = useState(() =>
+    getProductoImagenPrincipal(producto.imagen),
   );
   const childVariants = useMemo(
     () =>
@@ -37,8 +44,6 @@ export default function ProductDetail({
   const galleryImages = Array.from(
     new Set([...producto.imagen, ...childVariants.map((variante) => variante.imagen)]),
   );
-  const selectedImage = selectedVariant?.imagen;
-
   const imageLabels = useMemo(
     () =>
       Object.fromEntries(
@@ -56,15 +61,15 @@ export default function ProductDetail({
   );
 
   const selectImage = (image: string) => {
-    const nextVariant = producto.variantes?.find(
-      (variante) => variante.imagen === image,
-    );
+    const nextVariant = childVariants.find((variante) => variante.imagen === image);
 
-    if (nextVariant) {
-      setSelectedVariant(nextVariant);
-    } else if (producto.imagen.includes(image)) {
-      setSelectedVariant(null);
-    }
+    setSelectedImage(image);
+    setSelectedVariant(nextVariant ?? null);
+  };
+
+  const selectVariant = (variant: ProductoVariante | null) => {
+    setSelectedVariant(variant);
+    setSelectedImage(variant?.imagen ?? getProductoImagenPrincipal(producto.imagen));
   };
 
   return (
@@ -106,7 +111,7 @@ export default function ProductDetail({
               <div className="flex flex-wrap gap-2">
                 <button
                   type="button"
-                  onClick={() => setSelectedVariant(null)}
+                  onClick={() => selectVariant(null)}
                   className={`rounded-lg border px-4 py-2 text-sm font-black transition ${
                     selectedVariant === null
                       ? "border-blue-700 bg-blue-700 text-white dark:border-cyan-300 dark:bg-cyan-300 dark:text-slate-950"
@@ -119,7 +124,7 @@ export default function ProductDetail({
                   <button
                     key={variante.codigo}
                     type="button"
-                    onClick={() => setSelectedVariant(variante)}
+                    onClick={() => selectVariant(variante)}
                     className={`rounded-lg border px-4 py-2 text-sm font-black transition ${
                       selectedVariant?.codigo === variante.codigo
                         ? "border-blue-700 bg-blue-700 text-white dark:border-cyan-300 dark:bg-cyan-300 dark:text-slate-950"
@@ -142,7 +147,12 @@ export default function ProductDetail({
             >
               Consultar por WhatsApp
             </a>
-            {catalogAction}
+            <ShareButton
+              title={displayName}
+              text={`Mira esta moto: ${displayName}`}
+              url={getProductoCanonicalPath(producto)}
+              className="rounded-lg border border-slate-300 px-5 py-3 text-center text-sm font-black text-slate-800 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700 dark:border-slate-600 dark:text-slate-100 dark:hover:border-cyan-400 dark:hover:bg-slate-900 dark:hover:text-cyan-300"
+            />
           </div>
         </div>
       </section>

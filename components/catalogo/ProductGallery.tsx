@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getProductoImagenPrincipal } from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
@@ -25,12 +25,6 @@ export default function ProductGallery({
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
   const mainImage =
     selectedImage || internalSelectedImage || getProductoImagenPrincipal(imagen);
-
-  useEffect(() => {
-    if (selectedImage) {
-      setInternalSelectedImage(selectedImage);
-    }
-  }, [selectedImage]);
 
   const handleSelectImage = (image: string) => {
     setInternalSelectedImage(image);

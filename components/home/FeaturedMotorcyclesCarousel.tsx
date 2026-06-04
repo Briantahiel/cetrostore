@@ -57,9 +57,13 @@ export default function FeaturedMotorcyclesCarousel({ productos }: Props) {
       }
     }
 
-    await navigator.clipboard.writeText(url);
-    setShareStatus("copied");
-    window.setTimeout(() => setShareStatus("idle"), 2200);
+    try {
+      await navigator.clipboard.writeText(url);
+      setShareStatus("copied");
+      window.setTimeout(() => setShareStatus("idle"), 2200);
+    } catch {
+      setShareStatus("idle");
+    }
   };
 
   if (!activeProduct) return null;
