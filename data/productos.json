@@ -508,7 +508,7 @@
     "precio": null,
     "stock": "virtual"
   },
-  {
+/*  {
     "id": 42,
     "codigo": "MO1001",
     "nombre": "Keller Eco Crono 110",
@@ -518,10 +518,10 @@
     ],
     "precio": null,
     "stock": "virtual"
-  },
+  },*/
   {
     "id": 43,
-    "codigo": "MO1002",
+    "codigo": "MO0366",
     "nombre": "Corven Energy 110",
     "descripcion": "La Corven Energy 110 es una moto utilitaria pensada para uso diario, con mecánica simple, bajo consumo y mantenimiento económico. Es cómoda para ciudad y recorridos frecuentes gracias a su peso contenido y manejo fácil.",
     "imagen": [
