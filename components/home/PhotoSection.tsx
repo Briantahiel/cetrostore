@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { getProductoImagenPrincipal, type Producto } from "@/data/productos";
+import {
+  getProductoCanonicalPath,
+  getProductoImagenPrincipal,
+  type Producto,
+} from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 type Props = {
@@ -32,7 +36,7 @@ export default function PhotoSection({ productos }: Props) {
           {showroomPhotos.map((producto) => (
             <Link
               key={producto.id}
-              href={`/catalogo/${producto.id}`}
+              href={getProductoCanonicalPath(producto)}
               className="group overflow-hidden rounded-lg border border-slate-200 bg-slate-50 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md dark:border-slate-700 dark:bg-slate-900 dark:hover:border-cyan-300"
             >
               <div className="flex aspect-[4/3] items-center justify-center p-4 sm:p-5">

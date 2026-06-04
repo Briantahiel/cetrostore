@@ -2,7 +2,11 @@
 
 import { useCallback, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import ProductCard from "@/components/catalogo/ProductCard";
-import { getCilindradaProducto, type Producto } from "@/data/productos";
+import {
+  getCilindradaProducto,
+  getProductoCanonicalPath,
+  type Producto,
+} from "@/data/productos";
 
 const normalizeSearch = (value: string) =>
   value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -191,9 +195,14 @@ export default function ProductCatalog({ productos }: Props) {
   const getProductDetailHref = useCallback(
     (productId: number) => {
       const returnUrl = `/catalogo${catalogSearchParams}`;
-      return `/catalogo/${productId}?from=${encodeURIComponent(returnUrl)}`;
+      const producto = productos.find((item) => item.id === productId);
+      const productPath = producto
+        ? getProductoCanonicalPath(producto)
+        : `/catalogo/${productId}`;
+
+      return `${productPath}?from=${encodeURIComponent(returnUrl)}`;
     },
-    [catalogSearchParams],
+    [catalogSearchParams, productos],
   );
 
   useEffect(() => {

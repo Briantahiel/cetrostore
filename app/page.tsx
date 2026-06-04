@@ -16,7 +16,7 @@ export default async function HomePage() {
 
   return (
     <main className="flex-1 bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-slate-50">
-      <HeroShowroom />
+      <HeroShowroom productos={productos} />
       <SalesHighlights />
       <NewsSection novedades={novedades} />
       <PurchaseProcess />

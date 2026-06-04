@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { getProductoImagenPrincipal, type ProductoVariante } from "@/data/productos";
+import {
+  getProductoCanonicalPath,
+  getProductoImagenPrincipal,
+  type ProductoVariante,
+} from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 type Props = {
@@ -24,7 +28,7 @@ export default function ProductCard({
   color,
   stock = "fisico",
   variantes,
-  detailHref = `/catalogo/${id}`,
+  detailHref = getProductoCanonicalPath({ id, codigo, nombre }),
   onOpen,
 }: Props) {
   const whatsappText = encodeURIComponent(

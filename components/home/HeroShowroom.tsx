@@ -1,10 +1,20 @@
 import Link from "next/link";
-import { getProductoImagenPrincipal, productos } from "@/data/productos";
+import {
+  getProductoCanonicalPath,
+  getProductoImagenPrincipal,
+  type Producto,
+} from "@/data/productos";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
-const featuredMoto = productos[0] ?? productos[0];
+type Props = {
+  productos: Producto[];
+};
 
-export default function HeroShowroom() {
+export default function HeroShowroom({ productos }: Props) {
+  const featuredMoto = productos[0];
+
+  if (!featuredMoto) return null;
+
   return (
     <section className="relative overflow-hidden border-b border-slate-200 bg-[linear-gradient(135deg,#0f172a_0%,#111827_66%,#e0f2fe_66%,#ffffff_100%)] px-4 py-14 text-white dark:border-slate-800 dark:bg-[linear-gradient(135deg,#020617_0%,#0f172a_68%,#164e63_68%,#020617_100%)] sm:px-8 lg:px-10">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
@@ -49,7 +59,7 @@ export default function HeroShowroom() {
               </h2>
             </div>
             <Link
-              href={`/catalogo/${featuredMoto.id}`}
+              href={getProductoCanonicalPath(featuredMoto)}
               className="rounded-lg bg-emerald-100 px-3 py-2 text-xs font-black uppercase tracking-wide text-emerald-800 transition hover:bg-emerald-200 dark:bg-emerald-400/15 dark:text-emerald-200 dark:hover:bg-emerald-400/25"
             >
               Ver

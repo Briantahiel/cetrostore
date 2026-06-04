@@ -10,6 +10,8 @@ type Props = {
   imageClassName?: string;
   style?: CSSProperties;
   imageStyle?: CSSProperties;
+  loading?: "eager" | "lazy";
+  sizes?: string;
   onClick?: () => void;
 };
 
@@ -20,6 +22,8 @@ export default function ImageWithSkeleton({
   imageClassName = "",
   style,
   imageStyle,
+  loading = "lazy",
+  sizes = "(max-width: 768px) 100vw, 50vw",
   onClick,
 }: Props) {
   const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
@@ -43,6 +47,9 @@ export default function ImageWithSkeleton({
         ref={handleImageRef}
         src={src}
         alt={alt}
+        decoding="async"
+        loading={loading}
+        sizes={sizes}
         onClick={onClick}
         onLoad={markAsLoaded}
         onError={markAsLoaded}

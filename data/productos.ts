@@ -32,6 +32,26 @@ export type FichaTecnicaItem = {
 
 export const getProductoImagenPrincipal = (imagen: string[]) => imagen[0] ?? "";
 
+export const normalizeProductoSlug = (value: string) =>
+  value
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+export const getProductoSlug = (
+  producto: Pick<Producto, "id" | "codigo" | "nombre">,
+) =>
+  normalizeProductoSlug(
+    `${producto.nombre}${producto.codigo ? ` ${producto.codigo}` : ` ${producto.id}`}`,
+  );
+
+export const getProductoCanonicalPath = (
+  producto: Pick<Producto, "id" | "codigo" | "nombre">,
+) => `/catalogo/${getProductoSlug(producto)}`;
+
 const ficha = (items: Array<[string, string]>): FichaTecnicaItem[] =>
   items.map(([etiqueta, valor]) => ({ etiqueta, valor }));
 
@@ -286,6 +306,56 @@ const fichasTecnicas = {
     ["Transmisión", "Correa trapezoidal automática"],
     ["Embrague", "Automático centrifugo en seco"],
   ]),
+  kymcoMicare125: ficha([
+    ["Cilindrada", "125 cc"],
+    ["Motor", "Monocilindrico 4 tiempos"],
+    ["Refrigeracion", "Aire"],
+    ["Alimentacion", "Carburador"],
+    ["Arranque", "Electrico / Patada"],
+    ["Transmision", "Automatica CVT"],
+    ["Freno delantero", "A disco"],
+    ["Uso", "Urbano"],
+  ]),
+  yamahaFascino125: ficha([
+    ["Cilindrada", "125 cc"],
+    ["Motor", "Monocilindrico 4 tiempos SOHC"],
+    ["Alimentacion", "Inyeccion electronica"],
+    ["Transmision", "Automatica CVT"],
+    ["Arranque", "Electrico"],
+    ["Freno delantero", "A disco"],
+    ["Llantas", "Aleacion"],
+    ["Uso", "Urbano"],
+  ]),
+  yamahaRayZr125: ficha([
+    ["Cilindrada", "125 cc"],
+    ["Motor", "Monocilindrico 4 tiempos SOHC"],
+    ["Alimentacion", "Inyeccion electronica"],
+    ["Transmision", "Automatica CVT"],
+    ["Arranque", "Electrico"],
+    ["Freno delantero", "A disco"],
+    ["Llantas", "Aleacion"],
+    ["Uso", "Scooter urbano"],
+  ]),
+  rouserP150: ficha([
+    ["Cilindrada", "149,68 cc"],
+    ["Motor", "Monocilindrico 4 tiempos DTS-i"],
+    ["Refrigeracion", "Aire"],
+    ["Alimentacion", "Carburador"],
+    ["Caja", "5 velocidades"],
+    ["Arranque", "Electrico"],
+    ["Freno delantero", "A disco"],
+    ["Uso", "Street"],
+  ]),
+  rouserNs160: ficha([
+    ["Cilindrada", "160,3 cc"],
+    ["Motor", "Monocilindrico 4 tiempos DTS-i"],
+    ["Refrigeracion", "Aceite"],
+    ["Caja", "5 velocidades"],
+    ["Arranque", "Electrico"],
+    ["Freno delantero", "A disco"],
+    ["Llantas", "Aleacion"],
+    ["Uso", "Street"],
+  ]),
 };
 
 type FichaTecnicaKey = keyof typeof fichasTecnicas;
@@ -318,15 +388,15 @@ const fichaTecnicaPorCodigo: Partial<Record<string, FichaTecnicaKey>> = {
   MO0873: "xtz250",
   MO0891: "xtz250",
   MO0926: "hondaXr300Rally",
-  MO0846: "scooter125",
-  MO0847: "scooter125",
-  MO0848: "rayZ",
-  MO0849: "rayZ",
-  MO0850: "rayZ",
-  MO0884: "scooter125",
-  MO0885: "scooter125",
-  MO0886: "scooter125",
-  MO0902: "scooter125",
+  MO0846: "yamahaFascino125",
+  MO0847: "yamahaFascino125",
+  MO0848: "yamahaRayZr125",
+  MO0849: "yamahaRayZr125",
+  MO0850: "yamahaRayZr125",
+  MO0884: "kymcoMicare125",
+  MO0885: "kymcoMicare125",
+  MO0886: "kymcoMicare125",
+  MO0902: "yamahaFascino125",
   MO0814: "cb125",
   MO0819: "xr190",
   MO0820: "cb300",
@@ -336,17 +406,17 @@ const fichaTecnicaPorCodigo: Partial<Record<string, FichaTecnicaKey>> = {
   MO0852: "yamahaFz",
   MO0853: "yamahaFz",
   MO0854: "yamahaFz",
-  MO0857: "rouser150",
-  MO0858: "rouser150",
-  MO0859: "rouser150",
+  MO0857: "rouserP150",
+  MO0858: "rouserP150",
+  MO0859: "rouserP150",
   MO0861: "rouser125",
   MO0862: "rouser125",
   MO0866: "rouser200",
-  MO0870: "rouser150",
+  MO0870: "rouserNs160",
   MO0874: "yamahaFz25",
   MO0901: "yamahaFz25",
   MO0908: "yamahaFz25",
-  MO0904: "rouser150",
+  MO0904: "rouserP150",
   MO0920: "boxer100",
   MO0918: "boxer100",
 };
@@ -366,11 +436,11 @@ const getFichaTecnicaKeyPorNombre = (nombre: string): FichaTecnicaKey | null => 
   if (normalizedName.includes("rouserns200")) return "rouser200";
   if (
     normalizedName.includes("rouserp150") ||
-    normalizedName.includes("rouserns150") ||
-    normalizedName.includes("rouserns160")
+    normalizedName.includes("rouserns150")
   ) {
-    return "rouser150";
+    return "rouserP150";
   }
+  if (normalizedName.includes("rouserns160")) return "rouserNs160";
   if (normalizedName.includes("motomels2")) return "motomelS2";
   if (normalizedName.includes("glh150") || normalizedName.includes("cg150")) {
     return "hondaCgGlh150";
@@ -400,10 +470,9 @@ const getFichaTecnicaKeyPorNombre = (nombre: string): FichaTecnicaKey | null => 
   if (normalizedName.includes("cb300")) return "cb300";
   if (normalizedName.includes("xtz250")) return "xtz250";
   if (normalizedName.includes("xtz125")) return "xtz125";
-  if (normalizedName.includes("fascino") || normalizedName.includes("micare")) {
-    return "scooter125";
-  }
-  if (normalizedName.includes("rayzr")) return "rayZ";
+  if (normalizedName.includes("fascino")) return "yamahaFascino125";
+  if (normalizedName.includes("micare")) return "kymcoMicare125";
+  if (normalizedName.includes("rayzr")) return "yamahaRayZr125";
 
   return null;
 };
