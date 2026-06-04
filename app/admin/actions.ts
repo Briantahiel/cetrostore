@@ -230,6 +230,7 @@ const getProductoFromForm = (formData: FormData, id: number): Producto => {
     color: String(formData.get("color") ?? "").trim() || undefined,
     stock: formData.get("stock") === "fisico" ? "fisico" : "virtual",
     disponibleSucursal: formData.get("disponibleSucursal") === "on",
+    vendido: formData.get("vendido") === "on",
     fichaTecnica: fichaTecnica.length ? fichaTecnica : undefined,
   };
 };
@@ -303,6 +304,7 @@ export async function saveProductoAction(formData: FormData) {
             descripcion: producto.descripcion,
             precio: producto.precio,
             stock: producto.stock,
+            vendido: producto.vendido,
             fichaTecnica: producto.fichaTecnica,
           };
           const nextVariants = variants.map((variant) =>

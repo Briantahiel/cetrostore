@@ -10,6 +10,7 @@ export type Producto = {
   color?: string;
   stock?: "fisico" | "virtual";
   disponibleSucursal?: boolean;
+  vendido?: boolean;
   variantes?: ProductoVariante[];
   fichaTecnica?: FichaTecnicaItem[];
 };
@@ -22,6 +23,7 @@ export type ProductoVariante = {
   descripcion?: string;
   precio?: number | null;
   stock?: "fisico" | "virtual";
+  vendido?: boolean;
   fichaTecnica?: FichaTecnicaItem[];
 };
 
@@ -31,6 +33,18 @@ export type FichaTecnicaItem = {
 };
 
 export const getProductoImagenPrincipal = (imagen: string[]) => imagen[0] ?? "";
+
+export const isProductoVendido = (
+  producto: Pick<Producto, "vendido"> | Pick<ProductoVariante, "vendido">,
+) => Boolean(producto.vendido);
+
+export const getProductoEstadoLabel = (
+  producto: Pick<Producto, "stock" | "vendido"> | Pick<ProductoVariante, "stock" | "vendido">,
+) => {
+  if (isProductoVendido(producto)) return "Vendido";
+
+  return producto.stock === "virtual" ? "Stock virtual" : "Moto disponible";
+};
 
 export const normalizeProductoSlug = (value: string) =>
   value

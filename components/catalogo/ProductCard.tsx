@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  getProductoEstadoLabel,
   getProductoCanonicalPath,
   getProductoImagenPrincipal,
   type ProductoVariante,
@@ -14,6 +15,8 @@ type Props = {
   imagen: string[];
   color?: string;
   stock?: "fisico" | "virtual";
+  disponibleSucursal?: boolean;
+  vendido?: boolean;
   variantes?: ProductoVariante[];
   detailHref?: string;
   onOpen?: () => void;
@@ -27,6 +30,8 @@ export default function ProductCard({
   imagen,
   color,
   stock = "fisico",
+  disponibleSucursal = false,
+  vendido = false,
   variantes,
   detailHref = getProductoCanonicalPath({ id, codigo, nombre }),
   onOpen,
@@ -34,8 +39,8 @@ export default function ProductCard({
   const whatsappText = encodeURIComponent(
     `Hola! Quiero consultar por el modelo ${nombre}${codigo ? `, código ${codigo}` : ""}. ¿Podrían pasarme información sobre financiación y medios de pago?`,
   );
-  const isVirtualStock = stock === "virtual";
   const imagenPrincipal = getProductoImagenPrincipal(imagen);
+  const statusLabel = getProductoEstadoLabel({ stock, vendido });
 
   return (
     <article className="flex h-full min-h-[430px] flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/10 dark:border-slate-700 dark:bg-slate-950 dark:hover:border-cyan-400">
@@ -61,9 +66,20 @@ export default function ProductCard({
 
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center gap-2">
-          <p className="rounded-full bg-blue-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-blue-800 dark:bg-cyan-300/15 dark:text-cyan-200">
-            {isVirtualStock ? "Stock virtual" : "Moto disponible"}
+          <p
+            className={`rounded-full px-3 py-1 text-xs font-black uppercase tracking-wide ${
+              vendido
+                ? "bg-red-100 text-red-800 dark:bg-red-400/15 dark:text-red-200"
+                : "bg-blue-100 text-blue-800 dark:bg-cyan-300/15 dark:text-cyan-200"
+            }`}
+          >
+            {statusLabel}
           </p>
+          {disponibleSucursal && !vendido ? (
+            <p className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-emerald-800 dark:bg-emerald-400/15 dark:text-emerald-200">
+              En sucursal
+            </p>
+          ) : null}
           {codigo && (
             <p className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-slate-700 dark:bg-slate-800 dark:text-slate-300">
               Código {codigo}

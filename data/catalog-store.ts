@@ -229,9 +229,11 @@ const mergeProductosJsonWithFirebaseState = async (productos: Producto[]) => {
       (producto.codigo ? existingByCodigo.get(producto.codigo) : undefined) ??
       existingById.get(producto.id);
 
-    return existingProducto?.disponibleSucursal
-      ? { ...producto, disponibleSucursal: true }
-      : producto;
+    return {
+      ...producto,
+      disponibleSucursal: Boolean(existingProducto?.disponibleSucursal),
+      vendido: Boolean(existingProducto?.vendido),
+    };
   });
 };
 

@@ -11,7 +11,9 @@ type Props = {
 };
 
 export default function PhotoSection({ productos }: Props) {
-  const showroomPhotos = productos.filter((producto) => producto.disponibleSucursal);
+  const showroomPhotos = productos.filter(
+    (producto) => producto.disponibleSucursal && !producto.vendido,
+  );
 
   if (!showroomPhotos.length) return null;
 

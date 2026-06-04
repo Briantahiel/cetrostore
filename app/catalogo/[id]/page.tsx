@@ -133,7 +133,9 @@ export default async function ProductPage({ params, searchParams }: Props) {
         offers: {
           "@type": "Offer",
           availability:
-            producto.stock === "virtual"
+            producto.vendido
+              ? "https://schema.org/OutOfStock"
+              : producto.stock === "virtual"
               ? "https://schema.org/PreOrder"
               : "https://schema.org/InStock",
           priceCurrency: "ARS",

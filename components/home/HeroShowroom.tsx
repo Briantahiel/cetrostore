@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function HeroShowroom({ productos }: Props) {
-  const featuredMoto = productos[0];
+  const featuredMoto = productos.find((producto) => !producto.vendido);
 
   if (!featuredMoto) return null;
 

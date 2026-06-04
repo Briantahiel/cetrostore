@@ -389,6 +389,8 @@ export default function ProductCatalog({ productos }: Props) {
               descripcion={producto.descripcion}
               imagen={producto.imagen}
               stock={producto.stock}
+              disponibleSucursal={producto.disponibleSucursal}
+              vendido={producto.vendido}
               color={producto.color}
               variantes={producto.variantes}
               detailHref={getProductDetailHref(producto.id)}

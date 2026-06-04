@@ -14,7 +14,10 @@ type Props = {
 };
 
 export default function FeaturedMotorcyclesCarousel({ productos }: Props) {
-  const featuredProducts = useMemo(() => productos.slice(0, 5), [productos]);
+  const featuredProducts = useMemo(
+    () => productos.filter((producto) => !producto.vendido).slice(0, 5),
+    [productos],
+  );
   const [activeIndex, setActiveIndex] = useState(0);
   const [shareStatus, setShareStatus] = useState<"idle" | "copied">("idle");
   const activeProduct = featuredProducts[activeIndex];
@@ -114,7 +117,7 @@ export default function FeaturedMotorcyclesCarousel({ productos }: Props) {
           </div>
           <div className="flex flex-col justify-center p-5 md:p-7">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700 dark:text-cyan-300">
-              Disponible
+              {activeProduct.disponibleSucursal ? "En sucursal" : "Disponible"}
             </p>
             <h3 className="mt-3 text-2xl font-black tracking-tight md:text-3xl">
               {activeProduct.nombre}

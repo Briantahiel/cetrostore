@@ -261,6 +261,7 @@ function ProductForm({
         descripcion: selectedVariant.descripcion ?? producto?.descripcion,
         precio: selectedVariant.precio ?? producto?.precio,
         stock: selectedVariant.stock ?? producto?.stock,
+        vendido: selectedVariant.vendido ?? producto?.vendido,
         imagen: [selectedVariant.imagen],
       }
     : producto;
@@ -339,22 +340,38 @@ function ProductForm({
         />
       </label>
 
-      {!isEditingVariant ? (
-        <label className="flex items-start gap-3 rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm font-black text-slate-800">
+      <div className="grid gap-3">
+        {!isEditingVariant ? (
+          <label className="flex items-start gap-3 rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm font-black text-slate-800">
+            <input
+              type="checkbox"
+              name="disponibleSucursal"
+              defaultChecked={Boolean(producto?.disponibleSucursal)}
+              className="mt-1 h-4 w-4 rounded border-slate-300 accent-blue-600"
+            />
+            <span className="grid gap-1">
+              <span>Mostrar en Motos listas para ver</span>
+              <span className="text-xs font-bold text-slate-500">
+                Usalo para las motos disponibles en la sucursal.
+              </span>
+            </span>
+          </label>
+        ) : null}
+        <label className="flex items-start gap-3 rounded-lg border border-red-100 bg-red-50 p-4 text-sm font-black text-slate-800">
           <input
             type="checkbox"
-            name="disponibleSucursal"
-            defaultChecked={Boolean(producto?.disponibleSucursal)}
-            className="mt-1 h-4 w-4 rounded border-slate-300 accent-blue-600"
+            name="vendido"
+            defaultChecked={Boolean(displayProducto?.vendido)}
+            className="mt-1 h-4 w-4 rounded border-slate-300 accent-red-600"
           />
           <span className="grid gap-1">
-            <span>Mostrar en Motos listas para ver</span>
+            <span>Marcar como vendido</span>
             <span className="text-xs font-bold text-slate-500">
-              Usalo para las motos disponibles en la sucursal.
+              Tambien se puede cambiar a mano desde data/motos.json.
             </span>
           </span>
         </label>
-      ) : null}
+      </div>
 
       <ImageGalleryField
         galleryImages={galleryImages}
@@ -545,6 +562,11 @@ export default async function AdminPage({ searchParams }: Props) {
                       #{producto.id} {producto.codigo}
                     </p>
                     <h3 className="mt-1 break-words text-base font-black">{producto.nombre}</h3>
+                    {producto.vendido ? (
+                      <p className="mt-2 inline-flex rounded-lg bg-red-50 px-2 py-1 text-xs font-black text-red-700">
+                        Vendido
+                      </p>
+                    ) : null}
                     {producto.disponibleSucursal ? (
                       <p className="mt-2 inline-flex rounded-lg bg-blue-50 px-2 py-1 text-xs font-black text-blue-700">
                         En sucursal

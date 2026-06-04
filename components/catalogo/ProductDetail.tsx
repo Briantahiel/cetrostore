@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ProductGallery from "@/components/catalogo/ProductGallery";
 import ShareButton from "@/components/ui/ShareButton";
 import {
+  getProductoEstadoLabel,
   getProductoImagenPrincipal,
   getProductoCanonicalPath,
   type FichaTecnicaItem,
@@ -38,6 +39,11 @@ export default function ProductDetail({
   const displayCode = selectedVariant?.codigo ?? producto.codigo;
   const displayDescription = selectedVariant?.descripcion ?? producto.descripcion;
   const displayStock = selectedVariant?.stock ?? producto.stock;
+  const displaySold = selectedVariant?.vendido ?? producto.vendido;
+  const displayStatus = getProductoEstadoLabel({
+    stock: displayStock,
+    vendido: displaySold,
+  });
   const displayFichaTecnica = selectedVariant?.fichaTecnica?.length
     ? selectedVariant.fichaTecnica
     : fichaTecnica;
@@ -89,9 +95,20 @@ export default function ProductDetail({
         />
 
         <div className="flex flex-col justify-center">
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700 dark:text-cyan-300">
-            {displayStock === "virtual" ? "Stock virtual" : "Moto disponible"}
+          <p
+            className={`text-xs font-black uppercase tracking-[0.18em] ${
+              displaySold
+                ? "text-red-700 dark:text-red-300"
+                : "text-blue-700 dark:text-cyan-300"
+            }`}
+          >
+            {displayStatus}
           </p>
+          {producto.disponibleSucursal && !displaySold ? (
+            <p className="mt-2 text-xs font-black uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
+              Disponible en sucursal
+            </p>
+          ) : null}
           {displayCode && (
             <p className="mt-2 text-xs font-black uppercase tracking-wide text-slate-700 dark:text-slate-300">
               Código {displayCode}
