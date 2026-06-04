@@ -1734,7 +1734,7 @@
     "imagen": [
       "/motos/corven-energy.webp"
     ],
-    "codigo": "MO1002",
+    "codigo": "MO0366",
     "descripcion": "La Corven Energy 110 es una moto utilitaria pensada para uso diario, con mecánica simple, bajo consumo y mantenimiento económico. Es cómoda para ciudad y recorridos frecuentes gracias a su peso contenido y manejo fácil.",
     "id": 33,
     "stock": "virtual",
@@ -1816,17 +1816,17 @@
   {
     "stock": "virtual",
     "id": 37,
-    "nombre": "Gilera Smash 110",
+    "nombre": "Gilera Smash 110 Full A/D",
     "imagen": [
       "/motos/gilera-smash-110.jpg"
     ],
-    "codigo": "MO1010",
+    "codigo": "MO0626",
     "precio": null,
     "descripcion": "La Gilera Smash 110 es una de las cub urbanas mas elegidas por su bajo costo de uso, facilidad de manejo y repuestos accesibles. Es una alternativa práctica para trabajo, estudio y traslados diarios.",
     "disponibleSucursal": false,
     "vendido": false
   },
-  {
+/*  {
     "descripcion": "La Corven Energy 110 Base mantiene una propuesta simple y económica para movilidad diaria. Su motor de 110 cc, bajo consumo y mantenimiento accesible la vuelven una opcion funcional para recorridos urbanos.",
     "precio": null,
     "imagen": [
@@ -1838,7 +1838,7 @@
     "stock": "virtual",
     "disponibleSucursal": false,
     "vendido": false
-  },
+  },*/
   {
     "id": 39,
     "stock": "virtual",
@@ -1847,7 +1847,7 @@
     "imagen": [
       "/motos/cetrogar-honda-cb190.webp"
     ],
-    "codigo": "MO1012",
+    "codigo": "MO0916",
     "descripcion": "La Honda CB 190 R es una street de estilo deportivo con motor de 184 cc, inyección electrónica y caja de 5 velocidades. Ofrece una conducción ágil para ciudad y buena respuesta para quienes buscan subir de cilindrada.",
     "disponibleSucursal": false,
     "vendido": false
@@ -1865,7 +1865,7 @@
     "disponibleSucursal": false,
     "vendido": false
   },
-  {
+ /* {
     "stock": "virtual",
     "id": 41,
     "nombre": "Yamaha YBR 125",
@@ -1877,7 +1877,7 @@
     "descripcion": "La Yamaha YBR 125 es una street urbana confiable, económica y fácil de manejar. Su motor de 125 cc, caja de 5 velocidades y postura cómoda la hacen una alternativa práctica para traslados diarios y primera moto.",
     "disponibleSucursal": false,
     "vendido": false
-  },
+  },*/
   {
     "id": 42,
     "codigo": "MO0683",
