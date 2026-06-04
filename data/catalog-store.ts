@@ -128,6 +128,15 @@ const readJsonFile = async <T,>(filePath: string, fallback: T): Promise<T> => {
   }
 };
 
+const readNovedadesJson = async () => {
+  const novedades = await readJsonFile<Novedad[]>(
+    novedadesPath,
+    novedadesData as Novedad[],
+  );
+
+  return normalizeNovedadIds(sortById(novedades));
+};
+
 const writeJsonFile = async <T,>(filePath: string, data: T) => {
   if (process.env.VERCEL) {
     throw new Error(
@@ -276,19 +285,21 @@ export const syncProductosJsonToFirebase = async () => {
 
 export const getNovedades = async () => {
   if (hasFirebaseConfig()) {
-    const novedades = await getCollectionItems<Novedad>(novedadesCollection);
+    try {
+      const novedades = await getCollectionItems<Novedad>(novedadesCollection);
 
-    if (novedades.length) {
-      return normalizeNovedadIds(sortById(novedades));
+      if (novedades.length) {
+        return normalizeNovedadIds(sortById(novedades));
+      }
+    } catch (error) {
+      console.warn(
+        "[catalog-store] No se pudieron cargar novedades desde Firebase; usando data/novedades.json.",
+        error,
+      );
     }
   }
 
-  const novedades = await readJsonFile<Novedad[]>(
-    novedadesPath,
-    novedadesData as Novedad[],
-  );
-
-  return normalizeNovedadIds(sortById(novedades));
+  return readNovedadesJson();
 };
 
 export const saveNovedades = async (novedades: Novedad[]) => {

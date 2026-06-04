@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 import Navbar from "@/components/layout/Navbar";
+import ThemeInitializer from "@/components/layout/ThemeInitializer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,22 +53,11 @@ export default function RootLayout({
     <html
       lang="es"
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <Script id="theme-script" strategy="beforeInteractive">
-          {`
-            try {
-              var t = localStorage.getItem("cetromotos-theme");
-              var d = t
-                ? t === "dark"
-                : matchMedia("(prefers-color-scheme: dark)").matches;
-
-              document.documentElement.classList.toggle("dark", d);
-              document.documentElement.style.colorScheme = d ? "dark" : "light";
-            } catch (e) {}
-          `}
-        </Script>
+        <ThemeInitializer />
         <Navbar />
         {children}
         <Footer />

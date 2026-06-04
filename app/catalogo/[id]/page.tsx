@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { permanentRedirect } from "next/navigation";
 import { connection } from "next/server";
+import Script from "next/script";
 import { Suspense } from "react";
 import ProductDetail from "@/components/catalogo/ProductDetail";
 import BackButton from "@/components/ui/BackButton";
@@ -38,6 +39,9 @@ const getProductDescription = (producto: Producto) =>
   producto.descripcion.length > 155
     ? `${producto.descripcion.slice(0, 152).trim()}...`
     : producto.descripcion;
+
+const serializeJsonLd = (value: unknown) =>
+  JSON.stringify(value).replace(/</g, "\\u003c");
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
@@ -166,9 +170,11 @@ export default async function ProductPage({ params, searchParams }: Props) {
   return (
     <main className="flex-1 bg-slate-50 px-4 py-10 text-slate-950 dark:bg-slate-950 dark:text-slate-50 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-6xl">
-        <script
+        <Script
+          id={`producto-json-ld-${producto.id}`}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
         />
         <Suspense fallback={null}>
           <BackButton />
