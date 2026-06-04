@@ -43,6 +43,7 @@ export default function PhotoSection({ productos }: Props) {
                 <ImageWithSkeleton
                   src={getProductoImagenPrincipal(producto.imagen)}
                   alt={producto.nombre}
+                  frame="product"
                   className="flex h-full w-full items-center justify-center"
                   imageClassName="block object-contain"
                   imageStyle={{

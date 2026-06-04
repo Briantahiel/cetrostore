@@ -42,3 +42,17 @@ body {
   background: #bfdbfe;
   color: #0f172a;
 }
+
+.product-image-frame {
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.dark .product-image-frame {
+  background: #ffffff;
+}
+
+.product-image-frame > img {
+  margin: 0;
+}

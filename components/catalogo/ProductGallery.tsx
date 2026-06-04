@@ -42,7 +42,8 @@ export default function ProductGallery({
         <ImageWithSkeleton
           src={mainImage}
           alt={nombre}
-          className="flex aspect-[4/3] w-full items-center justify-center rounded-lg bg-white p-4 sm:p-5"
+          frame="product"
+          className="flex aspect-[4/3] w-full items-center justify-center rounded-lg"
           imageClassName="block"
           imageStyle={{
             maxHeight: "100%",
@@ -69,6 +70,7 @@ export default function ProductGallery({
             <ImageWithSkeleton
               src={item}
               alt={`${nombre} foto ${index + 1}`}
+              frame="product"
               className="flex h-full w-full items-center justify-center"
               imageClassName="block max-h-full max-w-full object-contain"
             />
@@ -94,7 +96,8 @@ export default function ProductGallery({
           <ImageWithSkeleton
             src={expandedImage}
             alt={nombre}
-            className="flex max-h-[86vh] max-w-[92vw] items-center justify-center rounded-lg bg-white p-4"
+            frame="product"
+            className="flex max-h-[86vh] max-w-[92vw] items-center justify-center rounded-lg"
             imageClassName="block"
             imageStyle={{
               maxHeight: "82vh",

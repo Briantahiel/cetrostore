@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import path from "node:path";
 import type { WriteBatch } from "firebase-admin/firestore";
 import type { Novedad } from "@/data/novedades";
-import type { Producto, ProductoVariante } from "@/data/productos";
+import { getDescripcionProducto, type Producto, type ProductoVariante } from "@/data/productos";
 import { getFirebaseDb, hasFirebaseConfig } from "@/lib/firebase-admin";
 import productosData from "@/data/productos.json";
 import novedadesData from "@/data/novedades.json";
@@ -36,6 +36,22 @@ export const normalizeProductoIds = (productos: Producto[]) =>
 
 export const normalizeNovedadIds = (novedades: Novedad[]) =>
   novedades.map((novedad, index) => ({ ...novedad, id: index + 1 }));
+
+const normalizeProductoDescriptions = (productos: Producto[]) =>
+  productos.map((producto) => ({
+    ...producto,
+    descripcion: getDescripcionProducto(producto),
+    variantes: producto.variantes?.map((variante) => ({
+      ...variante,
+      descripcion: variante.descripcion
+        ? getDescripcionProducto({
+            codigo: variante.codigo,
+            nombre: variante.nombre,
+            descripcion: variante.descripcion,
+          })
+        : variante.descripcion,
+    })),
+  }));
 
 const getColorVariantFromName = (name: string) => {
   const normalizedName = name.trim().toLowerCase();
@@ -176,7 +192,9 @@ const getProductosJsonSnapshot = async () => {
     productosPath,
     productosData as Producto[],
   );
-  const normalizedProductos = normalizeProductoIds(groupProductoVariants(sortById(productos)));
+  const normalizedProductos = normalizeProductoIds(
+    normalizeProductoDescriptions(groupProductoVariants(sortById(productos))),
+  );
 
   return {
     hash: getContentHash(normalizedProductos),
@@ -250,7 +268,9 @@ export const getProductos = async () => {
     const productos = await getCollectionItems<Producto>(productosCollection);
 
     if (productos.length) {
-      return normalizeProductoIds(groupProductoVariants(sortById(productos)));
+      return normalizeProductoIds(
+        normalizeProductoDescriptions(groupProductoVariants(sortById(productos))),
+      );
     }
 
     await saveProductosJsonSnapshotToFirebase(jsonSnapshot);
@@ -261,7 +281,9 @@ export const getProductos = async () => {
 };
 
 export const saveProductos = async (productos: Producto[]) => {
-  const normalizedProductos = normalizeProductoIds(groupProductoVariants(productos));
+  const normalizedProductos = normalizeProductoIds(
+    normalizeProductoDescriptions(groupProductoVariants(productos)),
+  );
 
   if (hasFirebaseConfig()) {
     await saveCollectionItems(productosCollection, normalizedProductos);

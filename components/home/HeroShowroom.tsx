@@ -69,6 +69,7 @@ export default function HeroShowroom({ productos }: Props) {
             <ImageWithSkeleton
               src={getProductoImagenPrincipal(featuredMoto.imagen)}
               alt={featuredMoto.nombre}
+              frame="product"
               className="flex aspect-[4/3] w-full items-center justify-center"
               imageClassName="block object-contain"
               imageStyle={{

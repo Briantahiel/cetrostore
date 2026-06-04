@@ -102,6 +102,7 @@ export default function FeaturedMotorcyclesCarousel({ productos }: Props) {
             <ImageWithSkeleton
               src={getProductoImagenPrincipal(activeProduct.imagen)}
               alt={activeProduct.nombre}
+              frame="product"
               className="flex aspect-[4/3] w-full items-center justify-center"
               imageClassName="block object-contain"
               imageStyle={{

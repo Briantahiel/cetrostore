@@ -91,7 +91,8 @@ function ImageGalleryField({
             <ImageWithSkeleton
               src={image}
               alt={image}
-              className="flex h-24 items-center justify-center rounded-md bg-slate-100"
+              frame="product"
+              className="flex h-24 items-center justify-center rounded-md"
               imageClassName="block"
               imageStyle={{
                 height: "100%",

@@ -47,7 +47,8 @@ export default function ProductCard({
         <ImageWithSkeleton
           src={imagenPrincipal}
           alt={nombre}
-          className="flex aspect-[4/3] w-full items-center justify-center rounded-lg bg-white"
+          frame="product"
+          className="flex aspect-[4/3] w-full items-center justify-center rounded-lg"
           imageClassName="block"
           imageStyle={{
             maxHeight: "100%",

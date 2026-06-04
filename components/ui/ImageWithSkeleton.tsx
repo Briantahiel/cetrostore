@@ -6,6 +6,7 @@ import { CSSProperties, useCallback, useState } from "react";
 type Props = {
   src: string;
   alt: string;
+  frame?: "none" | "product";
   className?: string;
   imageClassName?: string;
   style?: CSSProperties;
@@ -18,6 +19,7 @@ type Props = {
 export default function ImageWithSkeleton({
   src,
   alt,
+  frame = "none",
   className = "",
   imageClassName = "",
   style,
@@ -39,7 +41,12 @@ export default function ImageWithSkeleton({
   );
 
   return (
-    <div className={`relative overflow-hidden ${className}`} style={style}>
+    <div
+      className={`relative overflow-hidden ${
+        frame === "product" ? "product-image-frame" : ""
+      } ${className}`}
+      style={style}
+    >
       {isLoading && (
         <div className="absolute inset-0 animate-pulse bg-slate-200 dark:bg-slate-800" />
       )}
