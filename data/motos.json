@@ -1,0 +1,3316 @@
+[
+  {
+    "id": 1,
+    "codigo": "MO0808",
+    "nombre": "Honda Wave 110 S New rojo",
+    "descripcion": "La Honda Wave 110 S New mantiene el reconocido equilibrio entre economía, confiabilidad y practicidad para uso urbano diario. Esta version incorpora diseño actualizado y excelente autonomía, siendo ideal para quienes buscan una moto ágil y de bajo mantenimiento.",
+    "precio": null,
+    "imagen": [
+      "/motos/honda-wave-roja.jpg",
+      "/motos/honda-wave-blanca.jpg",
+      "/motos/honda-wave-negra.jpg",
+      "/motos/honda-wave-gris.jpg"
+    ],
+    "variantes": [
+      {
+        "codigo": "MO0808",
+        "nombre": "Honda Wave 110 S New roja",
+        "imagen": "/motos/honda-wave-roja.jpg",
+        "color": "Rojo",
+        "descripcion": "La Honda Wave 110 S New es una cub urbana simple, economica y confiable, pensada para traslados diarios con bajo consumo, mantenimiento accesible y manejo agil.",
+        "fichaTecnica": [
+          {
+            "etiqueta": "Motor",
+            "valor": "Monocilindrico 4 tiempos OHC, 2 valvulas"
+          },
+          {
+            "etiqueta": "Cilindrada",
+            "valor": "109 cc"
+          },
+          {
+            "etiqueta": "Alimentacion",
+            "valor": "Carburador"
+          },
+          {
+            "etiqueta": "Potencia máxima",
+            "valor": "9.3 HP a 7.500 rpm"
+          },
+          {
+            "etiqueta": "Torque máximo",
+            "valor": "8.5 Nm a 6.000 rpm"
+          },
+          {
+            "etiqueta": "Arranque",
+            "valor": "Eléctrico / Patada"
+          },
+          {
+            "etiqueta": "Transmision",
+            "valor": "Semiautomatica de 4 velocidades"
+          },
+          {
+            "etiqueta": "Freno delantero",
+            "valor": "Disco / tambor segun version"
+          },
+          {
+            "etiqueta": "Freno trasero",
+            "valor": "Tambor con CBS"
+          },
+          {
+            "etiqueta": "Velocidad maxima estimada",
+            "valor": "90 km/h aprox."
+          }
+        ]
+      },
+      {
+        "codigo": "MO0809",
+        "nombre": "Honda Wave 110 S New blanco",
+        "imagen": "/motos/honda-wave-blanca.jpg",
+        "color": "Blanco",
+        "descripcion": "La Honda Wave 110 S New es una cub urbana simple, economica y confiable, pensada para traslados diarios con bajo consumo, mantenimiento accesible y manejo agil.",
+        "fichaTecnica": [
+          {
+            "etiqueta": "Motor",
+            "valor": "Monocilindrico 4 tiempos OHC, 2 valvulas"
+          },
+          {
+            "etiqueta": "Cilindrada",
+            "valor": "109 cc"
+          },
+          {
+            "etiqueta": "Alimentacion",
+            "valor": "Carburador"
+          },
+          {
+            "etiqueta": "Potencia máxima",
+            "valor": "9.3 HP a 7.500 rpm"
+          },
+          {
+            "etiqueta": "Torque máximo",
+            "valor": "8.5 Nm a 6.000 rpm"
+          },
+          {
+            "etiqueta": "Arranque",
+            "valor": "Eléctrico / Patada"
+          },
+          {
+            "etiqueta": "Transmision",
+            "valor": "Semiautomatica de 4 velocidades"
+          },
+          {
+            "etiqueta": "Freno delantero",
+            "valor": "Disco / tambor segun version"
+          },
+          {
+            "etiqueta": "Freno trasero",
+            "valor": "Tambor con CBS"
+          },
+          {
+            "etiqueta": "Velocidad maxima estimada",
+            "valor": "90 km/h aprox."
+          }
+        ]
+      },
+      {
+        "codigo": "MO0810",
+        "nombre": "Honda Wave 110 S New negra",
+        "imagen": "/motos/honda-wave-negra.jpg",
+        "color": "Negro",
+        "descripcion": "La Honda Wave 110 S New es una cub urbana simple, economica y confiable, pensada para traslados diarios con bajo consumo, mantenimiento accesible y manejo agil.",
+        "fichaTecnica": [
+          {
+            "etiqueta": "Motor",
+            "valor": "Monocilindrico 4 tiempos OHC, 2 valvulas"
+          },
+          {
+            "etiqueta": "Cilindrada",
+            "valor": "109 cc"
+          },
+          {
+            "etiqueta": "Alimentacion",
+            "valor": "Carburador"
+          },
+          {
+            "etiqueta": "Potencia máxima",
+            "valor": "9.3 HP a 7.500 rpm"
+          },
+          {
+            "etiqueta": "Torque máximo",
+            "valor": "8.5 Nm a 6.000 rpm"
+          },
+          {
+            "etiqueta": "Arranque",
+            "valor": "Eléctrico / Patada"
+          },
+          {
+            "etiqueta": "Transmision",
+            "valor": "Semiautomatica de 4 velocidades"
+          },
+          {
+            "etiqueta": "Freno delantero",
+            "valor": "Disco / tambor segun version"
+          },
+          {
+            "etiqueta": "Freno trasero",
+            "valor": "Tambor con CBS"
+          },
+          {
+            "etiqueta": "Velocidad maxima estimada",
+            "valor": "90 km/h aprox."
+          }
+        ]
+      },
+      {
+        "codigo": "MO0811",
+        "nombre": "Honda Wave 110 S New gris",
+        "imagen": "/motos/honda-wave-gris.jpg",
+        "color": "Gris",
+        "descripcion": "La Honda Wave 110 S New es una cub urbana simple, economica y confiable, pensada para traslados diarios con bajo consumo, mantenimiento accesible y manejo agil.",
+        "fichaTecnica": [
+          {
+            "etiqueta": "Motor",
+            "valor": "Monocilindrico 4 tiempos OHC, 2 valvulas"
+          },
+          {
+            "etiqueta": "Cilindrada",
+            "valor": "109 cc"
+          },
+          {
+            "etiqueta": "Alimentacion",
+            "valor": "Carburador"
+          },
+          {
+            "etiqueta": "Potencia máxima",
+            "valor": "9.3 HP a 7.500 rpm"
+          },
+          {
+            "etiqueta": "Torque máximo",
+            "valor": "8.5 Nm a 6.000 rpm"
+          },
+          {
+            "etiqueta": "Arranque",
+            "valor": "Eléctrico / Patada"
+          },
+          {
+            "etiqueta": "Transmision",
+            "valor": "Semiautomatica de 4 velocidades"
+          },
+          {
+            "etiqueta": "Freno delantero",
+            "valor": "Disco / tambor segun version"
+          },
+          {
+            "etiqueta": "Freno trasero",
+            "valor": "Tambor con CBS"
+          },
+          {
+            "etiqueta": "Velocidad maxima estimada",
+            "valor": "90 km/h aprox."
+          }
+        ]
+      }
+    ],
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos OHC, 2 valvulas"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "109 cc"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "9.3 HP a 7.500 rpm"
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "8.5 Nm a 6.000 rpm"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico / Patada"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Semiautomatica de 4 velocidades"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco / tambor segun version"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor con CBS"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "90 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "codigo": "MO0805",
+    "nombre": "Honda XR 150 L rojo",
+    "descripcion": "La Honda XR 150L es una moto doble propósito preparada para circular comodamente tanto en ciudad como en caminos de tierra. Su posición elevada, suspensiones resistentes y mecánica confiable la convierten en una opción muy valorada para trabajo y aventura.",
+    "imagen": [
+      "/motos/cetrogar-honda-xr150.jpg",
+      "/motos/honda-xr-150-blanca.webp"
+    ],
+    "variantes": [
+      {
+        "codigo": "MO0805",
+        "nombre": "Honda XR 150 L rojo",
+        "imagen": "/motos/cetrogar-honda-xr150.jpg",
+        "color": "Rojo",
+        "descripcion": "La Honda XR 150 L es una doble proposito versatil, preparada para ciudad, ripio y caminos de tierra con postura alta y suspensiones resistentes.",
+        "fichaTecnica": [
+          {
+            "etiqueta": "Tipo",
+            "valor": "Monocilíndrico, 4 tiempos OHC, refrigerado por aire"
+          },
+          {
+            "etiqueta": "Cilindrada",
+            "valor": "149,1 cc"
+          },
+          {
+            "etiqueta": "Potencia máxima",
+            "valor": "12,6 HP a 7.750 rpm"
+          },
+          {
+            "etiqueta": "Alimentación",
+            "valor": "Carburador"
+          },
+          {
+            "etiqueta": "Encendido",
+            "valor": "CDI electrónico"
+          },
+          {
+            "etiqueta": "Torque máximo",
+            "valor": "12,1 Nm a 6.000 rpm aprox."
+          },
+          {
+            "etiqueta": "Arranque",
+            "valor": "Eléctrico/Patada"
+          },
+          {
+            "etiqueta": "Transmision",
+            "valor": "5 velocidades"
+          },
+          {
+            "etiqueta": "Freno delantero",
+            "valor": "A disco"
+          },
+          {
+            "etiqueta": "Freno trasero",
+            "valor": "Tambor"
+          },
+          {
+            "etiqueta": "Velocidad maxima estimada",
+            "valor": "105 km/h aprox."
+          },
+          {
+            "etiqueta": "Uso",
+            "valor": "On/Off"
+          }
+        ]
+      },
+      {
+        "codigo": "MO0806",
+        "nombre": "Honda XR 150 L blanco",
+        "imagen": "/motos/honda-xr-150-blanca.webp",
+        "color": "Blanco",
+        "descripcion": "La Honda XR 150 L es una doble proposito versatil, preparada para ciudad, ripio y caminos de tierra con postura alta y suspensiones resistentes.",
+        "fichaTecnica": [
+          {
+            "etiqueta": "Tipo",
+            "valor": "Monocilíndrico, 4 tiempos OHC, refrigerado por aire"
+          },
+          {
+            "etiqueta": "Cilindrada",
+            "valor": "149,1 cc"
+          },
+          {
+            "etiqueta": "Potencia máxima",
+            "valor": "12,6 HP a 7.750 rpm"
+          },
+          {
+            "etiqueta": "Alimentación",
+            "valor": "Carburador"
+          },
+          {
+            "etiqueta": "Encendido",
+            "valor": "CDI electrónico"
+          },
+          {
+            "etiqueta": "Torque máximo",
+            "valor": "12,1 Nm a 6.000 rpm aprox."
+          },
+          {
+            "etiqueta": "Arranque",
+            "valor": "Eléctrico/Patada"
+          },
+          {
+            "etiqueta": "Transmision",
+            "valor": "5 velocidades"
+          },
+          {
+            "etiqueta": "Freno delantero",
+            "valor": "A disco"
+          },
+          {
+            "etiqueta": "Freno trasero",
+            "valor": "Tambor"
+          },
+          {
+            "etiqueta": "Velocidad maxima estimada",
+            "valor": "105 km/h aprox."
+          },
+          {
+            "etiqueta": "Uso",
+            "valor": "On/Off"
+          }
+        ]
+      }
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos OHC, refrigerado por aire"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "149,1 cc"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "12,6 HP a 7.750 rpm"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Encendido",
+        "valor": "CDI electrónico"
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "12,1 Nm a 6.000 rpm aprox."
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico/Patada"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "105 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "On/Off"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "codigo": "MO0819",
+    "nombre": "Honda XR 190 L beige",
+    "descripcion": "La Honda XR 190L ofrece mayor potencia y equipamiento dentro de la linea on/off de Honda. Su motor de 190 cc, buena altura al suelo y posición de manejo confortable permiten un desempeño eficiente tanto en ciudad como fuera del asfalto.",
+    "imagen": [
+      "/motos/honda-xr-190-beige.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, OHC"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "184.4 cc"
+      },
+      {
+        "etiqueta": "Freno",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "15,6 HP a 8.500 rpm aprox."
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "15,7 Nm a 6.000 rpm"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica PGM-FI"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico/Patada"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Velocidad máxima",
+        "valor": "110 - 120 km/h"
+      },
+      {
+        "etiqueta": "Consumo estimado",
+        "valor": "35km/l aprox"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "codigo": "MO0830",
+    "nombre": "Honda XR 300 L rojo",
+    "descripcion": "La Honda XR 300L está orientada a usuarios que buscan una moto de aventura con mayor potencia y capacidad off-road. Su motor de mayor cilindrada y suspensiones reforzadas brindan estabilidad y rendimiento en terrenos exigentes.",
+    "imagen": [
+      "/motos/honda-tornado-300.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, 4 válvulas, OHC, refrigerado por aire y aceite"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "294 cc."
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica PGM-FI"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "24,2 HP a 7.500 rpm aprox."
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "26,5 Nm a 5.750 rpm"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "6"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "135 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "On/Off"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "codigo": "MO0839",
+    "nombre": "Yamaha XTZ 250 ABS Azul",
+    "descripcion": "La Yamaha XTZ 250 ABS es una doble propósito con motor de 249 cc, inyección electrónica y arranque eléctrico. Su suspensión de largo recorrido, frenos con ABS y postura alta la hacen apta para ciudad, ripio y caminos de uso mixto.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "249 cc"
+      },
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico 4T SOHC, refrigerado por aire"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Diametro x carrera",
+        "valor": "74 x 58 mm"
+      },
+      {
+        "etiqueta": "Relación compresión",
+        "valor": "9.8:1"
+      },
+      {
+        "etiqueta": "Lubricación",
+        "valor": "Carter húmedo"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica"
+      },
+      {
+        "etiqueta": "Encendido",
+        "valor": "TCI"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "codigo": "MO0841",
+    "nombre": "Yamaha XTZ 125 E Azul",
+    "descripcion": "La Yamaha XTZ 125 E es una on/off liviana con motor de 124 cc, caja de 5 velocidades y refrigeración por aire. Su bajo peso, despeje y postura erguida la vuelven práctica para aprender, circular en ciudad y entrar en caminos de tierra.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "124 cc aprox."
+      },
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Transmisión",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "On/Off liviana"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "codigo": "MO0842",
+    "nombre": "Yamaha XTZ 125 E Blanco",
+    "descripcion": "La Yamaha XTZ 125 E combina una mecánica simple de 124 cc con suspensiones pensadas para uso mixto. Es una moto confiable y fácil de manejar, adecuada para traslados diarios y salidas por calles en mal estado o ripio.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "124 cc aprox."
+      },
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Transmisión",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "On/Off liviana"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "codigo": "MO0843",
+    "nombre": "Yamaha XTZ 125 E Negro",
+    "descripcion": "La Yamaha XTZ 125 E es una alternativa de baja cilindrada para quienes buscan una moto alta, liviana y versatil. Su motor refrigerado por aire y transmisión de 5 marchas priorizan economía, control y mantenimiento sencillo.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "124 cc aprox."
+      },
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Transmisión",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "On/Off liviana"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "codigo": "MO0873",
+    "nombre": "Yamaha XTZ 250 ABS negro",
+    "descripcion": "La Yamaha XTZ 250 ABS utiliza un monocilíndrico de 249 cc con inyección electrónica, reconocido por su entrega progresiva. La versión con ABS suma seguridad de frenado y conserva la versatilidad para transitar asfalto, tierra y recorridos largos.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "249 cc"
+      },
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico 4T SOHC, refrigerado por aire"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Diametro x carrera",
+        "valor": "74 x 58 mm"
+      },
+      {
+        "etiqueta": "Relación compresión",
+        "valor": "9.8:1"
+      },
+      {
+        "etiqueta": "Lubricación",
+        "valor": "Carter húmedo"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica"
+      },
+      {
+        "etiqueta": "Encendido",
+        "valor": "TCI"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "codigo": "MO0891",
+    "nombre": "Yamaha XTZ 250 ABS beige",
+    "descripcion": "La Yamaha XTZ 250 ABS está pensada para quienes necesitan una doble propósito confiable con buena autonomía y respuesta. Su configuración de 249 cc, suspensiones altas y frenos asistidos favorecen el uso diario y las escapadas fuera del asfalto.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "249 cc"
+      },
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico 4T SOHC, refrigerado por aire"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Diametro x carrera",
+        "valor": "74 x 58 mm"
+      },
+      {
+        "etiqueta": "Relación compresión",
+        "valor": "9.8:1"
+      },
+      {
+        "etiqueta": "Lubricación",
+        "valor": "Carter húmedo"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica"
+      },
+      {
+        "etiqueta": "Encendido",
+        "valor": "TCI"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "codigo": "MO0926",
+    "nombre": "Honda XR 300 L Tornado Rally Rojo",
+    "descripcion": "La Honda XR 300L Tornado Rally es una trail de 293 cc orientada al uso mixto y a caminos exigentes. Su motor monocilíndrico, chasis preparado para doble propósito y posición de manejo alta la hacen adecuada para aventura y recorridos rurales.",
+    "imagen": [
+      "/motos/honda-tornado-300-rally.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, 4 válvulas, OHC, refrigerado por aire y aceite"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "294 cc"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica PGM-FI"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "24,3 HP a 7.500 rpm"
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "26,5 Nm a 5.750 rpm"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco con ABS"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Disco"
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "6"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "135 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "On/Off - Adventure"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "codigo": "MO0846",
+    "nombre": "Yamaha Fascino 125 FI Negra",
+    "descripcion": "La Yamaha Fascino 125 FI es un scooter urbano con motor de 125 cc, inyeccion electrónica y transmisión automática CVT. Su enfoque está en la comodidad, bajo consumo y manejo simple para desplazamientos diarios sin cambios manuales.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "125 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Automatica CVT"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Urbano"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "codigo": "MO0847",
+    "nombre": "Yamaha Fascino 125 FI Cyan",
+    "descripcion": "La Yamaha Fascino 125 FI ofrece una conducción ligera y práctica gracias a su transmisión automática y motor eficiente de 125 cc. Su diseno tipo scooter facilita el uso urbano, con buena maniobrabilidad y asiento comodo para trayectos cotidianos.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "125 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Automatica CVT"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Urbano"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "codigo": "MO0848",
+    "nombre": "Yamaha Ray ZR 125 FI Rojo",
+    "descripcion": "La Yamaha Ray ZR 125 FI es un scooter de estilo deportivo con motor de 125 cc, inyección electrónica y transmisión automática. Está pensado para ciudad, con manejo ágil, bajo peso y practicidad para usuarios que buscan movilidad sencilla.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "125 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Automatica CVT"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Scooter urbano"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "codigo": "MO0849",
+    "nombre": "Yamaha Ray ZR 125 FI Negro",
+    "descripcion": "La Yamaha Ray ZR 125 FI combina estética deportiva con economía de combustible y conducción automática. Su motor de 125 cc y dimensiones compactas lo hacen comodo para tránsito urbano, estacionamiento y recorridos frecuentes.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "125 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Automatica CVT"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Scooter urbano"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "codigo": "MO0850",
+    "nombre": "Yamaha Ray ZR 125 FI Azul",
+    "descripcion": "La Yamaha Ray ZR 125 FI es un scooter urbano de 125 cc con respuesta progresiva y manejo muy simple. La transmisión CVT elimina los cambios manuales y favorece una conducción relajada en calles congestionadas.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "125 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Automatica CVT"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Scooter urbano"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "codigo": "MO0884",
+    "nombre": "Kymco Micare 125 - Black",
+    "descripcion": "La Kymco Micare 125 es un scooter urbano de 125 cc con transmisión automática, ideal para moverse con comodidad en ciudad. Su formato compacto, piso plano y protección frontal priorizan practicidad, bajo consumo y facilidad de uso.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "125 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico / Patada"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Automatica CVT"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Urbano"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "codigo": "MO0885",
+    "nombre": "Kymco Micare 125 - Ruby red",
+    "descripcion": "La Kymco Micare 125 apunta a usuarios que quieren un scooter sencillo, económico y fácil de estacionar. Su motor de 125 cc y transmisión CVT permiten circular sin cambios manuales, con una postura cómoda para trayectos urbanos.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "125 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico / Patada"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Automatica CVT"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Urbano"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "codigo": "MO0886",
+    "nombre": "Kymco Micare 125 - Silver Blue",
+    "descripcion": "La Kymco Micare 125 es una opción práctica para movilidad diaria, con mecánica de 125 cc y conducción automática. Su configuración de scooter favorece el uso cotidiano, la comodidad del conductor y los recorridos cortos dentro de la ciudad.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "125 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico / Patada"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Automatica CVT"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Urbano"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "codigo": "MO0902",
+    "nombre": "Yamaha Fascino 125 FI Rojo",
+    "descripcion": "La Yamaha Fascino 125 FI es un scooter eficiente, liviano y fácil de conducir gracias a su transmisión automática. Su motor con inyección electrónica ayuda a reducir consumo y mejora la respuesta en uso urbano.",
+    "imagen": [
+      "/motos/cetrogar-kymco-agility.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "125 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "Automatica CVT"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Urbano"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "codigo": "MO0814",
+    "nombre": "Honda CB 125 F Twister negro",
+    "descripcion": "La Honda CB125F Twister es una street de 124 cc orientada a la movilidad urbana con bajo consumo y manejo fácil. Su caja de 5 velocidades, freno delantero a disco y postura cómoda la hacen una buena opción para uso diario.",
+    "imagen": [
+      "/motos/honda-cb-125-negra.png"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, OHC, 4 valvulas"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "124 cc"
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire (con radiador de aceite)"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica PGM-FI"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "11 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "10,6 Nm aprox."
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleación"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "105 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "codigo": "MO0820",
+    "nombre": "Honda CB 300 F Twister rojo",
+    "descripcion": "La Honda CB300F Twister combina un monocilíndrico de 294 cc con una ciclística ágil para uso diario y salidas a ruta. Su equipamiento moderno, frenos a disco y respuesta contundente la ubican como una naked versatil de media cilindrada.",
+    "imagen": [
+      "/motos/honda-cb-300-twister.jpg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "variantes": [
+      {
+        "codigo": "MO0820",
+        "nombre": "Honda CB 300 F Twister rojo",
+        "imagen": "/motos/honda-cb-300-twister.jpg",
+        "color": "Rojo",
+        "descripcion": "La Honda CB 300 F Twister es una naked de media cilindrada con respuesta contundente, frenos a disco y ergonomia apta para ciudad o ruta corta.",
+        "fichaTecnica": [
+          {
+            "etiqueta": "Tipo",
+            "valor": "Monocilíndrico, 4 tiempos, OHC, 4 valvulas"
+          },
+          {
+            "etiqueta": "Cilindrada",
+            "valor": "294 cc"
+          },
+          {
+            "etiqueta": "Potencia máxima",
+            "valor": "24,5 CV a 7.500 rpm aprox."
+          },
+          {
+            "etiqueta": "Torque máximo",
+            "valor": "25,6 Nm a 5.500 rpm"
+          },
+          {
+            "etiqueta": "Refrigeración",
+            "valor": "Aire con radiador de aceite"
+          },
+          {
+            "etiqueta": "Alimentación",
+            "valor": "Inyección electrónica PGM-FI"
+          },
+          {
+            "etiqueta": "Arranque",
+            "valor": "Eléctrico"
+          },
+          {
+            "etiqueta": "Transmision",
+            "valor": "6 velocidades, embrague anti-rebote"
+          },
+          {
+            "etiqueta": "Freno delantero",
+            "valor": "Disco con ABS"
+          },
+          {
+            "etiqueta": "Freno trasero",
+            "valor": "Disco con ABS"
+          },
+          {
+            "etiqueta": "Velocidad maxima estimada",
+            "valor": "135 km/h aprox."
+          }
+        ]
+      },
+      {
+        "codigo": "MO0822",
+        "nombre": "Honda CB 300 F Twister gris",
+        "imagen": "/motos/honda-cb-300-twister-gris.webp",
+        "color": "Gris",
+        "descripcion": "La Honda CB 300 F Twister es una naked de media cilindrada con respuesta contundente, frenos a disco y ergonomia apta para ciudad o ruta corta.",
+        "fichaTecnica": [
+          {
+            "etiqueta": "Tipo",
+            "valor": "Monocilíndrico, 4 tiempos, OHC, 4 valvulas"
+          },
+          {
+            "etiqueta": "Cilindrada",
+            "valor": "294 cc"
+          },
+          {
+            "etiqueta": "Potencia máxima",
+            "valor": "24,5 CV a 7.500 rpm aprox."
+          },
+          {
+            "etiqueta": "Torque máximo",
+            "valor": "25,6 Nm a 5.500 rpm"
+          },
+          {
+            "etiqueta": "Refrigeración",
+            "valor": "Aire con radiador de aceite"
+          },
+          {
+            "etiqueta": "Alimentación",
+            "valor": "Inyección electrónica PGM-FI"
+          },
+          {
+            "etiqueta": "Arranque",
+            "valor": "Eléctrico"
+          },
+          {
+            "etiqueta": "Transmision",
+            "valor": "6 velocidades, embrague anti-rebote"
+          },
+          {
+            "etiqueta": "Freno delantero",
+            "valor": "Disco con ABS"
+          },
+          {
+            "etiqueta": "Freno trasero",
+            "valor": "Disco con ABS"
+          },
+          {
+            "etiqueta": "Velocidad maxima estimada",
+            "valor": "135 km/h aprox."
+          }
+        ]
+      }
+    ],
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, OHC, 4 valvulas"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "294 cc"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "24,5 CV a 7.500 rpm aprox."
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "25,6 Nm a 5.500 rpm"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire con radiador de aceite"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica PGM-FI"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "6 velocidades, embrague anti-rebote"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco con ABS"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Disco con ABS"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "135 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "codigo": "MO0822",
+    "nombre": "Honda CB 300 F Twister gris",
+    "descripcion": "La Honda CB300F Twister combina un monocilíndrico de 294 cc con una ciclística ágil para uso diario y salidas a ruta. Su equipamiento moderno, frenos a disco y respuesta contundente la ubican como una naked versatil de media cilindrada.",
+    "imagen": [
+      "/motos/honda-cb-300-twister-gris.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, OHC, 4 valvulas"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "294 cc"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "24,5 CV a 7.500 rpm aprox."
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "25,6 Nm a 5.500 rpm"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire con radiador de aceite"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica PGM-FI"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "6 velocidades, embrague anti-rebote"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco con ABS"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Disco con ABS"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "135 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "codigo": "MO0833",
+    "nombre": "Honda GLH 150 rojo",
+    "descripcion": "La Honda GLH150 es una moto urbana de 149,2 cc con inyección electrónica, pensada para eficiencia y confiabilidad. Su caja de 5 velocidades, postura cómoda y bajo consumo la hacen muy apta para trabajo y traslados cotidianos.",
+    "imagen": [
+      "/motos/honda-glh-roja.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, OHC"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "149,2 cc"
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica PGM-FI"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "12 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "12,5 Nm aprox."
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco hidraulico de 240 mm"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor con CBS"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleación"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "110 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "codigo": "MO0851",
+    "nombre": "Yamaha FZS FI V4.0 ABS Negro",
+    "descripcion": "La Yamaha FZS FI V4.0 ABS es una naked urbana con motor de 149 cc con inyección electrónica y freno delantero con ABS. Se destaca por su bajo consumo, ergonomía cómoda y diseño moderno para quienes buscan una 150 equipada.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "153 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica segun version"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "12,4 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "13,3 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor / disco segun version"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "115 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Naked urbana"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "codigo": "MO0852",
+    "nombre": "Yamaha FZS FI V4.0 ABS Azul",
+    "descripcion": "La Yamaha FZS FI V4.0 ABS mantiene la base eficiente de la familia FZ con inyección, buena estabilidad y postura relajada. El ABS delantero suma seguridad en frenadas y la hace conveniente para uso urbano intensivo.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "153 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica segun version"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "12,4 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "13,3 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor / disco segun version"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "115 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Naked urbana"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "codigo": "MO0853",
+    "nombre": "Yamaha FZS FI V4.0 ABS Azul LL Azul",
+    "descripcion": "La Yamaha FZS FI V4.0 ABS es una street de 150 cc pensada para economía, confort y respuesta suave en ciudad. Su estética naked, inyección electrónica y freno con ABS la vuelven una alternativa moderna dentro del segmento.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "153 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica segun version"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "12,4 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "13,3 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor / disco segun version"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "115 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Naked urbana"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "codigo": "MO0854",
+    "nombre": "Yamaha FZS FI V4.0 ABS Negra LL Dorada",
+    "descripcion": "La Yamaha FZS FI V4.0 ABS combina motor eficiente de 149 cc, ergonomía urbana y detalles deportivos de la linea FZ. La versión con ABS delantero mejora el control de frenado y conserva el bajo consumo característico del modelo.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "153 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica segun version"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "12,4 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "13,3 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor / disco segun version"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "115 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Naked urbana"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "codigo": "MO0857",
+    "nombre": "Bajaj Rouser P 150 Black Red",
+    "descripcion": "La Bajaj Rouser P150 es una street de 150 cc con orientación deportiva y una posición de manejo cómoda para ciudad. Su motor eficiente, caja de 5 velocidades y diseño moderno la hacen una evolución práctica dentro de la familia Rouser.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "149,68 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos DTS-i"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Street"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "codigo": "MO0858",
+    "nombre": "Bajaj Rouser P 150 Caribbean",
+    "descripcion": "La Bajaj Rouser P150 ofrece una combinación de bajo consumo, buen torque urbano y estética naked actual. Es una moto pensada para uso diario con prestaciones suficientes para traslados rápidos y una conducción estable.",
+    "imagen": [
+      "/motos/rousercaribbean.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "149,68 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos DTS-i"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Street"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "codigo": "MO0859",
+    "nombre": "Bajaj Rouser P 150 Ebony Black",
+    "descripcion": "La Bajaj Rouser P150 pertenece al segmento street 150, con motor de 4 tiempos y caja de 5 marchas. Su enfoque está en la eficiencia, el diseño deportivo y una respuesta equilibrada para ciudad y recorridos suburbanos.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "149,68 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos DTS-i"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Street"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "codigo": "MO0861",
+    "nombre": "Bajaj Rouser 125 LS Blanco",
+    "descripcion": "La Bajaj Rouser 125 LS utiliza un motor DTS-i de 124,4 cc que prioriza rendimiento y bajo consumo. Es una moto liviana y maniobrable, ideal para primera moto, trabajo diario y trayectos urbanos frecuentes.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, DTS-i"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "124,4 cc"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "12 HP a 8.500 rpm"
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "11 Nm a 6.500 rpm"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico / Patada"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco hidraulico de 240 mm"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor de 130 mm"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "105 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "codigo": "MO0862",
+    "nombre": "Bajaj Rouser 125 LS Negro",
+    "descripcion": "La Bajaj Rouser 125 LS combina diseño deportivo con mecánica simple de 125 cc y caja de 5 velocidades. Su buena autonomía y respuesta suave la hacen una opción confiable para ciudad y usuarios que buscan economía.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, DTS-i"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "124,4 cc"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "12 HP a 8.500 rpm"
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "11 Nm a 6.500 rpm"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico / Patada"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco hidraulico de 240 mm"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor de 130 mm"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "105 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "codigo": "MO0866",
+    "nombre": "Bajaj Rouser NS 200 Pearl",
+    "descripcion": "La Bajaj Rouser NS 200 es una naked deportiva con motor de 199,5 cc, caja de 6 velocidades y buena respuesta en media cilindrada. Su chasis perimetral, frenos a disco y postura agresiva la hacen apta para manejo urbano dinámico y ruta corta.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "199,5 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos DTS-i"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Liquida"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador / inyeccion segun version"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "23,5 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "18,3 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "6"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "135 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Naked deportiva"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "codigo": "MO0870",
+    "nombre": "Bajaj Rouser NS 160 Pearl",
+    "descripcion": "La Bajaj Rouser NS 160 se ubica entre las street de baja y media cilindrada, con enfoque deportivo y buen rendimiento urbano. Su motor de 160 cc, postura naked y frenado a disco ofrecen una conducción más firme que una 160 tradicional.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "160,3 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos DTS-i"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aceite"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Street"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "codigo": "MO0874",
+    "nombre": "Yamaha FZ25 BS Rojo",
+    "descripcion": "La Yamaha FZ25 es una naked de 249 cc con inyección electrónica y motor SOHC refrigerado por aire y aceite segun versión. Se destaca por su torque a bajas vueltas, postura cómoda y facilidad para usarla tanto en ciudad como en ruta.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "249 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire con radiador de aceite"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "20,9 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "20,1 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "ABS",
+        "valor": "Delantero / segun version"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "130 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Naked urbana y ruta corta"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "codigo": "MO0901",
+    "nombre": "Yamaha FZ25 ABS Azul",
+    "descripcion": "La Yamaha FZ25 ABS agrega asistencia antibloqueo al frenado sobre una base de 249 cc confiable y de bajo mantenimiento. Es una naked equilibrada, con buena entrega de torque y una ergonomía apta para recorridos diarios o salidas de fin de semana.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "249 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire con radiador de aceite"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "20,9 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "20,1 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "ABS",
+        "valor": "Delantero / segun version"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "130 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Naked urbana y ruta corta"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "codigo": "MO0908",
+    "nombre": "Yamaha FZ25 AZUL",
+    "descripcion": "La Yamaha FZ25 ofrece un monocilíndrico de 249 cc con respuesta elástica y consumo razonable para su cilindrada. Su diseño naked, asiento amplio y buena estabilidad la convierten en una moto versatil para ciudad y ruta.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "249 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire con radiador de aceite"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "20,9 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "20,1 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "ABS",
+        "valor": "Delantero / segun version"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "130 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Naked urbana y ruta corta"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "codigo": "MO0904",
+    "nombre": "Bajaj Rouser P 150 ROJA",
+    "descripcion": "La Bajaj Rouser P 150 es una moto de 150 cc orientada al uso urbano con estilo deportivo y mecánica eficiente. Su caja de 5 velocidades, bajo consumo y postura cómoda la hacen adecuada para trabajo y viajes diarios.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "149,68 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos DTS-i"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Electrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Street"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "codigo": "MO0920",
+    "nombre": "Bajaj Boxer CT 100 ROJA",
+    "descripcion": "La Bajaj Boxer CT100 es una moto utilitaria de baja cilindrada enfocada en economía, robustez y mantenimiento simple. Su motor cercano a 100 cc, transmision de 4 velocidades y construccion resistente la hacen popular para trabajo diario.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "100 cc aprox."
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "4"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico / Patada"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Utilitario urbano"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "codigo": "MO0918",
+    "nombre": "Bajaj Boxer CT 100 Azul/Negro",
+    "descripcion": "La Bajaj Boxer CT100 prioriza bajo consumo y durabilidad por encima de prestaciones deportivas. Es una moto liviana y sencilla, adecuada para recorridos urbanos, tareas de reparto y usuarios que buscan costos operativos reducidos.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "100 cc aprox."
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "4"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico / Patada"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Utilitario urbano"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "codigo": "MO1001",
+    "nombre": "Keller Eco Crono 110",
+    "descripcion": "La Keller Eco Crono 110 es una cub urbana de bajo consumo, sencilla de mantener y practica para moverse todos los dias. Su mecanica 110 cc, arranque electrico y formato liviano la hacen una opcion accesible para trabajo, estudio y traslados cortos.",
+    "imagen": [
+      "/motos/keller-eco-crono-110.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "107 cc"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "6,5 HP a 8.000 rpm"
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "7 Nm aprox."
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "4 velocidades semiautomática"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico / Patada"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco / tambor segun version"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "80 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "codigo": "MO1002",
+    "nombre": "Corven Energy 110",
+    "descripcion": "La Corven Energy 110 es una moto utilitaria pensada para uso diario, con mecánica simple, bajo consumo y mantenimiento económico. Es cómoda para ciudad y recorridos frecuentes gracias a su peso contenido y manejo fácil.",
+    "imagen": [
+      "/motos/corven-energy.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, refrigerado por aire"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "107 cc"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "6,6 HP a 8.500 rpm"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico/Patada"
+      },
+      {
+        "etiqueta": "Transmisión",
+        "valor": "4 velocidades semiautomatica"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "codigo": "MO1003",
+    "nombre": "Motomel S2 150",
+    "descripcion": "La Motomel S2 150 es una street de 150 cc orientada a movilidad urbana y viajes cortos. Combina postura cómoda, caja manual de 5 velocidades y una mecánica conocida para quienes buscan una moto práctica y económica.",
+    "imagen": [
+      "/motos/motomel-s2.png",
+      "/motos/motomel-s2.jpg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilíndrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "149,5 cc"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "13,4 HP a 8.500 rpm"
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "12 Nm aprox."
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico / Patada"
+      },
+      {
+        "etiqueta": "Transmisión",
+        "valor": "Manual 5 velocidades"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "110 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "codigo": "MO1004",
+    "nombre": "Honda GLH 150",
+    "descripcion": "La Honda GLH 150 es una moto urbana confiable, eficiente y cómoda para uso intensivo. Su motor de 150 cc con inyección electrónica, caja de 5 marchas y freno delantero a disco la hacen muy apta para trabajo y traslados diarios.",
+    "imagen": [
+      "/motos/honda-glh-roja.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, OHC"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "149,2 cc"
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica PGM-FI"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "12 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "12,5 Nm aprox."
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco hidraulico de 240 mm"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor con CBS"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleación"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "110 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "codigo": "MO1007",
+    "nombre": "Honda XR 150 L",
+    "descripcion": "La Honda XR 150 L es una doble propósito versatil, preparada para ciudad, caminos de tierra y recorridos de uso mixto. Su posición alta de manejo, suspensiones resistentes y mecánica confiable la vuelven una opción muy buscada.",
+    "imagen": [
+      "/motos/cetrogar-honda-xr150.jpg",
+      "/motos/honda-xr-150-blanca.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos OHC, refrigerado por aire"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "149,1 cc"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "12,6 HP a 7.750 rpm"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Encendido",
+        "valor": "CDI electrónico"
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "12,1 Nm a 6.000 rpm aprox."
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico/Patada"
+      },
+      {
+        "etiqueta": "Transmision",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "105 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "On/Off"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "codigo": "MO1009",
+    "nombre": "Zanella ZB 110",
+    "descripcion": "La Zanella ZB 110 es una cub liviana y económica, ideal para quienes necesitan movilidad simple en ciudad. Su formato práctico, consumo bajo y mantenimiento sencillo la hacen conveniente para el uso cotidiano.",
+    "imagen": [
+      "/motos/zanella-zb.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, OCH"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "107 cc"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "6.7 a 7.2 HP"
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "7 Nm aprox."
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico / Patada"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "4 velocidades semiautomática"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco / tambor segun version"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "80 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "codigo": "MO1010",
+    "nombre": "Gilera Smash 110",
+    "descripcion": "La Gilera Smash 110 es una de las cub urbanas mas elegidas por su bajo costo de uso, facilidad de manejo y repuestos accesibles. Es una alternativa práctica para trabajo, estudio y traslados diarios.",
+    "imagen": [
+      "/motos/gilera-smash-110.jpg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "107 cc"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "6,6 HP a 8.500 rpm"
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "7 Nm aprox."
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "4 velocidades semiautomática"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico / Patada"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco / tambor segun version"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "80 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "codigo": "MO1011",
+    "nombre": "Corven Energy 110 Base",
+    "descripcion": "La Corven Energy 110 Base mantiene una propuesta simple y económica para movilidad diaria. Su motor de 110 cc, bajo consumo y mantenimiento accesible la vuelven una opcion funcional para recorridos urbanos.",
+    "imagen": [
+      "/motos/corven-energy.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, refrigerado por aire"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "107 cc"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "6,6 HP a 8.500 rpm"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico/Patada"
+      },
+      {
+        "etiqueta": "Transmisión",
+        "valor": "4 velocidades semiautomatica"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "codigo": "MO1012",
+    "nombre": "Honda CB 190 R",
+    "descripcion": "La Honda CB 190 R es una street de estilo deportivo con motor de 184 cc, inyección electrónica y caja de 5 velocidades. Ofrece una conducción ágil para ciudad y buena respuesta para quienes buscan subir de cilindrada.",
+    "imagen": [
+      "/motos/cetrogar-honda-cb190.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, OHC"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "184,4 cc"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "16,4 HP a 8.500 rpm aprox."
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "15,7 Nm a 6.000 rpm"
+      },
+      {
+        "etiqueta": "Refrigeración",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica PGM-FI"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Caja",
+        "valor": "5 velocidades"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "Disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Disco"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "115 km/h aprox."
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "codigo": "MO1013",
+    "nombre": "Honda XR 300 L Tornado",
+    "descripcion": "La Honda XR 300 L Tornado es una trail de mayor cilindrada pensada para uso mixto, con buen despeje, suspensiones preparadas y respuesta solida en caminos exigentes. Es una moto orientada a aventura, trabajo rural y recorridos fuera del asfalto.",
+    "imagen": [
+      "/motos/honda-tornado-300.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Tipo",
+        "valor": "Monocilíndrico, 4 tiempos, 4 válvulas, OHC, refrigerado por aire y aceite"
+      },
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "294 cc."
+      },
+      {
+        "etiqueta": "Alimentación",
+        "valor": "Inyección electrónica PGM-FI"
+      },
+      {
+        "etiqueta": "Potencia máxima",
+        "valor": "24,2 HP a 7.500 rpm aprox."
+      },
+      {
+        "etiqueta": "Torque máximo",
+        "valor": "26,5 Nm a 5.750 rpm"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "6"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "135 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "On/Off"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "codigo": "MO1005",
+    "nombre": "Yamaha YBR 125",
+    "descripcion": "La Yamaha YBR 125 es una street urbana confiable, económica y fácil de manejar. Su motor de 125 cc, caja de 5 velocidades y postura cómoda la hacen una alternativa práctica para traslados diarios y primera moto.",
+    "imagen": [
+      "/motos/cetrogar-yamaha-xtz-250.jpeg"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "124 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "10 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "10 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "105 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Street urbano"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "codigo": "MO1006",
+    "nombre": "Yamaha FZ 150",
+    "descripcion": "La Yamaha FZ 150 es una naked urbana con buen equilibrio entre consumo, comodidad y respuesta. Su posición de manejo relajada y su estética deportiva la hacen atractiva para ciudad y recorridos frecuentes.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "153 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos SOHC"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Inyeccion electronica segun version"
+      },
+      {
+        "etiqueta": "Potencia maxima",
+        "valor": "12,4 HP aprox."
+      },
+      {
+        "etiqueta": "Torque maximo",
+        "valor": "13,3 Nm aprox."
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor / disco segun version"
+      },
+      {
+        "etiqueta": "Llantas",
+        "valor": "Aleacion"
+      },
+      {
+        "etiqueta": "Velocidad maxima estimada",
+        "valor": "115 km/h aprox."
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Naked urbana"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "codigo": "MO1008",
+    "nombre": "Bajaj Boxer 150",
+    "descripcion": "La Bajaj Boxer 150 es una moto utilitaria robusta, pensada para trabajo y uso diario. Su mecánica simple, bajo consumo y buena capacidad para recorridos intensivos la convierten en una opción funcional y rendidora.",
+    "imagen": [
+      "/motos/cetrogar-bajaj-rouser-125.webp"
+    ],
+    "precio": null,
+    "stock": "virtual",
+    "fichaTecnica": [
+      {
+        "etiqueta": "Cilindrada",
+        "valor": "144,8 cc"
+      },
+      {
+        "etiqueta": "Motor",
+        "valor": "Monocilindrico 4 tiempos"
+      },
+      {
+        "etiqueta": "Refrigeracion",
+        "valor": "Aire"
+      },
+      {
+        "etiqueta": "Alimentacion",
+        "valor": "Carburador"
+      },
+      {
+        "etiqueta": "Velocidades",
+        "valor": "5"
+      },
+      {
+        "etiqueta": "Arranque",
+        "valor": "Eléctrico"
+      },
+      {
+        "etiqueta": "Freno delantero",
+        "valor": "A disco / tambor segun version"
+      },
+      {
+        "etiqueta": "Freno trasero",
+        "valor": "Tambor"
+      },
+      {
+        "etiqueta": "Uso",
+        "valor": "Utilitario"
+      }
+    ]
+  }
+]

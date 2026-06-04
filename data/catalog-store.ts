@@ -5,11 +5,11 @@ import type { WriteBatch } from "firebase-admin/firestore";
 import type { Novedad } from "@/data/novedades";
 import { getDescripcionProducto, type Producto, type ProductoVariante } from "@/data/productos";
 import { getFirebaseDb, hasFirebaseConfig } from "@/lib/firebase-admin";
-import productosData from "@/data/productos.json";
+import motosData from "@/data/motos.json";
 import novedadesData from "@/data/novedades.json";
 
 const dataDirectory = path.join(process.cwd(), "data");
-const productosPath = path.join(dataDirectory, "productos.json");
+const motosPath = path.join(dataDirectory, "motos.json");
 const novedadesPath = path.join(dataDirectory, "novedades.json");
 const productosCollection = "productos";
 const novedadesCollection = "novedades";
@@ -189,8 +189,8 @@ const saveCollectionItems = async <T extends { id: number }>(
 
 const getProductosJsonSnapshot = async () => {
   const productos = await readJsonFile<Producto[]>(
-    productosPath,
-    productosData as Producto[],
+    motosPath,
+    motosData as Producto[],
   );
   const normalizedProductos = normalizeProductoIds(
     normalizeProductoDescriptions(groupProductoVariants(sortById(productos))),
@@ -242,41 +242,13 @@ const saveProductosJsonSnapshotToFirebase = async ({
     .set({
       hash,
       itemCount: mergedProductos.length,
-      source: "data/productos.json",
+      source: "data/motos.json",
       syncedAt: new Date().toISOString(),
     });
 };
 
-const ensureProductosJsonSyncedToFirebase = async () => {
-  const snapshot = await getProductosJsonSnapshot();
-  const metadata = await getFirebaseDb()
-    .collection(metadataCollection)
-    .doc(productosJsonMetadataDoc)
-    .get();
-  const metadataHash = metadata.exists ? metadata.data()?.hash : null;
-
-  if (metadataHash !== snapshot.hash) {
-    await saveProductosJsonSnapshotToFirebase(snapshot);
-  }
-
-  return snapshot;
-};
-
 export const getProductos = async () => {
-  if (hasFirebaseConfig()) {
-    const jsonSnapshot = await ensureProductosJsonSyncedToFirebase();
-    const productos = await getCollectionItems<Producto>(productosCollection);
-
-    if (productos.length) {
-      return normalizeProductoIds(
-        normalizeProductoDescriptions(groupProductoVariants(sortById(productos))),
-      );
-    }
-
-    await saveProductosJsonSnapshotToFirebase(jsonSnapshot);
-    return jsonSnapshot.productos;
-  }
-
+  // Las motos se consultan desde JSON para que el catalogo no dependa de Firestore.
   return (await getProductosJsonSnapshot()).productos;
 };
 
@@ -285,12 +257,7 @@ export const saveProductos = async (productos: Producto[]) => {
     normalizeProductoDescriptions(groupProductoVariants(productos)),
   );
 
-  if (hasFirebaseConfig()) {
-    await saveCollectionItems(productosCollection, normalizedProductos);
-    return;
-  }
-
-  await writeJsonFile(productosPath, normalizedProductos);
+  await writeJsonFile(motosPath, normalizedProductos);
 };
 
 export const syncProductosJsonToFirebase = async () => {

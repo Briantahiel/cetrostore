@@ -1,4 +1,4 @@
-import productosData from "./productos.json";
+import motosData from "./motos.json";
 
 export type Producto = {
   id: number;
@@ -722,4 +722,4 @@ export const getCilindradaProducto = (
   return nombreMatch ? Number(nombreMatch[1]) : null;
 };
 
-export const productos: Producto[] = productosData as Producto[];
+export const productos: Producto[] = motosData as Producto[];
