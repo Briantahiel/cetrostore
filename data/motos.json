@@ -1839,32 +1839,6 @@
     "disponibleSucursal": false,
     "vendido": false
   },
-  /*{
-    "id": 39,
-    "stock": "virtual",
-    "nombre": "Honda CB 190 R",
-    "precio": null,
-    "imagen": [
-      "/motos/cetrogar-honda-cb190.webp"
-    ],
-    "codigo": "MO1012",
-    "descripcion": "La Honda CB 190 R es una street de estilo deportivo con motor de 184 cc, inyección electrónica y caja de 5 velocidades. Ofrece una conducción ágil para ciudad y buena respuesta para quienes buscan subir de cilindrada.",
-    "disponibleSucursal": false,
-    "vendido": false
-  },*/
-  /*{
-    "id": 40,
-    "stock": "virtual",
-    "nombre": "Honda XR 300 L Tornado",
-    "precio": null,
-    "imagen": [
-      "/motos/honda-tornado-300.webp"
-    ],
-    "codigo": "MO1013",
-    "descripcion": "La Honda XR 300 L Tornado es una trail de mayor cilindrada pensada para uso mixto, con buen despeje, suspensiones preparadas y respuesta solida en caminos exigentes. Es una moto orientada a aventura, trabajo rural y recorridos fuera del asfalto.",
-    "disponibleSucursal": false,
-    "vendido": false
-  },*/
   {
     "stock": "virtual",
     "id": 41,
