@@ -1744,7 +1744,7 @@
   },
   {
     "id": 34,
-    "codigo": "MO1003",
+    "codigo": "MO0622",
     "nombre": "Motomel S2 150",
     "descripcion": "La Motomel S2 150 es una street de 150 cc orientada a movilidad urbana y viajes cortos. Combina postura cómoda, caja manual de 5 velocidades y una mecánica conocida para quienes buscan una moto práctica y económica.",
     "precio": null,
@@ -1792,7 +1792,7 @@
       "/motos/cetrogar-honda-xr150.jpg",
       "/motos/honda-xr-150-blanca.webp"
     ],
-    "codigo": "MO1007",
+    "codigo": "MO0514",
     "precio": null,
     "nombre": "Honda XR 150 L",
     "stock": "virtual",
@@ -1808,7 +1808,7 @@
     "imagen": [
       "/motos/zanella-zb.webp"
     ],
-    "codigo": "MO1009",
+    "codigo": "MO0801",
     "descripcion": "La Zanella ZB 110 es una cub liviana y económica, ideal para quienes necesitan movilidad simple en ciudad. Su formato práctico, consumo bajo y mantenimiento sencillo la hacen conveniente para el uso cotidiano.",
     "disponibleSucursal": false,
     "vendido": false
@@ -1816,11 +1816,11 @@
   {
     "stock": "virtual",
     "id": 37,
-    "nombre": "Gilera Smash 110",
+    "nombre": "Gilera Smash 110 Full A/D",
     "imagen": [
       "/motos/gilera-smash-110.jpg"
     ],
-    "codigo": "MO1010",
+    "codigo": "MO0626",
     "precio": null,
     "descripcion": "La Gilera Smash 110 es una de las cub urbanas mas elegidas por su bajo costo de uso, facilidad de manejo y repuestos accesibles. Es una alternativa práctica para trabajo, estudio y traslados diarios.",
     "disponibleSucursal": false,
@@ -1832,14 +1832,14 @@
     "imagen": [
       "/motos/corven110aleacion.webp"
     ],
-    "codigo": "MO1011",
+    "codigo": "MO0423",
     "nombre": "Corven Energy 110",
     "id": 38,
     "stock": "virtual",
     "disponibleSucursal": false,
     "vendido": false
   },
-  {
+  /*{
     "id": 39,
     "stock": "virtual",
     "nombre": "Honda CB 190 R",
@@ -1851,8 +1851,8 @@
     "descripcion": "La Honda CB 190 R es una street de estilo deportivo con motor de 184 cc, inyección electrónica y caja de 5 velocidades. Ofrece una conducción ágil para ciudad y buena respuesta para quienes buscan subir de cilindrada.",
     "disponibleSucursal": false,
     "vendido": false
-  },
-  {
+  },*/
+  /*{
     "id": 40,
     "stock": "virtual",
     "nombre": "Honda XR 300 L Tornado",
@@ -1864,7 +1864,7 @@
     "descripcion": "La Honda XR 300 L Tornado es una trail de mayor cilindrada pensada para uso mixto, con buen despeje, suspensiones preparadas y respuesta solida en caminos exigentes. Es una moto orientada a aventura, trabajo rural y recorridos fuera del asfalto.",
     "disponibleSucursal": false,
     "vendido": false
-  },
+  },*/
   {
     "stock": "virtual",
     "id": 41,
@@ -1872,7 +1872,7 @@
     "imagen": [
       "/motos/cetrogar-yamaha-xtz-250.jpeg"
     ],
-    "codigo": "MO1005",
+    "codigo": "MO0240",
     "precio": null,
     "descripcion": "La Yamaha YBR 125 es una street urbana confiable, económica y fácil de manejar. Su motor de 125 cc, caja de 5 velocidades y postura cómoda la hacen una alternativa práctica para traslados diarios y primera moto.",
     "disponibleSucursal": false,
