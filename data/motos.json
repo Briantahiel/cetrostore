@@ -1734,8 +1734,8 @@
     "imagen": [
       "/motos/corven-energy.webp"
     ],
-    "codigo": "MO1002",
-    "descripcion": "La Corven Energy 110 es una moto utilitaria pensada para uso diario, con mecánica simple, bajo consumo y mantenimiento económico. Es cómoda para ciudad y recorridos frecuentes gracias a su peso contenido y manejo fácil.",
+    "codigo": "MO0366",
+    "descripcion": "La Corven Energy es una moto práctica, económica y confiable, ideal para el uso diario. Su diseño de estilo clásico, junto con su bajo consumo y fácil mantenimiento, la convierten en una excelente opción para quienes buscan una herramienta de trabajo o movilidad eficiente.",
     "id": 33,
     "stock": "virtual",
     "nombre": "Corven Energy 110",
@@ -1827,10 +1827,10 @@
     "vendido": false
   },
   {
-    "descripcion": "La Corven Energy 110 Base mantiene una propuesta simple y económica para movilidad diaria. Su motor de 110 cc, bajo consumo y mantenimiento accesible la vuelven una opcion funcional para recorridos urbanos.",
+    "descripcion": " La Corven Energy Aleación ofrece las mismas prestaciones y confiabilidad de la línea Energy, pero con una estética más moderna y atractiva. Es una opción ideal para quienes buscan una moto versátil para la ciudad, combinando economía, comodidad y un diseño más actual.",
     "precio": null,
     "imagen": [
-      "/motos/corven-energy.webp"
+      "/motos/corven110aleacion.webp"
     ],
     "codigo": "MO1011",
     "nombre": "Corven Energy 110 Base",
