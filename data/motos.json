@@ -2091,5 +2091,53 @@
       }
     ],
     "vendido": false
+  },
+  {
+  "id": 48,
+  "codigo": "MO0860",
+  "nombre": "Bajaj Rouser 125 LS Rojo",
+  "descripcion": "La Bajaj Rouser 125 LS es una motocicleta street diseñada para el uso diario, combinando economía de combustible, bajo mantenimiento y un diseño deportivo característico de la familia Rouser. Su motor de 124,45 cc ofrece un equilibrio ideal entre rendimiento y eficiencia para la ciudad.",
+  "precio": null,
+  "imagen": [
+    "/motos/rouser125lsrojo.png"
+  ],
+  "color": "Rojo",
+  "stock": "virtual",
+  "disponibleSucursal": true,
+  "fichaTecnica": [
+    {
+      "etiqueta": "Cilindrada",
+      "valor": "124,45 cc"
+    },
+    {
+      "etiqueta": "Motor",
+      "valor": "Monocilindrico 4 tiempos DTS-i"
+    },
+    {
+      "etiqueta": "Refrigeracion",
+      "valor": "Aire"
+    },
+    {
+      "etiqueta": "Alimentacion",
+      "valor": "Carburador"
+    },
+    {
+      "etiqueta": "Caja",
+      "valor": "5 velocidades"
+    },
+    {
+      "etiqueta": "Arranque",
+      "valor": "Electrico y pedal"
+    },
+    {
+      "etiqueta": "Freno delantero",
+      "valor": "A disco"
+    },
+    {
+      "etiqueta": "Uso",
+      "valor": "Street"
+    }
+  ],
+  "vendido": false
   }
 ]
