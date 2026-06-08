@@ -2094,7 +2094,7 @@
   },
   {
   "id": 48,
-  "codigo": "MO0860",
+  "codigo": "MO0863",
   "nombre": "Bajaj Rouser 125 LS Rojo",
   "descripcion": "La Bajaj Rouser 125 LS es una motocicleta street diseñada para el uso diario, combinando economía de combustible, bajo mantenimiento y un diseño deportivo característico de la familia Rouser. Su motor de 124,45 cc ofrece un equilibrio ideal entre rendimiento y eficiencia para la ciudad.",
   "precio": null,
@@ -2142,14 +2142,14 @@
   },
   {
   "id": 49,
-  "codigo": "MO0861",
-  "nombre": "Corven Triax 150 One Rojo",
+  "codigo": "MO0931",
+  "nombre": "Corven Triax 150 One",
   "descripcion": "La Corven Triax 150 One es una motocicleta multipropósito de estilo enduro diseñada para combinar el uso urbano con recorridos por caminos de tierra. Equipada con un motor monocilíndrico de 149 cc, transmisión de 5 velocidades y suspensión de largo recorrido, ofrece una conducción cómoda, robusta y económica para el uso diario y la aventura ligera.",
   "precio": null,
   "imagen": [
-    "/motos/triax150onerojo.png"
+    "/motos/triax150onenegro.png"
   ],
-  "color": "Rojo",
+  "color": "Negro",
   "stock": "virtual",
   "disponibleSucursal": true,
   "fichaTecnica": [
