@@ -1195,6 +1195,15 @@
         "valor": "105 km/h aprox."
       }
     ],
+        "variantes": [
+      {
+        "codigo": "MO0860",
+        "nombre": "Bajaj Rouser 125 LS Rojo",
+        "color": "Rojo",
+        "imagen": "/motos/rouser125rojo.webp",
+        "vendido": false
+      }
+    ],
     "vendido": false
   },
   {
@@ -2091,5 +2100,169 @@
       }
     ],
     "vendido": false
-  }
+  },
+  {
+  "id": 48,
+  "codigo": "MO0861",
+  "nombre": "Corven Triax 150 One",
+  "descripcion": "La Corven Triax 150 One es una motocicleta multipropósito de estilo enduro diseñada para combinar el uso urbano con recorridos por caminos de tierra. Equipada con un motor monocilíndrico de 149 cc, transmisión de 5 velocidades y suspensión de largo recorrido, ofrece una conducción cómoda, robusta y económica para el uso diario y la aventura ligera.",
+  "precio": null,
+  "imagen": [
+    "/motos/corven150one.png"
+  ],
+  "color": "Negro",
+  "stock": "virtual",
+  "disponibleSucursal": true,
+  "fichaTecnica": [
+    {
+      "etiqueta": "Cilindrada",
+      "valor": "149 cc"
+    },
+    {
+      "etiqueta": "Motor",
+      "valor": "Monocilindrico 4 tiempos OHV"
+    },
+    {
+      "etiqueta": "Potencia",
+      "valor": "16 CV @ 8300 rpm"
+    },
+    {
+      "etiqueta": "Refrigeracion",
+      "valor": "Aire"
+    },
+    {
+      "etiqueta": "Alimentacion",
+      "valor": "Carburador"
+    },
+    {
+      "etiqueta": "Encendido",
+      "valor": "CDI"
+    },
+    {
+      "etiqueta": "Caja",
+      "valor": "5 velocidades"
+    },
+    {
+      "etiqueta": "Arranque",
+      "valor": "Electrico y pedal"
+    },
+    {
+      "etiqueta": "Freno delantero",
+      "valor": "Disco hidraulico"
+    },
+    {
+      "etiqueta": "Freno trasero",
+      "valor": "Tambor"
+    },
+    {
+      "etiqueta": "Suspension delantera",
+      "valor": "Horquilla telescopica"
+    },
+    {
+      "etiqueta": "Suspension trasera",
+      "valor": "Monoamortiguador hidraulico regulable"
+    },
+    {
+      "etiqueta": "Tanque",
+      "valor": "12,5 L"
+    },
+    {
+      "etiqueta": "Peso",
+      "valor": "125,5 kg"
+    },
+    {
+      "etiqueta": "Capacidad de carga",
+      "valor": "150 kg"
+    },
+    {
+      "etiqueta": "Uso",
+      "valor": "Enduro"
+    }
+  ],
+  "vendido": false
+},
+{
+  "id": 49,
+  "codigo": "MO0862",
+  "nombre": "Corven DX 70 Azul",
+  "descripcion": "La Corven DX 70 es una minibike de estilo retro inspirada en las clásicas Dax. Compacta, liviana y económica, está diseñada para desplazamientos urbanos cortos. Su motor de 72 cc, transmisión semiautomática de 4 velocidades y bajo consumo la convierten en una excelente opción para quienes buscan practicidad y facilidad de conducción en la ciudad.",
+  "precio": null,
+  "imagen": [
+    "/motos/corvendx70.png"
+  ],
+  "color": "Azul",
+  "stock": "virtual",
+  "disponibleSucursal": true,
+  "fichaTecnica": [
+    {
+      "etiqueta": "Cilindrada",
+      "valor": "72 cc"
+    },
+    {
+      "etiqueta": "Motor",
+      "valor": "Monocilindrico 4 tiempos OHC"
+    },
+    {
+      "etiqueta": "Potencia",
+      "valor": "4,5 CV @ 8500 rpm"
+    },
+    {
+      "etiqueta": "Refrigeracion",
+      "valor": "Aire"
+    },
+    {
+      "etiqueta": "Alimentacion",
+      "valor": "Carburador"
+    },
+    {
+      "etiqueta": "Encendido",
+      "valor": "CDI"
+    },
+    {
+      "etiqueta": "Caja",
+      "valor": "4 velocidades"
+    },
+    {
+      "etiqueta": "Embrague",
+      "valor": "Automatico centrifugo"
+    },
+    {
+      "etiqueta": "Arranque",
+      "valor": "Electrico y pedal"
+    },
+    {
+      "etiqueta": "Freno delantero",
+      "valor": "Tambor"
+    },
+    {
+      "etiqueta": "Freno trasero",
+      "valor": "Tambor"
+    },
+    {
+      "etiqueta": "Suspension delantera",
+      "valor": "Horquilla telescopica hidraulica"
+    },
+    {
+      "etiqueta": "Suspension trasera",
+      "valor": "Doble amortiguador"
+    },
+    {
+      "etiqueta": "Tanque",
+      "valor": "3,8 L"
+    },
+    {
+      "etiqueta": "Peso",
+      "valor": "76 kg"
+    },
+    {
+      "etiqueta": "Capacidad de carga",
+      "valor": "140 kg"
+    },
+    {
+      "etiqueta": "Uso",
+      "valor": "Urbano"
+    }
+  ],
+  "vendido": false
+}
 ]
