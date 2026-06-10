@@ -1197,11 +1197,13 @@
     ],
         "variantes": [
       {
-        "codigo": "MO0860",
+        "codigo": "MO0863",
         "nombre": "Bajaj Rouser 125 LS Rojo",
         "color": "Rojo",
         "imagen": "/motos/rouser125rojo.webp",
-        "vendido": false
+        "vendido": false,
+        "stock": "fisico",
+        "disponibleSucursal": true
       }
     ],
     "vendido": false
@@ -2103,7 +2105,7 @@
   },
   {
   "id": 48,
-  "codigo": "MO0861",
+  "codigo": "MO0931",
   "nombre": "Corven Triax 150 One",
   "descripcion": "La Corven Triax 150 One es una motocicleta multipropósito de estilo enduro diseñada para combinar el uso urbano con recorridos por caminos de tierra. Equipada con un motor monocilíndrico de 149 cc, transmisión de 5 velocidades y suspensión de largo recorrido, ofrece una conducción cómoda, robusta y económica para el uso diario y la aventura ligera.",
   "precio": null,
@@ -2111,7 +2113,7 @@
     "/motos/corven150one.png"
   ],
   "color": "Negro",
-  "stock": "virtual",
+  "stock": "fisico",
   "disponibleSucursal": true,
   "fichaTecnica": [
     {
@@ -2183,7 +2185,7 @@
 },
 {
   "id": 49,
-  "codigo": "MO0862",
+  "codigo": "MO0367",
   "nombre": "Corven DX 70 Azul",
   "descripcion": "La Corven DX 70 es una minibike de estilo retro inspirada en las clásicas Dax. Compacta, liviana y económica, está diseñada para desplazamientos urbanos cortos. Su motor de 72 cc, transmisión semiautomática de 4 velocidades y bajo consumo la convierten en una excelente opción para quienes buscan practicidad y facilidad de conducción en la ciudad.",
   "precio": null,
@@ -2191,7 +2193,7 @@
     "/motos/corvendx70.png"
   ],
   "color": "Azul",
-  "stock": "virtual",
+  "stock": "fisico",
   "disponibleSucursal": true,
   "fichaTecnica": [
     {
