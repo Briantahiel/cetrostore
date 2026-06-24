@@ -1695,7 +1695,7 @@
   {
     "id": 32,
     "disponibleSucursal": true,
-    "stock": "virtual",
+    "stock": "fisico",
     "color": "No especificado",
     "imagen": [
       "/motos/keller-eco-crono-110.webp"
@@ -1737,7 +1737,7 @@
     "descripcion": "La Keller Eco Crono 110 es una cub urbana de bajo consumo, sencilla de mantener y practica para moverse todos los días. Su mecánica 110 cc, arranque eléctrico y formato liviano la hacen una opcion accesible para trabajo y traslados diarios.",
     "nombre": "Keller Eco Crono 110",
     "precio": null,
-    "codigo": "MO1001",
+    "codigo": "MO0717",
     "vendido": false
   },
   {
