@@ -1644,25 +1644,6 @@
     "id": 31,
     "codigo": "MO0918",
     "nombre": "Bajaj Boxer CT 100 Azul/Negro",
-    
-        "etiqueta": "Freno delantero",
-        "valor": "Tambor"
-      },
-      {
-        "etiqueta": "Freno trasero",
-        "valor": "Tambor"
-      },
-      {
-        "etiqueta": "Uso",
-        "valor": "Utilitario urbano"
-      }
-    ],
-    "vendido": false
-  },
-  {
-    "id": 31,
-    "codigo": "MO0918",
-    "nombre": "Bajaj Boxer CT 100 Azul/Negro",
     "descripcion": "La Bajaj Boxer CT 100 es una motocicleta urbana de 102 cc, reconocida por su bajo consumo de combustible, mecánica sencilla y bajo costo de mantenimiento. Su diseño resistente y su posición de manejo cómoda la convierten en una excelente opción para los desplazamientos diarios, el trabajo y el uso cotidiano. Se destaca por su practicidad, durabilidad y eficiencia, ideal para quienes buscan una moto confiable y económica. Esta versión combina los colores azul y negro.", 
     "precio": null,
     "imagen": [
